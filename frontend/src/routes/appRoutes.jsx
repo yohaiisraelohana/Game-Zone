@@ -2,6 +2,7 @@ import {createBrowserRouter , RouterProvider } from 'react-router-dom'
 
 import React from 'react'
 import Home from '../pages/homePage/home';
+import MemoryGame from '../components/games/memoryGame/memoryGame';
 
 export const AppRoutes = () => {
 
@@ -9,6 +10,10 @@ export const AppRoutes = () => {
         {
           path: "/",
           element: <Home/>,
+        },
+        {
+          path:"/memoryGame",
+          element: <MemoryGame/>
         }
     ]);
 
