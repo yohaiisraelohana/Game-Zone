@@ -5,45 +5,50 @@ const Schema = mongoose.Schema;
 
 
 const userSchema = new Schema({
-    email:{
-        type:String,
-        required:true,
-        unique:true,
-    },
-    password:{
-        type:String,
-        required:true,
-    },
-    name:{
+  email:{
       type:String,
+      required:true,
+      unique:true,
+  },
+  password:{
+      type:String,
+      required:true,
+  },
+  name:{
+    type:String,
+    required:false,
+  },
+  level:{
+    type:Number,
+    required:false,
+    default:1,
+  },
+  xp:{
+    type:Number,
+    required:false,
+    default:0,
+  },
+  friends:[
+    {
+      type:Schema.Types.ObjectId,
+      ref:'User',
       required:false,
-    },
-    level:{
-      type:Number,
+    }
+  ],
+  requests:[
+    {
+      type:Schema.Types.ObjectId,
+      ref:'User',
       required:false,
-      default:1,
-    },
-    xp:{
-      type:Number,
+    }
+  ],
+  pendingFriendRequests:[
+    {
+      type:Schema.Types.ObjectId,
+      ref:'User',
       required:false,
-      default:0,
-    },
-    friends:[
-      {
-        type:Schema.Types.ObjectId,
-        ref:'User',
-        required:false,
-        unique:true,
-      }
-    ],
-    request:[
-      {
-        type:Schema.Types.ObjectId,
-        ref:'User',
-        required:false,
-        unique:true,
-      }
-    ],
+    }
+  ],
 })
 
 userSchema.statics.signup = async function (email,password,name){
