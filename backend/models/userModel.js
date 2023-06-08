@@ -28,14 +28,22 @@ const userSchema = new Schema({
       required:false,
       default:0,
     },
-    Friends:[
+    friends:[
       {
         type:Schema.Types.ObjectId,
         ref:'User',
         required:false,
         unique:true,
       }
-    ]
+    ],
+    request:[
+      {
+        type:Schema.Types.ObjectId,
+        ref:'User',
+        required:false,
+        unique:true,
+      }
+    ],
 })
 
 userSchema.statics.signup = async function (email,password,name){
