@@ -3,7 +3,7 @@ const User = require('../models/userModel');
 
 //create toekn
 const createToken = (_id) => {
-    return jwt.sign({_id},process.env.SECRET,{expiresIn:'1h'}); 
+    return jwt.sign({_id},process.env.SECRET,{expiresIn:'60000m'}); 
 }
 
 //login user
@@ -40,6 +40,8 @@ const stayLogin = async(req,res) =>{
     res.status(400).json({error: error.message})
   }
 }
+
+
 
 
 //signup user
@@ -79,10 +81,6 @@ const deleteUser = async(req,res) => {
 }
 
 
-
-const test = async(req,res) =>{
-  res.status(200).json({message:'test'})
-}
 
 module.exports = {
     signUser,

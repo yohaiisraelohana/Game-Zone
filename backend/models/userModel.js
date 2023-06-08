@@ -17,7 +17,25 @@ const userSchema = new Schema({
     name:{
       type:String,
       required:false,
-    }
+    },
+    level:{
+      type:Number,
+      required:false,
+      default:1,
+    },
+    xp:{
+      type:Number,
+      required:false,
+      default:0,
+    },
+    Friends:[
+      {
+        type:Schema.Types.ObjectId,
+        ref:'User',
+        required:false,
+        unique:true,
+      }
+    ]
 })
 
 userSchema.statics.signup = async function (email,password,name){
