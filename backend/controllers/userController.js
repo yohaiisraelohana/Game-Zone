@@ -149,6 +149,6 @@ const deleteUser = async (req, res) => {
 module.exports = {
     signUser,
     loginUser,
-    test,
     stayLogin,
+    friendRequest,
 }
