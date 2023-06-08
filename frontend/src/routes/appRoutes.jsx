@@ -11,7 +11,7 @@ export const AppRoutes = () => {
           element: <Home/>,
         }
       ]);
-
+            
   return (
     <div className="">
         <RouterProvider router={router}/>
