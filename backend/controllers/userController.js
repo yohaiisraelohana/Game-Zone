@@ -38,6 +38,56 @@ const friendRequest = async (req, res) => {
   }
 };
 
+
+//send friend request
+const friendRequest2 = async (req, res) => {
+  const { _id: senderId } = req;
+  const { id: recipientId } = req.params;
+  if (!recipientId) {
+    return res.status(400).json({ error: "Recipient not found" });
+  }
+  try {
+    let user = await User.findById(recipientId);
+
+    const exist = user.requests.find((i)=>i==senderId);
+    if(exist){
+      user.requests = user.requests.filter(i=>i!=senderId);
+    } else {
+      user.requests.push(senderId);
+    }
+
+    await user.save()
+
+
+
+  } catch (error) {
+    
+  }
+  try {
+    const [sender, recipient] = await Promise.all([
+      await User.findOneAndUpdate(
+        {
+          _id: senderId,
+          pendingFriendRequests: { $nin: [recipientId] },
+        },
+        { $push: { pendingFriendRequests: recipientId } }
+      ),
+      await User.findOneAndUpdate(
+        { _id: recipientId },
+        { $addToSet: { requests: senderId } }
+      ),
+    ]);
+    if(!recipient || !sender) {
+      return res.status(400).json({ error: "Could not send request"});
+    }
+    return res.status(200).json({ message: "Friend request sent" });
+  } catch (error) {
+    console.log(error.message);
+   res.status(500).json({ error: "Friend request failed" });
+  }
+};
+
+
 //accept friend request
 const acceptFriendRequest = async (req, res) => {
   const { _id: recipientId } = req;
