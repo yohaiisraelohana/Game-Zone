@@ -163,6 +163,7 @@ const stayLogin = async (req, res) => {
   }
 };
 
+
 //signup user
 const signUser = async (req, res) => {
   console.log(req.body);
@@ -199,6 +200,7 @@ const deleteUser = async (req, res) => {
 module.exports = {
     signUser,
     loginUser,
-    test,
     stayLogin,
+    acceptFriendRequest,
+    friendRequest
 }
