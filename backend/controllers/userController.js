@@ -147,8 +147,8 @@ const deleteUser = async (req, res) => {
 };
 
 module.exports = {
-  signUser,
-  loginUser,
-  stayLogin,
-  friendRequest,
-};
+    signUser,
+    loginUser,
+    test,
+    stayLogin,
+}
