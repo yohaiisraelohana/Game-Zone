@@ -6,6 +6,8 @@ const createToken = (_id) => {
     return jwt.sign({_id},process.env.SECRET,{expiresIn:'60000m'}); 
 }
 
+
+
 //login user
 const loginUser = async(req,res) =>{
    //console.log(req.body);
