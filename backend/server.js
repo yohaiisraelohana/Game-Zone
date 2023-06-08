@@ -24,7 +24,8 @@ app.use((req,res,next)=>{
 })
 
 // routes
-
+//? api
+//? why not configRoutes
 app.use('/api/users',userRoutes)
 
 //connect to db

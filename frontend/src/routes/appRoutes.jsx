@@ -13,7 +13,7 @@ export const AppRoutes = () => {
     ]);
 
   return (
-    <div  >
+    <div className='app-provider'  >
         <RouterProvider router={router}/>
     </div>
 )
