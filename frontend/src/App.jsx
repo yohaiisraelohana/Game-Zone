@@ -1,13 +1,13 @@
 import React from 'react'
-import Roulette from './components/games/roulette/roulette'
 import './App.css'
+import { AppRoutes } from './routes/appRoutes'
 
 function App() {
 
 
   return (
     <>
-      <Roulette/>
+      <AppRoutes/>
     </>
   )
 }
