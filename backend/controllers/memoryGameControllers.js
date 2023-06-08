@@ -18,9 +18,11 @@ const getMemories = async (req,res) => {
 //add 
 const addMemory = async (req,res) => {
     try {
-        
+        const memory = new MemoryGame(req.body);
+        await memory.save();
+        res.json(memory);
     } catch (error) {
-        
+        res.status(400).json({ error: error.message });
     }
 }
 

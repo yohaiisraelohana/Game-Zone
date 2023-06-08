@@ -49,6 +49,7 @@ const validateMemoryGame = (req,res,next) => {
 module.exports = {
     validateLogin,
     validateSignUp,
+    validateMemoryGame
 }
 
 
