@@ -58,32 +58,9 @@ const friendRequest2 = async (req, res) => {
 
     await user.save()
 
-
-
-  } catch (error) {
-    
-  }
-  try {
-    const [sender, recipient] = await Promise.all([
-      await User.findOneAndUpdate(
-        {
-          _id: senderId,
-          pendingFriendRequests: { $nin: [recipientId] },
-        },
-        { $push: { pendingFriendRequests: recipientId } }
-      ),
-      await User.findOneAndUpdate(
-        { _id: recipientId },
-        { $addToSet: { requests: senderId } }
-      ),
-    ]);
-    if(!recipient || !sender) {
-      return res.status(400).json({ error: "Could not send request"});
-    }
-    return res.status(200).json({ message: "Friend request sent" });
   } catch (error) {
     console.log(error.message);
-   res.status(500).json({ error: "Friend request failed" });
+    res.status(500).json({ error: 'Friend request acceptance failed' });
   }
 };
 
@@ -201,5 +178,9 @@ module.exports = {
     signUser,
     loginUser,
     stayLogin,
+<<<<<<< HEAD
     friendRequest
+=======
+    friendRequest2,
+>>>>>>> 482c2e6449449f81f589697dcd23b6eb078a33a6
 }

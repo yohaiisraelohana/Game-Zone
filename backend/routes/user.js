@@ -1,5 +1,5 @@
 const express = require('express');
-const {signUser,loginUser,friendRequest,stayLogin} = require('../controllers/userController')
+const {signUser,loginUser,friendRequest2,stayLogin} = require('../controllers/userController')
 const {authentication}  = require('../middleware/requireAuth');
 const {validateSignUp,validateLogin} = require('../middleware/validation');
 const { getSignature } = require('../utils/uploadImage');
@@ -20,7 +20,7 @@ router.post('/stayLogin',stayLogin)
 router.post('/signup',validateSignUp,signUser)
 
 //send friend request 
-router.post('/sendFriendRequest/:id',authentication,friendRequest);
+router.post('/sendFriendRequest/:id',authentication,friendRequest2);
 
 
 module.exports = router;
