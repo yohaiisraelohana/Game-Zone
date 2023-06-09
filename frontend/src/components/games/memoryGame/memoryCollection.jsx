@@ -2,6 +2,7 @@ import React from 'react'
 import MemoryCards from './memoryCards';
 
 export default function MemoryCollection({memorycategories}) {
+  
   console.log(memorycategories);
   return (
     <div>

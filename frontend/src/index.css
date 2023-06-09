@@ -4,6 +4,13 @@
     font-family:  ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 }
 
+button:disabled{
+    cursor: not-allowed;
+    opacity: 0.5;
+}
+
+
+
 :root{
-    --primary : white
+    --primary : white  
 }
