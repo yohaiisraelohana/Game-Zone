@@ -16,6 +16,17 @@ const memoryGameSchema = new Schema({
         type:String,
         required:false
     },
+    keys:{
+        type:Array,
+        required:false,
+        default:[]
+    },
+    img_keys:{
+        type:Array,
+        required:false,
+        default:[]
+    }
+
 })
 
 //access key

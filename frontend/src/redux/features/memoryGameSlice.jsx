@@ -17,7 +17,12 @@ const initialState = {
     data:null,
     loading:false,
     error:null,
-    currentGame:null
+    currentGame:null,
+    memoryLevels:[
+      {name:"Begginer",level:6},
+      {name:"Advanced",level:12},
+      {name:"Pro",level:24}
+    ]
 }
 
 

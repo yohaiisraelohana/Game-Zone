@@ -28,11 +28,6 @@ app.use((req,res,next)=>{
 
 
 
-<<<<<<< HEAD
-=======
-app.use('/api/user',userRoutes)
-
->>>>>>> 482c2e6449449f81f589697dcd23b6eb078a33a6
 
 
 // routes
