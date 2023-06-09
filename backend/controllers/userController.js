@@ -136,10 +136,6 @@ module.exports = {
     signUser,
     loginUser,
     stayLogin,
-<<<<<<< HEAD
-    friendRequest,
-=======
     acceptFriendRequest,
->>>>>>> f9683629f94c47e7c42faeb8e4e51412a372838f
     friendRequest2,
 }
