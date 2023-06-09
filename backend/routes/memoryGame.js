@@ -8,7 +8,7 @@ const router = express.Router()
 router.get("/",getMemories);
 
 //add memory route
-router.post('/',validateMemoryGame,addMemory);
+router.post("/",validateMemoryGame,addMemory);
 //router.post('/',authentication,addMemory);
 
 

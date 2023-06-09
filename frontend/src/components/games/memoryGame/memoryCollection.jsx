@@ -1,25 +1,19 @@
 import React from 'react'
-import MemoryCards from './memoryCards';
-
+import { useNavigate } from 'react-router-dom'
+import './memoryCollection.css'
 export default function MemoryCollection({memorycategories}) {
-  
-  console.log(memorycategories);
+  const navigate = useNavigate();
+
   return (
     <div>
-      <h1>memoryCollection</h1>
-
-      {memorycategories.map((m)=>(
-        <div style={
-          {height:"200px",
-          width:"400px",
-          backgroundImage:`url(${m.img_url})`,
-          backgroundPosition:'center',
-          border:"white 1px solid"}}>
+      {memorycategories.map((m,i)=>(
+        <div className='collection-card'
+        key={i}
+        onClick={()=>navigate(`/memoryGame/${m.name}`)}
+        style={{backgroundImage:`url(${m.img_url})`}}>
           <h2>{m.name}</h2>
         </div>
-        
       ))}
-      <MemoryCards/>
     </div>
   )
 }

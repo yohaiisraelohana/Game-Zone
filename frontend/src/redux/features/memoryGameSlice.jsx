@@ -16,14 +16,19 @@ export const getMemoryGames = createAsyncThunk('memoryGame/getMemoryGames', asyn
 const initialState = {
     data:null,
     loading:false,
-    error:null
+    error:null,
+    currentGame:null
 }
 
 
 const memoryGameSlice = createSlice({
     initialState,
     name:"memoryGame",
-    reducers:{},
+    reducers:{
+      setCurrentGame: (state,action) => {
+        state.currentGame = action.payload;
+      }
+    },
     extraReducers: (builder) => {
         builder
         .addCase(getMemoryGames.pending, (state) => {
@@ -41,5 +46,5 @@ const memoryGameSlice = createSlice({
     }
 })
 
-export const {} = memoryGameSlice.actions;
+export const {setCurrentGame} = memoryGameSlice.actions;
 export default memoryGameSlice.reducer;
