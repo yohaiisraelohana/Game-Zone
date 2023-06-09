@@ -178,4 +178,5 @@ module.exports = {
     signUser,
     loginUser,
     stayLogin,
+    friendRequest2,
 }
