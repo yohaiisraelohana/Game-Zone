@@ -36,8 +36,6 @@ export default function MemoryGameStart() {
         console.log(error);
       }
     }
-    console.log(currentGame);
-    console.log(memoryCards);
     
 
     useEffect(()=>{

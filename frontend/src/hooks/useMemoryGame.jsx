@@ -11,7 +11,6 @@ export default function useMemoryGame() {
     const setMemoryGame = (memory) =>{
       dispatch(setCurrentGame(memory));
     }
-    console.log(data,loading,error);
 
   return {loading,data,error,currentGame,memoryLevels,getMemory,setMemoryGame};
 }
