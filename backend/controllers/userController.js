@@ -16,10 +16,12 @@ const friendRequest2 = async (req, res) => {
   }
   try {
     let recipient = await User.findById(recipientId);
-
-    const exist = recipient.requests.find((i) => i === senderId);
+    console.log(recipient.requests);
+    const exist = recipient.requests.find((i) =>i.toString() === senderId.toString());
     if (exist) {
       recipient.requests = recipient.requests.filter((i) => i !== senderId);
+      await recipient.save();
+      return res.status(202).json({message:"Declined friend request"})
     } else {
       recipient.requests.push(senderId);
     }
@@ -37,17 +39,25 @@ const friendRequest2 = async (req, res) => {
 const acceptFriendRequest = async(req,res) =>{
   const { _id: recipientId } = req;
   const { id: senderId } = req.params;
- try{
   let recipient = await User.findById(recipientId);
   let sender = await User.findById(senderId);
-  const exist = recipient.requests.find((i) => i === senderId);
+  if(!recipient || !sender){
+    return res.status(404).json({ message: 'Accept friend request failed' });
+  }
+ try{
+  const exist = recipient.requests.find((i) => i.toString() === senderId.toString());
+  console.log(exist);
   if(exist){
-    recipient.requests = recipient.requests.filter((i) => i !== senderId);
+    recipient.requests = recipient.requests.filter((i) => i.toString() !== senderId.toString());
     recipient.friends.push(senderId);
     sender.friends.push(recipientId);
   }
+  else{
+    return res.status(404).json({ message:'Failed'});
+  }
   await recipient.save();
   await sender.save();
+  return res.status(200).json({ message: "Friend request sent" });
 }
 catch(error){
   console.log(error.message);
