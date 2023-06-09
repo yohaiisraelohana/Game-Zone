@@ -1,6 +1,8 @@
 require('dotenv').config()
 const express = require('express');
 const mongoose = require('mongoose')
+
+
 const cookieParser = require('cookie-parser');
 const cors = require('cors');
 
@@ -29,9 +31,8 @@ app.use((req,res,next)=>{
 
 
 
-
 // routes
-app.use('/api/user',userRoutes);
+app.use('/user',userRoutes);
 app.use('/memoryGame',memoryGameRoutes);
 
 
