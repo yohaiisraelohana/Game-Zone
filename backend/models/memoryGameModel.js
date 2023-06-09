@@ -18,7 +18,10 @@ const memoryGameSchema = new Schema({
     },
 })
 
+//access key
+//xtNRe-AoJuMXYuvPwwKuJ2zQJl0v9eKShc0Wqwvt_Os
 
-
+//secret key
+//H2_y_nm_7IAYw5Q7nUTn6yiIddXyhtSylEL-1qvCDik
 
 module.exports = mongoose.model("MemoryGame",memoryGameSchema);

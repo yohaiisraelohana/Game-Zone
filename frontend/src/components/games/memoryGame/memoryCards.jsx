@@ -1,10 +1,9 @@
 import React from 'react'
 
-const memoryCards = () => {
-
+export default function MemoryCards() {
   return (
-    <div>memoryCards</div>
+    <div>
+      <h1>memoryCards</h1>
+    </div>
   )
 }
-
-export default memoryCards
