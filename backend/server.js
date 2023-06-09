@@ -1,6 +1,10 @@
 require('dotenv').config()
 const express = require('express');
 const mongoose = require('mongoose')
+<<<<<<< HEAD
+const userRoutes = require('./routes/user');
+=======
+>>>>>>> 88c770070e6966f14552d8df2a0c62df50a4a471
 const cookieParser = require('cookie-parser');
 const cors = require('cors');
 
@@ -27,6 +31,9 @@ app.use((req,res,next)=>{
 })
 
 
+<<<<<<< HEAD
+app.use('/api/user',userRoutes)
+=======
 
 
 // routes
@@ -34,6 +41,7 @@ app.use('/api/users',userRoutes);
 app.use('/memoryGame',memoryGameRoutes);
 
 
+>>>>>>> 88c770070e6966f14552d8df2a0c62df50a4a471
 
 //connect to db
 mongoose.connect(process.env.MONGO_URI)
