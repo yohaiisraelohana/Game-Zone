@@ -31,7 +31,7 @@ app.use((req,res,next)=>{
 
 
 // routes
-app.use('/api/user',userRoutes);
+app.use('/user',userRoutes);
 app.use('/memoryGame',memoryGameRoutes);
 
 

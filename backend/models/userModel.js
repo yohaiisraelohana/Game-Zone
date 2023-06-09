@@ -42,13 +42,6 @@ const userSchema = new Schema({
       required:false,
     }
   ],
-  pendingFriendRequests:[
-    {
-      type:Schema.Types.ObjectId,
-      ref:'User',
-      required:false,
-    }
-  ],
 },{timestamps:true})
 
 userSchema.statics.signup = async function (email,password,name){
