@@ -25,6 +25,11 @@ const memoryGameSchema = new Schema({
         type:Array,
         required:false,
         default:[]
+    },
+    headers:{
+        type:Object,
+        required:false,
+        default:{}
     }
 
 })

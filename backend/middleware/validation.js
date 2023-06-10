@@ -37,7 +37,8 @@ const validateMemoryGame = (req,res,next) => {
         img_url:Joi.string().min(2).max(400),
         api:Joi.string().min(3).max(300).required(),
         keys:Joi.array(),
-        img_keys:Joi.array()
+        img_keys:Joi.array(),
+        headers:Joi.object()
     });
     const {error} = schema.validate(req.body);
     if (error) {

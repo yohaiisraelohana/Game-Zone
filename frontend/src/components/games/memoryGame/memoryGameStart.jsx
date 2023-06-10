@@ -17,7 +17,7 @@ export default function MemoryGameStart() {
 
     const getMemoryCards = async () => {
       try {
-        let {data} = await apiGet(`${currentGame.api}${level}`);
+        let {data} = await apiGet(`${currentGame.api}${level}`,currentGame.headers);
         for (let i = 0; i < currentGame.keys.length ; i++) {
           data = data[currentGame.keys[i]];
         }
@@ -36,6 +36,8 @@ export default function MemoryGameStart() {
         console.log(error);
       }
     }
+
+    console.log(memoryCards);
     
 
     useEffect(()=>{
