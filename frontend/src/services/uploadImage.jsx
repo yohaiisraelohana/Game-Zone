@@ -4,11 +4,12 @@ import { apiGet } from "./apiRequests";
 
 export const uploadImageToCloudinary = async (img) => {
     try {
+        //get a sign from cloudinary in the backend
         const {data:uploadParams} = await apiGet(UPLOAD_IMAGE,{
             'Content-Type': 'application/json',
             'x-api-key': `${JSON.parse(localStorage.getItem("user")).Token}`
         });
-
+        //create a query srtring from the sign
         const queryString = Object.keys(uploadParams)
             .map((key) => `${key}=${encodeURIComponent(uploadParams[key])}`)
             .join('&');
@@ -21,10 +22,13 @@ export const uploadImageToCloudinary = async (img) => {
         const {data} = await axios.post(uploadUrl, formData, {
             headers: { 'Content-Type': 'multipart/form-data' },
         })
-        console.log(data.secure_url);
-        return data.secure_url
+        return data
     } catch (error) {
         console.log(error);
     }
 }
 
+/* 
+TODO: 1. when calling this function - {secure_url} = uploadImageToCloudinary(the image from user);
+* then check if secure_url exist and save in the user
+ */ 
