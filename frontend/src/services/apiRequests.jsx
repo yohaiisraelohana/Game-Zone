@@ -17,3 +17,19 @@ export const apiGet = async (url,headers) => {
         throw(error);
     }
 }
+
+export const apiPost = async(url,bodyData) => {
+    try {
+        const config = {
+            method:"POST",
+            url:url,
+            data:bodyData,
+            withCredentials:true,
+        }
+        const response = await axios(config);
+        return response;
+    } catch (error) {
+        console.log(error);
+        throw(error);
+    }
+}
