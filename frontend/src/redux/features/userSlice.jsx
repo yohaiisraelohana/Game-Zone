@@ -1,5 +1,4 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import axios from "axios";
 import { LOGIN_USER, SIGNUP_USER } from "../../constants/urls";
 import { apiPost } from "../../services/apiRequests";
 
