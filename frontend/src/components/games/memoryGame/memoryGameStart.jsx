@@ -3,24 +3,37 @@ import useMemoryGame from '../../../hooks/useMemoryGame'
 import MemoryLevelNav from './memoryLevelNav'
 import { apiGet } from '../../../services/apiRequests';
 import './memoryGameStart.css';
+import MemoryCard from './memoryCard';
 
 export default function MemoryGameStart() {
     const [level,setLevel] = useState(null);
     const {currentGame} = useMemoryGame();
     const [memoryCards,setMemoryCards]=useState(null); 
+
+    const [turns,setTurns] = useState(0);
+    const [firstCard,setFirstCard] = useState(null);
+    const [secondCard,setSecondCard] = useState(null);
+    const [disabled,setDisabled] =  useState(false);
     
 
     const updateMemoryCards = (data) => {
-      setMemoryCards([...data,...data]);
+      const shuffledCardsArray = [...data,...data]
+        .sort(()=>Math.random() - 0.5)
+        .map((card,i)=>({src:card,mached:false,id:i}));
+      
+      setMemoryCards(shuffledCardsArray);
+
     }
     
 
     const getMemoryCards = async () => {
       try {
         let {data} = await apiGet(`${currentGame.api}${level}`,currentGame.headers);
+        //getting tha image array
         for (let i = 0; i < currentGame.keys.length ; i++) {
           data = data[currentGame.keys[i]];
         }
+        //gerring only the image needed
         if (currentGame.img_keys.length > 0) {
           let imgs = [];
           for (let j = 0; j < currentGame.img_keys.length; j++) {
@@ -37,34 +50,81 @@ export default function MemoryGameStart() {
       }
     }
 
-    console.log(memoryCards);
-    
+    const choiseCard = (card) => {
+      if (firstCard) {
+        setDisabled(true);
+        setSecondCard(card);
+      } else {
+        setFirstCard(card);
+      } 
+    }
+
+    const checkIfWon = () => {
+      for (let i = 0; i < memoryCards.length ; i++) {
+        if (!memoryCards[i].mached) {
+          return false;
+        }        
+      }
+      return true;
+    }
+
+
+
+
+
+
+    useEffect(()=>{
+      if (firstCard && secondCard) {
+        if (firstCard.src == secondCard.src) {
+          setMemoryCards([...memoryCards.map((card)=>(
+            card.src == firstCard.src 
+            ? {...card,mached:true}
+            : card
+          ))]);
+        }
+        setTimeout(() => {
+          setFirstCard(null);
+          setSecondCard(null);
+          setTurns(turns + 1);
+          setDisabled(false);
+        }, 1000);
+      }
+    },[firstCard,secondCard])
 
     useEffect(()=>{
       if (currentGame && level) {
         getMemoryCards();
       }
     },[level,currentGame])
+
+    useEffect(()=>{
+      if (memoryCards) {
+        if (checkIfWon()) {
+          alert(`congradilations!
+          you won ${Math.ceil(level * 100 / turns)} xp`);
+          setTurns(0);
+        }
+      }
+    },[memoryCards])
+
+
+
   return (
     <div>
+
         {level ? 
         <div className="memory-game-start">
           <p>game started level {level}</p>
+          <p>Turns{turns}</p>
           <div className="memory-cards-container">
           {memoryCards ? 
             memoryCards.map((card,i)=>(
-              <div className="memory-card" key={i}>
-                <div 
-                style={{backgroundImage:`url("https://res.cloudinary.com/dhojbnefp/image/upload/v1686320267/GameProject/memoryGame/9B55637C-4815-4169-947B-C0B1478146E9_mylsol.jpg")`}}
-                className="back">
-                </div>
-
-                {/* <div 
-                className='front'
-                style={{backgroundImage:`url(${card})`}}  >
-                </div> */}
-              </div>
-
+              <MemoryCard 
+                flipped={card == firstCard || card == secondCard}
+                choiseCard={choiseCard} 
+                card={card}
+                disabled={disabled} 
+                key={i} />
             ))      
             : <p>loading</p>
           }
