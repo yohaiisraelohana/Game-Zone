@@ -2,8 +2,10 @@ import React, { useEffect, useState } from 'react'
 import useMemoryGame from '../../../hooks/useMemoryGame'
 import MemoryLevelNav from './memoryLevelNav'
 import { apiGet } from '../../../services/apiRequests';
-import './memoryGameStart.css';
 import MemoryCard from './memoryCard';
+import {useNavigate} from 'react-router-dom'
+
+import './memoryGameStart.css';
 
 export default function MemoryGameStart() {
     const [level,setLevel] = useState(null);
@@ -15,6 +17,7 @@ export default function MemoryGameStart() {
     const [secondCard,setSecondCard] = useState(null);
     const [disabled,setDisabled] =  useState(false);
     
+    const navigate = useNavigate();
 
     const updateMemoryCards = (data) => {
       const shuffledCardsArray = [...data,...data]
@@ -102,7 +105,7 @@ export default function MemoryGameStart() {
         if (checkIfWon()) {
           alert(`congradilations!
           you won ${Math.ceil(level * 100 / turns)} xp`);
-          setTurns(0);
+          navigate(-1);
         }
       }
     },[memoryCards])
