@@ -132,6 +132,10 @@ const deleteUser = async (req, res) => {
   }
 };
 
+const updateImage = async (req, res) => {
+  
+}
+
 module.exports = {
     signUser,
     loginUser,
