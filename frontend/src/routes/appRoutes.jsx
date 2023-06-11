@@ -1,20 +1,23 @@
+//react router dom
 import {createBrowserRouter , RouterProvider ,Route ,createRoutesFromElements} from 'react-router-dom'
-
+//component routes
 import React from 'react'
 import Home from '../pages/homePage/home';
 import MemoryGame from '../components/games/memoryGame/memoryGame';
 import MemoryGameStart from '../components/games/memoryGame/memoryGameStart';
-import GameCollection from '../components/games/gamesCollection/gameCollection';
+import NavBar from '../components/navBar/navBar';import TicTacGame from '../components/games/ticTacToe/ticTacGame';
+ '../components/navBar/navBar'
 
 export const AppRoutes = () => {
 
 
     const router = createBrowserRouter(
       createRoutesFromElements(
-        <Route path="/" element={<Home/>}>
-          <Route index element={<GameCollection/>}/>
+        <Route path="/" element={<NavBar/>}>
+          <Route index element={<Home/>}/>
           <Route path='/memoryGame' element={<MemoryGame/>} />
           <Route path='/memoryGame/:name' element={<MemoryGameStart/>} />
+          <Route path='ticTacGame' element={<TicTacGame/>}/>
         </Route>
       )
     )
