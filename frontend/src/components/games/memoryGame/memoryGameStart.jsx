@@ -34,7 +34,7 @@ export default function MemoryGameStart() {
         let {data} = await apiGet(`${currentGame.api}${level}`,currentGame.headers);
         //getting tha image array
         for (let i = 0; i < currentGame.keys.length ; i++) {
-          data = data[currentGame.keys[i]];
+          data = data[currentGame.keys[i]]; 
         }
         //gerring only the image needed
         if (currentGame.img_keys.length > 0) {
@@ -53,6 +53,8 @@ export default function MemoryGameStart() {
       }
     }
 
+
+
     const choiseCard = (card) => {
       if (firstCard) {
         setDisabled(true);
@@ -61,6 +63,7 @@ export default function MemoryGameStart() {
         setFirstCard(card);
       } 
     }
+
 
     const checkIfWon = () => {
       for (let i = 0; i < memoryCards.length ; i++) {
@@ -71,6 +74,13 @@ export default function MemoryGameStart() {
       return true;
     }
 
+
+
+    useEffect(()=>{
+      if (currentGame && level) {
+        getMemoryCards();
+      }
+    },[level,currentGame])
 
 
 
@@ -94,11 +104,9 @@ export default function MemoryGameStart() {
       }
     },[firstCard,secondCard])
 
-    useEffect(()=>{
-      if (currentGame && level) {
-        getMemoryCards();
-      }
-    },[level,currentGame])
+   
+
+
 
     useEffect(()=>{
       if (memoryCards) {
