@@ -2,6 +2,8 @@ import React from 'react'
 import { useNavigate } from 'react-router-dom'
 import useMemoryGame from '../../../hooks/useMemoryGame'
 import './memoryCollection.css'
+
+
 export default function MemoryCollection({memorycategories}) {
   const {setMemoryGame} = useMemoryGame();
   const navigate = useNavigate();
