@@ -17,7 +17,7 @@ export const AppRoutes = () => {
           <Route index element={<Home/>}/>
           <Route path='/memoryGame' element={<MemoryGame/>} />
           <Route path='/memoryGame/:name' element={<MemoryGameStart/>} />
-          <Route path='ticTacGame' element={<TicTacGame/>}/>
+          <Route path='/ticTacGame' element={<TicTacGame/>}/>
         </Route>
       )
     )
