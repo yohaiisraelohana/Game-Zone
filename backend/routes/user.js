@@ -7,8 +7,7 @@ const { getSignature } = require('../utils/uploadImage');
 const router = express.Router()
 
 //upload image route
-//! need to add auth
-router.get("/uploadImage",getSignature);
+router.get("/uploadImage",authentication,getSignature);
 
 //login route
 router.post('/login',validateLogin,loginUser)
