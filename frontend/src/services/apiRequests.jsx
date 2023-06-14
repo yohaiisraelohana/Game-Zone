@@ -5,7 +5,8 @@ export const apiGet = async (url,headers) => {
     try {
         const config = {
             method:"GET",
-            url:url
+            url:url,
+            withCredentials:true,//!check proplems
         }
         if (headers) {
             config.headers = headers
