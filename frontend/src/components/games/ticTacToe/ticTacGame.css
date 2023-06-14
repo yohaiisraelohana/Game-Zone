@@ -1,4 +1,71 @@
-.pc{
-    color: white;
-    
+/* 
+.games {
+    color:var(--primary);
+    display: flex;
+    justify-content: center;
+    padding-top: 20px;
+} */
+.type{
+    display: flex;
+    justify-content: space-evenly;
+    width: 1200px;
+}
+
+.ticTac-pc{
+    background-image:url('../../../assets/images/games/tictaccomputer.png');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    border: white 1px solid;
+    border-radius: 5px;
+
+    height: 200px;
+    width: 300px;
+
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+.ticTac-pc p{
+    margin: auto;
+    font-size: 30px;
+}
+
+.ticTac-pc:hover{
+    /* box-shadow: inset white 0px 2px 7px 7px; */
+    box-shadow:  white 0px 2px 7px 7px;
+    text-shadow: white 0px 0px 5px,
+    white 0px 0px 10px,
+    white 0px 0px 15px;
+}
+
+
+.ticTac-users{
+    background-image:url('../../../assets/images/games/tictacusers.png');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    border: white 1px solid;
+    border-radius: 5px;
+
+    height: 200px;
+    width: 300px;
+
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+.ticTac-users p{
+    margin: auto;
+    font-size: 30px;
+}
+
+.ticTac-users:hover{
+    /* box-shadow: inset white 0px 2px 7px 7px; */
+    box-shadow:  white 0px 2px 7px 7px;
+    text-shadow: white 0px 0px 5px,
+    white 0px 0px 10px,
+    white 0px 0px 15px;
 }
