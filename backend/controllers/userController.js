@@ -89,9 +89,9 @@ const stayLogin = async (req, res) => {
   try {
     if (token) {
       const decoded = jwt.verify(token, process.env.SECRET);
-      const user = await User.findById(decoded._id);
+      const user = await User.findById(decoded._id,{password:0});
       console.log(user._id.toString());
-      return res.status(200).json({ name: user.name, id: user._id.toString() });
+      return res.status(200).json(user);
     }
   } catch (error) {
     res.status(400).json({ error: error.message });
