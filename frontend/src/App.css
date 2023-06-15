@@ -5,11 +5,15 @@
 }
 
 .app-provider{
-  background-image: url('./assets/images/bgImages/homePageBg.jpeg');
+  /* background-image: url('./assets/images/bgImages/homePageBg.jpeg');
   background-position: center;
   background-size: cover;
-  background-repeat: no-repeat;
+  background-repeat: no-repeat; */
+  background-color: var(--dark-bg);
   height: 100vh;
   width: 100vw;
-  overflow-y: auto;
+  overflow: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }

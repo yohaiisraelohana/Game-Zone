@@ -1,12 +1,45 @@
-import React from "react";
+import React, { useState } from "react";
 import { Outlet } from "react-router-dom";
+import { useModal } from "../../hooks/useModal";
+//components
+import Logo from './logo'
+import ProfileImgAndLevel from "./profileImgAndLevel";
+import LogInButton from "./logInButton";
+
+//style
 import "./navBar.css";
 
+
+
 export default function NavBar() {
+  const [selected,setSelected] = useState("logo");
+  const navOptions = useState(
+    [
+      {provider:"logo",inner:""},
+      {provider:"friends",inner:""},
+      {provider:"account",inner:""}
+    ]
+    );
+  const [modal,setModal] = useState(null);
+
+  const closeModal = () => {
+      setModal(null);
+  }
+  const getModal = (content) => {
+    const modalContent = useModal(content,closeModal);
+    setModal(modalContent);
+  }
+
+
   return (
-    <div>
+    <div className="nav-bar">
+      {modal && modal}
       <div className="header">
-            header
+        <Logo/>
+        {false 
+        ? <ProfileImgAndLevel/>
+        : <LogInButton hundleLogin={getModal}/> }
+        
       </div>
       <main>
         <Outlet />
