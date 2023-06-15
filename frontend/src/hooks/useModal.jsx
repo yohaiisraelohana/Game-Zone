@@ -11,7 +11,9 @@ const UseModal = ({content,close}) => {
             {content}
             <button 
                 onClick={()=> close()}
-                className='modal-close' ></button>
+                className='modal-close' >
+                    <AiOutlineClose/>
+                </button>
         </div>
 
     </div>

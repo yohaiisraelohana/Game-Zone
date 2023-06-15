@@ -1,0 +1,59 @@
+.signUp-container{
+    background-color: rgb(26, 22, 22);
+    border-radius: 10px;
+    padding: 10px;
+    padding-block: 20px;
+    padding-bottom: 30px;
+    display: flex;
+    justify-content: center;
+    align-content: start;
+    flex-wrap: wrap;
+    width: 85vw;
+}
+
+.signUp-nav{
+    color: var(--primary);
+    font-size: 25px;
+    
+}
+.log-in{
+    border: none;
+    background-color: transparent;
+}
+
+.signUp-form{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.signUp-form label{
+    width: 100%;
+    margin-inline:12% ;
+    margin-top: 15px;
+}
+
+.signUp-form input{
+    width: 75%;
+    padding: 7px;
+    background-color: transparent;
+    border: 1px var(--primary) solid;
+    border-radius: 5px;
+    margin: 2px;
+}
+
+.forgot-password{
+    color: var(--primary);
+    font-size: small;
+    margin-top: 10px;
+    width: 100%;
+    text-align: center;
+}
+
+.signUp-form .signUp-button{
+    background-color: var(--primary);
+    border: none;
+    margin-top: 20px;
+    padding: 10px 30px;
+}

@@ -38,7 +38,7 @@ export default function NavBar() {
         <Logo/>
         {false 
         ? <ProfileImgAndLevel/>
-        : <LogInButton hundleLogin={getModal}/> }
+        : <LogInButton updateModal={getModal}/> }
         
       </div>
       <main>
