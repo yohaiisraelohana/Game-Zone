@@ -1,4 +1,4 @@
-.login-container{
+.signUp-container{
     background-color: rgb(26, 22, 22);
     border-radius: 10px;
     padding: 10px;
@@ -11,30 +11,30 @@
     width: 85vw;
 }
 
-.login-nav{
+.signUp-nav{
     color: var(--primary);
     font-size: 25px;
     
 }
-.sign-up{
+.log-in{
     border: none;
     background-color: transparent;
 }
 
-.login-form{
+.signUp-form{
     width: 100%;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
 }
 
-.login-form label{
+.signUp-form label{
     width: 100%;
     margin-inline:12% ;
     margin-top: 15px;
 }
 
-.login-form input{
+.signUp-form input{
     width: 75%;
     padding: 7px;
     background-color: transparent;
@@ -51,7 +51,7 @@
     text-align: center;
 }
 
-.login-form .login-button{
+.signUp-form .signUp-button{
     background-color: var(--primary);
     border: none;
     margin-top: 20px;
