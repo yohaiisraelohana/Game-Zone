@@ -5,7 +5,8 @@ import React from 'react'
 import Home from '../pages/homePage/home';
 import MemoryGame from '../components/games/memoryGame/memoryGame';
 import MemoryGameStart from '../components/games/memoryGame/memoryGameStart';
-import NavBar from '../components/navBar/navBar';import TicTacGame from '../components/games/ticTacToe/ticTacGame';
+import NavBar from '../components/navBar/navBar';
+import TicTacGame from '../components/games/ticTacToe/ticTacGame';
 import TicTacPc from '../components/games/ticTacToe/ticTacPc';
  '../components/navBar/navBar'
 

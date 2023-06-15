@@ -12,5 +12,6 @@ button:disabled{
 
 
 :root{
-    --primary : white  
+    --primary :  rgb(43, 99, 255); 
+    --dark-bg : black;
 }
