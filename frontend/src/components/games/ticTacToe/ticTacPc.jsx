@@ -6,7 +6,7 @@ export default function TicTacPc() {
   const [move, setMove] = useState("X");
   const [round, setRound] = useState(0)
   const [winner, setWinner] = useState(null);
-  const [toggle, setToggle] = useState(true);
+  const [toggle, setToggle] = useState(false);
 
   const [winConditions] = useState([
     [0, 1, 2],
@@ -135,7 +135,6 @@ export default function TicTacPc() {
       if (!win())
       if (!blockUser())
       advance()
-      console.log('yo')
       setMove(opposite())
       setRound(round + 1)
     }, 1000);
