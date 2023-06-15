@@ -13,6 +13,9 @@ export default function GameCollection() {
         <Link to={"/ticTacGame"} className="ticTac-game">
           <p>Tic Tac Toe</p>
         </Link>
+        <div className="roulette-game">
+          <p>Roulette</p>
+        </div>
       </div>
     </div>
   );

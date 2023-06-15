@@ -9,9 +9,36 @@ button:disabled{
     opacity: 0.5;
 }
 
+.modal-container{
+    height: 100vh;
+    width: 100vw;
+    background-color:rgba(255, 255, 255, 0.7) ;
+    z-index: 5;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+}
+.modal-content{
+    position: relative;
+}
+.modal-close{
+    color: black;
+    font-style: red;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    border: none;
+    height: 10px;
+    width: 10px;
 
+    background: url("https://cdn-icons-png.flaticon.com/512/399/399426.png?w=1380&t=st=1686829257~exp=1686829857~hmac=5e29ae05a754ebc4f1ba18ffd3b99ab5d7028793341c1c41bb9d35f9bb158f43") center/cover no-repeat;
+}
 
 :root{
-    --primary :  rgb(43, 99, 255); 
+    --primary :  rgb(35 144 255); 
     --dark-bg : black;
 }

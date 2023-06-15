@@ -25,8 +25,6 @@ export default function ProfileImgAndLevel() {
             <IoLogoGameControllerB/>
             <div className="level">10</div>
         </div>
-        
-
     </div>
   )
 }

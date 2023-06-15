@@ -1,0 +1,9 @@
+.login-button{
+    background-color: var(--primary);
+    border: none;
+    border-radius: 3px;
+    padding: 7px;
+}
+.login-button:hover{
+    box-shadow: 2px 2px 20px 1px var(--primary);
+}
