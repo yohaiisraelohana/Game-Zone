@@ -16,6 +16,9 @@ export default function GameCollection() {
         <div className="roulette-game">
           <p>Roulette</p>
         </div>
+        <div className="sudoko-game">
+          <p>Sudoko</p>
+        </div>
       </div>
     </div>
   );
