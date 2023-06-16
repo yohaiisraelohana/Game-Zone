@@ -134,6 +134,10 @@ export default function TicTacPc() {
             } ))
             return true
         }
+        if(board[rnd] !== null){
+            
+        }
+
     }
     return false
   }
