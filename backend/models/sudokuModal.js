@@ -4,48 +4,13 @@ const Schema = mongoose.Schema;
 const sudokuSchema = new Schema({
     level:{
         type:String,
-        require:true
+        required:true
     },
-    template:Array,
-
-})
-
-const memoryGameSchema = new Schema({
-    name:{
-        type:String,
-        required:true,
-        unique:true,
-    },
-    api:{
-        type:String,
-        required:true,
-    },
-    img_url:{
-        type:String,
-        required:false
-    },
-    keys:{
+    template:{
         type:Array,
-        required:false,
-        default:[]
-    },
-    img_keys:{
-        type:Array,
-        required:false,
-        default:[]
-    },
-    headers:{
-        type:Object,
-        required:false,
-        default:{}
+        required:true
     }
-
 })
 
-//access key
-//xtNRe-AoJuMXYuvPwwKuJ2zQJl0v9eKShc0Wqwvt_Os
+module.exports = mongoose.model("sudoku",sudokuSchema);
 
-//secret key
-//H2_y_nm_7IAYw5Q7nUTn6yiIddXyhtSylEL-1qvCDik
-
-module.exports = mongoose.model("MemoryGame",memoryGameSchema);

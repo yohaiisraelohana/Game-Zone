@@ -2,16 +2,31 @@ const MemoryGame = require('../models/memoryGameModel');
 
 
 
-//get
+//get 
 const getMemories = async (req,res) => {
     try {
         const {name} = req.params;
+        const {page,per_page} = req.query;
         let filter = {};
         if (name) {filter.name = name};
+        if (page) {page--} else {page=0}
+        if (!per_page) {per_page = 20};
         const memory = await MemoryGame.find(filter);
         res.json(memory)
     } catch (error) {
         res.status(400).json({ error: error.message });
+    }
+}
+
+const getMemoryCount = async(req,res) => {
+    try {
+        let filter = {};
+        const {per_page} = req.query;
+        if (!per_page) {per_page = 20};
+        const memoryCount = await Sudoku.countDocuments(filter);
+        res.json({count:memoryCount,pages:Math.ceil(memoryCount/per_page)});
+    } catch (error) {
+        res.status(502).json({error});
     }
 }
 
@@ -26,7 +41,30 @@ const addMemory = async (req,res) => {
     }
 }
 
+const updateMemory = async(req,res) => {
+    try {
+        const {id} = req.params;
+        const memory = await MemoryGame.findByIdAndUpdate(id,req.body);
+        res.json(memory);
+    } catch (error) {
+        res.status(400).json({ error: error.message });
+    }
+}
+
+const deleteMemory = async (req,res) => {
+    try {
+        const {id} = req.params;
+        const memory = await MemoryGame.findByIdAndDelete(id)
+        res.json(memory);
+    } catch (error) {
+        res.status(400).json({ error: error.message });
+    }
+}
+
 module.exports = {
     getMemories,
-    addMemory
+    addMemory,
+    updateMemory,
+    deleteMemory,
+    getMemoryCount
 }

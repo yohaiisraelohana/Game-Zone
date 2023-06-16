@@ -1,9 +1,10 @@
-/* 
+/*                                          TODO
 
 
     *Main*
 1.  design website for all sizes
-
+2.  make admin layout where he can add sudoku templates and 
+    memory games search users and more
 
 
     *User*
@@ -13,14 +14,25 @@
 
 
     *Sudoku*
-1.  when user finish template save the template id 
+?1.  
+    when user finish template save the template id 
     in the user for he is won't be able to do him again
     or he is will be able to do but will not get xp for 
     this 
+2.  
+    backend with level and more
+3.  
+    check all routes in postman
+3.  
+    create redux slice
+4.  
+    finish collection and componnents with connection to backend
+5.
+    add reset button
 
     *MemoryGame*
 1.  make the option to put post and delete for only admin user
-
+2.  update count in redux
 
     *LogIn*
 1.  finish "forgot your password link"

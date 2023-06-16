@@ -16,6 +16,7 @@ export default function LogInForm({updateModal}) {
     console.log(data);
     reset()
   }
+  
   return (
     <div className='login-container'>
       <div className='login-nav'>LogIn  
