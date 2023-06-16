@@ -1,0 +1,23 @@
+.sudoku-game{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.sudoku-grid{
+    display: grid;
+    grid-template-columns: repeat(9,40px);
+}
+.sudoku-grid > * {
+    background-color: white;
+    color: #333;
+    border: 1px black solid;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.wrong-number{
+    background-color: red;
+}
+

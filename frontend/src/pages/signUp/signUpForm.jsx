@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 import { useForm } from 'react-hook-form'
 import LogInForm from '../logIn/logInForm';
-import { Link } from 'react-router-dom';
 import './signUpForm.css'
 
 export default function SignUpForm({updateModal}) {
@@ -42,11 +41,8 @@ export default function SignUpForm({updateModal}) {
           {...register("password")}
           placeholder='****'
           type="text" />
-        <Link className='forgot-password'>
-          Forgot your password ?
-        </Link>
         <button className='signUp-button'>
-          LogIn
+          SignUp
         </button>
     </form>
   </div>
