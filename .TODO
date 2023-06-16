@@ -1,17 +1,28 @@
 /* 
 
 
-    //main//
+    *Main*
 1.  design website for all sizes
 
 
 
+    *User*
+1.  make an admin role 
+2.  create admin validation 
 
 
-    //sudoku//
+
+    *Sudoku*
 1.  when user finish template save the template id 
     in the user for he is won't be able to do him again
     or he is will be able to do but will not get xp for 
     this 
+
+    *MemoryGame*
+1.  make the option to put post and delete for only admin user
+
+
+    *LogIn*
+1.  finish "forgot your password link"
 
 */
