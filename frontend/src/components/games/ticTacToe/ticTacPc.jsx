@@ -6,7 +6,15 @@ export default function TicTacPc() {
   const [move, setMove] = useState("X");
   const [round, setRound] = useState(0)
   const [winner, setWinner] = useState(null);
-  const [toggle, setToggle] = useState(false);
+  const [toggle, setToggle] = useState(true);
+  
+  const reset = () => {
+    setBoard(Array(9).fill(null));
+    setWinner(null);
+    setToggle(true);
+  }
+
+
 
   const [winConditions] = useState([
     [0, 1, 2],
@@ -31,6 +39,7 @@ export default function TicTacPc() {
         const [a, b, c] = winConditions[i];
         if (board[a] === check && board[b] === check && board[c] === check) {
           setWinner(check);
+          setToggle(false);
           return true
         }
       }
@@ -38,6 +47,7 @@ export default function TicTacPc() {
     }
     if (board.every((cell) => cell !== null)) {
       setWinner("draw");
+      setToggle(false);
       return true
     }
     return false
@@ -166,6 +176,7 @@ export default function TicTacPc() {
         ))}
       </div>
       {winner && <div className="winner">Winner: {winner}</div>}
+      <button onClick={()=> reset()} className="button">reset</button>
     </div>
   );
 }
