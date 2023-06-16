@@ -1,12 +1,13 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useForm } from 'react-hook-form'
 import LogInForm from '../logIn/logInForm';
 import './signUpForm.css'
 
 export default function SignUpForm({updateModal}) {
-    const {register,handleSubmit,formState:{errors}} = useForm();
+    const {register,handleSubmit,reset,formState:{errors}} = useForm();
     const hundleSignUp = (data) => {
         console.log(data);
+        reset();
       }
       
   return (

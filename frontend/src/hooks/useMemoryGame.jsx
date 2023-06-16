@@ -2,7 +2,7 @@ import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { getMemoryGames, setCurrentGame } from '../redux/features/memoryGameSlice';
 
-export default function useMemoryGame() {
+export default function UseMemoryGame() {
     const {data,loading,error,currentGame,memoryLevels} = useSelector(store=>store.memoryGameReducer);
     const dispatch  = useDispatch();
     const getMemory = () => {
