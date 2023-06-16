@@ -8,6 +8,7 @@ import MemoryGameStart from '../components/games/memoryGame/memoryGameStart';
 import NavBar from '../components/navBar/navBar';
 import TicTacGame from '../components/games/ticTacToe/ticTacGame';
 import TicTacPc from '../components/games/ticTacToe/ticTacPc';
+import SudokuGame from '../components/games/sudokuGame/sudokuGame';
  '../components/navBar/navBar'
 
 export const AppRoutes = () => {
@@ -21,6 +22,7 @@ export const AppRoutes = () => {
           <Route path='/memoryGame/:name' element={<MemoryGameStart/>} />
           <Route path='/ticTacGame' element={<TicTacGame/>}/>
           <Route path='/ticTacGame/pc' element={<TicTacPc/>}/>
+          <Route path='/sudokuGame' element={<SudokuGame/>} />
         </Route>
       )
     )
