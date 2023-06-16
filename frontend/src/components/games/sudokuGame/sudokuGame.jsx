@@ -95,7 +95,7 @@ export default function SudokuGame() {
         }
     }
 
-  return (
+  return ( 
     <div className='sudoku-game'>
         <h2>sudokuGame</h2>
         <div className="sudoku-grid">
@@ -103,9 +103,17 @@ export default function SudokuGame() {
             row.map((col,j)=>
                 (
                     col > 0 ?
-                    <p key={j} className={wrongNumber == col ? "wrong-number" : ""} >{col}</p> 
+                    <p key={j} className={`
+                    ${wrongNumber == col ? "wrong-number" : "" }
+                    ${(j % 3) == 2 ? "border-right" : ""}
+                    ${(i % 3) == 2 ? "border-bottom" : ""}
+                    `} >{col}</p> 
                     : <input 
-                        disabled={disable}
+                        disabled={disable} 
+                        className={`
+                        ${(j % 3) == 2 ? "border-right" : ""}
+                        ${(i % 3) == 2 ? "border-bottom" : ""}
+                        `}
                         onChange={(e)=>hundleChange(i,j,parseInt(e.target.value))}
                         type="text" 
                         key={j}  />)
