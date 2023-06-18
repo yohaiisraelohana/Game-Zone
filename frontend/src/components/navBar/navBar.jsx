@@ -8,11 +8,13 @@ import LogInButton from "./logInButton";
 
 //style
 import "./navBar.css";
+import useUser from "../../hooks/useUser";
 
 
 
 export default function NavBar() {
   const [selected,setSelected] = useState("logo");
+  const {user} = useUser(); 
   const navOptions = useState(
     [
       {provider:"logo",inner:""},
@@ -36,7 +38,7 @@ export default function NavBar() {
       {modal && modal}
       <div className="header">
         <Logo/>
-        {false 
+        {user
         ? <ProfileImgAndLevel/>
         : <LogInButton closeModal={closeModal} updateModal={getModal}/> }
         

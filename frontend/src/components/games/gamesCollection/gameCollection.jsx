@@ -13,7 +13,7 @@ export default function GameCollection() {
         <Link to={"/ticTacGame"} className="ticTac-game">
           <p>Tic Tac Toe</p>
         </Link>
-        <Link className="roulette-game">
+        <Link to={"/rouletteGame"} className="roulette-game">
           <p>Roulette</p>
         </Link>
         <Link to={"/sudokuGame"} className="sudoko-game">

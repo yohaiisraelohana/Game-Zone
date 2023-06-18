@@ -1,3 +1,4 @@
+
 @keyframes cycle {
     from{
         transform: rotate(0deg);
@@ -12,7 +13,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 700px;
+    height: 300px;
     margin-top: 20px;
 }
 
@@ -22,6 +23,7 @@
     justify-content: center;
     align-items: center;
     position: relative;
+    margin-block: 2vh;
 }
 
 
@@ -38,14 +40,14 @@
     height: 100%;
     width: 100%;
     justify-content: center;
-    transform: rotate(00deg); 
-    animation: cycle 3s linear infinite ;
+    /* transform: rotate(00deg);  */
+    /* animation: cycle 3s linear 3 forwards ; */
     padding-top: 2vh;
 } 
 
 .ball{
-    width: 2rem;
-    height: 2rem;
+    width: 1rem;
+    height: 1rem;
     z-index: 1;
     background: #dadada;
     box-shadow: 7px 7px 10px #181818;
@@ -62,4 +64,121 @@
     border-radius: 50px;
     background: #ffffff;
     filter: blur(2px);
+}
+
+.options-container{
+    display: flex;
+    flex-wrap: wrap;
+    width: 150px;
+    transform: rotate(-90deg); 
+    margin: auto;
+}
+.options-container .zero{
+    width: 150px;
+    border-radius:100% 100% 0px 0px ;
+}
+.options-container button{
+    width: 50px;
+    height: 25px;
+    border: 1px solid white;
+    background-color: rgb(66, 171, 66);
+}
+.red{
+    background-color: red !important ;
+}
+.black{
+    background-color: #333 !important ;
+}
+
+.rows-options-container{
+    display: flex;
+    flex-wrap:wrap ;
+    margin: auto;
+    margin-bottom: -100px;
+    width: 100%;
+    justify-content: center;
+}
+
+.rows-options-container button{
+    background-color: rgb(66, 171, 66);
+    color: white;
+    height: 25px;
+    width: 25px;
+    border: white 1px solid;
+    padding: 6px;
+    transform: rotate(180deg);
+}
+.one-row-container{
+    display: flex;
+    width: 300px;
+    margin: auto;
+    justify-content: center;
+}
+
+.two-rows-container{
+    display: flex;
+}
+.two-rows-container button{
+    width: 50px;
+    font-size: large;
+}
+.four-rows-container{
+    display: flex;
+    width: 300px;
+    margin: auto;
+    justify-content: center;
+    margin-top: -100px;
+}
+.four-rows-container button{
+    background-color: rgb(66, 171, 66);
+    border: white 1px solid;
+    width: 100px;
+    height: 30px;
+}
+.specials-options-container{
+    width: 300px;
+    margin: auto;
+    display: flex;
+}
+.specials-options-container button{
+    background-color: rgb(66, 171, 66);
+    border: white 1px solid;
+    padding-inline:7px ;
+}
+.selected{
+    background-color: var(--primary) !important;
+}
+.spin-button-container{
+    display: flex;
+    justify-content: center;
+    margin-block: 5vh;
+}
+.spin-button{
+    background-color: var(--primary);
+    padding: 5px;
+    border: none;
+    border-radius: 5px;
+}
+
+.select-price-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: goldenrod;
+    height: fit-content;
+    padding: 5px;
+    border-radius: 5px;
+}
+.select-price{
+    background-color: transparent;
+    border: none;
+    outline: none;
+}
+
+.spin-container{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
 }

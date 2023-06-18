@@ -4,8 +4,8 @@ import { getSudoku, setCurrentSudoku } from '../redux/features/sudokuSlice';
 export default function useSudoku() {
     const {data,loading,error,currentSudoku,sudokuLevels } = useSelector(store => store.sudokuReducer);
     const dispatch  = useDispatch();
-    const getSudokuTemolates = () => {
-        dispatch(getSudoku());
+    const getSudokuTemolates = (payload) => {
+        dispatch(getSudoku(payload ? payload : ""));
     }
     const setSudokuTemplate = (sudokuTemplate) => {
         dispatch(setCurrentSudoku(sudokuTemplate));

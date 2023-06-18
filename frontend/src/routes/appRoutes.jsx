@@ -10,7 +10,8 @@ import TicTacGame from '../components/games/ticTacToe/ticTacGame';
 import TicTacPc from '../components/games/ticTacToe/ticTacPc';
 import SudokuGame from '../components/games/sudokuGame/sudokuGame';
 import SudokuGameStart from '../components/games/sudokuGame/sudokuGameStart';
-
+import Roulette from '../components/games/roulette/roulette'
+ 
 export const AppRoutes = () => {
 
 
@@ -24,6 +25,7 @@ export const AppRoutes = () => {
           <Route path='/ticTacGame/pc' element={<TicTacPc/>}/>
           <Route path='/sudokuGame' element={<SudokuGame/>} />
           <Route path='/sudokuGame/:level' element={<SudokuGameStart/>} />
+          <Route path='/rouletteGame' element={<Roulette/>} />
         </Route>
       )
     )

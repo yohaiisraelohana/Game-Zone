@@ -5,19 +5,15 @@
 1.  design website for all sizes
 2.  make admin layout where he can add sudoku templates and 
     memory games search users and more
+3.  use skeletons instead of loading
 
 
 
 
-<<<<<<< HEAD
 
     *Sudoku*
-?1.  
-    when user finish template save the template id 
-=======
-    //sudoku//
+
 1.  when user finish template save the template id 
->>>>>>> 0db21738b4897392b7120b5c1e6fa062db93dfe5
     in the user for he is won't be able to do him again
     or he is will be able to do but will not get xp for 
     this 
@@ -31,8 +27,8 @@
     finish collection and componnents with connection to backend
 5.
     add reset button
-
-<<<<<<< HEAD
+6.  
+    change p to input
     *MemoryGame*
 1.  make the option to put post and delete for only admin user
 2.  update count in redux
@@ -40,6 +36,8 @@
     *LogIn*
 1.  finish "forgot your password link"
 
-=======
->>>>>>> 0db21738b4897392b7120b5c1e6fa062db93dfe5
+
+    *roulette*
+1.  change mark ^ and <> to icons
+
 */
