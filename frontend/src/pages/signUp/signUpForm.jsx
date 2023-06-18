@@ -4,7 +4,7 @@ import LogInForm from "../logIn/logInForm";
 import "./signUpForm.css";
 import useUser from "../../hooks/useUser";
 
-export default function SignUpForm({ updateModal }) {
+export default function SignUpForm({ updateModal,closeModal }) {
   const {
     register,
     handleSubmit,
@@ -27,7 +27,7 @@ export default function SignUpForm({ updateModal }) {
       <div className="signUp-nav">
         SignUp
         <button
-          onClick={() => updateModal(<LogInForm updateModal={updateModal} />)}
+          onClick={() => updateModal(<LogInForm closeModal={closeModal} updateModal={updateModal} />)}
           className="log-in"
         >
           /LogIn

@@ -7,7 +7,7 @@ import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
 import useUser from "../../hooks/useUser";
 
-export default function LogInForm({ updateModal }) {
+export default function LogInForm({ updateModal,closeModal }) {
 
   const { user, error, loading, loginUser } = useUser();
   const {
@@ -35,7 +35,7 @@ export default function LogInForm({ updateModal }) {
       <div className="login-nav">
         LogIn
         <button
-          onClick={() => updateModal(<SignUpForm updateModal={updateModal} />)}
+          onClick={() => updateModal(<SignUpForm closeModal={closeModal} updateModal={updateModal} />)}
           className="sign-up"
         >
           /SignUp
