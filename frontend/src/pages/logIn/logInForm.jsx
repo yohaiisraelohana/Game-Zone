@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 //style
 import "./logInForm.css";
@@ -18,11 +18,20 @@ export default function LogInForm({ updateModal }) {
   } = useForm();
   const [toggle, setToggle] = useState(false);
   const emailAlphabet = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i;
+
+  useEffect(() => {
+    if(user){
+      updateModal(null);
+    }
+  },[user]);
+
   const hundleLogIn = (data) => {
     console.log(data);
     loginUser(data);
     reset();
   };
+
+  
   return (
     <div className="login-container">
       <div className="login-nav">
