@@ -1,7 +1,6 @@
-require('dotenv').config()
+require('dotenv').config();
 const express = require('express');
-const mongoose = require('mongoose')
-
+const mongoose = require('mongoose');
 
 const cookieParser = require('cookie-parser');
 const cors = require('cors');
@@ -11,41 +10,36 @@ const userRoutes = require('./routes/user');
 const memoryGameRoutes = require('./routes/memoryGame');
 const sudokuRoutes = require('./routes/sudoku');
 
-
-
 //express app
 const app = express();
 
 //middleware
 app.use(cors({
     origin: 'http://localhost:5173',
-    credentials:true
-}))
-app.use(cookieParser())
-app.use(express.json())
-app.use((req,res,next)=>{
+    credentials: true
+}));
+app.use(cookieParser());
+app.use(express.json());
+app.use((req, res, next) => {
     console.log(req.path, req.method);
     next();
-})
-
-
-
+});
 
 // routes
-app.use('/user',userRoutes);
-app.use('/memoryGame',memoryGameRoutes);
-app.use("/sudoku",sudokuRoutes);
+app.use('/user', userRoutes);
+app.use('/memoryGame', memoryGameRoutes);
+app.use('/sudoku', sudokuRoutes);
+
 
 
 //connect to db
 mongoose.connect(process.env.MONGO_URI)
-.then(()=>{
-    //listen for requests
-    app.listen(process.env.PORT,() =>{
-        console.log('listen to port',process.env.PORT);
+    .then(() => {
+        //listen for requests
+        app.listen(process.env.PORT, () => {
+            console.log('Listening on port', process.env.PORT);
+        });
+    })
+    .catch((err) => {
+        console.log(err);
     });
-})
-.catch((err) =>{
-    console.log(err);
-})
-

@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 import React, { useState,useEffect } from "react";
+=======
+import React, { useEffect, useState } from "react";
+>>>>>>> b6cf79c21fd260ee77cedeb7d2b3a7775240a8a2
 import { useForm } from "react-hook-form";
 import LogInForm from "../logIn/logInForm";
 import "./signUpForm.css";
@@ -22,11 +26,19 @@ export default function SignUpForm({ updateModal,closeModal }) {
     reset();
   };
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> b6cf79c21fd260ee77cedeb7d2b3a7775240a8a2
   useEffect(() => {
     if(user){
       closeModal();
     }
   },[user]);
+<<<<<<< HEAD
+=======
+
+>>>>>>> b6cf79c21fd260ee77cedeb7d2b3a7775240a8a2
   return (
     <div className="signUp-container">
       <div className="signUp-nav">
