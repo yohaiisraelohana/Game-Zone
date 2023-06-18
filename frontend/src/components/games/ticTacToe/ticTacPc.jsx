@@ -162,6 +162,7 @@ export default function TicTacPc() {
     }
   }, [board, move, round]);
 
+  
   const doMove = (index) => {
     setBoard(prev => prev.map((x, i) => i == index ? move : x))
     setMove(prev => prev == 'X' ? 'O' : 'X')
