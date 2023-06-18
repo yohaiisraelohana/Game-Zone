@@ -20,15 +20,9 @@ export default function LogInForm({ updateModal }) {
   const emailAlphabet = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i;
   const hundleLogIn = (data) => {
     console.log(data);
-<<<<<<< HEAD
-    reset()
-  }
-  
-=======
     loginUser(data);
     reset();
   };
->>>>>>> 0db21738b4897392b7120b5c1e6fa062db93dfe5
   return (
     <div className="login-container">
       <div className="login-nav">

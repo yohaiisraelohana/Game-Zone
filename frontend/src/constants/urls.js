@@ -10,3 +10,7 @@ export const SIGNUP_USER = USER + "/signup";
 //* memory Game
 const MEMORY_GAME = API_URL + "/memoryGame";
 export const GET_MEMORY_GAMES = MEMORY_GAME;
+
+//* sudoku
+const SUDOKU = API_URL + "/sudoku";
+export const GET_SUDOKU_TEMPLATE = SUDOKU;
