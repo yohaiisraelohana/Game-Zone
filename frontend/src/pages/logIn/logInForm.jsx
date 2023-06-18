@@ -27,6 +27,11 @@ export default function LogInForm({ updateModal }) {
 
   const hundleLogIn = (data) => {
     console.log(data);
+<<<<<<< HEAD
+    reset()
+  }
+  
+=======
     loginUser(data);
     reset();
   };

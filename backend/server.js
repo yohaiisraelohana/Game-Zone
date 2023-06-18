@@ -9,7 +9,7 @@ const cors = require('cors');
 //routes imports
 const userRoutes = require('./routes/user');
 const memoryGameRoutes = require('./routes/memoryGame');
-
+const sudokuRoutes = require('./routes/sudoku');
 
 
 
@@ -34,7 +34,7 @@ app.use((req,res,next)=>{
 // routes
 app.use('/user',userRoutes);
 app.use('/memoryGame',memoryGameRoutes);
-
+app.use("/sudoku",sudokuRoutes);
 
 
 //connect to db

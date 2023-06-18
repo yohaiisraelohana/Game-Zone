@@ -21,4 +21,9 @@ const authentication = async (req, res, next) => {
   }
 };
 
-module.exports = {authentication};
+const authenticationAdmin = (req,res,next) => {
+  console.log("coming soon");
+  next();
+}
+
+module.exports = {authentication,authenticationAdmin};
