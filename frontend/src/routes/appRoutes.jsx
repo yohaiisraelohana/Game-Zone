@@ -9,7 +9,7 @@ import NavBar from '../components/navBar/navBar';
 import TicTacGame from '../components/games/ticTacToe/ticTacGame';
 import TicTacPc from '../components/games/ticTacToe/ticTacPc';
 import SudokuGame from '../components/games/sudokuGame/sudokuGame';
- '../components/navBar/navBar'
+import SudokuGameStart from '../components/games/sudokuGame/sudokuGameStart';
 
 export const AppRoutes = () => {
 
@@ -23,6 +23,7 @@ export const AppRoutes = () => {
           <Route path='/ticTacGame' element={<TicTacGame/>}/>
           <Route path='/ticTacGame/pc' element={<TicTacPc/>}/>
           <Route path='/sudokuGame' element={<SudokuGame/>} />
+          <Route path='/sudokuGame/:level' element={<SudokuGameStart/>} />
         </Route>
       )
     )

@@ -26,11 +26,11 @@ export default function LogInForm({ updateModal }) {
   },[user]);
 
   const hundleLogIn = (data) => {
+
     loginUser(data);
     reset();
   };
 
-  
   return (
     <div className="login-container">
       <div className="login-nav">

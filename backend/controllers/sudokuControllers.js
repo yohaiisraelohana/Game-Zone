@@ -5,7 +5,7 @@ const Sudoku = require('../models/sudokuModal');
 const getSudoku = async(req,res) => {
     try {
         let filter = {};
-        const {level,page,per_page} = req.query;
+        let {level,page,per_page} = req.query;
         if (level) {filter.level = level}; 
         if (page) {page--}  else {page = 0}; 
         if (!per_page) {per_page = 30};
@@ -23,7 +23,7 @@ const getSudoku = async(req,res) => {
 const getSudokuCount = async(req,res) => {
     try {
         let filter = {};
-        const {level,per_page} = req.query;
+        let {level,per_page} = req.query;
         if (level) {filter.level = level}; 
         if (!per_page) {per_page = 30};
         const sudokuCount = await Sudoku.countDocuments(filter);

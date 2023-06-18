@@ -6,7 +6,7 @@ const MemoryGame = require('../models/memoryGameModel');
 const getMemories = async (req,res) => {
     try {
         const {name} = req.params;
-        const {page,per_page} = req.query;
+        let {page,per_page} = req.query;
         let filter = {};
         if (name) {filter.name = name};
         if (page) {page--} else {page=0}
@@ -21,7 +21,7 @@ const getMemories = async (req,res) => {
 const getMemoryCount = async(req,res) => {
     try {
         let filter = {};
-        const {per_page} = req.query;
+        let {per_page} = req.query;
         if (!per_page) {per_page = 20};
         const memoryCount = await Sudoku.countDocuments(filter);
         res.json({count:memoryCount,pages:Math.ceil(memoryCount/per_page)});
