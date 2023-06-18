@@ -3,10 +3,10 @@ import LogInForm from "../../pages/logIn/logInForm";
 //style
 import './loginButton.css'
 
-export default function LogInButton({updateModal}) {
+export default function LogInButton({updateModal,closeModal}) {
   return (
     <button
-    onClick={()=>updateModal(<LogInForm updateModal={updateModal}/>)}
+    onClick={()=>updateModal(<LogInForm closeModal={closeModal} updateModal={updateModal}/>)}
     className='login-button'
     >logIn</button>
   )
