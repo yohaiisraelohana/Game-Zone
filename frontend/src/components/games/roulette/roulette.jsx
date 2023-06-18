@@ -181,13 +181,3 @@ const Roulette = () => {
 export default Roulette
 //MdArrowDropUp
 //BiSolidUpArrow
-//selected one number x36 from the price
-//selected 2 numbers x18
-//selected 3 numbers x12
-//selected 4 numbers x9
-//selected 6 numbers x6
-// slelected row x3
-// selected part of 12 x3
-// odd or even x2
-//half of table 1-18 and 19-36 x2
-// exact color x2 from the price
