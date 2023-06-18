@@ -21,7 +21,7 @@ export default function LogInForm({ updateModal,closeModal }) {
 
   useEffect(() => {
     if(user){
-      updateModal(null);
+      closeModal();
     }
   },[user]);
 
