@@ -152,11 +152,17 @@ export default function TicTacPc() {
         );
         return true;
       }
-      if (board[rnd] !== null) {
-      }
     }
     return false;
   };
+
+  const randomMove = () => {
+      const emptyCells = board.filter((square,i) => {
+        if(square == null) return i;
+      })
+      const rnd = Math.floor(Math.random()*emptyCells.length);
+      setBoard(prev => prev.map((x,i) => emptyCells[rnd] === i ? move : 'X'))
+  }
 
   const makeComputerMove = () => {
     setTimeout(() => {
@@ -164,7 +170,9 @@ export default function TicTacPc() {
       if (!starterMove())
       if (!win())
       if (!blockUser())
-       advance();
+      if (!advance());
+        // randomMove();
+        console.log("true");
       setMove(opposite());
       setRound(round + 1);
     }, 1000);
