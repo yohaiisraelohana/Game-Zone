@@ -1,3 +1,12 @@
+@keyframes flip{
+    from{
+        transform: rotateY(0deg)
+    }
+    to{
+        transform: rotateY(360deg);
+    }
+}
+
 
 .logo-container{
     display: flex;
@@ -15,4 +24,7 @@
     background-size: contain;
     height: 70px;
     width: 70px;
+}
+.logo-image:hover{
+    animation: flip 1s infinite ease-in-out;
 }

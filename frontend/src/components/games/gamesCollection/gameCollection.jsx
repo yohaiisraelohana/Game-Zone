@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 //style
 import "./gameCollection.css";
-
+ 
 export default function GameCollection() {
   return (
     <div>
@@ -18,6 +18,9 @@ export default function GameCollection() {
         </Link>
         <Link to={"/sudokuGame"} className="sudoko-game">
           <p>Sudoko</p>
+        </Link>
+        <Link to={"/slidePuzzleGame"} className="slide-puzzle-game">
+          <p>Slide Puzzle</p>
         </Link>
       </div>
     </div>
