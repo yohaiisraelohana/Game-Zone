@@ -1,21 +1,15 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
+import useSudoku from '../../../hooks/useSudoku';
+import {useParams} from 'react-router-dom'
 import './sudokuGameStart.css'
 
 export default function SudokuGameStart() {
-    const [template,setTemplete] = useState([
-        [0,0,8,1,0,0,0,0,7],
-        [0,4,7,8,5,0,6,0,0],
-        [0,5,0,9,0,0,2,0,4],
-        [7,0,6,2,0,8,0,0,1],
-        [0,0,1,0,4,0,7,0,0],
-        [2,0,0,0,7,0,3,0,8],
-        [4,0,5,0,0,3,0,2,0],
-        [0,0,2,0,1,9,8,7,0],
-        [8,0,0,0,0,5,4,0,0]
-    ])
+    const {currentSudoku} = useSudoku();
+    const [template,setTemplete] = useState(null);
     const [wrongNumber,setWrongNumber] = useState(null);
     const [disable,setDisable] = useState(false);
-    console.log(template);
+    const {level} = useParams();
+    console.log(level);
 
     const checkRow = (row)=>{
         let arr = new Array(10).fill(0);
@@ -85,7 +79,7 @@ export default function SudokuGameStart() {
     const hundleChange = (row,col,val) => {
         setDisable(true);
         console.log(row,col,val);
-        const newTmp = [...template];
+        const newTmp = [...template.map((rowArr) => [...rowArr])];
         newTmp[row][col] = val;
         setTemplete(newTmp);
         if (checkSudoku(row,col)) {
@@ -95,34 +89,42 @@ export default function SudokuGameStart() {
         }
     }
 
+    useEffect(()=>{
+        if (currentSudoku) {
+            setTemplete(currentSudoku);
+        }
+    },[currentSudoku])
+
 
 
   return ( 
     <div className='sudoku-game'>
         <h2>sudokuGame</h2>
-        <div className="sudoku-grid">
-        {template && template.map((row,i)=>(
+        <div className={`sudoku-grid ${level}`} >
+        {template && template.map((row,i)=>( 
             row.map((col,j)=>
                 (
-                    col > 0 ?
-                    <p key={j} className={`
-                    ${wrongNumber == col ? "wrong-number" : "" }
-                    ${(j % 3) == 2 ? "border-right" : ""}
-                    ${(i % 3) == 2 ? "border-bottom" : ""}
-                    `} >{col}</p> 
-                    : <input 
-                        disabled={disable} 
+                     <input 
+                        disabled={disable || col > 0} 
+                        value={col > 0 ? col : ''}
                         className={`
                         ${(j % 3) == 2 ? "border-right" : ""}
                         ${(i % 3) == 2 ? "border-bottom" : ""}
+                        ${wrongNumber == col ? "wrong-number" : "" }
+                        ${currentSudoku[i][j] == col && col > 0 ? `exist-${level}` : ""}
                         `}
                         onChange={(e)=>hundleChange(i,j,parseInt(e.target.value))}
                         type="text" 
                         key={j}  />)
-                
+                        // if equals to the basic
             )
         ))}
         </div>
+        <button 
+            onClick={()=>setTemplete(currentSudoku)}
+            className='reset-sudoku'>
+            Reset
+        </button>
     </div>
   )
 }

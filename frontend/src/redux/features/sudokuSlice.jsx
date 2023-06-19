@@ -3,9 +3,9 @@ import {apiGet} from '../../services/apiRequests'
 import { GET_SUDOKU_TEMPLATE } from "../../constants/urls";
 
 // Async thunk action creator
-export const getSudoku = createAsyncThunk('sudoku/getSudoku', async () => {
+export const getSudoku = createAsyncThunk('sudoku/getSudoku', async (payload) => {
     try {
-      const response = await apiGet(GET_SUDOKU_TEMPLATE);
+      const response = await apiGet(`${GET_SUDOKU_TEMPLATE + payload}`);
       return response.data;
     } catch (error) {
       // Handle any errors that occurred during the API request
@@ -19,9 +19,9 @@ const initialState = {
     error:null,
     currentSudoku:null,
     sudokuLevels:[
-      {level:"Easy"},
-      {level:"Medium"},
-      {level:"Hard"}
+      {level:"easy"},
+      {level:"medium"},
+      {level:"hard"}
     ]
 }
 

@@ -22,7 +22,6 @@ export default function SignUpForm({ updateModal,closeModal }) {
     reset();
   };
 
-
   useEffect(() => {
     if(user){
       closeModal();

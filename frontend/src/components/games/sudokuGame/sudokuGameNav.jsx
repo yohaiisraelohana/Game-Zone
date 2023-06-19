@@ -1,15 +1,25 @@
 import React from 'react'
-import {useNavigate} from 'react-router-dom';
-
-export default function SudokuGameNav({options}) {
-    const navigate = useNavigate();
+import './sudokuGameNav.css'; 
+import useSudoku from '../../../hooks/useSudoku';
+export default function SudokuGameNav() {
+    const {sudokuLevels,getSudokuTemolates} = useSudoku();
+    const hundleClick = (level) => {
+      getSudokuTemolates(`?level=${level}`)
+    }
   return (
-    <div>
-        {options && options.map((option,i)=>(
+    <div className='sudoku-nav'>
+        <button 
+            className={`all`}
+            onClick={()=>getSudokuTemolates()}
+            >All</button>
+        {sudokuLevels ? sudokuLevels.map((option,i)=>(
             <button 
-                onClick={()=>navigate(`/sudokuGame/${option.level}`)}
+                className={`${option.level}`}
+                onClick={()=>hundleClick(option.level)}
                 key={i}>{option.level}</button>
-        ))}
+        ))
+        : <p>loading</p>
+        }
     </div>
   )
 }

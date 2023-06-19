@@ -1,0 +1,34 @@
+.sudoku-collection-container{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: space-between;
+    padding-inline: 7vw;
+}
+.sudoku-preview{
+    display: grid;
+    grid-template-columns: repeat(9,17px);
+    margin-block:1vh;
+}
+.sudoku-preview > * {
+    background-color: white;
+    color: #333;
+    border: 1px black solid;
+    height: 17px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.sudoku-collection-container .easy{
+    background-color:  lightgreen ;
+    border: 1px black solid;
+}
+.sudoku-collection-container .medium{
+    background-color:  rgb(255, 211, 130) ;
+    border: 1px black solid;
+}
+.sudoku-collection-container .hard{
+    background-color:  rgb(255, 123, 123) ;
+    border: 1px black solid;
+}

@@ -1,0 +1,26 @@
+.sudoku-nav{
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    margin-block: 10px;
+}
+
+.sudoku-nav button{
+    border-radius: 3px; 
+    border: none;
+    text-transform: capitalize;
+}
+
+.all{
+    background-color: var(--primary);
+}
+
+.easy{
+    background-color: green;
+}
+.medium{
+    background-color: orange;
+}
+.hard{
+    background-color: red;
+}

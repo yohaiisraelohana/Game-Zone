@@ -1,20 +1,4 @@
-@keyframes cycle {
-    from{
-        transform: rotate(0deg);
-    }
-    to{
-        transform: rotate(360deg);
-    }
-};
 
-.roulette-container{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 700px;
-    margin-top: 20px;
-}
 
 .while-container{
     height: 100%;
@@ -22,6 +6,7 @@
     justify-content: center;
     align-items: center;
     position: relative;
+    margin-block: 2vh;
 }
 
 
@@ -38,14 +23,12 @@
     height: 100%;
     width: 100%;
     justify-content: center;
-    transform: rotate(00deg); 
-    animation: cycle 3s linear infinite ;
     padding-top: 2vh;
 } 
 
 .ball{
-    width: 2rem;
-    height: 2rem;
+    width: 1rem;
+    height: 1rem;
     z-index: 1;
     background: #dadada;
     box-shadow: 7px 7px 10px #181818;
@@ -63,3 +46,4 @@
     background: #ffffff;
     filter: blur(2px);
 }
+

@@ -1,23 +1,22 @@
 /*                                          TODO
 
 
-    //main//
-1.  design website for all sizes
-2.  make admin layout where he can add sudoku templates and 
+    *Main*
+1.  
+    design website for all sizes
+2.  
+    make admin layout where he can add sudoku templates and 
     memory games search users and more
+3.  
+    use skeletons instead of loading
 
 
 
 
-<<<<<<< HEAD
 
     *Sudoku*
-?1.  
-    when user finish template save the template id 
-=======
-    //sudoku//
+
 1.  when user finish template save the template id 
->>>>>>> 0db21738b4897392b7120b5c1e6fa062db93dfe5
     in the user for he is won't be able to do him again
     or he is will be able to do but will not get xp for 
     this 
@@ -31,15 +30,43 @@
     finish collection and componnents with connection to backend
 5.
     add reset button
+6.  
+    change p to input
 
-<<<<<<< HEAD
+
+
+
     *MemoryGame*
-1.  make the option to put post and delete for only admin user
-2.  update count in redux
+1.  
+    make the option to put post and delete for only admin user
+2.  
+    update count in redux
+
+
 
     *LogIn*
-1.  finish "forgot your password link"
+1.  
+    finish "forgot your password link"
+2.  
+    add red border to error inputs
 
-=======
->>>>>>> 0db21738b4897392b7120b5c1e6fa062db93dfe5
+
+
+
+    *SignUp*
+1.  
+    add red border to error inputs
+
+
+
+
+    *roulette*
+1.  
+    change mark ^ and <> to icons
+
+
+    *slidePuzzle*
+1.
+    collection of images after select image he will be able to select the level
+    just like in memory game
 */
