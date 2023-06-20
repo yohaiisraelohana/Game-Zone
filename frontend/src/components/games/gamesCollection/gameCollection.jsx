@@ -22,6 +22,9 @@ export default function GameCollection() {
         <Link to={"/slidePuzzleGame"} className="slide-puzzle-game">
           <p>Slide Puzzle</p>
         </Link>
+        <Link to={"/puzzleGame"} className="puzzle-game">
+          <p>Puzzle</p>
+        </Link>
       </div>
     </div>
   );

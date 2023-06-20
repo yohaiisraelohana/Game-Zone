@@ -1,0 +1,12 @@
+.pieces-container{
+    width: 1080;
+    display: flex;
+    flex-wrap: wrap;
+}
+/* .pieces-container > * {
+    margin-top: -87px;
+} */
+
+.take-left{
+    margin-left: -140px;
+}
