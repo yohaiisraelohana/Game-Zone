@@ -4,6 +4,7 @@ import LogInForm from "../../pages/logIn/logInForm";
 import './loginButton.css'
 
 export default function LogInButton({updateModal,closeModal}) {
+
   return (
     <button
     onClick={()=>updateModal(<LogInForm closeModal={closeModal} updateModal={updateModal}/>)}

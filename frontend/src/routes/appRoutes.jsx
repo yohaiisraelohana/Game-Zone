@@ -14,6 +14,7 @@ import Roulette from '../components/games/roulette/roulette'
 import RouletteGame from '../components/games/roulette/rouletteGame';
 import SlidePuzzleGame from '../components/games/slidePuzzleGame/slidePuzzleGame';
 import PuzzleGame from '../components/games/puzzleGame/puzzleGame';
+import CirclesFight from '../components/games/circlesFight/circlesFight';
  
 export const AppRoutes = () => {
 
@@ -31,6 +32,7 @@ export const AppRoutes = () => {
           <Route path='/rouletteGame' element={<RouletteGame/>} />
           <Route path='/slidePuzzleGame' element={<SlidePuzzleGame/>} />
           <Route path='/puzzleGame' element={<PuzzleGame/>}/>
+          <Route path='/circlesFight' element={<CirclesFight/>}/>
         </Route>
       )
     )

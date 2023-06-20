@@ -1,12 +1,23 @@
 .pieces-container{
-    width: 1080;
+    width: 300;
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
+    position: relative;
 }
-/* .pieces-container > * {
-    margin-top: -87px;
-} */
 
-.take-left{
-    margin-left: -140px;
+.pieces-container > *{
+    position: absolute;
 }
+/* .take-space{
+    margin-right: 1px;
+}
+.take-top{
+    margin-top: -30px;
+}
+.take-double-top{
+    margin-top: -60px;
+}
+.take-left{
+    margin-left: -30px !important;
+} */
