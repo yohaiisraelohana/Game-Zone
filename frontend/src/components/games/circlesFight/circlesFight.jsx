@@ -74,7 +74,7 @@ export default function CirclesFight() {
 
     
 
-    const player = new Player(innerWidth / 2,innerHeight / 2,30,'blue');
+    const player = new Player(window.innerWidth / 2,window.innerHeight / 2,30,'blue');
     const projectiles = [];
     const enemies = [];
 
@@ -84,18 +84,18 @@ export default function CirclesFight() {
             let x;
             let y;
             if (Math.random() < 0.5) {
-                x = Math.random() < 0.5 ? 0 - radius : innerWidth + radius;
+                x = Math.random() < 0.5 ? 0 - radius : window.innerWidth + radius;
                 y = Math.random() * innerHeight;
             } else {
                 x = Math.random() * innerWidth;
-                y = Math.random() < 0.5 ? 0 - radius : innerHeight + radius;
+                y = Math.random() < 0.5 ? 0 - radius : window.innerHeight + radius;
             }
 
             const color = 'green';
 
             const angle = Math.atan2(
-                innerHeight / 2 - y,
-                innerWidth / 2 - x);
+                window.innerHeight / 2 - y,
+                window.innerWidth / 2 - x);
             const velocity = {
                 x:Math.cos(angle),
                 y:Math.sin(angle)
@@ -112,10 +112,18 @@ export default function CirclesFight() {
         if (!c) {
             return
         }
-        c.clearRect(0,0,innerWidth,innerHeight);
+        c.clearRect(0,0,window.innerWidth,window.innerHeight);
         player.draw();
-        projectiles.forEach((projectile)=>{
+        projectiles.forEach((projectile,index)=>{
             projectile.update();
+            if (projectile.x + projectile.radius < 0 ||
+                projectile.x - projectile.radius > window.innerWidth||
+                projectile.y + projectile.radius < 0 || 
+                projectile.y - projectile.radius > window.innerHeight) {
+                    setTimeout(()=>{
+                        projectiles.splice(index,1);
+                    },0)
+            }
         });
 
         enemies.forEach((enemy,index)=>{
@@ -138,8 +146,8 @@ export default function CirclesFight() {
 
     window.addEventListener("click",(event)=>{
         const angle = Math.atan2(
-            event.clientY - innerHeight / 2,
-            event.clientX - innerWidth / 2);
+            event.clientY - window.innerHeight / 2,
+            event.clientX - window.innerWidth / 2);
         const velocity = {
             x:Math.cos(angle),
             y:Math.sin(angle)
@@ -153,7 +161,7 @@ export default function CirclesFight() {
   return (
         <canvas
             ref={canvasRef}
-            height={innerHeight}
+            height={window.innerHeight}
             width={innerWidth}>
         </canvas>
   )

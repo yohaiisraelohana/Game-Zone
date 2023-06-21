@@ -1,14 +1,14 @@
 .pieces-container{
-    width: 300;
+    width: 300px;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     position: relative;
 }
 
-.pieces-container > *{
-    position: absolute;
-}
+/* .pieces-container > *{
+     position: absolute; 
+} */
 /* .take-space{
     margin-right: 1px;
 }
