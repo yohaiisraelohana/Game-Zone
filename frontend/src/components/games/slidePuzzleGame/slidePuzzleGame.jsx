@@ -8,6 +8,8 @@ import SlidePuzzleImgInput from './slidePuzzleImgInput'
 import SlidePuzzleStartGame from './slidePuzzleStartGame';
 //services
 import { resizeCloudinaryImage } from '../../../services/resizeCloudinaryImage'; 
+import useCloudinaryImages from '../../../hooks/useCloudinaryImages';
+import NavBackButton from '../../reusfullComponents/navigateBackButton/navBackButton';
 
 
 
@@ -15,56 +17,37 @@ import { resizeCloudinaryImage } from '../../../services/resizeCloudinaryImage';
 
 export default function SlidePuzzleGame() {
   const [puzzle_image,setPuzzleImage] = useState(null);
-  
   const box_size = window.innerWidth < 600 ? 300 : (window.innerWidth < 900 ? 600 : 900) ;
-  const images_collection = [
-    {
-      id:"8D95449E-A44F-4A03-B2D7-F6DB3D59F7D0_1_105_c_o8ejzp.jpg",
-      route:"/GameProject/slidingPuzzle/",
-      src:"https://res.cloudinary.com/dhojbnefp/image/upload/v1687409882"
-    },
-    {
-      id:"57C19211-866B-4D0D-9CD5-5745B3449F5A_1_105_c_sxradj.jpg",
-      route:"/GameProject/slidingPuzzle/",
-      src:"https://res.cloudinary.com/dhojbnefp/image/upload/v1687409887"
-    },
-    {
-      id:"3A3FC9A7-D98C-4435-87E4-FED7FFFD89A0_r0ltsi.jpg",
-      route:"/GameProject/slidingPuzzle/",
-      src:"https://res.cloudinary.com/dhojbnefp/image/upload/v1687409891"
-    },
-    {
-      id:"D3D8097C-B566-4817-BE67-75F6E53BF40D_1_105_c_agaxwy.jpg",
-      route:"/GameProject/slidingPuzzle/",
-      src:"https://res.cloudinary.com/dhojbnefp/image/upload/v1687409913",
-    },
-    {
-      id:"875A4D64-1D5C-4935-A92A-13E2A60471AE_wxslhn_uf4nq1.jpg",
-      route:"/GameProject/slidingPuzzle/",
-      src:"https://res.cloudinary.com/dhojbnefp/image/upload/v1687410012",
-    },
-    {
-      id:"E905691D-C29C-4D9D-8312-6FA7247F7691_1_105_c_haq0sz.jpg",
-      route:"/GameProject/slidingPuzzle/",
-      src:"https://res.cloudinary.com/dhojbnefp/image/upload/v1687409864",
-    }
-  ];
+  const {data,currentImage,setImage} = useCloudinaryImages();
 
-  const image_id = "E905691D-C29C-4D9D-8312-6FA7247F7691_1_105_c_haq0sz.jpg"
 
-  const route = "/GameProject/slidingPuzzle/8D95449E-A44F-4A03-B2D7-F6DB3D59F7D0_1_105_c_o8ejzp.jpg";
-
-  const updatePuzzleImage = (route) => {
-    setPuzzleImage(resizeCloudinaryImage(route,box_size,box_size));
+  const updatePuzzleImage = () => {
+    setPuzzleImage(resizeCloudinaryImage(currentImage.route + currentImage.id,box_size,box_size));
   }
 
+  useEffect(()=>{
+    if(currentImage){
+      updatePuzzleImage();
+    }
+  },[currentImage])
 
+  console.log({currentImage});
   return (
-    <div >
-      <SlidePuzzleImgInput />
-      <SlidePuzzleCollection updatePuzzleImage={updatePuzzleImage} images_collection={images_collection}/>
+    <div className='sliding-puzzle-game-container' >
       
-      {puzzle_image && <SlidePuzzleStartGame image={puzzle_image} box_size={box_size} />}
+      
+      {currentImage
+        ? 
+          <div>
+            <NavBackButton onClick={() => setImage(null)}/>
+            <SlidePuzzleStartGame image={puzzle_image} box_size={box_size} />
+          </div>
+          
+        : <div >
+            <NavBackButton />
+            <SlidePuzzleImgInput />
+            <SlidePuzzleCollection  images_collection={data}/>
+          </div> }
     </div>
   )
 }

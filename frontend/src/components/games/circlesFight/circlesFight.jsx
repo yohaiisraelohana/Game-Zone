@@ -110,7 +110,7 @@ export default function CirclesFight() {
     function animate(){
         animationId = requestAnimationFrame(animate);
         if (!c) {
-            return
+            return;
         }
         c.clearRect(0,0,window.innerWidth,window.innerHeight);
         player.draw();

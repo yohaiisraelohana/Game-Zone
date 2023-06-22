@@ -1,8 +1,9 @@
 .slide-grid{
+    margin-block: 10% ;
+    margin-inline: auto ;
     display: flex;
     flex-wrap:wrap ;
     position: relative;
-    margin: auto;
 }
 .slide-image{
     border:  white 1px solid;
