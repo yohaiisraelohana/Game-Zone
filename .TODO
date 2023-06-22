@@ -11,6 +11,8 @@
     use skeletons instead of loading
 4. 
     in componnents i want only to know if the user 
+5.
+    add some styles from https://www.julienthibeaut.xyz/blog
 
 
 
@@ -78,4 +80,7 @@
     *circlesFight*
 1.  
     make set interval of 1 min that will changed the set interval of the enemies sending
+
+
+
 */

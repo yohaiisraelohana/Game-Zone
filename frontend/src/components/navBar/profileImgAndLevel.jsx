@@ -2,9 +2,11 @@ import React from 'react'
 import './profileImgAndLevel.css'
 import {AiFillStar} from 'react-icons/ai'
 import {IoLogoGameControllerB} from 'react-icons/io'
+import useUser from '../../hooks/useUser'
 //import {IoGameController} from 'react-icons/io'
 
 export default function ProfileImgAndLevel() {
+  const {user:{image}} = useUser();
   return (
     <div className="profile-container">
               <div className="profile-img-border">
