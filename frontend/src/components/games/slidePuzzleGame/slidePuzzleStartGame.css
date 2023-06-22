@@ -1,0 +1,20 @@
+.slide-grid{
+    margin-block: 10% ;
+    margin-inline: auto ;
+    display: flex;
+    flex-wrap:wrap ;
+    position: relative;
+}
+.slide-image{
+    border:  white 1px solid;
+    z-index: 2;
+}
+
+.bg-image{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    height: 100%;
+    width: 100%;
+    opacity: 0.3;
+}
