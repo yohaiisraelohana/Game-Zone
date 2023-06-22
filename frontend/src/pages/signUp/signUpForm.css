@@ -26,6 +26,7 @@
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
+    position: relative;
 }
 
 .signUp-form label{
@@ -57,4 +58,25 @@
     margin-top: 20px;
     padding: 10px 30px;
     border-radius: 3px;
+}
+
+.signUp-form .eye-icon{
+    position: absolute;
+    top: 69%;
+    left: 78%;
+}
+.signUp-form .lock-icon{
+    position: absolute;
+    top: 69%;
+    left: 84%;
+}
+.signUp-form .email-icon{
+    position: absolute;
+    top: 43%;
+    left: 84%; 
+}
+.signUp-form .user-icon{
+    position: absolute;
+    top: 16%;
+    left: 84%; 
 }

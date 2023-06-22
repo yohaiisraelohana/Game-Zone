@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import {AiOutlineEyeInvisible,AiOutlineEye,AiFillLock,AiOutlineMail} from 'react-icons/ai';
 
 //style
 import "./logInForm.css";
@@ -8,7 +9,6 @@ import { Link } from "react-router-dom";
 import useUser from "../../hooks/useUser";
 
 export default function LogInForm({ updateModal,closeModal }) {
-
   const { user, error, loading, loginUser } = useUser();
   const {
     register,
@@ -16,8 +16,8 @@ export default function LogInForm({ updateModal,closeModal }) {
     reset,
     formState: { errors },
   } = useForm();
-  const [toggle, setToggle] = useState(false);
   const emailAlphabet = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i;
+  const [show_password,setShowPassord] = useState(false); 
 
   useEffect(() => {
     if(user){
@@ -42,6 +42,12 @@ export default function LogInForm({ updateModal,closeModal }) {
         </button>
       </div>
       <form onSubmit={handleSubmit(hundleLogIn)} className="login-form">
+
+        { show_password 
+          ?  <AiOutlineEye className="eye-icon" onClick={()=>setShowPassord(false)}/>
+          :  <AiOutlineEyeInvisible className="eye-icon" onClick={()=>setShowPassord(true)}/>}
+        <AiFillLock className="lock-icon" />
+        <AiOutlineMail className="email-icon"/>
         <label>Email</label>
         <input
           {...register("email", {
@@ -64,7 +70,7 @@ export default function LogInForm({ updateModal,closeModal }) {
             minLength: { value: 5, message: "min 5 chars.." },
             maxLength: { value: 40, message: "max 40 chars.." },
           })}
-          type={!toggle ? "Password" : "text"}
+          type={show_password ? "text" : 'password'}
           placeholder="Type Password.."
         />
         {errors.password && <p>{errors.password.message}</p>}
