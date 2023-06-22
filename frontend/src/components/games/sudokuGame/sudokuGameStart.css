@@ -10,7 +10,7 @@
     padding-left: 5px;
     padding-top: 5px;
 }
-.easy{
+/* .easy{
     border: 5px green solid;
 }
 .medium{
@@ -18,7 +18,7 @@
 }
 .hard{
     border: 5px red solid;
-}
+} */
 .sudoku-grid > * {
     background-color: white;
     color: #333;

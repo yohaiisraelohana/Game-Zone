@@ -100,7 +100,7 @@ export default function SudokuGameStart() {
   return ( 
     <div className='sudoku-game'>
         <h2>sudokuGame</h2>
-        <div className={`sudoku-grid ${level}`} >
+        <div className="sudoku-grid" >
         {template && template.map((row,i)=>( 
             row.map((col,j)=>
                 (
