@@ -1,5 +1,5 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import { LOGIN_USER, SIGNUP_USER } from "../../constants/urls";
+import { ACCEPT_FRIEND, ADD_FRIEND, LOGIN_USER, SIGNUP_USER, STAY_LOGIN } from "../../constants/urls";
 import { apiPost } from "../../services/apiRequests";
 
 
@@ -18,9 +18,39 @@ export const signUp = createAsyncThunk("user/signUp", async (userData) => {
         const response = await apiPost(SIGNUP_USER,userData);
         return response.data;
     } catch (error) {
-        console.log(error.response.data.data);
-        throw error.response.data.data;
+        console.log(error.response.data.error);
+        throw error.response.data.error;
     }
+})
+
+export const stayLogin = createAsyncThunk("user/stayLogin", async () => {
+    try {
+      const response = await apiPost(STAY_LOGIN,{});
+      return response.data;
+    } catch (error) {
+      console.log(error.response.data.error);
+      throw error.response.data.error;
+    }
+})
+
+export const addFriends = createAsyncThunk("user/addFriends", async (_id) => {
+  try {
+    const response = await apiPost(ADD_FRIEND + `/${_id}`,{});
+    return response.data;
+  } catch (error) {
+    console.log(error);
+    throw error;
+  }
+})
+
+export const acceptFriend = createAsyncThunk("user/acceptFriend" , async (_id) => {
+  try {
+    const response = await apiPost(ACCEPT_FRIEND + `/${_id}`,{});
+    return response.data;
+  } catch (error) {
+    console.log(error);
+    throw error;
+  }
 })
 
 
