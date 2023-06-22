@@ -7,6 +7,34 @@ const createToken = (_id) => {
   return jwt.sign({ _id }, process.env.SECRET, { expiresIn: "60000m" });
 };
 
+const usersList = async (req ,res) => {
+  try{
+    const users = await User.find({},'name');
+    res.status(200).json({users});
+  }
+    catch(error){
+      console.error(error);
+      return res.status(500).json({error: "Failed to send users name"});
+    }
+}
+
+//users friend
+const usersFriend = async (req, res) => {
+  const { _id } = req;
+  try {
+    const user = await User.findById(_id).populate('friends', '_id image name level xp'); 
+    if (!user) {
+      return res.status(404).json({ error: 'User not found' });
+    }
+    const friends = user.friends;
+    res.status(200).json({ friends });
+  } catch (error) {
+    console.log(error);
+    res.status(500).json({ error: 'Failed to retrieve user friends' });
+  }
+};
+
+
 //send friend request
 const friendRequest2 = async (req, res) => {
   const { _id: senderId } = req;
@@ -57,7 +85,7 @@ const acceptFriendRequest = async(req,res) =>{
   }
   await recipient.save();
   await sender.save();
-  return res.status(200).json({ message: "Friend request sent" });
+  return res.status(200).json({ message: "Friend request Accepted" });
 }
 catch(error){
   console.log(error.message);
@@ -121,6 +149,7 @@ const signUser = async (req, res) => {
   }
 };
 
+
 //delete user
 const deleteUser = async (req, res) => {
   const id = req.params.id;
@@ -132,14 +161,13 @@ const deleteUser = async (req, res) => {
   }
 };
 
-const updateImage = async (req, res) => {
-  
-}
 
 module.exports = {
+    usersList,
     signUser,
     loginUser,
     stayLogin,
     acceptFriendRequest,
     friendRequest2,
+    usersFriend,
 }

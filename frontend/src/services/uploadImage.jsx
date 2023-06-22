@@ -5,7 +5,7 @@ import { apiGet } from "./apiRequests";
 export const uploadImageToCloudinary = async (img) => {
     try {
         //get a sign from cloudinary in the backend
-        const {data:uploadParams} = await apiGet(UPLOAD_IMAGE);
+        const {data:uploadParams} = await apiGet(UPLOAD_IMAGE,{},true);
         //create a query srtring from the sign
         const queryString = Object.keys(uploadParams)
             .map((key) => `${key}=${encodeURIComponent(uploadParams[key])}`)

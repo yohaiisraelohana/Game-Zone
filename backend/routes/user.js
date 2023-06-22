@@ -1,5 +1,5 @@
 const express = require('express');
-const {signUser,loginUser,friendRequest2,stayLogin,acceptFriendRequest} = require('../controllers/userController')
+const {usersFriend,usersList,signUser,loginUser,friendRequest2,stayLogin,acceptFriendRequest} = require('../controllers/userController')
 const {authentication}  = require('../middleware/requireAuth');
 const {validateSignUp,validateLogin} = require('../middleware/validation');
 const { getSignature } = require('../utils/uploadImage');
@@ -8,6 +8,12 @@ const router = express.Router()
 
 //upload image route
 router.get("/uploadImage",authentication,getSignature);
+
+//users friend
+router.post('/usersFriend',authentication,usersFriend);
+
+//users List
+router.get("/usersList",usersList);
 
 //login route
 router.post('/login',validateLogin,loginUser)

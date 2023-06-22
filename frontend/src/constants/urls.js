@@ -6,6 +6,9 @@ const USER = API_URL + "/user";
 export const UPLOAD_IMAGE = USER + "/uploadImage";
 export const LOGIN_USER = USER + "/login";
 export const SIGNUP_USER = USER + "/signup";
+export const STAY_LOGIN = USER + "/stayLogin";
+export const ADD_FRIEND = USER + "/sendFriendRequest";
+export const ACCEPT_FRIEND = USER + "/acceptFriendRequest";
 
 //* memory Game
 const MEMORY_GAME = API_URL + "/memoryGame";

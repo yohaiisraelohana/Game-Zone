@@ -1,15 +1,18 @@
 import axios from "axios";
 
 
-export const apiGet = async (url,headers) => {
+export const apiGet = async (url,headers,withCredentials) => {
     try {
-        const config = {
+        let config = {
             method:"GET",
             url:url,
             // withCredentials:true,//!check proplems
         }
         if (headers) {
             config.headers = headers
+        }
+        if(withCredentials) {
+            config.withCredentials = withCredentials;
         }
         const response = await axios(config);
         return response;
@@ -19,9 +22,10 @@ export const apiGet = async (url,headers) => {
     }
 }
 
+
 export const apiPost = async(url,bodyData) => {
     try {
-        const config = {
+        let config = {
             method:"POST",
             url:url,
             data:bodyData,
