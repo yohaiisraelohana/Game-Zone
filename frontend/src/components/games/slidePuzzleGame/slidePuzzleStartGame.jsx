@@ -44,16 +44,16 @@ export default function SlidePuzzleStartGame({image,box_size}) {
         className="slide-grid"
         style={{height:box_size,width:box_size}}>
 
-    {[...imagesArr].map((n,i)=> 
+    {[...imagesArr].map((position,i)=> 
     (
         <button 
         key={i}
-        onClick={()=>moveImage(n,i)}
+        onClick={()=>moveImage(position,i)}
         disabled={i == empty}
         style={
             i == empty 
             ?   {height:box_size/3,width:box_size/3}
-            :   {height:box_size/3,width:box_size/3,backgroundImage:`url(${image})`,backgroundPosition:n}
+            :   {height:box_size/3,width:box_size/3,backgroundImage:`url(${image})`,backgroundPosition:position}
         }
         className="slide-image"></button>
     ))} 
