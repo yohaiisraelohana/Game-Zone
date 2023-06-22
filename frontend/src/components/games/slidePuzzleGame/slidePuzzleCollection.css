@@ -1,0 +1,33 @@
+.sliding-puzzle-collection{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding-inline:10% ;
+    gap:30px ;
+}
+
+.image-preview{
+    position: relative;
+}
+
+img{
+    height: 150px;
+    width: 150px;
+}
+
+.demo-grid{
+    width: 150px;
+    display: flex;
+    flex-wrap: wrap;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+}
+.inner-demo-grid{
+    width:49px;
+    height: 49px;
+    border:  0.5px solid white;
+}
+.inner-demo-grid:last-child{
+    background-color: rgba(255, 255, 255,0.4)
+}
