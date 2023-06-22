@@ -1,62 +1,97 @@
 import React, { useEffect, useState } from 'react'
+
+//style
 import './slidePuzzleGame.css'
+//components
 import SlidePuzzleCollection from './slidePuzzleCollection'
 import SlidePuzzleImgInput from './slidePuzzleImgInput'
-import image from '../../../assets/images/games/slideImageTest.jpeg';
+import SlidePuzzleStartGame from './slidePuzzleStartGame';
+//services
+import { resizeCloudinaryImage } from '../../../services/resizeCloudinaryImage'; 
+import useCloudinaryImages from '../../../hooks/useCloudinaryImages';
+import NavBackButton from '../../reusfullComponents/navigateBackButton/navBackButton';
+
+
+
+
 
 export default function SlidePuzzleGame() {
-  const initial = ["top left","top center","top right","center left","center","center right","bottom left","bottom center"];
-  const [imagesArr,setImagesArr] = useState([]);
-  const [empty,setEmpty] = useState(8);
+  const [puzzle_image,setPuzzleImage] = useState(null);
+  const box_size = window.innerWidth < 600 ? 300 : (window.innerWidth < 900 ? 600 : 900) ;
+  const {data,currentImage,setImage} = useCloudinaryImages();
 
-  const checkWinning = () => {
-    const checkArr = [...initial,"empty"];
-    for (let i = 0; i < checkArr.length ; i++) {
-      if (checkArr[i] != imagesArr[i]) {
-        return false;
-      }      
-    }
-    return true;
+
+  const updatePuzzleImage = () => {
+    setPuzzleImage(resizeCloudinaryImage(currentImage.route + currentImage.id,box_size,box_size));
   }
-  console.log(checkWinning());
 
   useEffect(()=>{
-    let startArray = [...initial.sort(()=>Math.random() - 0.5)];
-    startArray.push("empty");
-    setImagesArr(startArray);
-  },[])
+    if(currentImage){
+      updatePuzzleImage();
+    }
+  },[currentImage])
 
-  const moveImage = (n,i) => {
-    if (i+1 == empty || i-1 == empty || i+3 == empty || i-3 == empty) {
-      let arr = [...imagesArr];
-      arr[i] = arr[empty];
-      arr[empty] = n;
-      setEmpty(i);
-      setImagesArr(arr);
-    } else {
-      alert("impossible move")
-    }
-    if (checkWinning()) {
-      alert("congradilations !!!");
-    }
-  }
+  console.log({currentImage});
   return (
-    <div >
-      <SlidePuzzleImgInput/>
-      <SlidePuzzleCollection/>
-      <div className="slide-grid"  >
-       {[...imagesArr].map((n,i)=> i != empty ? (<button 
-          key={i}
-          onClick={()=>moveImage(n,i)}
-          style={{backgroundImage:`url(${image})`,backgroundPosition:n}}
-          className="slide-image"></button>)
-          : ( <button disabled={true} key={i} className='slide-image'></button> )
-      )} 
-      {/* <div className="slide-image outer-img" style={{backgroundImage:`url(${image})`}}>
-      </div> */}
-    </div>
-
+    <div className='sliding-puzzle-game-container' >
+      
+      
+      {currentImage
+        ? 
+          <div>
+            <NavBackButton onClick={() => setImage(null)}/>
+            <SlidePuzzleStartGame image={puzzle_image} box_size={box_size} />
+          </div>
+          
+        : <div >
+            <NavBackButton />
+            <SlidePuzzleImgInput />
+            <SlidePuzzleCollection  images_collection={data}/>
+          </div> }
     </div>
   )
 }
+
+/*
+
+*/
+/**
+
+
+ */
   
+
+/*
+import Resizer from 'react-image-file-resizer';
+
+
+
+*/
+
+  // const resizeFile = (file) =>
+  // new Promise((resolve) => {
+  //   Resizer.imageFileResizer(
+  //     file,
+  //     300,
+  //     300,
+  //     "JPEG",
+  //     100,
+  //     0,
+  //     (uri) => {
+  //       console.log(uri);
+  //       resolve(uri);
+  //     },
+  //     "base64",
+  //     300,
+  //     300
+  //   );
+  // });
+
+  // const resizeImage = async () => {
+  //   try {
+  //     const new_img = await resizeFile(image)
+  //     setPuzzleImage(new_img);
+  //   } catch (error) {
+  //     console.log(error);
+  //   }
+  // }

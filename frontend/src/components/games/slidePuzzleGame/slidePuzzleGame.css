@@ -1,24 +1,4 @@
-.slide-grid{
-    display: flex;
-    flex-wrap:wrap ;
-    width: 909px;
+.sliding-puzzle-game-container{
     position: relative;
-    margin: auto;
+    padding-block:20px ;
 }
-.slide-image{
-    height: 300px;
-    width: 300px;
-    border:  white 1px solid;
-    z-index: 2;
-}
-.outer-img{
-    background-position: bottom right;
-    opacity: 0.5;
-}
-
-/*               style.backgroundPosition = "bottom right";
-              style.opacity = '0.4';
-              style.position = 'absolute';
-              style.bottom = '1px';
-              style.right = '9px';
-              style.zIndex = '1'; */

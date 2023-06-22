@@ -2,6 +2,7 @@ import React,{useState} from 'react'
 import './slidePuzzleImgInput.css';
 export default function SlidePuzzleImgInput() {
     const [selectedImage, setSelectedImage] = useState(null);
+    const [open_input,setOpenInput] = useState(false);
 
     const handleImageChange = (event) => {
       const file = event.target.files[0];
@@ -18,15 +19,17 @@ export default function SlidePuzzleImgInput() {
     };
   
     return (
-      <div>
-        <h2>Image Uploader</h2>
-        <input type="file" accept="image/*" onChange={handleImageChange} />
-        {selectedImage && (
-          <div>
-            <h3>Selected Image:</h3>
-            <img src={selectedImage} alt="Selected" />
-          </div>
-        )}
+      <div className='slide-pizzle-input'>
+          <button 
+            onClick={()=>setOpenInput(!open_input)}
+            className='open-input'>click to play with your own image</button>
+          {open_input && 
+          <label htmlFor="images" className="drop-container">
+            <span className="drop-title">Drop files here</span>
+            or
+            <input type="file" id="images" accept="image/*" required={true} />
+          </label>
+          }
       </div>
     );
 }

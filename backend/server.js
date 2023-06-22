@@ -12,6 +12,8 @@ const cors = require('cors');
 // Create an express app
 const app = express();
 
+
+
 // Middleware
 app.use(cors({
   origin: 'http://localhost:5173',

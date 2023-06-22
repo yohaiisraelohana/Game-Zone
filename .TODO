@@ -9,6 +9,8 @@
     memory games search users and more
 3.  
     use skeletons instead of loading
+4. 
+    in componnents i want only to know if the user 
 
 
 
@@ -69,4 +71,11 @@
 1.
     collection of images after select image he will be able to select the level
     just like in memory game
+2.
+    check why not working at mobile
+
+
+    *circlesFight*
+1.  
+    make set interval of 1 min that will changed the set interval of the enemies sending
 */
