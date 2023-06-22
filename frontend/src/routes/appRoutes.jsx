@@ -15,6 +15,7 @@ import RouletteGame from '../components/games/roulette/rouletteGame';
 import SlidePuzzleGame from '../components/games/slidePuzzleGame/slidePuzzleGame';
 import PuzzleGame from '../components/games/puzzleGame/puzzleGame';
 import CirclesFight from '../components/games/circlesFight/circlesFight';
+import TicTacUsers from '../components/games/ticTacToe/ticTacUsers';
  
 export const AppRoutes = () => {
 
@@ -27,6 +28,7 @@ export const AppRoutes = () => {
           <Route path='/memoryGame/:name' element={<MemoryGameStart/>} />
           <Route path='/ticTacGame' element={<TicTacGame/>}/>
           <Route path='/ticTacGame/pc' element={<TicTacPc/>}/>
+          <Route path='/ticTacGame/users' element={<TicTacUsers/>}/>
           <Route path='/sudokuGame' element={<SudokuGame/>} />
           <Route path='/sudokuGame/:level' element={<SudokuGameStart/>} />
           <Route path='/rouletteGame' element={<RouletteGame/>} />

@@ -11,13 +11,14 @@ export default function Home() {
     const [messageReceived,setMessageReceived] = useState("");
 
   const sendMessage = () => {
+    console.log(message);
     socket.emit("send_Message", { message: message });
-    setMessage("");
   };
   
   useEffect(() => {
     socket.on("received_message", (data) => {
       setMessageReceived(data.message);
+      console.log(data)
     });
   }, [socket]);
 
