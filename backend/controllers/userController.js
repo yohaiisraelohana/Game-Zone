@@ -127,7 +127,7 @@ const signUser = async (req, res) => {
     // res.setHeader(['set-Cookie'],['token',token]);
     res.cookie("token", token, {
       httpOnly: true,
-      sameSite: "lax",
+      sameSite: "strict",
       maxAge: 3600000,
     });
     user.password = "******";
@@ -150,6 +150,7 @@ const deleteUser = async (req, res) => {
 };
 
 
+
 module.exports = {
     usersList,
     signUser,
@@ -157,5 +158,5 @@ module.exports = {
     stayLogin,
     acceptFriendRequest,
     friendRequest2,
-    
+    usersFriend,
 }
