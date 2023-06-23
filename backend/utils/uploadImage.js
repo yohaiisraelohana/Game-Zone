@@ -1,6 +1,5 @@
 const cloudinary = require('cloudinary').v2;
 
-
 const cloud_name = 'dhojbnefp';
 const api_key = '755684193658436';
 const api_secret = 'vk4p7PmBI7p5rPKKH7HtJQQNTXs';
