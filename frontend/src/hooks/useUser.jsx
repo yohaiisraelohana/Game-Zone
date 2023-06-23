@@ -1,6 +1,8 @@
 import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { login,signUp,stayLogin } from '../redux/features/userSlice';
+import { addFriends, login,signUp,stayLogin } from '../redux/features/userSlice';
+import { apiGet } from '../services/apiRequests';
+import { USERS_LIST } from '../constants/urls';
 
 export default function useUser() {
     const {user,loading,error} = useSelector(store=>store.userReducer);
@@ -15,15 +17,18 @@ export default function useUser() {
       dispatch(stayLogin());
     }
 
-    // export const usersList = createAsyncThunk("user/usersList" , async () => {
-    //   try {
-    //     const response = await apiGet(USERS_LIST);
-    //     return response.data;
-    //   } catch (error) {
-    //     console.log(error);
-    //     throw error;
-    //   }
-    // })
+    const sendFriendRequest = (id) => {
+      dispatch(addFriends(id));
+    }
 
-  return {loading,user,error,signUpUser,loginUser,stayLoginUser};
+    const searchUser = async (name) => {
+      try {
+        const {data} = await apiGet(USERS_LIST + name);
+        return data;
+      } catch (error) {
+        console.log({error});
+      }
+    }
+
+  return {loading,user,error,signUpUser,loginUser,stayLoginUser,searchUser,sendFriendRequest};
 }

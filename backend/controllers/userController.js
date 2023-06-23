@@ -9,8 +9,13 @@ const createToken = (_id) => {
 
 const usersList = async (req ,res) => {
   try{
-    const users = await User.find({},'name');
-    res.status(200).json({users});
+    let name = req.params.name;
+    if(!name){
+      return res.status(400).json({ error: "Name is required" });
+    }
+    name = new RegExp(name,"i");
+    const users = await User.find({name:name});
+    res.status(200).json(users);
   }
     catch(error){
       console.error(error);
@@ -138,6 +143,23 @@ const signUser = async (req, res) => {
 };
 
 
+//update user
+const updateUser = async (req, res) => {
+  const id = req.params.id;
+  try {
+    const user = await User.findById(id);
+    const {xp,level,image} = req.body;
+    if (xp)user.xp = xp;
+    if (level)user.level = level;
+    if (image)user.image = image;
+    await user.save();
+    res.status(200).json(user);
+  } catch (error) {
+    res.status(400).json({ error: error.message });
+  }
+};
+
+
 //delete user
 const deleteUser = async (req, res) => {
   const id = req.params.id;
@@ -158,4 +180,5 @@ module.exports = {
     stayLogin,
     acceptFriendRequest,
     friendRequest2,
+    updateUser
 }

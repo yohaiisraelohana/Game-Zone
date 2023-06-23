@@ -2,10 +2,10 @@ import React from 'react'
 //style
 import './userDropDownMenu.css';
 import UsersList from '../friends/usersList';
-export default function UserDropDownMenu({user:{email,name,friends},getModal}) {
+export default function UserDropDownMenu({user:{email,name},getModal}) {
     const user_menu = [
         {name:"Account",to:"/account",function:()=>console.log("nav to /account")},
-        {name:"Friends",to:"/account",function:()=>getModal(<UsersList users={friends} />)},
+        {name:"Friends",to:"/account",function:()=>getModal(<UsersList />)},
         {name:"LogOut",to:"/logout",function:()=>console.log("loging out")}
       ];
   return (
