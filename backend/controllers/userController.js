@@ -106,11 +106,14 @@ const loginUser = async (req, res) => {
       sameSite: "lax",
       maxAge: 3600000,
     });
-    res.status(200).json({ name: user.name, id: user.id });
+    user.password = "*****";
+    res.status(200).json(user);
   } catch (error) {
     res.status(400).json({ error: error.message });
   }
 };
+
+
 //stay login
 const stayLogin = async (req, res) => {
   const { token } = req.cookies;
@@ -143,7 +146,8 @@ const signUser = async (req, res) => {
       sameSite: "lax",
       maxAge: 3600000,
     });
-    res.status(200).json({ name });
+    user.password = "******";
+    res.status(200).json(user);
   } catch (error) {
     res.status(400).json({ error: error.message });
   }

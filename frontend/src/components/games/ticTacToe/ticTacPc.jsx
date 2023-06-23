@@ -170,8 +170,7 @@ export default function TicTacPc() {
       if (!starterMove())
       if (!win())
       if (!blockUser())
-      if (!advance());
-        // randomMove();
+        advance()
         console.log("true");
       setMove(opposite());
       setRound(round + 1);

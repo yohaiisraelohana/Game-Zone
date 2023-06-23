@@ -1,7 +1,7 @@
 //react router dom
 import {createBrowserRouter , RouterProvider ,Route ,createRoutesFromElements} from 'react-router-dom'
 //component routes
-import React from 'react'
+import React, { useEffect } from 'react'
 import Home from '../pages/homePage/home';
 import MemoryGame from '../components/games/memoryGame/memoryGame';
 import MemoryGameStart from '../components/games/memoryGame/memoryGameStart';
@@ -16,9 +16,19 @@ import SlidePuzzleGame from '../components/games/slidePuzzleGame/slidePuzzleGame
 import PuzzleGame from '../components/games/puzzleGame/puzzleGame';
 import CirclesFight from '../components/games/circlesFight/circlesFight';
 import TicTacUsers from '../components/games/ticTacToe/ticTacUsers';
+import useUser from '../hooks/useUser';
  
 export const AppRoutes = () => {
-
+  const { user , stayLoginUser} = useUser();
+  useEffect(() => {
+  if(!user){
+    stayLoginUser();
+    console.log(user);
+  }
+  else{
+    console.log(user);
+  }
+  },[user])
 
     const router = createBrowserRouter(
       createRoutesFromElements(

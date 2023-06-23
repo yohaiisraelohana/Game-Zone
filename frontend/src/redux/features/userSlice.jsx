@@ -1,11 +1,12 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import { ACCEPT_FRIEND, ADD_FRIEND, LOGIN_USER, SIGNUP_USER, STAY_LOGIN } from "../../constants/urls";
-import { apiPost } from "../../services/apiRequests";
+import { ACCEPT_FRIEND, ADD_FRIEND, LOGIN_USER, SIGNUP_USER, STAY_LOGIN, USERS_FRIEND, USERS_LIST } from "../../constants/urls";
+import { apiGet, apiPost } from "../../services/apiRequests";
 
 
 export const login = createAsyncThunk("user/login", async (userData) => {
   try {
     const response = await apiPost(LOGIN_USER, userData);
+    console.log(response.data);
     return response.data;
   } catch (error) {
     console.log(error.response.data.error);
@@ -53,6 +54,26 @@ export const acceptFriend = createAsyncThunk("user/acceptFriend" , async (_id) =
   }
 })
 
+export const usersList = createAsyncThunk("user/usersList" , async () => {
+  try {
+    const response = await apiGet(USERS_LIST);
+    return response.data;
+  } catch (error) {
+    console.log(error);
+    throw error;
+  }
+})
+
+export const usersFriend = createAsyncThunk("user/usersFriend", async () => {
+  try {
+      const response = await apiPost(USERS_FRIEND,{});
+      return response.data;
+  } catch (error) {
+    console.log(error);
+    throw error;
+  }
+})
+
 
 
 const userSlice = createSlice({
@@ -61,6 +82,7 @@ const userSlice = createSlice({
     user: null,
     loading: true,
     error: null,
+    
   },
   extraReducers: (builder) => {
     builder
@@ -85,6 +107,17 @@ const userSlice = createSlice({
         state.loading = false;
     })
     .addCase(signUp.rejected, (state, action) => {
+        state.error = action.payload;
+        state.loading = false;
+      })
+    .addCase(stayLogin.pending , (state,action) => {
+        state.loading = true;
+    })
+    .addCase(stayLogin.fulfilled, (state, action) => {
+        state.user = action.payload;
+        state.loading = false;
+    })
+    .addCase(stayLogin.rejected, (state, action) => {
         state.error = action.payload;
         state.loading = false;
       });
