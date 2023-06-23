@@ -1,11 +1,12 @@
 import React from 'react'
 //style
 import './userDropDownMenu.css';
-export default function UserDropDownMenu({user:{email,name}}) {
+import UsersList from '../friends/usersList';
+export default function UserDropDownMenu({user:{email,name,friends},getModal}) {
     const user_menu = [
-        {name:"Account",to:"/account"},
-        {name:"Friends",to:"/account"},
-        {name:"LogOut",to:"/logout"}
+        {name:"Account",to:"/account",function:()=>console.log("nav to /account")},
+        {name:"Friends",to:"/account",function:()=>getModal(<UsersList users={friends} />)},
+        {name:"LogOut",to:"/logout",function:()=>console.log("loging out")}
       ];
   return (
     <div className="dropdowm-options-container">
@@ -16,7 +17,10 @@ export default function UserDropDownMenu({user:{email,name}}) {
       </p>
     </div>
       {user_menu.map((link,i)=>(
-        <button key={i} className="dropdown-option">{link.name}</button>
+        <button 
+          key={i}
+          className="dropdown-option"
+          onClick={link.function}>{link.name}</button>
       ))}
     </div>
   )

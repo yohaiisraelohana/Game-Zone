@@ -42,7 +42,7 @@ export default function NavBar() {
             <ProfileImgAndLevel user={user} openUserMenu={()=>setOpenUserMenu(!open_user_menu)} />
             { open_user_menu && 
                 <div className="account-dropdown">
-                  <UserDropDownMenu user={user}/>
+                  <UserDropDownMenu getModal={getModal} user={user}/>
                 </div>
             }
           </div> 
