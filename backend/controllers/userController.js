@@ -18,22 +18,6 @@ const usersList = async (req ,res) => {
     }
 }
 
-//users friend
-const usersFriend = async (req, res) => {
-  const { _id } = req;
-  try {
-    const user = await User.findById(_id).populate('friends', '_id image name level xp'); 
-    if (!user) {
-      return res.status(404).json({ error: 'User not found' });
-    }
-    const friends = user.friends;
-    res.status(200).json({ friends });
-  } catch (error) {
-    console.log(error);
-    res.status(500).json({ error: 'Failed to retrieve user friends' });
-  }
-};
-
 
 //send friend request
 const friendRequest2 = async (req, res) => {
@@ -120,7 +104,7 @@ const stayLogin = async (req, res) => {
   try {
     if (token) {
       const decoded = jwt.verify(token, process.env.SECRET);
-      const user = await User.findById(decoded._id,{password:0});
+      const user = await User.findById(decoded._id,{password:0}).populate('friends', '_id image name level xp');
       console.log(user._id.toString());
       return res.status(200).json(user);
     }
@@ -173,5 +157,5 @@ module.exports = {
     stayLogin,
     acceptFriendRequest,
     friendRequest2,
-    usersFriend,
+    
 }

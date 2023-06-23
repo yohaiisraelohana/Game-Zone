@@ -15,5 +15,15 @@ export default function useUser() {
       dispatch(stayLogin());
     }
 
+    // export const usersList = createAsyncThunk("user/usersList" , async () => {
+    //   try {
+    //     const response = await apiGet(USERS_LIST);
+    //     return response.data;
+    //   } catch (error) {
+    //     console.log(error);
+    //     throw error;
+    //   }
+    // })
+
   return {loading,user,error,signUpUser,loginUser,stayLoginUser};
 }
