@@ -158,5 +158,4 @@ module.exports = {
     stayLogin,
     acceptFriendRequest,
     friendRequest2,
-    usersFriend,
 }
