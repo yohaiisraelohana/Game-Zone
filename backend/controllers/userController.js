@@ -143,7 +143,7 @@ const signUser = async (req, res) => {
     // res.setHeader(['set-Cookie'],['token',token]);
     res.cookie("token", token, {
       httpOnly: true,
-      sameSite: "lax",
+      sameSite: "strict",
       maxAge: 3600000,
     });
     user.password = "******";
