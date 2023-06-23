@@ -1,18 +1,23 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import './profileImgAndLevel.css'
-import {AiFillStar} from 'react-icons/ai'
 import {IoLogoGameControllerB} from 'react-icons/io'
-import useUser from '../../hooks/useUser'
-//import {IoGameController} from 'react-icons/io'
 
-export default function ProfileImgAndLevel() {
-  const {user:{image}} = useUser();
+export default function ProfileImgAndLevel({user:{image,level,xp},openUserMenu}) {
+  const [xp_progress,setXpProgress] = useState(null);
+  useEffect(()=>{
+    if (level) {
+      let sum_xp = 0;
+      for (let i = 1; i <= level; i++) {
+        sum_xp += (100 * i);
+      }
+      setXpProgress((xp/sum_xp)*100 * 1.45);
+    }
+  },[level,xp])
+
   return (
-    <div className="profile-container">
+    <div className="profile-container" onClick={()=>openUserMenu()}>
               <div className="profile-img-border">
-                <div className="profile-img">
-                    
-                </div>
+                <img src={image} className="profile-img"/>
               </div>
         <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%" height="100%">
          <defs>
@@ -21,11 +26,17 @@ export default function ProfileImgAndLevel() {
                <stop offset="100%" stopColor="#258fff" />
             </linearGradient>
          </defs>
-         <circle cx="50%" cy="50%" r="47%"  strokeLinecap="round" />
+         <circle 
+          cx="50%" 
+          cy="50%" 
+          r="47%"  
+          strokeLinecap="round"
+          strokeDasharray={1000}
+          strokeDashoffset={1000 - xp_progress} />
         </svg>
         <div className="level-container">
             <IoLogoGameControllerB/>
-            <div className="level">10</div>
+            <div className="level">{level}</div>
         </div>
     </div>
   )
