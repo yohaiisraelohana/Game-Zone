@@ -7,3 +7,8 @@ conditions
 2. if there is a win condition for the computer - win
 3. if there is a win condition for the user - block 
 4. randomally fill a square to create a win condition(a sequence of two or two with a blank square in between)
+
+
+
+
+

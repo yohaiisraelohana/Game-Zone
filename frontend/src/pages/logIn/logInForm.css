@@ -26,6 +26,7 @@
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
+    position: relative;
 }
 
 .login-form label{
@@ -56,4 +57,21 @@
     border: none;
     margin-top: 20px;
     padding: 10px 30px;
+}
+
+.eye-icon{
+    position: absolute;
+    left: 79%;
+    top: 52%;
+}
+
+.lock-icon {
+    position: absolute;
+    left: 84%;
+    top: 52%;
+}
+.email-icon{
+    position: absolute;
+    top: 20%;
+    left: 84%;
 }

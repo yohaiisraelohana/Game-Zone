@@ -3,6 +3,8 @@ import { useForm } from "react-hook-form";
 import LogInForm from "../logIn/logInForm";
 import "./signUpForm.css";
 import useUser from "../../hooks/useUser";
+import {AiOutlineEyeInvisible,AiOutlineEye,AiFillLock,AiOutlineMail,AiOutlineUser} from 'react-icons/ai';
+
 
 export default function SignUpForm({ updateModal,closeModal }) {
   const {
@@ -14,7 +16,7 @@ export default function SignUpForm({ updateModal,closeModal }) {
   const {user,error,loading,signUpUser} = useUser();
   const nameRegex = /^[a-zA-Z ]+$/;
   const emailAlphabet = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i;
-  const [toggle, setToggle] = useState(false);
+  const [show_password,setShowPassord] = useState(false);
 
   const hundleSignUp = (data) => {
     console.log(data);
@@ -40,6 +42,12 @@ export default function SignUpForm({ updateModal,closeModal }) {
         </button>
       </div>
       <form onSubmit={handleSubmit(hundleSignUp)} className="signUp-form">
+        {show_password
+          ? <AiOutlineEye className="eye-icon" onClick={() => setShowPassord(false)}   /> 
+          : <AiOutlineEyeInvisible className="eye-icon" onClick={()=>setShowPassord(true)}  /> }
+        <AiOutlineMail className="email-icon" />
+        <AiFillLock className="lock-icon" />
+        <AiOutlineUser className="user-icon"/>
         <label>Name</label>
         <input
           {...register("name", {
@@ -77,7 +85,7 @@ export default function SignUpForm({ updateModal,closeModal }) {
             minLength: { value: 5, message: "min 5 chars.." },
             maxLength: { value: 40, message: "max 40 chars.." },
           })}
-          type={!toggle ? "Password" : "text"}
+          type={show_password ? "text" : 'password'}
           placeholder="Type Password.."
         />
         <button className="signUp-button">SignUp</button>
