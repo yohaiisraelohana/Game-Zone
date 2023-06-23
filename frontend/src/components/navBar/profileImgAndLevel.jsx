@@ -2,8 +2,9 @@ import React, { useEffect, useState } from 'react'
 import './profileImgAndLevel.css'
 import {IoLogoGameControllerB} from 'react-icons/io'
 
-export default function ProfileImgAndLevel({user:{image,level,xp},openUserMenu}) {
+export default function ProfileImgAndLevel({user,openUserMenu}) {
   const [xp_progress,setXpProgress] = useState(null);
+  const {image,level,xp} = user;
   useEffect(()=>{
     if (level) {
       let sum_xp = 0;
@@ -14,6 +15,7 @@ export default function ProfileImgAndLevel({user:{image,level,xp},openUserMenu})
     }
   },[level,xp])
 
+console.log({image,level,xp,user});
   return (
     <div className="profile-container" onClick={()=>openUserMenu()}>
               <div className="profile-img-border">

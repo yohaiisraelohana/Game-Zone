@@ -150,6 +150,24 @@ const signUser = async (req, res) => {
 };
 
 
+const updateUser = async (req, res) => {
+  try {
+    const id = req.params.id;
+    const {image,xp,level} = req.body;
+    const user = await User.findById(id);
+
+    if(image)user.image = image;
+    if(xp)user.xp = xp;
+    if(level)user.level = level;
+
+    await user.save();
+    res.status(200).json(user);
+  } catch (error) {
+    res.status(400).json({ error: error.message });
+  }
+}
+
+
 //delete user
 const deleteUser = async (req, res) => {
   const id = req.params.id;
@@ -162,6 +180,7 @@ const deleteUser = async (req, res) => {
 };
 
 
+
 module.exports = {
     usersList,
     signUser,
@@ -170,4 +189,5 @@ module.exports = {
     acceptFriendRequest,
     friendRequest2,
     usersFriend,
+    updateUser
 }
