@@ -1,5 +1,5 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import { ACCEPT_FRIEND, ADD_FRIEND, LOGIN_USER, SIGNUP_USER, STAY_LOGIN, USERS_LIST } from "../../constants/urls";
+import { ACCEPT_FRIEND, ADD_FRIEND, LOGIN_USER, REMOVE_FRIEND, SIGNUP_USER, STAY_LOGIN, USERS_LIST } from "../../constants/urls";
 import { apiGet, apiPost } from "../../services/apiRequests";
 
 
@@ -53,8 +53,16 @@ export const acceptFriend = createAsyncThunk("user/acceptFriend" , async (_id) =
     throw error;
   }
 })
- 
 
+export const removeFriend = createAsyncThunk("user/removeFriend" , async (_id) => {
+    try {
+      const response = await apiPost(REMOVE_FRIEND + `/${_id}`,{});
+      return response.data;
+    } catch (error) {
+      console.log(error);
+      throw error;
+    }
+})
 
 
 const userSlice = createSlice({
