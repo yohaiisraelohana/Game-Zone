@@ -13,6 +13,8 @@
     in componnents i want only to know if the user 
 5.
     add some styles from https://www.julienthibeaut.xyz/blog
+6. 
+    https://www.npmjs.com/package/react-image-file-resizer make in services function that changes user image from input
 
 
 
@@ -47,6 +49,8 @@
     make the option to put post and delete for only admin user
 2.  
     update count in redux
+3. 
+    make the option to search for any subject user wants in pexels api
 
 
 
@@ -73,10 +77,11 @@
 
     *slidePuzzle*
 1.
-    collection of images after select image he will be able to select the level
-    just like in memory game
+    add level option to parts of the puzzle
 2.
     check why not working at mobile
+3.
+    use the function to change user image from input
 
 
     *circlesFight*
