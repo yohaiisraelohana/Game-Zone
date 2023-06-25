@@ -97,7 +97,7 @@ const removeFriendRequest = async (req, res) => {
     user.friends = user.friends.filter((i) => i.toString() !== friend_id.toString());
     await friend.save();
     await user.save();
-    return res.status(200).json({ message: 'Friend removed successfully' });
+    return res.status(200).json(user);
   } catch (error) {
     console.log(error.message)
     return res.status(500).json({error:'Friend remove failed'})

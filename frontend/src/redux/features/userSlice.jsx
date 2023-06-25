@@ -144,6 +144,17 @@ const userSlice = createSlice({
         state.error = action.payload;
         state.loading = false;
       })
+      .addCase(removeFriend.pending , (state,action) => {
+        state.loading = true;
+    })
+    .addCase(removeFriend.fulfilled, (state, action) => {
+        state.user = action.payload;
+        state.loading = false;
+    })
+    .addCase(removeFriend.rejected, (state, action) => {
+        state.error = action.payload;
+        state.loading = false;
+      })
 
   },
   reducers: {},
