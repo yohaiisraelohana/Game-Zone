@@ -18,7 +18,7 @@ export default function MemoryGameStart() {
     const [firstCard,setFirstCard] = useState(null);
     const [secondCard,setSecondCard] = useState(null);
     const [disabled,setDisabled] =  useState(false);
-    
+
     const navigate = useNavigate();
 
     const updateMemoryCards = (data) => {

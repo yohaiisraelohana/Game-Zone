@@ -41,7 +41,7 @@ export default function RouletteBoard({setChoice,setRevard,chice}) {
                 setChoice([i]);
                 setRevard(36);
               }}
-              className={`${i == 0 ? 'zero' : n.color}${chice && chice.includes(i) ? " selected" : ""}`}
+              className={`${chice && chice.includes(i) ? " selected-number " : ""}${i == 0 ? " zero" : n.color}`}
               key={i}>{i}</button>
           ))}
           {[[1,4,7,10,13,16,19,22,25,28,31,34],

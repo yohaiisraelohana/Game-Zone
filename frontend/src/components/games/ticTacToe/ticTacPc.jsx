@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./ticTacPc.css";
+import useUser from "../../../hooks/useUser";
+import { useParams } from "react-router-dom/dist/umd/react-router-dom.development";
 
 export default function TicTacPc() {
   const [board, setBoard] = useState(Array(9).fill(null));
@@ -7,6 +9,8 @@ export default function TicTacPc() {
   const [round, setRound] = useState(0);
   const [winner, setWinner] = useState(null);
   const [toggle, setToggle] = useState(true);
+  const {user,updateXp} = useUser();
+  const {level} = useParams();
 
   const reset = () => {
     setBoard(Array(9).fill(null));
@@ -41,6 +45,17 @@ export default function TicTacPc() {
           board[c] === check
         ) {
           setWinner(check);
+          if (user) {
+            if (check === "X") {
+              if (level === "easy") {
+                updateXp(50);
+              } else if (level === "medium") {
+                updateXp(100);
+              } else {
+                updateXp(150);
+              }
+            }
+          }
           setToggle(false);
           return true;
         }
@@ -184,6 +199,7 @@ export default function TicTacPc() {
       }
     } else {
       setRound(0);
+
     }
   }, [board, move, round, toggle]);
 
@@ -196,6 +212,7 @@ export default function TicTacPc() {
       setRound(round + 1);
     }
   };
+
 
   return (
     <div className="game">

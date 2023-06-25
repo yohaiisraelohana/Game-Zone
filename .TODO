@@ -9,14 +9,14 @@
     memory games search users and more
 3.  
     use skeletons instead of loading
-4. 
-    in componnents i want only to know if the user 
 5.
     add some styles from https://www.julienthibeaut.xyz/blog
 6. 
-    https://www.npmjs.com/package/react-image-file-resizer make in services function that changes user image from input
+    https://www.npmjs.com/package/react-image-file-resizer make in services function that changes size of user image from input
 7.
     send xp update after every game
+8.
+    change cngradilation allert on winning to something more special
 
 
 
@@ -42,7 +42,8 @@
     add reset button
 6.  
     change p to input
-
+7.
+    button to solve the sudoku template
 
 
 
@@ -79,7 +80,7 @@
 
     *slidePuzzle*
 1.
-    add level option to parts of the puzzle
+    add level option to parts of the puzzle and then xp
 2.
     check why not working at mobile
 3.
@@ -93,5 +94,9 @@
     *account*
 1.  
     fix progress bat to work on the first render
+
+    *tic tac toe*
+1.
+    in online game users have option to select price they can play on him
 
 */

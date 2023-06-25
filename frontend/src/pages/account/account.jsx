@@ -25,7 +25,7 @@ export default function Account() {
       setExectedXp(100 * i);
       setXpProgress((xp_riched / expected_xp) * 100);
     }
-    else{
+    if(error){
       nav('/');
     }
   },[user])

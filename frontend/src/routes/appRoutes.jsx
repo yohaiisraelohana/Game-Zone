@@ -8,6 +8,7 @@ import MemoryGameStart from '../components/games/memoryGame/memoryGameStart';
 import NavBar from '../components/navBar/navBar';
 import TicTacGame from '../components/games/ticTacToe/ticTacGame';
 import TicTacPc from '../components/games/ticTacToe/ticTacPc';
+import TicTacPcNav from '../components/games/ticTacToe/ticTacPcNav';
 import SudokuGame from '../components/games/sudokuGame/sudokuGame';
 import SudokuGameStart from '../components/games/sudokuGame/sudokuGameStart';
 import Roulette from '../components/games/roulette/roulette'
@@ -38,7 +39,8 @@ export const AppRoutes = () => {
           <Route path='/memoryGame' element={<MemoryGame/>} />
           <Route path='/memoryGame/:name' element={<MemoryGameStart/>} />
           <Route path='/ticTacGame' element={<TicTacGame/>}/>
-          <Route path='/ticTacGame/pc' element={<TicTacPc/>}/>
+          <Route path='/ticTacGame/pc' element={<TicTacPcNav/>}/>
+          <Route path='/ticTacGame/pc/:level' element={<TicTacPc/>}/>
           <Route path='/ticTacGame/users' element={<TicTacUsers/>}/>
           <Route path='/sudokuGame' element={<SudokuGame/>} />
           <Route path='/sudokuGame/:level' element={<SudokuGameStart/>} />

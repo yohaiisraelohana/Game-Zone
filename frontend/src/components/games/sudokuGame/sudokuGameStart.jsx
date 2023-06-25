@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import useSudoku from '../../../hooks/useSudoku';
 import {useParams} from 'react-router-dom'
 import './sudokuGameStart.css'
+import useUser from '../../../hooks/useUser';
 
 export default function SudokuGameStart() {
     const {currentSudoku} = useSudoku();
@@ -9,7 +10,7 @@ export default function SudokuGameStart() {
     const [wrongNumber,setWrongNumber] = useState(null);
     const [disable,setDisable] = useState(false);
     const {level} = useParams();
-    console.log(level);
+    const {user,updateXp} = useUser();
 
     const checkRow = (row)=>{
         let arr = new Array(10).fill(0);
@@ -75,6 +76,16 @@ export default function SudokuGameStart() {
         }
         return true;
     }
+    const checkWinningSudoku = () => {
+        for (let i = 0; i < template.length; i++) {
+            for (let j = 0; j < template[i].length; j++) {
+                if (template[i][j] == 0) {
+                    return false;
+                }
+            }
+        }
+        return true;
+    }
 
     const hundleChange = (row,col,val) => {
         setDisable(true);
@@ -83,6 +94,18 @@ export default function SudokuGameStart() {
         newTmp[row][col] = val;
         setTemplete(newTmp);
         if (checkSudoku(row,col)) {
+            if(checkWinningSudoku()){
+                if (user) {
+                    if(level === "easy"){
+                        updateXp(50);
+                    } else if(level === "medium"){
+                        updateXp(100);
+                    } else {
+                        updateXp(200);
+                    }
+                }
+                alert("amaizing");
+            }
             setDisable(false);
         } else {
             setWrongNumber(val);

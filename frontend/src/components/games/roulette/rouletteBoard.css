@@ -1,4 +1,4 @@
-.options-container{
+.roulette-container .options-container{
     display: flex;
     flex-wrap: wrap;
     width: 150px;
@@ -15,8 +15,8 @@
     border: 1px solid white;
     background-color: rgb(66, 171, 66);
 }
-.red{
-    background-color: red !important ;
+.roulette-container .red{
+    background-color: red  ;
 }
 .black{
     background-color: #333 !important ;
@@ -77,6 +77,6 @@
     border: white 1px solid;
     padding-inline:7px ;
 }
-.specials-options-container .selected{
+.selected-number{
     background-color: var(--primary) !important;
 }
