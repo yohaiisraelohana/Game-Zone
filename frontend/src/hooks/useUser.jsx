@@ -1,6 +1,6 @@
 import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { acceptFriend, addFriends, login,signUp,stayLogin, updateUser } from '../redux/features/userSlice';
+import { acceptFriend, addFriends, login,signUp,stayLogin, updateUser,removeFriend } from '../redux/features/userSlice';
 import { apiGet } from '../services/apiRequests';
 import { USERS_LIST } from '../constants/urls';
 
@@ -44,6 +44,10 @@ export default function useUser() {
       dispatch(acceptFriend(id));
     }
 
+    const removeFriendRequest = async (id) => {
+      dispatch(removeFriend(id));
+    }
+
   return {
       loading,
       user,
@@ -54,6 +58,7 @@ export default function useUser() {
       searchUser,
       sendFriendRequest,
       update,
-      acceptFriendRequest
+      acceptFriendRequest,
+      removeFriendRequest,
     };
 }
