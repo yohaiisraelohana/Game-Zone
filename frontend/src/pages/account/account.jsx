@@ -3,6 +3,7 @@ import './account.css';
 import useUser from '../../hooks/useUser';
 import {IoLogoGameControllerB} from 'react-icons/io'
 import UsersList from '../../components/friends/usersList';
+import { useNavigate } from 'react-router-dom/dist/umd/react-router-dom.development';
 
 
 
@@ -12,6 +13,7 @@ export default function Account() {
   const [xp_progress,setXpProgress] = useState(null);
   const [expected_xp,setExectedXp] = useState(null);
   const [user_details_nav,setUserDetailsNav] = useState(["friends","requests"]);
+  const nav = useNavigate();
   useEffect(()=>{
     if (user) {
       let xp_riched = user.xp;
@@ -22,6 +24,9 @@ export default function Account() {
       setCurrentXp(xp_riched);
       setExectedXp(100 * i);
       setXpProgress((xp_riched / expected_xp) * 100);
+    }
+    else{
+      nav('/');
     }
   },[user])
   console.log(current_xp);

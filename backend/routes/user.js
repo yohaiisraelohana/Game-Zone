@@ -25,10 +25,10 @@ router.post('/signup',validateSignUp,signUser)
 router.post('/sendFriendRequest/:id',authentication,friendRequest);
 
 //accept friend request
-router.post('/acceptFriendRequest/:id',authentication,acceptFriendRequest);
+router.post('/acceptFriendRequest/:id',authentication,acceptFriendRequest,stayLogin);
 
 //remove friend request
-router.post('/removeFriendRequest/:id',authentication,removeFriendRequest);
+router.post('/removeFriendRequest/:id',authentication,removeFriendRequest,stayLogin);
 
 //update user
 router.put('/update',authentication,validateUpdateUser,updateUser);

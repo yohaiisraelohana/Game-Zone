@@ -53,7 +53,7 @@ const friendRequest = async (req, res) => {
 
 
 //accept friend request
-const acceptFriendRequest = async(req,res) =>{
+const acceptFriendRequest = async(req, res, next) =>{
   const { _id: recipientId } = req;
   const { id: senderId } = req.params;
   let recipient = await User.findById(recipientId);
@@ -74,7 +74,8 @@ const acceptFriendRequest = async(req,res) =>{
   }
   await recipient.save();
   await sender.save();
-  return res.status(200).json(recipient);
+  next();
+  // return res.status(200).json(recipient);
 }
 catch(error){
   console.log(error.message);
@@ -84,7 +85,7 @@ catch(error){
 
 
 //remove friend 
-const removeFriendRequest = async (req, res) => {
+const removeFriendRequest = async (req, res, next) => {
     const {id : friend_id} = req.params;
     const {_id: user_id} = req;
     let friend = await User.findById(friend_id);
@@ -97,7 +98,8 @@ const removeFriendRequest = async (req, res) => {
     user.friends = user.friends.filter((i) => i.toString() !== friend_id.toString());
     await friend.save();
     await user.save();
-    return res.status(200).json(user);
+    next();
+    // return res.status(200).json(user);
   } catch (error) {
     console.log(error.message)
     return res.status(500).json({error:'Friend remove failed'})
