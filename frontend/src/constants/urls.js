@@ -11,6 +11,8 @@ export const ADD_FRIEND = USER + "/sendFriendRequest";
 export const ACCEPT_FRIEND = USER + "/acceptFriendRequest";
 export const USERS_LIST = USER + "/usersList/";
 export const REMOVE_FRIEND = USER + "/removeFriendRequest";
+export const UPDATE_USER = USER + "/update"; 
+ c91acc12c8b485276b963e09f7cd3bedca85cc71
 
 //* memory Game
 const MEMORY_GAME = API_URL + "/memoryGame";

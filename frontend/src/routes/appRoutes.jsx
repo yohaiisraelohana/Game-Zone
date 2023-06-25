@@ -17,6 +17,7 @@ import PuzzleGame from '../components/games/puzzleGame/puzzleGame';
 import CirclesFight from '../components/games/circlesFight/circlesFight';
 import TicTacUsers from '../components/games/ticTacToe/ticTacUsers';
 import useUser from '../hooks/useUser';
+import Account from '../pages/account/account';
  
 export const AppRoutes = () => {
   const { user , stayLoginUser} = useUser();
@@ -45,6 +46,7 @@ export const AppRoutes = () => {
           <Route path='/slidePuzzleGame' element={<SlidePuzzleGame/>} />
           <Route path='/puzzleGame' element={<PuzzleGame/>}/>
           <Route path='/circlesFight' element={<CirclesFight/>}/>
+          <Route path='/account' element={<Account/>}/>
         </Route>
       )
     )

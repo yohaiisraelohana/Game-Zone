@@ -27,10 +27,6 @@ router.post('/sendFriendRequest/:id',authentication,friendRequest);
 //accept friend request
 router.post('/acceptFriendRequest/:id',authentication,acceptFriendRequest);
 
-//remove friend request
-router.post('/removeFriendRequest/:id',authentication,removeFriendRequest);
-
-//update user
 router.put('/:id',authentication,validateUpdateUser,updateUser);
 
 

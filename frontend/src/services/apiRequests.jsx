@@ -38,3 +38,18 @@ export const apiPost = async(url,bodyData) => {
         throw(error);
     }
 }
+export const apiPut = async(url,bodyData) => {
+    try {
+        let config = {
+            method:"PUT",
+            url:url,
+            data:bodyData,
+            withCredentials:true,
+        }
+        const response = await axios(config);
+        return response;
+    } catch (error) {
+        console.log(error);
+        throw(error);
+    }
+}

@@ -1,6 +1,9 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { ACCEPT_FRIEND, ADD_FRIEND, LOGIN_USER, REMOVE_FRIEND, SIGNUP_USER, STAY_LOGIN, USERS_LIST } from "../../constants/urls";
 import { apiGet, apiPost } from "../../services/apiRequests";
+import { ACCEPT_FRIEND, ADD_FRIEND, LOGIN_USER, SIGNUP_USER, STAY_LOGIN, USERS_LIST } from "../../constants/urls";
+import { apiGet, apiPost, apiPut } from "../../services/apiRequests";
+
 
 
 export const login = createAsyncThunk("user/login", async (userData) => {
@@ -47,6 +50,17 @@ export const addFriends = createAsyncThunk("user/addFriends", async (_id) => {
 export const acceptFriend = createAsyncThunk("user/acceptFriend" , async (_id) => {
   try {
     const response = await apiPost(ACCEPT_FRIEND + `/${_id}`,{});
+    return response.data;
+  } catch (error) {
+    console.log(error);
+    throw error;
+  }
+})
+
+export const updateUser = createAsyncThunk("user/updateUser" , async (data) => {
+  try {
+    const response = await apiPut(data);
+    console.log(response);
     return response.data;
   } catch (error) {
     console.log(error);
@@ -109,11 +123,34 @@ const userSlice = createSlice({
     .addCase(stayLogin.rejected, (state, action) => {
         state.error = action.payload;
         state.loading = false;
-      });
+      })
+    .addCase(updateUser.pending , (state,action) => {
+        state.loading = true;
+    })
+    .addCase(updateUser.fulfilled, (state, action) => {
+        state.user = action.payload;
+        state.loading = false;
+    })
+    .addCase(updateUser.rejected, (state, action) => {
+        state.error = action.payload;
+        state.loading = false;
+      })
+    .addCase(acceptFriend.pending , (state,action) => {
+        state.loading = true;
+    })
+    .addCase(acceptFriend.fulfilled, (state, action) => {
+        state.user = action.payload;
+        state.loading = false;
+    })
+    .addCase(acceptFriend.rejected, (state, action) => {
+        state.error = action.payload;
+        state.loading = false;
+      })
 
   },
   reducers: {},
 });
+//acceptFriend
 
 export const {} = userSlice.actions;
 export default userSlice.reducer;

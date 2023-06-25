@@ -74,7 +74,7 @@ const acceptFriendRequest = async(req,res) =>{
   }
   await recipient.save();
   await sender.save();
-  return res.status(200).json({ message: "Friend request Accepted" });
+  return res.status(200).json(recipient);
 }
 catch(error){
   console.log(error.message);
@@ -131,7 +131,10 @@ const stayLogin = async (req, res) => {
   try {
     if (token) {
       const decoded = jwt.verify(token, process.env.SECRET);
-      const user = await User.findById(decoded._id,{password:0}).populate('friends', '_id image name level xp');
+      const user = await User
+        .findById(decoded._id,{password:0})
+        .populate('friends', '_id image name level xp')
+        .populate('requests', '_id image name');
       console.log(user._id.toString());
       return res.status(200).json(user);
     }
@@ -167,13 +170,13 @@ const signUser = async (req, res) => {
 
 //update user
 const updateUser = async (req, res) => {
-  const id = req.params.id;
   try {
-    const user = await User.findById(id);
-    const {xp,level,image} = req.body;
+    const user = await User.findById(req._id);
+    const {xp,level,image,friends} = req.body;
     if (xp)user.xp = xp;
     if (level)user.level = level;
     if (image)user.image = image;
+    if (friends)user.friends = friends;
     await user.save();
     res.status(200).json(user);
   } catch (error) {
