@@ -44,6 +44,22 @@ export default function useUser() {
       dispatch(acceptFriend(id));
     }
 
+    const updateXp = (xp) => {
+      let xp_riched = user.xp ;
+      let i;
+      for (i = 1; i <=user.level -1; i++) {
+        xp_riched -= (100 * i);  
+      }
+      xp_riched += xp;
+      if(xp_riched < 0){
+        update({level: user.level - 1,xp:user.xp - xp});
+      } else if(xp_riched >= (100 * i)){
+        update({level: user.level + 1,xp: user.xp + xp});
+      } else {
+        update({xp:xp+user.xp});
+      }
+    }
+
   return {
       loading,
       user,
@@ -54,6 +70,7 @@ export default function useUser() {
       searchUser,
       sendFriendRequest,
       update,
-      acceptFriendRequest
+      acceptFriendRequest,
+      updateXp
     };
 }

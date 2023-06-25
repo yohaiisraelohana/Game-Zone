@@ -9,7 +9,7 @@ import UsersList from '../../components/friends/usersList';
 export default function Account() {
   const { user, loading ,error } = useUser();
   const [current_xp,setCurrentXp] = useState(null);
-  const [xp_progress,setXpProgress] = useState(null);
+  const [xp_progress,setXpProgress] = useState(0);
   const [expected_xp,setExectedXp] = useState(null);
   const [user_details_nav,setUserDetailsNav] = useState(["friends","requests"]);
   useEffect(()=>{
@@ -43,7 +43,7 @@ export default function Account() {
                 <p className='level'>{user.level}</p> 
               </div>
               <div className="xp-container">
-                {xp_progress && <progress value={xp_progress} max={100} /> }
+                <progress value={xp_progress} max={100} /> 
                 <div className="xp-details">
                   <p>XP</p>
                   <p>{current_xp}/{expected_xp}</p>

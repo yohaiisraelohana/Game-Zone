@@ -51,6 +51,24 @@ const friendRequest2 = async (req, res) => {
   }
 };
 
+//stay login
+const stayLogin = async (req, res) => {
+  const { token } = req.cookies;
+  try {
+    if (token) {
+      const decoded = jwt.verify(token, process.env.SECRET);
+      const user = await User
+        .findById(decoded._id,{password:0})
+        .populate('friends', '_id image name level xp')
+        .populate('requests', '_id image name');
+      console.log(user._id.toString());
+      return res.status(200).json(user);
+    }
+  } catch (error) {
+    res.status(400).json({ error: error.message });
+  }
+};
+
 
 //accept friend request
 const acceptFriendRequest = async(req,res) =>{
@@ -103,23 +121,7 @@ const loginUser = async (req, res) => {
 };
 
 
-//stay login
-const stayLogin = async (req, res) => {
-  const { token } = req.cookies;
-  try {
-    if (token) {
-      const decoded = jwt.verify(token, process.env.SECRET);
-      const user = await User
-        .findById(decoded._id,{password:0})
-        .populate('friends', '_id image name level xp')
-        .populate('requests', '_id image name');
-      console.log(user._id.toString());
-      return res.status(200).json(user);
-    }
-  } catch (error) {
-    res.status(400).json({ error: error.message });
-  }
-};
+
 
 
 //signup user
@@ -149,6 +151,7 @@ const signUser = async (req, res) => {
 //update user
 const updateUser = async (req, res) => {
   try {
+    console.log(req.body);
     const user = await User.findById(req._id);
     const {xp,level,image,friends} = req.body;
     if (xp)user.xp = xp;

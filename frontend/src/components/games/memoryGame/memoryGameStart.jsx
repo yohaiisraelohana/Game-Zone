@@ -6,11 +6,13 @@ import MemoryCard from './memoryCard';
 import {useNavigate} from 'react-router-dom'
 
 import './memoryGameStart.css';
+import useUser from '../../../hooks/useUser';
 
 export default function MemoryGameStart() {
     const [level,setLevel] = useState(null);
     const {currentGame} = useMemoryGame();
     const [memoryCards,setMemoryCards]=useState(null); 
+    const {user,updateXp} = useUser();
 
     const [turns,setTurns] = useState(0);
     const [firstCard,setFirstCard] = useState(null);
@@ -110,7 +112,11 @@ export default function MemoryGameStart() {
 
     useEffect(()=>{
       if (memoryCards) {
+
         if (checkIfWon()) {
+          if (user) {
+            updateXp(Math.ceil(level * 100 / turns))
+          }
           alert(`congradilations!
           you won ${Math.ceil(level * 100 / turns)} xp`);
           navigate(-1);
