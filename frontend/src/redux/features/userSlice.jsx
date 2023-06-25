@@ -53,6 +53,7 @@ export const acceptFriend = createAsyncThunk("user/acceptFriend" , async (_id) =
     throw error;
   }
 })
+<<<<<<< HEAD
 export const updateUser = createAsyncThunk("user/updateUser" , async (data) => {
   try {
     const response = await apiPut(data);
@@ -65,6 +66,9 @@ export const updateUser = createAsyncThunk("user/updateUser" , async (data) => {
 })
 
 
+=======
+ 
+>>>>>>> 19fffb52f202d1ea2a55f15625737f9d221485fb
 
 
 
