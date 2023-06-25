@@ -1,7 +1,7 @@
 const express = require('express');
-const {usersList,signUser,loginUser,friendRequest2,stayLogin,acceptFriendRequest} = require('../controllers/userController')
+const {usersList,signUser,loginUser,friendRequest2,stayLogin,acceptFriendRequest, updateUser} = require('../controllers/userController')
 const {authentication}  = require('../middleware/requireAuth');
-const {validateSignUp,validateLogin} = require('../middleware/validation');
+const {validateSignUp,validateLogin, validateUpdateUser} = require('../middleware/validation');
 const { getSignature } = require('../utils/uploadImage');
 
 const router = express.Router()
@@ -10,7 +10,7 @@ const router = express.Router()
 router.get("/uploadImage",authentication,getSignature);
 
 //users List
-router.get("/usersList",usersList);
+router.get("/usersList/:name",usersList);
 
 //login route
 router.post('/login',validateLogin,loginUser)
@@ -26,6 +26,8 @@ router.post('/sendFriendRequest/:id',authentication,friendRequest2);
 
 //accept friend request
 router.post('/acceptFriendRequest/:id',authentication,acceptFriendRequest);
+
+router.put('/:id',authentication,validateUpdateUser,updateUser);
 
 
 module.exports = router;
