@@ -53,8 +53,7 @@ export const acceptFriend = createAsyncThunk("user/acceptFriend" , async (_id) =
     throw error;
   }
 })
-
-
+ 
 
 
 
