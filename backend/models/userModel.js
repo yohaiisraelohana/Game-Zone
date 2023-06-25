@@ -80,7 +80,10 @@ userSchema.statics.login = async function(email,password) {
     if(!email || !password){
         throw Error('All fields must be filled ')
     }
-    const user = await this.findOne({ email }).populate('friends', '_id image name level xp');
+    const user = await this
+      .findOne({ email })
+      .populate('friends', '_id image name level xp')
+      .populate('requests', '_id image name');
     if(!user){
       throw Error('Incorrect email')
     }

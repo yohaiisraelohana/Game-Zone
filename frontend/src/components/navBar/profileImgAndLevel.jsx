@@ -7,11 +7,14 @@ export default function ProfileImgAndLevel({user,openUserMenu}) {
   const {image,level,xp} = user;
   useEffect(()=>{
     if (level) {
-      let sum_xp = 0;
-      for (let i = 1; i <= level; i++) {
-        sum_xp += (100 * i);
+      let expected_xp = 0;
+      let xp_riched = xp;
+      let i;
+      for (i = 1; i <=user.level -1; i++) {
+        xp_riched -= (100 * i);  
       }
-      setXpProgress((xp/sum_xp)*100 * 1.45);
+      expected_xp = (100 * i);
+      setXpProgress((xp_riched/expected_xp)*100 * 1.45);
     }
   },[level,xp])
 
