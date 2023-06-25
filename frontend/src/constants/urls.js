@@ -10,6 +10,7 @@ export const STAY_LOGIN = USER + "/stayLogin";
 export const ADD_FRIEND = USER + "/sendFriendRequest";
 export const ACCEPT_FRIEND = USER + "/acceptFriendRequest";
 export const USERS_LIST = USER + "/usersList/";
+export const REMOVE_FRIEND = USER + "/removeFriendRequest";
 export const UPDATE_USER = USER + "/update"; 
 
 //* memory Game

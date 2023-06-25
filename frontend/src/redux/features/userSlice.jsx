@@ -3,6 +3,7 @@ import { ACCEPT_FRIEND, ADD_FRIEND, LOGIN_USER, SIGNUP_USER, STAY_LOGIN, UPDATE_
 import { apiGet, apiPost, apiPut } from "../../services/apiRequests";
 
 
+
 export const login = createAsyncThunk("user/login", async (userData) => {
   try {
     const response = await apiPost(LOGIN_USER, userData);
@@ -65,6 +66,15 @@ export const updateUser = createAsyncThunk("user/updateUser" , async (data) => {
   }
 })
 
+export const removeFriend = createAsyncThunk("user/removeFriend" , async (_id) => {
+    try {
+      const response = await apiPost(REMOVE_FRIEND + `/${_id}`,{});
+      return response.data;
+    } catch (error) {
+      console.log(error);
+      throw error;
+    }
+})
 
 
 const userSlice = createSlice({
@@ -131,6 +141,17 @@ const userSlice = createSlice({
         state.loading = false;
     })
     .addCase(acceptFriend.rejected, (state, action) => {
+        state.error = action.payload;
+        state.loading = false;
+      })
+      .addCase(removeFriend.pending , (state,action) => {
+        state.loading = true;
+    })
+    .addCase(removeFriend.fulfilled, (state, action) => {
+        state.user = action.payload;
+        state.loading = false;
+    })
+    .addCase(removeFriend.rejected, (state, action) => {
         state.error = action.payload;
         state.loading = false;
       })

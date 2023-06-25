@@ -25,7 +25,7 @@ const usersList = async (req ,res) => {
 
 
 //send friend request
-const friendRequest2 = async (req, res) => {
+const friendRequest = async (req, res) => {
   const { _id: senderId } = req;
   const { id: recipientId } = req.params;
   if (!recipientId) {
@@ -71,7 +71,7 @@ const stayLogin = async (req, res) => {
 
 
 //accept friend request
-const acceptFriendRequest = async(req,res) =>{
+const acceptFriendRequest = async(req, res, next) =>{
   const { _id: recipientId } = req;
   const { id: senderId } = req.params;
   let recipient = await User.findById(recipientId);
@@ -92,12 +92,36 @@ const acceptFriendRequest = async(req,res) =>{
   }
   await recipient.save();
   await sender.save();
-  return res.status(200).json(recipient);
+  next();
+  // return res.status(200).json(recipient);
 }
 catch(error){
   console.log(error.message);
   res.status(500).json({ error: 'Friend accept failed' });
 }
+}
+
+
+//remove friend 
+const removeFriendRequest = async (req, res, next) => {
+    const {id : friend_id} = req.params;
+    const {_id: user_id} = req;
+    let friend = await User.findById(friend_id);
+    let user = await User.findById(user_id);
+    if(!friend|| !user){
+      return res.status(404).json({ message: 'Remove friend failed - User not exist'});
+    }
+  try {
+    friend.friends = friend.friends.filter((i) => i.toString() !== user_id.toString());
+    user.friends = user.friends.filter((i) => i.toString() !== friend_id.toString());
+    await friend.save();
+    await user.save();
+    next();
+    // return res.status(200).json(user);
+  } catch (error) {
+    console.log(error.message)
+    return res.status(500).json({error:'Friend remove failed'})
+  }
 }
 
 //login user
@@ -185,6 +209,7 @@ module.exports = {
     loginUser,
     stayLogin,
     acceptFriendRequest,
-    friendRequest2,
-    updateUser
+    friendRequest,
+    updateUser,
+    removeFriendRequest,
 }

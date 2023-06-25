@@ -2,7 +2,7 @@ import React from 'react'
 import './usersList.css';
 import useUser from '../../hooks/useUser';
 export default function UsersList({users}) {
-    const {user:{friends,_id,requests},sendFriendRequest,acceptFriendRequest} = useUser();
+    const {user:{friends,_id,requests},sendFriendRequest,acceptFriendRequest,removeFriendRequest} = useUser();
     console.log({users,friends,requests});
   return (
       <div className='users-list'>
@@ -15,7 +15,7 @@ export default function UsersList({users}) {
                 
                 {
                   friends.find(friend => friend._id === user._id) 
-                  ?  <button onClick={()=>console.log("REMOVE")} className='remove' >REMOVE</button>   
+                  ?  <button onClick={()=>{removeFriendRequest(user._id)}} className='remove' >REMOVE</button>   
                   :  (requests.find(request => request._id == user._id) 
                   ? <button
                     onClick={()=>acceptFriendRequest(user._id)}

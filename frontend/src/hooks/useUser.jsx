@@ -1,14 +1,10 @@
 import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { acceptFriend, addFriends, login,signUp,stayLogin, updateUser } from '../redux/features/userSlice';
+import { acceptFriend, addFriends, login,signUp,stayLogin, updateUser,removeFriend } from '../redux/features/userSlice';
 import { apiGet } from '../services/apiRequests';
 import { USERS_LIST } from '../constants/urls';
 
-/*
-TODO:
 
-  3. remove friend func (will use the update user func) 
- */
 
 export default function useUser() {
     const {user,loading,error} = useSelector(store=>store.userReducer);
@@ -44,6 +40,7 @@ export default function useUser() {
       dispatch(acceptFriend(id));
     }
 
+
     const updateXp = (xp) => {
       let xp_riched = user.xp ;
       let i;
@@ -59,6 +56,10 @@ export default function useUser() {
         update({xp:xp+user.xp});
       }
     }
+    const removeFriendRequest = async (id) => {
+      dispatch(removeFriend(id));
+
+    }
 
   return {
       loading,
@@ -71,6 +72,7 @@ export default function useUser() {
       sendFriendRequest,
       update,
       acceptFriendRequest,
-      updateXp
+      updateXp,
+      removeFriendRequest,
     };
-}
+  }
