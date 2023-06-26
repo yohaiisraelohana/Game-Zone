@@ -1,11 +1,13 @@
 import React from 'react'
 import './ticTacGame.css'
 import { Link } from 'react-router-dom'
+import NavBackButton from '../../reusfullComponents/navigateBackButton/navBackButton'
 
 export default function TicTacGame() {
 
   return (
-    <div className='games'>
+    <div className='tic-tac-toe-container'>
+      <NavBackButton to={"/"} />
     <div className="type">
       <Link to={"/ticTacGame/pc"} className="ticTac-pc">
         <p>Play with pc</p>

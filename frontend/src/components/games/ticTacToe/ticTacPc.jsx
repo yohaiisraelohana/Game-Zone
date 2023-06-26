@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import "./ticTacPc.css";
 import useUser from "../../../hooks/useUser";
 import { useParams } from "react-router-dom/dist/umd/react-router-dom.development";
+import SelectLevel from "../../reusfullComponents/selectLevel/selectLevel";
+import NavBackButton from "../../reusfullComponents/navigateBackButton/navBackButton";
 
 export default function TicTacPc() {
   const [board, setBoard] = useState(Array(9).fill(null));
@@ -10,7 +12,7 @@ export default function TicTacPc() {
   const [winner, setWinner] = useState(null);
   const [toggle, setToggle] = useState(true);
   const {user,updateXp} = useUser();
-  const {level} = useParams();
+  const [level,setLevel] = useState(null);
 
   const reset = () => {
     setBoard(Array(9).fill(null));
@@ -215,18 +217,23 @@ export default function TicTacPc() {
 
 
   return (
-    <div className="game">
-      <div className={`board ${toggle ? "" : "disabled"}`}>
-        {board.map((cell, index) => (
-          <div key={index} className="cell" onClick={() => doMove(index)}>
-            {cell}
+    <div className="tic-tac-toe-pc-container">
+      <NavBackButton  />
+    {level ?
+      <div className="game">
+          <div className={`board ${toggle ? "" : "disabled"}`}>
+            {board.map((cell, index) => (
+              <div key={index} className="cell" onClick={() => doMove(index)}>
+                {cell}
+              </div>
+            ))}
           </div>
-        ))}
+          {winner && <div className="winner">Winner: {winner}</div>}
+          <button onClick={() => reset()} className="button">
+            reset
+          </button>
       </div>
-      {winner && <div className="winner">Winner: {winner}</div>}
-      <button onClick={() => reset()} className="button">
-        reset
-      </button>
+      : <SelectLevel options={["easy","medium","hard"]} handleChoice={(option)=>setLevel(option)} /> }
     </div>
   );
 }

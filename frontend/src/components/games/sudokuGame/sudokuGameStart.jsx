@@ -3,6 +3,7 @@ import useSudoku from '../../../hooks/useSudoku';
 import {useParams} from 'react-router-dom'
 import './sudokuGameStart.css'
 import useUser from '../../../hooks/useUser';
+import NavBackButton from '../../reusfullComponents/navigateBackButton/navBackButton';
 
 export default function SudokuGameStart() {
     const {currentSudoku} = useSudoku();
@@ -122,6 +123,7 @@ export default function SudokuGameStart() {
 
   return ( 
     <div className='sudoku-game'>
+        <NavBackButton/>
         <h2>sudokuGame</h2>
         <div className="sudoku-grid" >
         {template && template.map((row,i)=>( 

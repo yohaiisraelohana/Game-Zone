@@ -74,7 +74,7 @@ export default function CirclesFight() {
 
     
 
-    const player = new Player(window.innerWidth / 2,window.innerHeight / 2,30,'blue');
+    const player = new Player(window.innerWidth / 2,window.innerHeight / 2,10,'white');
     const projectiles = [];
     const enemies = [];
 
@@ -91,7 +91,7 @@ export default function CirclesFight() {
                 y = Math.random() < 0.5 ? 0 - radius : window.innerHeight + radius;
             }
 
-            const color = 'green';
+            const color = `hsl(${Math.random() * 360},50%,50%)`;
 
             const angle = Math.atan2(
                 window.innerHeight / 2 - y,
@@ -102,7 +102,7 @@ export default function CirclesFight() {
             }
             enemies.push(new Enemy(x,y,radius,color,velocity));
 
-        },1000);
+        },2000);
     }
 
     
@@ -112,7 +112,8 @@ export default function CirclesFight() {
         if (!c) {
             return;
         }
-        c.clearRect(0,0,window.innerWidth,window.innerHeight);
+        c.fillStyle = 'rgba(0,0,0,0.1)';
+        c.fillRect(0,0,window.innerWidth,window.innerHeight);
         player.draw();
         projectiles.forEach((projectile,index)=>{
             projectile.update();
@@ -134,11 +135,19 @@ export default function CirclesFight() {
             }
             projectiles.forEach((projectile,p_index)=>{
                 const dist = Math.hypot(projectile.x - enemy.x,projectile.y - enemy.y);
+
                 if (dist -  enemy.radius - projectile.radius  < 1 ) {
-                    setTimeout(()=>{
-                        enemies.splice(index,1);
-                        projectiles.splice(p_index,1);
-                    },0)
+                    if (enemy.radius - 10 > 5) {
+                        enemy.radius -= 10;
+                        setTimeout(()=>{
+                            projectiles.splice(p_index,1);
+                        },0)
+                    } else {
+                        setTimeout(()=>{
+                            enemies.splice(index,1);
+                            projectiles.splice(p_index,1);
+                        },0)
+                    }
                 }
             })
         })
@@ -149,10 +158,10 @@ export default function CirclesFight() {
             event.clientY - window.innerHeight / 2,
             event.clientX - window.innerWidth / 2);
         const velocity = {
-            x:Math.cos(angle),
-            y:Math.sin(angle)
+            x:Math.cos(angle) * 5,
+            y:Math.sin(angle) * 5
         }
-        projectiles.push(new Projectile(player.x,player.y,5,'red',velocity));
+        projectiles.push(new Projectile(player.x,player.y,5,'white',velocity));
     })
 
     animate(); 

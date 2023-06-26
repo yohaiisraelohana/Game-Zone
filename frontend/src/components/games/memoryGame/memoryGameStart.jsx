@@ -1,16 +1,20 @@
 import React, { useEffect, useState } from 'react'
-import useMemoryGame from '../../../hooks/useMemoryGame'
-import MemoryLevelNav from './memoryLevelNav'
-import { apiGet } from '../../../services/apiRequests';
-import MemoryCard from './memoryCard';
 import {useNavigate} from 'react-router-dom'
-
-import './memoryGameStart.css';
+//components
+import MemoryCard from './memoryCard';
+import SelectLevel from '../../reusfullComponents/selectLevel/selectLevel';
+import NavBackButton from '../../reusfullComponents/navigateBackButton/navBackButton'
+//hooks & services
 import useUser from '../../../hooks/useUser';
+import useMemoryGame from '../../../hooks/useMemoryGame'
+import { apiGet } from '../../../services/apiRequests';
+//style
+import './memoryGameStart.css';
+
 
 export default function MemoryGameStart() {
     const [level,setLevel] = useState(null);
-    const {currentGame} = useMemoryGame();
+    const {currentGame,memoryLevels} = useMemoryGame();
     const [memoryCards,setMemoryCards]=useState(null); 
     const {user,updateXp} = useUser();
 
@@ -127,9 +131,9 @@ export default function MemoryGameStart() {
 
 
   return (
-    <div>
-
-        {level ? 
+    <div className='memory-game-start-container'>
+      <NavBackButton />
+      { level ? 
         <div className="memory-game-start">
           <p>game started level {level}</p>
           <p>Turns{turns}</p>
@@ -147,7 +151,12 @@ export default function MemoryGameStart() {
           }
           </div>
         </div>
-        :<MemoryLevelNav setLevel={setLevel} /> }
+        : <SelectLevel 
+            options={memoryLevels.map((l)=>l.name)} 
+            handleChoice={(name)=>{
+              const {level} = memoryLevels.find((l)=>l.name === name);
+              setLevel(level);
+            }} /> }
     </div>
   )
 }

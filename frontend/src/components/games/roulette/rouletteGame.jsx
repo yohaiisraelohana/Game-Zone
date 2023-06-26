@@ -4,6 +4,7 @@ import './rouletteGame.css'
 import RouletteSpin from './rouletteSpin'
 import RouletteBoard from './rouletteBoard';
 import useUser from '../../../hooks/useUser';
+import NavBackButton from '../../reusfullComponents/navigateBackButton/navBackButton'
 
 export default function RouletteGame() {
     const [revard,setRevard] = useState(null);
@@ -56,6 +57,7 @@ export default function RouletteGame() {
     }
   return (
     <div className='roulette-container'>
+        <NavBackButton/>
         <Roulette ballPosition={ballPosition}/>
         <RouletteSpin 
             spinBall={spinBall} 

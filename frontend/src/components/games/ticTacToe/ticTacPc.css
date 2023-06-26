@@ -1,8 +1,14 @@
-.game {
+.tic-tac-toe-pc-container .game {
     display: flex;
     flex-direction: column;
     align-items: center;
     margin-top: 50px;
+  }
+  .tic-tac-toe-pc-container{
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
   }
   
   .board {

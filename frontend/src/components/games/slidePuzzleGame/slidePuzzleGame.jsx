@@ -19,7 +19,7 @@ export default function SlidePuzzleGame() {
   const [puzzle_image,setPuzzleImage] = useState(null);
   const box_size = window.innerWidth < 600 ? 300 : (window.innerWidth < 900 ? 600 : 900) ;
   const {data,currentImage,setImage} = useCloudinaryImages();
-
+  
 
   const updatePuzzleImage = () => {
     setPuzzleImage(resizeCloudinaryImage(currentImage.route + currentImage.id,box_size,box_size));
@@ -34,8 +34,6 @@ export default function SlidePuzzleGame() {
   console.log({currentImage});
   return (
     <div className='sliding-puzzle-game-container' >
-      
-      
       {currentImage
         ? 
           <div>
@@ -47,7 +45,8 @@ export default function SlidePuzzleGame() {
             <NavBackButton />
             <SlidePuzzleImgInput />
             <SlidePuzzleCollection  images_collection={data}/>
-          </div> }
+          </div>
+        }
     </div>
   )
 }

@@ -1,7 +1,18 @@
+.memory-game-start-container{
+    position: relative;
+}
+.slide-puzzle-game-start{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    height: 80vh;
+}
 .slide-grid{
     margin-block: 10% ;
     margin-inline: auto ;
     display: flex;
+
     flex-wrap:wrap ;
     position: relative;
 }
