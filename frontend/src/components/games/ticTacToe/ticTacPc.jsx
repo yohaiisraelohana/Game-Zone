@@ -173,13 +173,6 @@ export default function TicTacPc() {
     return false;
   };
 
-  const randomMove = () => {
-      const emptyCells = board.filter((square,i) => {
-        if(square == null) return i;
-      })
-      const rnd = Math.floor(Math.random()*emptyCells.length);
-      setBoard(prev => prev.map((x,i) => emptyCells[rnd] === i ? move : 'X'))
-  }
 
   const makeComputerMove = () => {
     setTimeout(() => {
@@ -188,7 +181,6 @@ export default function TicTacPc() {
       if (!win())
       if (!blockUser())
         advance()
-        console.log("true");
       setMove(opposite());
       setRound(round + 1);
     }, 1000);
