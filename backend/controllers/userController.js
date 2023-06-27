@@ -149,7 +149,7 @@ const loginUser = async (req, res) => {
 
   } catch (error) {
     console.log(error);
-    res.status(400).json({ error,location:"loginUser" });
+    res.status(400).json({error: error.message});
   }
 };
 
@@ -187,7 +187,7 @@ const signUser = async (req, res) => {
     res.status(200).json(user);
   } catch (error) {
     console.log(error);
-    res.status(400).json({ error,location:"signUser" });
+    res.status(400).json({error: error.message});
   }
 };
 
