@@ -24,6 +24,9 @@
     fix errors in sign up 
 
 
+    *Admin*
+!1.
+    put authenticationAdmin on every game changing/adding/deleting route
 
     *NavBar*
 1.
