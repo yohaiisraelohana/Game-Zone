@@ -1,7 +1,8 @@
-const mongoose = require('mongoose')
+const mongoose = require('mongoose');
+const Schema = mongoose.Schema;
 const bcrypt = require('bcrypt')
 const validator = require('validator');
-const Schema = mongoose.Schema;
+
 
 
 const userSchema = new Schema({
@@ -33,6 +34,10 @@ const userSchema = new Schema({
     required:false,
     default: "https://img.freepik.com/free-vector/cute-cat-gaming-cartoon_138676-2969.jpg?w=1380&t=st=1686294308~exp=1686294908~hmac=067c1c77b764a597964985eae7d9ce98257146f8acfb48443919a2785a246c4f",
   },
+  refresh_token:{
+    type:String,
+    required:false,
+  },
   friends:[
     {
       type: Schema.Types.ObjectId,
@@ -47,6 +52,12 @@ const userSchema = new Schema({
       required:false,
     }
   ],
+  role:{
+    type:String,
+    required:false,
+    default:'user',
+    enum:['user','admin']
+  }
 },{timestamps:true})
 
 userSchema.statics.signup = async function (email,password,name){
@@ -80,6 +91,7 @@ userSchema.statics.login = async function(email,password) {
     if(!email || !password){
         throw Error('All fields must be filled ')
     }
+    
     const user = await this
       .findOne({ email })
       .populate('friends', '_id image name level xp')
@@ -87,6 +99,7 @@ userSchema.statics.login = async function(email,password) {
     if(!user){
       throw Error('Incorrect email')
     }
+
     const match = await bcrypt.compare(password,user.password)
     if(!match){
       throw Error('Incorrect password');
