@@ -1,11 +1,7 @@
-const jwt = require("jsonwebtoken");
 const User = require("../models/userModel");
 const mongoose = require("mongoose");
+const generateToken = require("../utils/generatToken");
 
-//create toekn
-const createToken = (_id) => {
-  return jwt.sign({ _id }, process.env.SECRET, { expiresIn: "60000m" });
-};
 
 const usersList = async (req ,res) => {
   try{
@@ -19,7 +15,7 @@ const usersList = async (req ,res) => {
   }
     catch(error){
       console.error(error);
-      return res.status(500).json({error: "Failed to send users name"});
+      return res.status(500).json({error,location:"usersList"});
     }
 }
 
@@ -46,26 +42,24 @@ const friendRequest = async (req, res) => {
     await recipient.save();
     return res.status(200).json({ message: "Friend request sent" });
   } catch (error) {
-    console.log(error.message);
-    res.status(500).json({ error: 'Friend request failed' });
+    console.log(error);
+    res.status(500).json({ error,location:"friendRequest"});
   }
 };
 
 //stay login
 const stayLogin = async (req, res) => {
-  const { token } = req.cookies;
   try {
-    if (token) {
-      const decoded = jwt.verify(token, process.env.SECRET);
       const user = await User
-        .findById(decoded._id,{password:0})
+        .findById(req._id,{password:0,refresh_token:0})
         .populate('friends', '_id image name level xp')
         .populate('requests', '_id image name');
       console.log(user._id.toString());
-      return res.status(200).json(user);
-    }
+      res.status(200).json(user);
+    
   } catch (error) {
-    res.status(400).json({ error: error.message });
+    console.log(error);
+    res.status(400).json({ error,location:"stayLoginUser"});
   }
 };
 
@@ -96,8 +90,8 @@ const acceptFriendRequest = async(req, res, next) =>{
   // return res.status(200).json(recipient);
 }
 catch(error){
-  console.log(error.message);
-  res.status(500).json({ error: 'Friend accept failed' });
+  console.log(error);
+  res.status(500).json({ error,location:"loginUser"});
 }
 }
 
@@ -119,28 +113,41 @@ const removeFriendRequest = async (req, res, next) => {
     next();
     // return res.status(200).json(user);
   } catch (error) {
-    console.log(error.message)
-    return res.status(500).json({error:'Friend remove failed'})
+    console.log(error)
+    return res.status(500).json({error,location:"removeFriendRequest"});
   }
 }
 
 //login user
 const loginUser = async (req, res) => {
-  //console.log(req.body);
-  const { email, password } = req.body;
   try {
-    const user = await User.login(email, password);
-    const token = createToken(user._id);
-    // res.setHeader(['set-Cookie'],['token',token]);
-    res.cookie("token", token, {
+    const { email, password } = req.body;
+    let user = await User.login(email, password);
+
+    const refreshToken = generateToken({_id:user._id,role:user.role},"30m");
+    const accessToken = generateToken({_id:user._id,role:user.role},"5m");
+
+    res.cookie("refreshToken", refreshToken, {
       httpOnly: true,
       sameSite: "lax",
       maxAge: 3600000,
     });
-    user.password = "*****";
+    res.cookie("accessToken", accessToken, {
+      httpOnly: true,
+      sameSite: "lax",
+      maxAge: 3600000,
+    });
+
+    user.refresh_token = refreshToken;
+    await user.save();
+
+    user.refresh_token = "******";
+    user.password = "******";
     res.status(200).json(user);
+
   } catch (error) {
-    res.status(400).json({ error: error.message });
+    console.log(error);
+    res.status(400).json({ error,location:"loginUser" });
   }
 };
 
@@ -150,24 +157,36 @@ const loginUser = async (req, res) => {
 
 //signup user
 const signUser = async (req, res) => {
-  console.log(req.body);
   const { email, password, name } = req.body;
   try {
     if (!name) {
       throw Error("Name is required");
     }
-    const user = await User.signup(email, password, name);
-    const token = createToken(user._id);
-    // res.setHeader(['set-Cookie'],['token',token]);
-    res.cookie("token", token, {
+    let user = await User.signup(email, password, name);
+
+    const refreshToken = generateToken({_id:user._id,role:"user"},"30m");
+    const accessToken = generateToken({_id:user._id,role:"user"},"5m");
+
+    res.cookie("refreshToken", refreshToken, {
       httpOnly: true,
-      sameSite: "strict",
+      sameSite: "lax",
       maxAge: 3600000,
     });
+    res.cookie("accessToken", accessToken, {
+      httpOnly: true,
+      sameSite: "lax",
+      maxAge: 3600000,
+    });
+
+    user.refresh_token = refreshToken;
+    await user.save();
+
     user.password = "******";
+    user.refresh_token = "******";
     res.status(200).json(user);
   } catch (error) {
-    res.status(400).json({ error: error.message });
+    console.log(error);
+    res.status(400).json({ error,location:"signUser" });
   }
 };
 
@@ -185,7 +204,8 @@ const updateUser = async (req, res) => {
     await user.save();
     res.status(200).json(user);
   } catch (error) {
-    res.status(400).json({ error: error.message });
+    console.log(error);
+    res.status(400).json({ error,location:"updateUser" });
   }
 };
 
@@ -197,7 +217,7 @@ const deleteUser = async (req, res) => {
     const user = await User.findByIdAndDelete(id);
     res.status(200).json(user);
   } catch (error) {
-    res.status(400).json({ error: error.message });
+    res.status(400).json({ error,location:"deleteUser" });
   }
 };
 
