@@ -9,3 +9,48 @@
     user-select: none;
 }
 
+.circle-start-game-container{
+    position: absolute;
+    inset: 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.circle-start-game-container .circle-form-container{
+    background-color: white;
+    width: 70vw;
+    padding: 15px;
+    padding-top: 30px;
+    text-align: center;
+    border-radius: 5px;
+}
+
+.circle-start-game-container .circle-form-container p:first-child {
+    font-size: 40px;
+    color: black;
+    font-weight: bold;
+    margin: 0px;
+}
+.circle-start-game-container .circle-form-container p{
+    font-size: 15px;
+    color: gray;
+    margin-bottom: 20px;
+}
+.circle-forms-buttons{
+    display: flex;
+    justify-content: space-between;
+}
+.circle-forms-buttons button{
+    border: none;
+    padding-block: 5px;
+    padding-inline: 10px;
+    border-radius: 10px;
+}
+.circle-forms-buttons .exit{
+    background-color: red;
+}
+.circle-forms-buttons .start {
+    background-color: var(--primary);
+}

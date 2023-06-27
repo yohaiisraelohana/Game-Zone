@@ -1,18 +1,23 @@
 import React, { useEffect, useState ,useRef } from 'react'
+import useUser from '../../../hooks/useUser';
 import './circlesFight.css'
+import { useNavigate } from 'react-router-dom';
 
 export default function CirclesFight() {
     const canvasRef = useRef();// document.querySelector('canvas');
     const [c,setC]= useState();
     let score = 0;
     let scoreElement = document.querySelector('#score');
+    const [display,setDisplay] = useState('flex');
+    const {user,updateXp} = useUser();
+    const [final_score,setFinalScore] = useState(0);
+    const navigate = useNavigate();
 
     useEffect(()=>{
         if (canvasRef) {
             setC(canvasRef.current.getContext('2d'));
             }
     },[canvasRef]);
-
 
     class Player {
         constructor(x,y,radius,color){
@@ -113,7 +118,6 @@ export default function CirclesFight() {
     const particles = [];
 
     function spawEnemies(){
-        
         setInterval(()=>{
             //create random enemy and add it to the array
             const radius = Math.random() * (30 - 5) + 5;
@@ -138,7 +142,7 @@ export default function CirclesFight() {
             }
             enemies.push(new Enemy(x,y,radius,color,velocity));
 
-        },2000);
+        },1000);    
     }
 
     
@@ -150,8 +154,8 @@ export default function CirclesFight() {
             return;
         }
         //design canvas
-        c.fillStyle = 'rgba(0,0,0,0.1)';
-        c.fillRect(0,0,window.innerWidth,window.innerHeight);
+        //c.fillStyle = 'rgba(0,0,0,0.1)';
+        c.clearRect(0,0,window.innerWidth,window.innerHeight);
         // draw player
         player.draw();
         particles.forEach((particle,index)=>{
@@ -184,14 +188,19 @@ export default function CirclesFight() {
             //  if enemy is touching the player stop the game
             if (dist -  enemy.radius - player.radius  < 1 ){
                 cancelAnimationFrame(animationId);
+                if (user) {
+                    updateXp(score);
+                }
+                setFinalScore(score);
+                setDisplay('flex');
             }
             projectiles.forEach((projectile,pindex)=>{
                 const dist = Math.hypot(projectile.x - enemy.x,projectile.y - enemy.y);
 
             //when the enemy touches the projectile
             if (dist -  enemy.radius - projectile.radius  < 1 ) {
-                score += 10;
-                scoreElement.innerHTML = score;
+                
+                
                 //create explosion animation
                 for (let i = 0; i < enemy.radius * 2; i++) {
                     particles.push(
@@ -207,16 +216,18 @@ export default function CirclesFight() {
                 //checking the radius of enemy if big take 10 from his radius else remove him
                 if (enemy.radius - 10 > 5) {
                     enemy.radius -= 10;
-
+                    score += 2;
                     setTimeout(()=>{
                         projectiles.splice(pindex,1);
                     },0);
                 } else {
+                    score += 5;
                     setTimeout(()=>{
                         enemies.splice(index,1);
                         projectiles.splice(pindex,1);
                     },0);
                 }
+                scoreElement.innerHTML = score;
                 }
             })
         })
@@ -234,10 +245,7 @@ export default function CirclesFight() {
         projectiles.push(new Projectile(player.x,player.y,5,'white',velocity));
     })
 
-    // coll the animation game always to check the game
-    animate(); 
-    // call the function to create enemies
-    spawEnemies();
+
 
   return (
     <div className="circle-fight-container">
@@ -247,6 +255,31 @@ export default function CirclesFight() {
             height={window.innerHeight}
             width={innerWidth}>
         </canvas>
+        <div className="circle-start-game-container" style={{display}}>
+            <div className="circle-form-container">
+                <p>{final_score}</p>
+                <p>xp</p>
+                <div className="circle-forms-buttons">
+                    <button 
+                    onClick={()=>navigate(-1)}
+                    className='exit'>
+
+                        Exit
+                    </button>
+                    <button
+                    onClick={()=>{
+                        // coll the animation game always to check the game
+                        animate(); 
+                        // call the function to create enemies
+                        spawEnemies();
+                        setDisplay('none');
+                    }}
+                    className='start'>
+                        Start Game
+                    </button>
+                </div>
+            </div>
+        </div>
      </div>
   )
 }
