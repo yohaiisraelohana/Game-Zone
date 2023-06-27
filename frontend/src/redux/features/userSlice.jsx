@@ -30,8 +30,8 @@ export const stayLogin = createAsyncThunk("user/stayLogin", async () => {
       const response = await apiPost(STAY_LOGIN,{});
       return response.data;
     } catch (error) {
-      console.log(error.response.data.error);
-      throw error.response.data.error;
+      console.log(error.response.data.message);
+      throw error.response.data.message;
     }
 })
 

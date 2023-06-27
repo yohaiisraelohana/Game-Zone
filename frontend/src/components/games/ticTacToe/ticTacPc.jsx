@@ -11,14 +11,15 @@ export default function TicTacPc() {
   const [round, setRound] = useState(0);
   const [winner, setWinner] = useState(null);
   const [toggle, setToggle] = useState(true);
-  const {user,updateXp} = useUser();
-  const [level,setLevel] = useState(null);
+  const { user, updateXp } = useUser();
+  const [level, setLevel] = useState(null);
 
   const reset = () => {
     setBoard(Array(9).fill(null));
     setWinner(null);
     setToggle(true);
     setRound(0);
+    setMove(opposite());
   };
 
   const [winConditions] = useState([
@@ -41,11 +42,7 @@ export default function TicTacPc() {
     for (let j = 0; j < 2; j++) {
       for (let i = 0; i < winConditions.length; i++) {
         const [a, b, c] = winConditions[i];
-        if (
-          board[a] === check &&
-          board[b] === check &&
-          board[c] === check
-        ) {
+        if (board[a] === check && board[b] === check && board[c] === check) {
           setWinner(check);
           if (user) {
             if (check === "X") {
@@ -77,9 +74,7 @@ export default function TicTacPc() {
     let rnd = Math.floor(Math.random() * 9);
 
     if (indexes.length === 0) {
-      setBoard((prev) =>
-        prev.map((square, i) => (i === rnd ? move : square))
-      );
+      setBoard((prev) => prev.map((square, i) => (i === rnd ? move : square)));
       return true;
     }
 
@@ -88,9 +83,7 @@ export default function TicTacPc() {
         rnd = Math.floor(Math.random() * 9);
       }
       console.log(rnd);
-      setBoard((prev) =>
-        prev.map((square, i) => (i === rnd ? move : square))
-      );
+      setBoard((prev) => prev.map((square, i) => (i === rnd ? move : square)));
       return true;
     }
 
@@ -173,14 +166,43 @@ export default function TicTacPc() {
     return false;
   };
 
+  const randomMove = () => {
+    let emptyCells = board.reduce(
+      (cells, cell, index) => (cell === null ? cells.concat(index) : cells),
+      []
+    );
+
+    if (emptyCells.length > 0) {
+      let rnd = Math.floor(Math.random() * emptyCells.length);
+      let randomIndex = emptyCells[rnd];
+      setBoard((prev) =>
+        prev.map((x, i) => (i === randomIndex && x === null ? move : x))
+      );
+    }
+  };
 
   const makeComputerMove = () => {
     setTimeout(() => {
-      if (!toggle) return;
-      if (!starterMove())
-      if (!win())
-      if (!blockUser())
-        advance()
+      if (level === "hard") {
+        if (!toggle) return;
+        if (!starterMove())
+        if (!win())
+        if (!blockUser())
+        if (!advance())
+         randomMove();
+      }
+      if(level === "medium") {
+        if (!toggle) return;
+        if (!starterMove())
+        if (!win())
+        if (!advance())
+        randomMove();
+      }
+      if (level === "easy") {
+        if (!toggle) return;
+        if (!starterMove())
+         randomMove();
+      }
       setMove(opposite());
       setRound(round + 1);
     }, 1000);
@@ -193,12 +215,11 @@ export default function TicTacPc() {
       }
     } else {
       setRound(0);
-
     }
   }, [board, move, round, toggle]);
 
   const doMove = (index) => {
-    if (!toggle || move !== "X") return; 
+    if (!toggle || move !== "X") return;
 
     if (board[index] === null) {
       setBoard((prev) => prev.map((x, i) => (i === index ? move : x)));
@@ -207,12 +228,11 @@ export default function TicTacPc() {
     }
   };
 
-
   return (
     <div className="tic-tac-toe-pc-container">
-      <NavBackButton  />
-    {level ?
-      <div className="game">
+      <NavBackButton />
+      {level ? (
+        <div className="game">
           <div className={`board ${toggle ? "" : "disabled"}`}>
             {board.map((cell, index) => (
               <div key={index} className="cell" onClick={() => doMove(index)}>
@@ -224,8 +244,13 @@ export default function TicTacPc() {
           <button onClick={() => reset()} className="button">
             reset
           </button>
-      </div>
-      : <SelectLevel options={["easy","medium","hard"]} handleChoice={(option)=>setLevel(option)} /> }
+        </div>
+      ) : (
+        <SelectLevel
+          options={["easy", "medium", "hard"]}
+          handleChoice={(option) => setLevel(option)}
+        />
+      )}
     </div>
   );
 }
