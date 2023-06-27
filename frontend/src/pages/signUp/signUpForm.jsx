@@ -52,8 +52,8 @@ export default function SignUpForm({ updateModal,closeModal }) {
         <input
           {...register("name", {
             required: { value: true, message: "name is Required..." },
-            minLength: { value: 10, message: "min 6 chars.." },
-            maxLength: { value: 30, message: "max 40 chars.." },
+            minLength: { value: 2, message: "min 2 chars.." },
+            maxLength: { value: 40, message: "max 40 chars.." },
             pattern: {
               value: nameRegex,
               message: "only alphabet allowed",
@@ -67,8 +67,8 @@ export default function SignUpForm({ updateModal,closeModal }) {
         <input
           {...register("email", {
             required: { value: true, message: "Email is Required..." },
-            minLength: { value: 10, message: "min 8 chars.." },
-            maxLength: { value: 30, message: "max 40 chars.." },
+            minLength: { value: 8, message: "min 8 chars.." },
+            maxLength: { value: 40, message: "max 40 chars.." },
             pattern: {
               value: emailAlphabet,
               message: "only alphabet allowed",
