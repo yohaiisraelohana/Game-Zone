@@ -16,7 +16,7 @@ router.get("/usersList/:name",usersList);
 router.post('/login',validateLogin,loginUser)
 
 //stay login route
-router.post('/stayLogin',stayLogin)
+router.post('/stayLogin',authentication,stayLogin)
 
 //signup route
 router.post('/signup',validateSignUp,signUser)
