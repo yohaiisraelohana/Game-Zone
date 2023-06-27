@@ -47,6 +47,7 @@ const friendRequest = async (req, res) => {
   }
 };
 
+
 //stay login
 const stayLogin = async (req, res) => {
   try {
@@ -62,6 +63,7 @@ const stayLogin = async (req, res) => {
     res.status(400).json({ error,location:"stayLoginUser"});
   }
 };
+
 
 
 //accept friend request
@@ -86,7 +88,7 @@ const acceptFriendRequest = async(req, res, next) =>{
   }
   await recipient.save();
   await sender.save();
-  next();
+  next()
   // return res.status(200).json(recipient);
 }
 catch(error){
@@ -154,7 +156,6 @@ const loginUser = async (req, res) => {
 
 
 
-
 //signup user
 const signUser = async (req, res) => {
   const { email, password, name } = req.body;
@@ -194,7 +195,6 @@ const signUser = async (req, res) => {
 //update user
 const updateUser = async (req, res) => {
   try {
-    console.log(req.body);
     const user = await User.findById(req._id);
     const {xp,level,image,friends} = req.body;
     if (xp)user.xp = xp;
