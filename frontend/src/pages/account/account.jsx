@@ -29,7 +29,6 @@ export default function Account() {
       nav('/');
     }
   },[user])
-  console.log(current_xp);
 
   return (
     <div
