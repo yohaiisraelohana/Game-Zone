@@ -7,6 +7,7 @@ const generateToken = require("../utils/generatToken");
 const authentication = async (req, res, next) => {
   const errorObject = { message: "unauthorized" };
   let userPayload = {};
+  console.log("arrivad to authenticate");
   try {
       // checking if the access token is valid
       const accessToken = req.cookies.accessToken;
@@ -17,6 +18,7 @@ const authentication = async (req, res, next) => {
           const {_id,role} = jwt.verify(accessToken, process.env.SECRET);
           userPayload = {_id,role};
           req._id = _id;
+          req.role = role;
           return next();
       }
       catch {
@@ -32,6 +34,7 @@ const authentication = async (req, res, next) => {
           const {_id,role} = jwt.verify(refreshToken, process.env.SECRET);
           userPayload = {_id,role};
           req._id = _id;
+          req.role = role;
       }
       catch {
           // if the refresh token expired the user will need to login again.
@@ -64,9 +67,11 @@ const authentication = async (req, res, next) => {
 }
 
 
-const authenticationAdmin = ({ user: { role } }, res, next) => {
+const authenticationAdmin = ({ role } , res, next) => {
+    console.log("arrivad to authenticateAdmin");
   if (role == "admin") next();
   else {
+        console.log("authentication admin failed");
       return res.status(401).json({ message: "unauthorized" })
   }
 }

@@ -13,6 +13,11 @@ export const USERS_LIST = USER + "/usersList/";
 export const REMOVE_FRIEND = USER + "/removeFriendRequest";
 export const UPDATE_USER = USER + "/update"; 
 
+//* admin
+//const ADMIN = API_URL + "/user/admin";
+export const ADMIN_GET_USERS = API_URL + "/user/adminUsersList";
+export const ADMIN_UPDATE_USER =  "/user/adminUpdate";
+
 //* memory Game
 const MEMORY_GAME = API_URL + "/memoryGame";
 export const GET_MEMORY_GAMES = MEMORY_GAME;

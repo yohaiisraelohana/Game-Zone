@@ -210,11 +210,11 @@ const updateUser = async (req, res) => {
 };
 
 
+
 //delete user
 const deleteUser = async (req, res) => {
-  const id = req.params.id;
   try {
-    const user = await User.findByIdAndDelete(id);
+    const user = await User.findByIdAndDelete(req._id);
     res.status(200).json(user);
   } catch (error) {
     res.status(400).json({ error,location:"deleteUser" });

@@ -1,8 +1,9 @@
 const express = require('express');
 const {removeFriendRequest,usersList,signUser,loginUser,friendRequest,stayLogin,acceptFriendRequest, updateUser} = require('../controllers/userController')
-const {authentication}  = require('../middleware/requireAuth');
+const {authentication, authenticationAdmin}  = require('../middleware/requireAuth');
 const {validateSignUp,validateLogin, validateUpdateUser} = require('../middleware/validation');
 const { getSignature } = require('../utils/uploadImage');
+const { updateUserByAdmin, deleteUserByAdmin, usersListByAdmin } = require('../controllers/adminController');
 
 const router = express.Router()
 
@@ -33,5 +34,10 @@ router.post('/removeFriendRequest/:id',authentication,removeFriendRequest,stayLo
 //update user
 router.put('/update',authentication,validateUpdateUser,updateUser);
 
+
+//Admin
+router.put('/adminUpdate/:id',authentication,authenticationAdmin,validateUpdateUser,updateUserByAdmin);
+router.delete('/adminDelete/:id',authentication,authenticationAdmin,deleteUserByAdmin);
+router.get('/adminUsersList/:name',authentication,authenticationAdmin,usersListByAdmin);
 
 module.exports = router;

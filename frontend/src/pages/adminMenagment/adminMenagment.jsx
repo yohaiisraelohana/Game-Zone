@@ -1,4 +1,5 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
+import {useNavigate} from 'react-router-dom'
 import useUser from '../../hooks/useUser'
 import './adminMenagment.css';
 import AdminMenagmentNav from './adminMenagmentNav';
@@ -6,12 +7,20 @@ import UsersMenagment from './usersMenagment/usersMenagment';
 import GamesMenagment from './gamesMenagment/gamesMenagment';
 
 export default function AdminMenagment() {
-    const {user:{name}} = useUser();
+    const {user,error} = useUser();
     const [option, setOption] = useState("Users")
     const menagment_options = ["Users","Games"];
-  return (
-    <div className='adminMenagment'>
-        <h1>Hello {name}</h1>
+    const navigate = useNavigate();
+    useEffect(()=>{
+      if(error){
+        navigate("/");
+      }
+    },[error]);
+    console.log(error);
+  return (<>
+    {user ? 
+      <div className='adminMenagment'>
+      <h1>Hello {user.name}</h1> 
         <AdminMenagmentNav 
           selected={option}
           options={menagment_options} 
@@ -19,5 +28,7 @@ export default function AdminMenagment() {
         {   option == "Users" && <UsersMenagment/>  }
         {   option == "Games" && <GamesMenagment/>  }
     </div>
+    : <p>loading</p> }
+    </>
   )
 }
