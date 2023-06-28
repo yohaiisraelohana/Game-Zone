@@ -1,6 +1,7 @@
 <!-- 
                                          TODO
  
+   ! *404page*
 
     *Main*
 1.  
@@ -28,7 +29,10 @@
     *Admin*
 !1.
     put authenticationAdmin on every game changing/adding/deleting route
-
+2.
+    gragh of users in periode
+3.
+    how many users plaied every game
     *NavBar*
 1.
     shadow to dropdown
@@ -69,7 +73,7 @@
 
 
     *LogIn*
-1.  
+!1.  
     finish "forgot your password link"
 2.  
     add red border to error inputs
@@ -115,7 +119,27 @@
     in online game users have option to select price they can play on him
 
     *Puzzle*
-!1. finish the game
+!1. 
+    finish the game
+
+    *breakOutGame*(canvas)
+1.
+    https://youtu.be/ftDxniRTpRQ
+
+    *chess*
+1.
+    https://youtu.be/Iri__zwxwHg
+
+    *candyCash*
+1.
+    https://youtu.be/PBrEq9Wd6_U
+
+    *onFuture*
+1.
+    put all games in backend with categories (popular,thinkink,puzzles)
+2.
+    when someone click on game add to the game in times_played ptropertie 1
+    in the home page present the most played game
 -->
 
 

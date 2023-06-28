@@ -18,6 +18,7 @@ import CirclesFight from '../components/games/circlesFight/circlesFight';
 import TicTacUsers from '../components/games/ticTacToe/ticTacUsers';
 import useUser from '../hooks/useUser';
 import Account from '../pages/account/account';
+import AdminMenagment from '../pages/adminMenagment/adminMenagment';
  
 export const AppRoutes = () => {
   const { user , stayLoginUser} = useUser();
@@ -47,6 +48,7 @@ export const AppRoutes = () => {
           <Route path='/puzzleGame' element={<PuzzleGame/>}/>
           <Route path='/circlesFight' element={<CirclesFight/>}/>
           <Route path='/account' element={<Account/>}/>
+          <Route path='/admin' element={<AdminMenagment/>}/>
         </Route>
       )
     )

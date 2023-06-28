@@ -6,7 +6,7 @@ import {useNavigate } from 'react-router-dom';
 import './userDropDownMenu.css';
 import SearchUsers from '../friends/searchUsers';
 
-export default function UserDropDownMenu({user:{email,name},getModal,closeMenu}) {
+export default function UserDropDownMenu({user:{email,name,role},getModal,closeMenu}) {
   const navigate = useNavigate();
     const user_menu = [
         {name:"Account",to:"/account",function:()=>{
@@ -22,6 +22,7 @@ export default function UserDropDownMenu({user:{email,name},getModal,closeMenu})
           closeMenu();
         }}
       ];
+    
   return (
     <div className="dropdowm-options-container">
     <div className="profile-details">
@@ -30,6 +31,11 @@ export default function UserDropDownMenu({user:{email,name},getModal,closeMenu})
         {email}
       </p>
     </div>
+      {role === "admin" && 
+              <button 
+              className="dropdown-option"
+              onClick={()=>navigate("/admin")}>Managment</button>
+      }
       {user_menu.map((link,i)=>(
         <button 
           key={i}

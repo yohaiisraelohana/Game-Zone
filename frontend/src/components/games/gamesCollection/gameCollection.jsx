@@ -4,30 +4,27 @@ import { Link } from "react-router-dom";
 import "./gameCollection.css";
  
 export default function GameCollection() {
+  const games_collection = [
+    {name:"Memory Game",link:"/memoryGame",className:"memory-game"},
+    {name:"Tic Tac Toe",link:"/ticTacGame",className:"ticTac-game"},
+    {name:"Roulette",link:"/rouletteGame",className:"roulette-game"},
+    {name:"Sudoko",link:"/sudokuGame",className:"sudoko-game"},
+    {name:"Slide Puzzle",link:"/slidePuzzleGame",className:"slide-puzzle-game"},
+    {name:"Puzzle",link:"/puzzleGame",className:"puzzle-game"},
+    {name:"Circles Fight",link:"/circlesFight",className:"circles-fight-game"},
+  ];
+
   return (
     <div>
       <div className="games">
-        <Link to={"/memoryGame"} className="memory-game">
-          <p>Memory Game</p>
-        </Link>
-        <Link to={"/ticTacGame"} className="ticTac-game">
-          <p>Tic Tac Toe</p>
-        </Link>
-        <Link to={"/rouletteGame"} className="roulette-game">
-          <p>Roulette</p>
-        </Link>
-        <Link to={"/sudokuGame"} className="sudoko-game">
-          <p>Sudoko</p>
-        </Link>
-        <Link to={"/slidePuzzleGame"} className="slide-puzzle-game">
-          <p>Slide Puzzle</p>
-        </Link>
-        <Link to={"/puzzleGame"} className="puzzle-game">
-          <p>Puzzle</p>
-        </Link>
-        <Link to={"/circlesFight"} className="puzzle-game">
-          <p>Circles Fight</p>
-        </Link>
+        {games_collection.map((game,i) => (
+          <Link 
+            key={i}
+            to={game.link} 
+            className={game.className}>
+            <p>{game.name}</p>
+          </Link>
+        ))}
       </div>
     </div>
   );
