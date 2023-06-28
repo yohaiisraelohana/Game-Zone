@@ -1,0 +1,19 @@
+/*
+.adminMenagmentNav
+
+*/
+.adminMenagmentNav{
+    display: flex;
+    width: 90vw;
+}
+.adminMenagmentNav button{
+    width: 50%;
+    background-color: transparent;
+    padding: 5px;
+    border: 1px solid white;
+    font-size: larger;
+    border-radius: 5px;
+}
+.adminMenagmentNav .selected{
+    background-color: var(--primary);
+}

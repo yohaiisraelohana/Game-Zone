@@ -1,6 +1,7 @@
 <!-- 
                                          TODO
  
+   ! *404page*
 
     *Main*
 1.  
@@ -10,8 +11,6 @@
     memory games search users and more
 3.  
     use skeletons instead of loading
-!4.
-    select how to make the level nav with route or condition
 5.
     add some styles from https://www.julienthibeaut.xyz/blog
 !6. 
@@ -22,12 +21,18 @@
     change cngradilation allert on winning to something more special
 !9.
     fix errors in sign up 
-
+!10.
+    in friends after sending request to clear input
+11.
+    light and dark mode https://www.youtube.com/watch?v=pZhAiCSqHPs
 
     *Admin*
 !1.
     put authenticationAdmin on every game changing/adding/deleting route
-
+2.
+    gragh of users in periode
+3.
+    how many users plaied every game
     *NavBar*
 1.
     shadow to dropdown
@@ -52,7 +57,8 @@
     change p to input
 7.
     button to solve the sudoku template
-
+8.
+    add count to redux
 
 
     *MemoryGame*
@@ -62,11 +68,12 @@
     update count in redux
 3. 
     make the option to search for any subject user wants in pexels api
-
+4.
+    add count in redux
 
 
     *LogIn*
-1.  
+!1.  
     finish "forgot your password link"
 2.  
     add red border to error inputs
@@ -101,7 +108,8 @@
 !2.
     when start playing put in modal or send to another route for he is will be only in the screen
     (another option is to put in absolute position )
-
+!3.
+    finish the game
     *account*
 !1.  
     fix progress bat to work on the first render
@@ -110,6 +118,28 @@
 1.
     in online game users have option to select price they can play on him
 
+    *Puzzle*
+!1. 
+    finish the game
+
+    *breakOutGame*(canvas)
+1.
+    https://youtu.be/ftDxniRTpRQ
+
+    *chess*
+1.
+    https://youtu.be/Iri__zwxwHg
+
+    *candyCash*
+1.
+    https://youtu.be/PBrEq9Wd6_U
+
+    *onFuture*
+1.
+    put all games in backend with categories (popular,thinkink,puzzles)
+2.
+    when someone click on game add to the game in times_played ptropertie 1
+    in the home page present the most played game
 -->
 
 
