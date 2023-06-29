@@ -1,14 +1,14 @@
 import React, { useEffect } from 'react'
-import {apiGet} from '../../../services/apiRequests'
 import './usersMenagment.css'
-import { ADMIN_GET_USERS } from '../../../constants/urls'
-import axios from 'axios'
+import useUser from '../../../hooks/useUser'
 
 export default function UsersMenagment() {
+  const [users, setUsers] = useState(null);
+  const {adminGetUsers} = useUser();
  const getUsers = async () => {
    try {
-     const {data} = await axios({method:"GET",url:ADMIN_GET_USERS,withCredentials:true});
-     console.log(data);
+     const data = await adminGetUsers();
+     setUsers(data);
    } catch (error) {
      console.log(error);
    }
@@ -17,6 +17,15 @@ export default function UsersMenagment() {
     getUsers();
   },[])
   return (
-    <div>usersMenagment</div>
+    <div>
+      <div className="">
+        {users ? users.map((u,i)=>(
+          <div className="" key={i}>
+            <h2>{u.name}</h2>
+          </div>
+        )):
+        <p>Loading</p> }
+      </div>
+    </div>
   )
 }

@@ -18,7 +18,7 @@ export default function AdminMenagment() {
     },[error]);
     console.log(error);
   return (<>
-    {user ? 
+    {user && user.role == "admin" ? 
       <div className='adminMenagment'>
       <h1>Hello {user.name}</h1> 
         <AdminMenagmentNav 

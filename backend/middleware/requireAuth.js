@@ -56,7 +56,7 @@ const authentication = async (req, res, next) => {
       res.cookie('refreshToken', newRefreshToken);
       
       // creating a new access token
-      const newAccessToken = generateToken({ _id:userPayload._id, role: userPayload.role }, "5m");
+      const newAccessToken = generateToken({ _id:userPayload._id, role: userPayload.role }, "1000m");
       res.cookie('accessToken',newAccessToken);
       next();
   }
