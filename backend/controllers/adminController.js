@@ -6,7 +6,7 @@ const usersListByAdmin = async (req ,res) => {
       let filter = {};
       const per_page = req.query.per_page || 50;
       const page = req.query.page - 1 || 0;
-      let name = req.params.name;
+      const name = req.query.name;
 
       if(name) {
         filter.name = new RegExp(name,"i");
