@@ -34,7 +34,9 @@ export default function UserDropDownMenu({user:{email,name,role},getModal,closeM
       {role === "admin" && 
               <button 
               className="dropdown-option"
-              onClick={()=>navigate("/admin")}>Managment</button>
+              onClick={()=>{
+                navigate("/admin");
+                closeMenu();}}>Managment</button>
       }
       {user_menu.map((link,i)=>(
         <button 

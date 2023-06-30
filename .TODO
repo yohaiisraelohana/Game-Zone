@@ -27,6 +27,10 @@
     light and dark mode https://www.youtube.com/watch?v=pZhAiCSqHPs
 !12.
     option for use to edit image
+!13.
+    function on the account component wich will check if the user is still connected
+
+
     *Admin*
 !1.
     put authenticationAdmin on every game changing/adding/deleting route
@@ -141,6 +145,11 @@
 2.
     when someone click on game add to the game in times_played ptropertie 1
     in the home page present the most played game
+
+
+
+
+*! check cookies time works
 -->
 
 

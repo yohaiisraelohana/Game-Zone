@@ -14,9 +14,8 @@ export const REMOVE_FRIEND = USER + "/removeFriendRequest";
 export const UPDATE_USER = USER + "/update"; 
 
 //* admin
-//const ADMIN = API_URL + "/user/admin";
-export const ADMIN_GET_USERS = API_URL + "/user/adminUsersList";
-export const ADMIN_UPDATE_USER =  "/user/adminUpdate";
+export const ADMIN_GET_USERS = USER + "/adminUsersList";
+export const ADMIN_UPDATE_USER = USER + "/adminUpdate/" ;
 
 //* memory Game
 const MEMORY_GAME = API_URL + "/memoryGame";
