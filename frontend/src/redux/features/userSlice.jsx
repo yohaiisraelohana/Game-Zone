@@ -107,7 +107,7 @@ const userSlice = createSlice({
         state.loading = false;
     })
     .addCase(signUp.rejected, (state, action) => {
-        state.error = action.payload;
+        state.error = action.error.message;
         state.loading = false;
       })
     .addCase(stayLogin.pending , (state,action) => {

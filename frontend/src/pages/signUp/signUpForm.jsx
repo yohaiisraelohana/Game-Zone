@@ -88,6 +88,10 @@ export default function SignUpForm({ updateModal,closeModal }) {
           type={show_password ? "text" : 'password'}
           placeholder="Type Password.."
         />
+        {errors.password && <p>{errors.password.message}</p>}
+        <div>
+          <p>{error}</p>
+        </div>
         <button className="signUp-button">SignUp</button>
       </form>
     </div>
