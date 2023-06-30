@@ -54,6 +54,7 @@
 
 .signUp-form .signUp-button{
     background-color: var(--primary);
+    width: 40%;
     border: none;
     margin-top: 20px;
     padding: 10px 30px;
@@ -79,4 +80,11 @@
     position: absolute;
     top: 16%;
     left: 84%; 
+}
+
+.error-server p {
+    color: red;
+}
+.error-client p{
+    color: red;
 }

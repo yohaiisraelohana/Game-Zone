@@ -62,7 +62,9 @@ export default function LogInForm({ updateModal,closeModal }) {
           placeholder="yourEmail@..."
           type="text"
         />
+        <div className="error-client">
         {errors.email && <p>{errors.email.message}</p>}
+        </div>
         <label>Password</label>
         <input
           {...register("password", {
@@ -73,8 +75,10 @@ export default function LogInForm({ updateModal,closeModal }) {
           type={show_password ? "text" : 'password'}
           placeholder="Type Password.."
         />
+        <div className="error-client">
         {errors.password && <p>{errors.password.message}</p>}
-        <div>
+        </div>
+        <div className="error-server">
           <p>{error}</p>
         </div>
         <Link className="forgot-password">Forgot your password ?</Link>

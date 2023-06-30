@@ -1,7 +1,7 @@
 import React from 'react'
 import './usersList.css';
 import useUser from '../../hooks/useUser';
-export default function UsersList({users}) {
+export default function UsersList({users,handleClearInput}) {
     const {user:{friends,_id,requests},sendFriendRequest,acceptFriendRequest,removeFriendRequest} = useUser();
     console.log({users,friends,requests});
   return (
@@ -15,15 +15,15 @@ export default function UsersList({users}) {
                 
                 {
                   friends.find(friend => friend._id === user._id) 
-                  ?  <button onClick={()=>{removeFriendRequest(user._id)}} className='remove' >REMOVE</button>   
+                  ?  <button onClick={()=>{removeFriendRequest(user._id),handleClearInput()}} className='remove' >REMOVE</button>   
                   :  (requests.find(request => request._id == user._id) 
                   ? <button
-                    onClick={()=>acceptFriendRequest(user._id)}
+                    onClick={()=>{acceptFriendRequest(user._id),handleClearInput()}}
                     className='pending'>ACCEPT</button> 
                   : <button 
                   onClick={()=>
                     {
-                      sendFriendRequest(user._id);
+                      sendFriendRequest(user._id),handleClearInput();
                     }
                   } 
                   className={user.requests && user.requests.find(request  => request === _id ) ? 'pending' : 'add'}

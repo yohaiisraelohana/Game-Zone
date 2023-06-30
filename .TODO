@@ -20,9 +20,9 @@
 8.
     change cngradilation allert on winning to something more special
 !9.
-    fix errors in sign up 
+    fix errors in sign up  - (fixed by noam)
 !10.
-    in friends after sending request to clear input
+    in friends after sending request to clear input (fixed by noam)
 11.
     light and dark mode https://www.youtube.com/watch?v=pZhAiCSqHPs
 !12.
@@ -81,14 +81,14 @@
 !1.  
     finish "forgot your password link"
 2.  
-    add red border to error inputs
+    add red border to error inputs(fixed by noam- instead of border the text color is red)
 
 
 
 
     *SignUp*
 1.  
-    add red border to error inputs
+    add red border to error inputs(fixed by noam- instead of border the text color is red)
 
 
 
