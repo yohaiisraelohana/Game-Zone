@@ -1,37 +1,46 @@
-import React,{useEffect, useState} from 'react'
+import React, { useEffect, useState, useRef } from 'react';
 import './searchUsers.css';
 import UsersList from './usersList';
 import useUser from '../../hooks/useUser';
-export default function SearchUsers({closeUsersList}) {
-    const {searchUser}  = useUser();
-    const [users,setUsers] = useState(null);
-    const [search_input,setSerchInput] = useState(null);
-    const hundleInput = async () => {
-      try {
-        const users_searched = await searchUser(search_input);
-        console.log(users_searched);
-        setUsers(users_searched);
-      } catch (error) {
-        console.log(error);
-      }
-    };
 
-    useEffect(()=>{
-      if (search_input && search_input.length > 2) {
-        hundleInput();
-      } else {
-        setUsers(null);
-      }
-    },[search_input])
+export default function SearchUsers() {
+  const { searchUser } = useUser();
+  const [users, setUsers] = useState(null);
+  const searchInputRef = useRef(null);
+
+  const handleInput = async () => {
+    try {
+      const usersSearched = await searchUser(searchInputRef.current.value);
+      console.log(usersSearched);
+      setUsers(usersSearched);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  useEffect(() => {
+    if (searchInputRef.current && searchInputRef.current.value.length > 2) {
+      handleInput();
+    } else {
+      setUsers(null);
+    }
+  }, []);
+
+  const handleClearInput = () => {
+    searchInputRef.current.value = "";
+    setUsers(null);
+  };
+
   return (
     <div className='search-users-list-container'>
-    <h3>Search For Friends</h3>
-    <input 
-      type="text" 
-      className='search-input'
-      onChange={(e)=>setSerchInput(e.target.value)}
+      <h3>Search For Friends</h3>
+      <input
+        type="text"
+        className='search-input'
+        ref={searchInputRef}
+        onChange={handleInput}
       />
-     {users && <UsersList users={users} />}
+      {users && <UsersList users={users} handleClearInput={handleClearInput}/>}
     </div>
-  )
+  );
 }

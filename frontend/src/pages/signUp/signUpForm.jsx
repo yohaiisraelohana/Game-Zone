@@ -51,7 +51,7 @@ export default function SignUpForm({ updateModal,closeModal }) {
         <label>Name</label>
         <input
           {...register("name", {
-            required: { value: true, message: "name is Required..." },
+            required: { value: true, message: "Name is Required..." },
             minLength: { value: 2, message: "min 2 chars.." },
             maxLength: { value: 40, message: "max 40 chars.." },
             pattern: {
@@ -62,7 +62,9 @@ export default function SignUpForm({ updateModal,closeModal }) {
           placeholder="Type Your Name.."
           type="text"
         />
+        <div className="error-client">
         {errors.name && <p>{errors.name.message}</p>}
+        </div>
         <label>Email</label>
         <input
           {...register("email", {
@@ -77,7 +79,9 @@ export default function SignUpForm({ updateModal,closeModal }) {
           placeholder="yourEmail@..."
           type="text"
         />
+        <div className="error-client">
         {errors.email && <p>{errors.email.message}</p>}
+        </div>
         <label>Password</label>
         <input
           {...register("password", {
@@ -88,10 +92,12 @@ export default function SignUpForm({ updateModal,closeModal }) {
           type={show_password ? "text" : 'password'}
           placeholder="Type Password.."
         />
+        <div className="error-client">
         {errors.password && <p>{errors.password.message}</p>}
-        <div>
-          <p>{error}</p>
         </div>
+        {<div className="error-server">
+          <p>{error}</p>
+        </div>}
         <button className="signUp-button">SignUp</button>
       </form>
     </div>
