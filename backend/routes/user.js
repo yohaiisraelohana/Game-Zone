@@ -38,6 +38,6 @@ router.put('/update',authentication,validateUpdateUser,updateUser);
 //Admin
 router.put('/adminUpdate/:id',authentication,authenticationAdmin,validateUpdateUser,updateUserByAdmin);
 router.delete('/adminDelete/:id',authentication,authenticationAdmin,deleteUserByAdmin);
-router.get('/adminUsersList/:name',authentication,authenticationAdmin,usersListByAdmin);
+router.get('/adminUsersList',authentication,authenticationAdmin,usersListByAdmin);
 
 module.exports = router;

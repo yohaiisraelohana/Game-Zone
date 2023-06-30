@@ -1,5 +1,5 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import { ACCEPT_FRIEND, ADD_FRIEND, LOGIN_USER, SIGNUP_USER, STAY_LOGIN, UPDATE_USER, USERS_LIST } from "../../constants/urls";
+import { ACCEPT_FRIEND, ADD_FRIEND, LOGIN_USER, SIGNUP_USER, STAY_LOGIN, UPDATE_USER, USERS_LIST,REMOVE_FRIEND } from "../../constants/urls";
 import { apiGet, apiPost, apiPut } from "../../services/apiRequests";
 
 
