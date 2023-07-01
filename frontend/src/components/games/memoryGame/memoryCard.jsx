@@ -3,7 +3,7 @@ import './memoryCard.css';
 
 export default function MemoryCard({card,choiseCard,flipped,disabled}) {
   return (
-    <div className={`${(flipped || card.mached) && "flipped"} memory-card`}>
+    <div className={`${(flipped || card.mached) && "flipped"} MemoryCard`}>
       
       <div 
       onClick={()=> !disabled && choiseCard(card)}

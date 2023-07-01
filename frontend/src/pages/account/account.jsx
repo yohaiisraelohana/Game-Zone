@@ -32,7 +32,7 @@ export default function Account() {
 
   return (
     <div
-      className='account'
+      className='Account'
       >
         {
           user ?

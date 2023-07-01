@@ -1,4 +1,4 @@
-.sliding-puzzle-collection{
+.SlidePuzzleCollection{
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
@@ -6,16 +6,16 @@
     gap:30px ;
 }
 
-.image-preview{
+.SlidePuzzleCollection .image-preview{
     position: relative;
 }
 
-.sliding-puzzle-collection img{
+.SlidePuzzleCollection img{
     height: 150px;
     width: 150px;
 }
 
-.demo-grid{
+.SlidePuzzleCollection .demo-grid{
     width: 150px;
     display: flex;
     flex-wrap: wrap;
@@ -23,11 +23,11 @@
     left: 0px;
     top: 0px;
 }
-.inner-demo-grid{
+.SlidePuzzleCollection .inner-demo-grid{
     width:49px;
     height: 49px;
     border:  0.5px solid white;
 }
-.inner-demo-grid:last-child{
+.SlidePuzzleCollection .inner-demo-grid:last-child{
     background-color: rgba(255, 255, 255,0.4)
 }

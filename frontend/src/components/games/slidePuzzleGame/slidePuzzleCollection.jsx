@@ -5,7 +5,7 @@ export default function SlidePuzzleCollection({updatePuzzleImage,images_collecti
   const {setImage} = useCloudinaryImages();
   console.log(images_collection);
   return (
-    <div className='sliding-puzzle-collection'>
+    <div className='SlidePuzzleCollection'>
       {images_collection && images_collection.map((image)=>(
         <div 
           className="image-preview" 

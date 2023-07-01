@@ -5,7 +5,7 @@ export default function UsersList({users,handleClearInput}) {
     const {user:{friends,_id,requests},sendFriendRequest,acceptFriendRequest,removeFriendRequest} = useUser();
     console.log({users,friends,requests});
   return (
-      <div className='users-list'>
+      <div className='UsersList'>
         {users && users.map((user,i) => user._id != _id && (
             <div className='user' key={i}>
               <div className="user-profile">

@@ -33,7 +33,7 @@ export default function SlidePuzzleGame() {
 
   console.log({currentImage});
   return (
-    <div className='sliding-puzzle-game-container' >
+    <div className='SlidePuzzleGame' >
       {currentImage
         ? 
           <div>

@@ -1,26 +1,18 @@
-.sudoku-game{
+.SudokuGameStart{
     width: 100%;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     position: relative;
 }
-.sudoku-grid{
+.SudokuGameStart .sudoku-grid{
     display: grid;
     grid-template-columns: repeat(9,40px);
     padding-left: 5px;
     padding-top: 5px;
 }
-/* .easy{
-    border: 5px green solid;
-}
-.medium{
-    border: 5px orange solid;
-}
-.hard{
-    border: 5px red solid;
-} */
-.sudoku-grid > * {
+
+.SudokuGameStart .sudoku-grid > * {
     background-color: white;
     color: #333;
     border: 1px black solid;
@@ -29,29 +21,29 @@
     font-size: 20px;
 }
 
-.exist-easy{
+.SudokuGameStart .exist-easy{
     background-color: lightgreen;
 }
-.exist-medium{
+.SudokuGameStart .exist-medium{
     background-color: lightsalmon;
 }
-.exist-hard{
+.SudokuGameStart .exist-hard{
     background-color: lightcoral;
 }
 
-.wrong-number{
+.SudokuGameStart .wrong-number{
     background-color: red;
 }
 
-.border-right{
+.SudokuGameStart .border-right{
     border-right: 5px black solid;
 }
 
-.border-bottom{
+.SudokuGameStart .border-bottom{
     border-bottom: 5px black solid;
 }
 
-.reset-sudoku{
+.SudokuGameStart .reset-sudoku{
     margin-block: 3vh;
     border: none;
     background-color: var(--primary);

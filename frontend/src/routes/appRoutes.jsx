@@ -19,6 +19,7 @@ import TicTacUsers from '../components/games/ticTacToe/ticTacUsers';
 import useUser from '../hooks/useUser';
 import Account from '../pages/account/account';
 import AdminMenagment from '../pages/adminMenagment/adminMenagment';
+import SudokuMenagmentOptions from '../pages/adminMenagment/gamesMenagment/sudokuMenagment/sudokuMenagmentOptions';
  
 export const AppRoutes = () => {
   const { user , stayLoginUser} = useUser();
@@ -43,6 +44,7 @@ export const AppRoutes = () => {
           <Route path='/ticTacGame/users' element={<TicTacUsers/>}/>
           <Route path='/sudokuGame' element={<SudokuGame/>} />
           <Route path='/sudokuGame/:level' element={<SudokuGameStart/>} />
+          <Route path='/sudokuGame/menagment'  element={<SudokuMenagmentOptions/>}/>
           <Route path='/rouletteGame' element={<RouletteGame/>} />
           <Route path='/slidePuzzleGame' element={<SlidePuzzleGame/>} />
           <Route path='/puzzleGame' element={<PuzzleGame/>}/>

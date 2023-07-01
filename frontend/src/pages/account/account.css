@@ -1,14 +1,14 @@
-.account-container{
+.Account .account-container{
     width: 100vw;
     display: flex;
 }
-.account-user-details{
+.Account .account-user-details{
     margin: auto;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
 }
-.account-user-details .account-profile-img{
+.Account .account-user-details .account-profile-img{
     height: 200px;
     width: 200px;
     border-radius: 10px;
@@ -16,20 +16,20 @@
     margin-inline: 100px;
 }
 
-.account-user-details .user-name{
+.Account .account-user-details .user-name{
     font-weight: bold;
     text-align: center;
     align-self: end;
     margin-block: 10px;
     margin-right: 10px;
 }
-.account-user-details .level-container{
+.Account .account-user-details .level-container{
     position: static;
     display: flex;
     justify-content: center;
     align-items: center;
 }
-.account-user-details .level-container .level{
+.Account .account-user-details .level-container .level{
     z-index: 2;
     font-size: 15px;
     background-color: white;
@@ -39,77 +39,77 @@
     margin-left: -42px;
     border-radius: 5px;
 }
-.account-user-details .level-container .level-icon{
+.Account .account-user-details .level-container .level-icon{
     position: static;
     font-size: 50px;
     top: 0px;
     left: 0px;
 }
 
-.xp-container{
+.Account .xp-container{
     width: 100%;
     display: flex;
     justify-content: center;
     position: relative;
 }
-.xp-container progress{
+.Account .xp-container progress{
     height: 30px;
     width: 300px;
 
 }
-progress[value] {
+.Account progress[value] {
     -webkit-appearance: none;
     appearance: none;
     width: 250px;
     height: 20px;
     
 }
-progress[value]::-webkit-progress-bar {
+.Account progress[value]::-webkit-progress-bar {
     background-color: #000000;
     border-radius: 5px;
     box-shadow: 0 2px 5px rgba(255, 255, 255) ;    
 }
-progress[value]::-webkit-progress-value {
+.Account progress[value]::-webkit-progress-value {
     background-image:
          -webkit-linear-gradient(#01faff, #1544ff);
       border-radius: 2px; 
       background-size: 35px 20px, 100% 100%, 100% 100%;
       transition: all 3s ease-in-out;
 }
-.xp-details{
+.Account .xp-details{
     position: absolute;
     display: flex;
     justify-content: space-between;
     width: 240px;
     padding-inline: 5px ;
 }
-.xp-details p:first-child{
+.Account .xp-details p:first-child{
     font-weight: bold;
 }
-.xp-details p:last-child{
+.Account .xp-details p:last-child{
     font-size: small;
     align-self: center;
 }
-.details-container{
+.Account .details-container{
     width: 80%;
     margin-top: 10px;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;  
 }
-.details-container p{
+.Account .details-container p{
     margin-block: 5px;
 }
-.details-container p:first-child{
+.Account .details-container p:first-child{
     width: 100%;
     font-size: 20px;
     text-align: center;
 }
-.details-container p:nth-child(2){
+.Account .details-container p:nth-child(2){
     width: 100%;
     text-align: center;
 }
-.details-container button{
+.Account .details-container button{
     border: none;
     background-color: transparent;
     padding: 5px;
@@ -118,14 +118,14 @@ progress[value]::-webkit-progress-value {
     text-transform: capitalize;
 }
 
-.friends-container .selected{
+.Account .friends-container .selected{
     color: var(--primary);    
 }
-.amount {
+.Account .amount {
     align-self: center;
 }
 
-.account-container .user {
+.Account .account-container .user {
     display: flex;
     width: 350px;
     justify-content: space-between;
@@ -134,17 +134,17 @@ progress[value]::-webkit-progress-value {
     padding-block: 10px;
 }
 
-.account-container .user .user-profile{
+.Account .account-container .user .user-profile{
     display: flex;
     align-items: end;
 }
 
 
-.account-container .user .user-profile .user-profile-img{
+.Account .account-container .user .user-profile .user-profile-img{
     height: 40px;
     width: 40px;
 }
-.account-container .user button{
+.Account .account-container .user button{
     max-height: 30px;
     align-self: self-end;
     margin-bottom: 4px;

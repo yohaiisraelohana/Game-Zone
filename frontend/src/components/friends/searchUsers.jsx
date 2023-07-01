@@ -32,7 +32,7 @@ export default function SearchUsers() {
   };
 
   return (
-    <div className='search-users-list-container'>
+    <div className='SearchUsers'>
       <h3>Search For Friends</h3>
       <input
         type="text"

@@ -229,7 +229,7 @@ export default function TicTacPc() {
   };
 
   return (
-    <div className="tic-tac-toe-pc-container">
+    <div className="TicTacPc">
       <NavBackButton />
       {level ? (
         <div className="game">

@@ -24,7 +24,7 @@ export default function UserDropDownMenu({user:{email,name,role},getModal,closeM
       ];
     
   return (
-    <div className="dropdowm-options-container">
+    <div className="UserDropDownMenu">
     <div className="profile-details">
       <p>{name}</p>
       <p className="email">

@@ -1,4 +1,4 @@
-.memory-card {
+.MemoryCard {
     margin-block: 10px;
     display: flex;
     height: 150px;
@@ -6,7 +6,7 @@
     position: relative;
 }
 
-.memory-card .back{
+.MemoryCard .back{
     width: 100%;
     height: 100%;
     background-position: center;
@@ -17,7 +17,7 @@
     border-radius: 5px;
 }
 
-.memory-card .front{
+.MemoryCard .front{
     width: 100%;
     height: 100%;
     background-position: center;

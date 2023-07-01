@@ -16,7 +16,7 @@ export default function GameCollection() {
 
   return (
     <div>
-      <div className="games">
+      <div className="GameCollection">
         {games_collection.map((game,i) => (
           <Link 
             key={i}

@@ -1,4 +1,4 @@
-.login-container{
+.LogInForm{
     background-color: rgb(26, 22, 22);
     border-radius: 10px;
     padding: 10px;
@@ -11,17 +11,17 @@
     width: 85vw;
 }
 
-.login-nav{
+.LogInForm .login-nav{
     color: var(--primary);
     font-size: 25px;
     
 }
-.sign-up{
+.LogInForm .sign-up{
     border: none;
     background-color: transparent;
 }
 
-.login-form{
+.LogInForm .login-form{
     width: 100%;
     display: flex;
     justify-content: center;
@@ -29,13 +29,13 @@
     position: relative;
 }
 
-.login-form label{
+.LogInForm .login-form label{
     width: 100%;
     margin-inline:12% ;
     margin-top: 15px;
 }
 
-.login-form input{
+.LogInForm .login-form input{
     width: 75%;
     padding: 7px;
     background-color: transparent;
@@ -44,7 +44,7 @@
     margin: 2px;
 }
 
-.forgot-password{
+.LogInForm .forgot-password{
     color: var(--primary);
     font-size: small;
     margin-top: 10px;
@@ -52,35 +52,35 @@
     text-align: center;
 }
 
-.login-form .login-button{
+.LogInForm .login-form .login-button{
     background-color: var(--primary);
     border: none;
     margin-top: 20px;
     padding: 10px 30px;
 }
 
-.eye-icon{
+.LogInForm .eye-icon{
     position: absolute;
     left: 79%;
     top: 52%;
 }
 
-.lock-icon {
+.LogInForm .lock-icon {
     position: absolute;
     left: 84%;
     top: 52%;
 }
-.email-icon{
+.LogInForm .email-icon{
     position: absolute;
     top: 20%;
     left: 84%;
 }
 
-.error-server p {
+.LogInForm .error-server p {
     color: red;
 }
 
-.error-client p{
+.LogInForm .error-client p{
     color: red;
 }
 

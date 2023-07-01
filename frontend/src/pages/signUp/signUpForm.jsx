@@ -31,7 +31,7 @@ export default function SignUpForm({ updateModal,closeModal }) {
   },[user]);
 
   return (
-    <div className="signUp-container">
+    <div className="SignUpForm">
       <div className="signUp-nav">
         SignUp
         <button

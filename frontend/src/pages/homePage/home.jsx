@@ -23,7 +23,7 @@ export default function Home() {
   }, [socket]);
 
   return (
-    <div className='home'>
+    <div className='Home'>
       <input type="text" onChange={(event) => {setMessage(event.target.value)}} />
       <button onClick={sendMessage}>send message</button>
       <h1>Message:</h1>

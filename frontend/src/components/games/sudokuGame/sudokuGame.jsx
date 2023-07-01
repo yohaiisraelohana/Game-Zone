@@ -1,23 +1,28 @@
-import React, { useEffect, useState } from 'react'
-import './sudokuGame.css'
+import React from 'react'
+import { useNavigate } from 'react-router-dom';
+
 import useSudoku from '../../../hooks/useSudoku';
+
 import SudokuGameNav from './sudokuGameNav';
 import SudokuCollection from './sudokuCollection';
 import NavBackButton from '../../reusfullComponents/navigateBackButton/navBackButton'
 
-export default function SudokuGame() {
-    const {getSudokuTemolates} = useSudoku();
+import './sudokuGame.css'
 
-    useEffect(()=>{
-        getSudokuTemolates();
-    },[])
+export default function SudokuGame() {
+    const {setSudokuTemplate} = useSudoku();
+    const navigate = useNavigate();
 
   return ( 
-    <div className='sudoku-game'>
+    <div className='SudokuGame'>
       <NavBackButton />
         <h2>sudokuGame</h2>
         <SudokuGameNav />
-        <SudokuCollection/>
+        <SudokuCollection
+          handleClick={(sudoku)=>{
+            setSudokuTemplate(sudoku.template);
+            navigate(`/sudokuGame/${sudoku.level}`);
+        }} />
     </div>
   )
 }

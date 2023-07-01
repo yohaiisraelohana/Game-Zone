@@ -3,7 +3,7 @@ import './rouletteBoard.css'
 
 export default function RouletteBoard({setChoice,setRevard,chice}) {
   return (
-    <div className='board-container'>
+    <div className='RouletteBoard'>
       <div className="rows-options-container">
       <div className="two-rows-container">
             {[[1,2,3,4,5,6],[7,8,9,10,11,12],[13,14,15,16,17,18]
@@ -41,7 +41,7 @@ export default function RouletteBoard({setChoice,setRevard,chice}) {
                 setChoice([i]);
                 setRevard(36);
               }}
-              className={`${chice && chice.includes(i) ? " selected-number " : ""}${i == 0 ? " zero" : n.color}`}
+              className={`${chice && chice.includes(i) ? " selected-number " : ""}${i == 0 ? " zero" : `${n.color}-cell`}`}
               key={i}>{i}</button>
           ))}
           {[[1,4,7,10,13,16,19,22,25,28,31,34],
@@ -77,8 +77,8 @@ export default function RouletteBoard({setChoice,setRevard,chice}) {
           [
             {name:"1 to 18",value:[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18]},
             {name:"EVEN",value:[1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35]},
-            {name:"<>",className:"red",value:[1,3,5,7,9,12,14,16,18,19,21,23,25,27,30,32,34,36]},
-            {name:"<>",className:"black",value:[2,4,6,8,10,11,13,15,17,20,22,24,26,28,29,31,33,35]},
+            {name:"<>",className:"red-option",value:[1,3,5,7,9,12,14,16,18,19,21,23,25,27,30,32,34,36]},
+            {name:"<>",className:"black-option",value:[2,4,6,8,10,11,13,15,17,20,22,24,26,28,29,31,33,35]},
             {name:"ODD",value:[2,4,6,8,10,12,14,16,18,20,22,24,26,28,30,32,34,36]},
             {name:"19 to 36",value:[19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36]}
           ].map((n,i)=>(

@@ -1,5 +1,6 @@
-.dropdowm-options-container{
+.UserDropDownMenu{
     position: absolute;
+    z-index: 2;
     top:5px;
     left: -33vw;
     width: 43vw;
@@ -11,32 +12,32 @@
     padding: 5px;
     justify-content: center;
 }
-.dropdowm-options-container .profile-details{
+.UserDropDownMenu .profile-details{
     border-bottom: var(--primary) 1px solid;
     overflow-wrap: break-word;
     width: calc(43vw - 10px);
     padding-block:10px ;
     margin-bottom: 5px;
 }
-.dropdowm-options-container .profile-details p{
+.UserDropDownMenu .profile-details p{
     color: black;
     font-weight: bolder;
 }
-.dropdowm-options-container .profile-details .email{
+.UserDropDownMenu .profile-details .email{
     font-size: 12px;
     color:#333;
     font-weight: normal;
     padding-top: 5px;
 }
 
-.dropdown-option{
+.UserDropDownMenu .dropdown-option{
     background-color: transparent;
     border: none;
     color: black;
     width: 100%;
     padding-block:10px ;
 }
-.dropdown-option:hover{
+.UserDropDownMenu .dropdown-option:hover{
     background-color: var(--primary);
     color: white;
     border-radius: 5px;

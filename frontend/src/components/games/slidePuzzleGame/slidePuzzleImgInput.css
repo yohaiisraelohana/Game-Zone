@@ -1,10 +1,10 @@
-.slide-pizzle-input{
+.SlidePuzzleImgInput{
     padding-block: 20px;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
 }
-.slide-pizzle-input .open-input{
+.SlidePuzzleImgInput .open-input{
     background-color: var(--primary);
     border: none;
     padding: 3px;
@@ -12,7 +12,7 @@
     width: 75%;
     margin-block:10px;
 }
-.slide-pizzle-input .drop-container {
+.SlidePuzzleImgInput .drop-container {
     position: relative;
     display: flex;
     gap: 10px;

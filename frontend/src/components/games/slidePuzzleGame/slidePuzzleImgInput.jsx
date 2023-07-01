@@ -19,7 +19,7 @@ export default function SlidePuzzleImgInput() {
     };
   
     return (
-      <div className='slide-pizzle-input'>
+      <div className='SlidePuzzleImgInput'>
           <button 
             onClick={()=>setOpenInput(!open_input)}
             className='open-input'>click to play with your own image</button>

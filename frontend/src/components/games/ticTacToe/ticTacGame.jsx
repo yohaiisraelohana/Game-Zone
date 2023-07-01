@@ -6,7 +6,7 @@ import NavBackButton from '../../reusfullComponents/navigateBackButton/navBackBu
 export default function TicTacGame() {
 
   return (
-    <div className='tic-tac-toe-container'>
+    <div className='TicTacGame'>
       <NavBackButton to={"/"} />
     <div className="type">
       <Link to={"/ticTacGame/pc"} className="ticTac-pc">

@@ -92,7 +92,7 @@ export default function SlidePuzzleStartGame({image,box_size}) {
       console.table(initial);
       console.table(imagesArr);
   return (
-    <div className="slide-puzzle-game-start">
+    <div className="SlidePuzzleStartGame">
       {level ?
       <div 
           className="slide-grid"

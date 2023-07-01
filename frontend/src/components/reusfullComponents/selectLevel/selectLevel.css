@@ -1,4 +1,4 @@
-.level-options-container{
+.SelectLevel{
     width: 70vw;
     height: 60vh;
 
@@ -12,7 +12,7 @@
     align-content: start;
     
 }
-.level-options-container .level-options{
+.SelectLevel .level-options{
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -21,7 +21,7 @@
     height: 85%;
     width: 80%;
 }
-.level-options-container .level-options button{
+.SelectLevel  .level-options button{
     width: 100%;
     height: 25%;
     background-color: var(--primary);
@@ -30,6 +30,6 @@
     border-radius: 10px;
     font-size: 30px;
 }
-.level-options-container h2{
+.SelectLevel  h2{
     margin-block: 4%;
 }

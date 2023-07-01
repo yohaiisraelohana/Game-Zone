@@ -7,7 +7,7 @@ export default function SudokuGameNav() {
       getSudokuTemolates(`?level=${level}`)
     }
   return (
-    <div className='sudoku-nav'>
+    <div className='SudokuGameNav'>
         <button 
             className={`all`}
             onClick={()=>getSudokuTemolates()}

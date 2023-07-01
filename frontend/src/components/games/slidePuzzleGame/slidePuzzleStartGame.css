@@ -1,14 +1,12 @@
-.memory-game-start-container{
-    position: relative;
-}
-.slide-puzzle-game-start{
+
+.SlidePuzzleStartGame{
     display: flex;
     justify-content: center;
     align-items: center;
     align-content: center;
     height: 80vh;
 }
-.slide-grid{
+.SlidePuzzleStartGame .slide-grid{
     margin-block: 10% ;
     margin-inline: auto ;
     display: flex;
@@ -16,12 +14,12 @@
     flex-wrap:wrap ;
     position: relative;
 }
-.slide-image{
+.SlidePuzzleStartGame .slide-image{
     border:  white 1px solid;
     z-index: 2;
 }
 
-.bg-image{
+.SlidePuzzleStartGame .bg-image{
     position: absolute;
     top: 0px;
     left: 0px;

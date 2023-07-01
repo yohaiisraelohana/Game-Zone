@@ -1,5 +1,5 @@
 
-.games{
+.GameCollection{
     display: flex;
     width: 85vw;
     padding-inline: 30px;
@@ -8,7 +8,7 @@
     row-gap: 30px;
     text-align: center;
 }
-.games > *{
+.GameCollection > *{
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -24,11 +24,11 @@
     align-items: center;
     text-decoration: none;
 }
-.games p{
+.GameCollection p{
     margin: auto;
     font-size: 30px;
 }
-.games > *:hover{
+.GameCollection > *:hover{
     /* box-shadow: inset white 0px 2px 7px 7px; */
     box-shadow:  white 0px 2px 7px 7px;
     text-shadow: white 0px 0px 5px,
@@ -36,18 +36,18 @@
     white 0px 0px 15px;
 }
 
-.memory-game{
+.GameCollection .memory-game{
     background-image:url('../../../assets/icons/games/memoryGameIcon.svg');
 }
 
-.ticTac-game{
+.GameCollection .ticTac-game{
     background-image:url('../../../assets/images/games/tictac.png');
 }
 
-.roulette-game{
+.GameCollection .roulette-game{
     background-image:url('../../../assets/icons/games/rouletteIcon.svg');
 }
 
-.sudoko-game{
+.GameCollection .sudoko-game{
     background-image:url('../../../assets/icons/games/sudokoGameIcon.svg');
 }
