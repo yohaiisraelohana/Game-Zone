@@ -24,3 +24,6 @@ export const GET_MEMORY_GAMES = MEMORY_GAME;
 //* sudoku
 const SUDOKU = API_URL + "/sudoku";
 export const GET_SUDOKU_TEMPLATE = SUDOKU;
+export const Add_SUDOKU_TEMPLATE = SUDOKU;
+export const UPDATE_SUDOKU_TEMPLATE = SUDOKU + "/";
+export const DELETE_SUDOKU_TEMPLATE = SUDOKU + "/";

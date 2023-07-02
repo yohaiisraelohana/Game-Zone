@@ -1,0 +1,38 @@
+.DefineSudokuLevel button{
+    margin-inline:10px ;
+    text-transform: capitalize;
+    background-color: transparent;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+.DefineSudokuLevel .easy{
+    border: 1px solid green;
+    color: green;
+}
+.DefineSudokuLevel .medium{
+    border: 1px solid orange;
+    color: orange;
+}
+.DefineSudokuLevel .hard{
+    border: 1px solid red;
+    color: red;
+}
+
+
+.DefineSudokuLevel .easy-selected{
+    background-color: green;
+    color: white;
+    border: none;
+}
+.DefineSudokuLevel .medium-selected{
+    background-color: orange;
+    color: white;
+    border: none;
+}
+.DefineSudokuLevel .hard-selected{
+    background-color: red;
+    color: white;
+    border: none;
+}
+

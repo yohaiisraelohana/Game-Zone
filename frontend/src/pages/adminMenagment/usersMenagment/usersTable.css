@@ -1,0 +1,169 @@
+.UsersTable .wrapper {
+    margin: 0 auto;
+    padding-inline: 10px;
+    width: 90vw;
+    overflow-x: auto;
+}
+
+.UsersTable .table {
+    margin: 0 0 40px 0;
+    width: 100%;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+    
+    display: table;
+    border-radius: 20px;
+}
+
+.UsersTable .row {
+    display: table-row;
+    background: #f6f6f6;
+    
+}
+.UsersTable .row:nth-of-type(odd) {
+    background: #e9e9e9;
+  }
+.UsersTable .row.header {
+    width: 90vw;
+    font-weight: 900;
+    color: #ffffff;
+    background: var(--primary);
+}
+
+
+.UsersTable .row.blue {
+    background: #2980b9;
+}
+
+
+.UsersTable .cell {
+    padding: 6px 12px;
+    display: table-cell;
+    height: fit-content;
+    font-size: 20px;
+    color: #3b3b3b;
+  }
+.UsersTable .edit-cell{
+    position: relative;
+    min-width: 50px;
+    user-select: none;
+} 
+  
+.UsersTable .edit-cell .edit-cell-icon{
+    background-color: var(--primary);
+    border-radius: 1px;
+    font-size: 20px;
+    left: 45%;
+    top: 20%;
+}
+
+
+
+.UsersTable .menu-opened {
+    width: 80px;
+    min-width: 70px;
+}
+.UsersTable .menu-opened .edit-cell-icon{
+    left: 9vw;
+}
+.UsersTable .actions-container{
+    display: flex;
+    position: absolute;
+    justify-content: space-between;
+    width: 6vw;
+    max-width: 50px;
+    top: 0.4rem;
+    left: 2.6rem;
+}
+
+.UsersTable .actions-container .action-item-1 > * {
+    position: static;
+    background-color: rgb(255, 80, 80);
+    border-radius: 1px;
+}
+.UsersTable .actions-container .action-item-0 > * {
+    background-color: rgb(255, 205, 80);
+    position: static;
+    border-radius: 1px;
+}
+
+
+
+@media screen and (max-width: 700px) {
+    .UsersTable .table {
+      display: block;
+    }
+    .UsersTable .row {
+        padding: 14px 0 7px;
+        display: block;
+        position: relative;
+    }
+    .UsersTable .row.header {
+        padding: 0;
+        height: 6px;
+        background-color: var(--primary);
+    }
+    .UsersTable .row.header .cell {
+        display: none;
+    }
+    .UsersTable .row .cell {
+        margin-bottom: 10px;
+    }
+    .UsersTable .row .cell:before {
+        margin-bottom: 3px;
+        content: attr(data-title);
+        min-width: 98px;
+        font-size: 10px;
+        line-height: 10px;
+        font-weight: bold;
+        text-transform: uppercase;
+        color: #969696;
+        display: block;
+    }
+    .UsersTable .cell {
+        padding: 2px 16px;
+        display: block;
+        width: 80%;
+        background-color: transparent;
+    }
+  
+    .UsersTable .edit-cell{
+          position: static;
+    } 
+  
+    .UsersTable .edit-cell .edit-cell-icon{
+          left: 83vw;
+          top: 2vh;
+          position: absolute;
+    }
+    .UsersTable .actions-container {
+        display: flex;
+        flex-wrap: wrap;
+        position: absolute;
+        top: 6vh;
+        left: 83vw;
+        width: 30px;
+    }
+      
+    .UsersTable .actions-container .action-item-1 > * {
+        position: static;
+        margin-top: 3px;
+        background-color: rgb(255, 80, 80);
+        border-radius: 1px;
+    }
+    .UsersTable .actions-container .action-item-0 > * {
+        margin-top: 5px;
+        background-color: rgb(255, 205, 80);
+        position: static;
+        border-radius: 1px;
+    }
+}
+
+@media (width > 700px){
+    /* .UsersTable .cell:nth-of-type(odd){
+        background: #e9e9e9;
+    } */
+    .UsersTable .row.header .cell {
+        color: white;
+    }
+}
+

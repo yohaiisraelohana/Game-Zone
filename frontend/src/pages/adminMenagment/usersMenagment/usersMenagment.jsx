@@ -21,7 +21,7 @@ export default function UsersMenagment() {
     getUsers();
   }, []);
   return (
-    <div className="sersMenagment">
+    <div className="UsersMenagment">
       { users 
         ? <UsersSortNav handleSort={getUsers} />
         : <p></p>}

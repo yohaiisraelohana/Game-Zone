@@ -2,11 +2,13 @@
 .adminMenagmentNav
 
 */
-.adminMenagmentNav{
+.AdminMenagmentNav{
     display: flex;
     width: 90vw;
+    justify-content: center;
+    font-size: 30px;
 }
-.adminMenagmentNav button{
+.AdminMenagmentNav button{
     width: 50%;
     background-color: transparent;
     padding: 5px;
@@ -14,6 +16,14 @@
     font-size: larger;
     border-radius: 5px;
 }
-.adminMenagmentNav .selected{
+.AdminMenagmentNav .selected{
     background-color: var(--primary);
+}
+.AdminMenagmentNav select{
+    background-color: transparent;
+    border: none;
+    margin-left: 20px;
+    font-size: 30px;
+    outline: none;
+    color: var(--primary);
 }

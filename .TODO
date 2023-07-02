@@ -11,23 +11,17 @@
     memory games search users and more
 3.  
     use skeletons instead of loading
-5.
+4.
     add some styles from https://www.julienthibeaut.xyz/blog
-!6. 
+!5. 
     https://www.npmjs.com/package/react-image-file-resizer make in services function that changes size of user image from input
-!7.
-    send xp update after every game
-8.
+6.
     change cngradilation allert on winning to something more special
-!9.
-    fix errors in sign up  - (fixed by noam)
-!10.
-    in friends after sending request to clear input (fixed by noam)
-11.
+7.
     light and dark mode https://www.youtube.com/watch?v=pZhAiCSqHPs
-!12.
+!8.
     option for use to edit image
-!13.
+!9.
     function on the account component wich will check if the user is still connected
 
 
@@ -37,7 +31,7 @@
 2.
     gragh of users in periode
 3.
-    how many users plaied every game
+    how many users plaied every game (future)
     *NavBar*
 1.
     shadow to dropdown

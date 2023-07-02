@@ -3,7 +3,8 @@
     flex-wrap: wrap;
     width: 100%;
     justify-content: space-between;
-    padding-inline: 7vw;
+    padding-inline: 5vw;
+    margin: auto;
 }
 .SudokuCollection .sudoku-preview{
     display: grid;

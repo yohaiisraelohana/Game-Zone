@@ -1,0 +1,38 @@
+.AddSudokuTemplate{
+    background-color: var(--dark-bg);
+    height: fit-content;
+    width: 80vw;
+    border-radius: 10px;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.AddSudokuTemplate h2{
+    width: 100%;
+    text-align: center;
+}
+
+.AddSudokuTemplate .add-button{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.AddSudokuTemplate .add-button button {
+    padding: 5px;
+    background-color: var(--primary);
+    border: none;
+    border-radius: 5px;
+    width: 80px;
+    margin-block: 10px;
+}
+.AddSudokuTemplate .level-options{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
