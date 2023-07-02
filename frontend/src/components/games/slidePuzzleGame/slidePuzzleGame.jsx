@@ -18,11 +18,11 @@ import NavBackButton from '../../reusfullComponents/navigateBackButton/navBackBu
 export default function SlidePuzzleGame() {
   const [puzzle_image,setPuzzleImage] = useState(null);
   const box_size = window.innerWidth < 600 ? 300 : (window.innerWidth < 900 ? 600 : 900) ;
-  const {data,currentImage,setImage} = useCloudinaryImages();
+  const {currentImage,setImage} = useCloudinaryImages();
   
 
   const updatePuzzleImage = () => {
-    setPuzzleImage(resizeCloudinaryImage(currentImage.route + currentImage.id,box_size,box_size));
+    setPuzzleImage(resizeCloudinaryImage(currentImage.route + currentImage.name,box_size,box_size));
   }
 
   useEffect(()=>{
@@ -44,7 +44,7 @@ export default function SlidePuzzleGame() {
         : <div >
             <NavBackButton />
             <SlidePuzzleImgInput />
-            <SlidePuzzleCollection  images_collection={data}/>
+            <SlidePuzzleCollection  />
           </div>
         }
     </div>

@@ -4,10 +4,15 @@ const express = require('express');
 const mongoose = require('mongoose');
 const http = require('http');
 const { Server } = require('socket.io');
+
+//routes
 const userRoutes = require('./routes/user');
 const memoryGameRouter = require('./routes/memoryGame');
 const sudokuGameRouter = require('./routes/sudoku');
+const cloudinaryGameImgsRouter = require('./routes/cloudinaryGameImgs');
 
+
+//middlewares
 const cookieParser = require('cookie-parser');
 const cors = require('cors');
 
@@ -35,6 +40,7 @@ app.use((req, res, next) => {
 app.use('/user',userRoutes);
 app.use('/memoryGame',memoryGameRouter);
 app.use('/sudoku',sudokuGameRouter);
+app.use("/cloudoinaryGamesImgs",cloudinaryGameImgsRouter);
 
 
 // Connect to the database

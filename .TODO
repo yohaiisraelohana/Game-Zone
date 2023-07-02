@@ -23,7 +23,8 @@
     option for use to edit image
 !9.
     function on the account component wich will check if the user is still connected
-
+!10.
+    add all routes in postman
 
     *Admin*
 !1.
@@ -136,11 +137,12 @@
     *onFuture*
 1.
     put all games in backend with categories (popular,thinkink,puzzles)
+    in addition make game define settings to every game , 
 2.
     when someone click on game add to the game in times_played ptropertie 1
     in the home page present the most played game
-
-
+3.  
+    add to cloudinary game images categories collection
 
 
 *! check cookies time works

@@ -27,3 +27,7 @@ export const GET_SUDOKU_TEMPLATE = SUDOKU;
 export const Add_SUDOKU_TEMPLATE = SUDOKU;
 export const UPDATE_SUDOKU_TEMPLATE = SUDOKU + "/";
 export const DELETE_SUDOKU_TEMPLATE = SUDOKU + "/";
+
+//* cloudinaryGamesImages
+const CLOUDINARYGAMESIMAGES = API_URL + "/cloudoinaryGamesImgs";
+export const GET_CLOUDINARY_GAMES_IMGS = CLOUDINARYGAMESIMAGES;

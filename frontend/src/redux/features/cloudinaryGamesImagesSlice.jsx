@@ -1,5 +1,56 @@
-import { createSlice} from "@reduxjs/toolkit";
+import { createSlice,createAsyncThunk} from "@reduxjs/toolkit";
+import { GET_CLOUDINARY_GAMES_IMGS } from "../../constants/urls";
+import { apiGet } from "../../services/apiRequests";
 
+
+export const getCloudinaryGamesImages = createAsyncThunk('cloudinaryGamesImages/getCloudinaryGamesImages', async () => {
+  try {
+    const response = await apiGet(GET_CLOUDINARY_GAMES_IMGS,false,false);
+    return response.data;
+  } catch (error) {
+    // Handle any errors that occurred during the API request
+    throw Error({msg:'Failed to fetch memory games',error});
+  }
+});
+
+const initialState = {
+    data:null,
+    loading:false,
+    error:null,
+    currentImage:null,
+}
+
+const cloudinaryGamesImagesSlice = createSlice({
+    initialState,
+    name:"cloudinaryGamesImages",
+    reducers:{
+        setCurrentImage: (state,action) =>{
+            state.currentImage = action.payload;
+        }
+    },
+    extraReducers: (builder) => {
+      builder
+      .addCase(getCloudinaryGamesImages.pending, (state) => {
+        state.loading = true;
+        state.error = null;
+      })
+      .addCase(getCloudinaryGamesImages.fulfilled, (state, action) => {
+        state.loading = false;
+        state.data = action.payload;
+      })
+      .addCase(getCloudinaryGamesImages.rejected, (state, action) => {
+        state.loading = false;
+        state.error = action.error.message;
+      });
+  }
+})
+
+
+export const {setCurrentImage} = cloudinaryGamesImagesSlice.actions;
+export default cloudinaryGamesImagesSlice.reducer;
+
+
+/*
 const images_collection = [
     {
       id:"8D95449E-A44F-4A03-B2D7-F6DB3D59F7D0_1_105_c_o8ejzp.jpg",
@@ -82,24 +133,4 @@ const images_collection = [
       src:"https://res.cloudinary.com/dhojbnefp/image/upload/v1687435839"
     }
   ];
-
-const initialState = {
-    data:images_collection,
-    loading:false,
-    error:null,
-    currentImage:null,
-}
-
-const cloudinaryImagesSlice = createSlice({
-    initialState,
-    name:"cloudinary_images",
-    reducers:{
-        setCurrentImage: (state,action) =>{
-            state.currentImage = action.payload;
-        }
-    }
-})
-
-
-export const {setCurrentImage} = cloudinaryImagesSlice.actions;
-export default cloudinaryImagesSlice.reducer;
+*/

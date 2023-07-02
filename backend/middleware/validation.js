@@ -83,6 +83,22 @@ const validateSudoku = (req,res,next) => {
     next();
 }
 
+const validateCLoudinaryGameImage = (req,res,next) => {
+    const schema = Joi.object({
+        name:Joi.string().min(2).max(300).required(),
+        route:Joi.string().min(2).max(300).required(),
+        src:Joi.string().min(2).max(300).required(),
+        category:Joi.string().min(2).max(100).required()
+    });
+    const {error} = schema.validate(req.body);
+    if (error) {
+        return res.status(400).json({
+            error: error.details[0].message
+        })
+    }
+    next();
+}
+
 
 
 module.exports = {
@@ -90,7 +106,8 @@ module.exports = {
     validateSignUp,
     validateUpdateUser,
     validateMemoryGame,
-    validateSudoku
+    validateSudoku,
+    validateCLoudinaryGameImage
 }
 
 
