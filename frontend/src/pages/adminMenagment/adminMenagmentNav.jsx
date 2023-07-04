@@ -3,7 +3,6 @@ import './adminMenagmentNav.css'
 export default function AdminMenagmentNav({options,setOption,selected}) {
   return (
     <div className='AdminMenagmentNav'>
-      <p>Managment</p>
       <select value={selected} onChange={(e)=>setOption(e.target.value)} >
           {options.map((option,i)=>(
             <option 

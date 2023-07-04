@@ -13,5 +13,8 @@ export default function UseCloudinaryImages() {
       dispatch(getCloudinaryGamesImages());
     }
 
-  return {loading,data,error,currentImage,setImage,getCloudinaryImages};
+    const addImageToCloudinary = (src,route,name) => {
+      //sending request in redux and updating the images arr
+    }
+  return {loading,data,error,currentImage,setImage,getCloudinaryImages,addImageToCloudinary};
 }

@@ -4,7 +4,7 @@
    ! *404page*
 
     *Main*
-1.  
+!1.  
     design website for all sizes
 2.  
     make admin layout where he can add sudoku templates and 
@@ -20,7 +20,7 @@
 7.
     light and dark mode https://www.youtube.com/watch?v=pZhAiCSqHPs
 !8.
-    option for use to edit image
+    option for user to edit image
 !9.
     function on the account component wich will check if the user is still connected
 !10.
@@ -33,8 +33,9 @@
     gragh of users in periode
 3.
     how many users plaied every game (future)
-4.
+!4.
     menage cloudinary games images amd memoryGame
+    
     *NavBar*
 1.
     shadow to dropdown
@@ -45,20 +46,8 @@
     in the user for he is won't be able to do him again
     or he is will be able to do but will not get xp for 
     this 
-2.  
-    backend with level and more
-3.  
-    check all routes in postman
-3.  
-    create redux slice
-4.  
-    finish collection and componnents with connection to backend
-5.
-    add reset button
-6.  
-    change p to input
 7.
-    button to solve the sudoku template
+    button to solve the sudoku template will use the function from leetcode
 8.
     add count to redux
 
@@ -70,48 +59,30 @@
     update count in redux
 3. 
     make the option to search for any subject user wants in pexels api
-4.
-    add count in redux
+
 
 
     *LogIn*
 !1.  
     finish "forgot your password link"
-2.  
-    add red border to error inputs(fixed by noam- instead of border the text color is red)
-
-
 
 
     *SignUp*
-1.  
-    add red border to error inputs(fixed by noam- instead of border the text color is red)
-
-
 
 
     *roulette*
-1.  
-    change mark ^ and <> to icons
 
 
     *slidePuzzle*
-1.
-    add level option to parts of the puzzle and then xp
 2.
-    check why not working at mobile
-3.
     use the function to change user image from input
 
 
     *circlesFight*
-1.  
-    make set interval of 1 min that will changed the set interval of the enemies sending
-!2.
+!1.
     when start playing put in modal or send to another route for he is will be only in the screen
     (another option is to put in absolute position )
-!3.
-    finish the game
+
     *account*
 !1.  
     fix progress bat to work on the first render
@@ -145,7 +116,10 @@
     in the home page present the most played game
 3.  
     add to cloudinary game images categories collection
-
+4. 
+    add option to resize the cloudinary images befor uploading them
+5.
+    add option to remove image from cloudinary
 
 *! check cookies time works
 -->
