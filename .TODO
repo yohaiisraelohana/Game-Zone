@@ -25,6 +25,8 @@
     function on the account component wich will check if the user is still connected
 !10.
     add all routes in postman
+!11.
+    in uploadImage function on backrnd move the details to .env file
 
     *Admin*
 !1.

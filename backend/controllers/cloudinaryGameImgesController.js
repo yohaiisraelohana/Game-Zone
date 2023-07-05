@@ -31,7 +31,7 @@ const getGameImagesCount = async(req,res) => {
 const addGameImage = async (req,res) => {
     try {
         const image = new GameImage(req.body);
-        await GameImage.save();
+        await image.save();
         res.json(image);
     } catch (error) {
         console.log(error);

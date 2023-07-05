@@ -86,9 +86,8 @@ const validateSudoku = (req,res,next) => {
 const validateCLoudinaryGameImage = (req,res,next) => {
     const schema = Joi.object({
         name:Joi.string().min(2).max(300).required(),
-        route:Joi.string().min(2).max(300).required(),
-        src:Joi.string().min(2).max(300).required(),
-        category:Joi.string().min(2).max(100).required()
+        route:Joi.string().max(300).required(),
+        src:Joi.string().min(2).max(300).required()
     });
     const {error} = schema.validate(req.body);
     if (error) {

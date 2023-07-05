@@ -12,12 +12,19 @@ cloudinary.config({
 
 const getSignature = (req, res) => {
     const timestamp = Math.round(new Date().getTime() / 1000); // Current UNIX timestamp
+    const signObject = {timestamp};
+
+    const public_id = req.query.public_id;
+    if (public_id) signObject.public_id = public_id;
+
     const signature = cloudinary.utils.api_sign_request(
-      { timestamp },
+      signObject,
       api_secret
     );
+    const returnedSign = {signature,timestamp,api_key};
+    if (public_id) returnedSign.public_id = public_id;
   
-    res.json({ signature, timestamp ,api_key});
+    res.json(returnedSign);
 }
 
 module.exports = {

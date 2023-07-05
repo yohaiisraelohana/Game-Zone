@@ -1,6 +1,6 @@
 import { createSlice,createAsyncThunk} from "@reduxjs/toolkit";
-import { GET_CLOUDINARY_GAMES_IMGS } from "../../constants/urls";
-import { apiGet } from "../../services/apiRequests";
+import { ADD_CLOUDINARY_GAMES_IMG, DELETE_CLOUDINARY_GAMES_IMG, GET_CLOUDINARY_GAMES_IMGS } from "../../constants/urls";
+import { apiDelete, apiGet, apiPost } from "../../services/apiRequests";
 
 
 export const getCloudinaryGamesImages = createAsyncThunk('cloudinaryGamesImages/getCloudinaryGamesImages', async () => {
@@ -9,7 +9,28 @@ export const getCloudinaryGamesImages = createAsyncThunk('cloudinaryGamesImages/
     return response.data;
   } catch (error) {
     // Handle any errors that occurred during the API request
-    throw Error({msg:'Failed to fetch memory games',error});
+    throw Error({msg:'Failed to fetch cloudinary games images',error});
+  }
+});
+export const deleteCloudinaryGamesImage = createAsyncThunk('cloudinaryGamesImages/deleteCloudinaryGamesImage', async (payload) => {
+  try {
+    const response = await apiDelete(DELETE_CLOUDINARY_GAMES_IMG + payload);
+    console.log(response);
+    return payload;
+  } catch (error) {
+    // Handle any errors that occurred during the API request
+    throw Error({msg:'Failed to delete cloudinary games image',error});
+  }
+});
+export const addCloudinaryGamesImage = createAsyncThunk('cloudinaryGamesImages/addCloudinaryGamesImage', async (payload) => {
+  try {
+    console.log(payload);
+    const response = await apiPost(ADD_CLOUDINARY_GAMES_IMG,payload);
+    console.log(response);
+    return response.data;
+  } catch (error) {
+    // Handle any errors that occurred during the API request
+    throw Error({msg:'Failed to add cloudinary games image',error});
   }
 });
 
@@ -41,6 +62,33 @@ const cloudinaryGamesImagesSlice = createSlice({
         state.data = action.payload;
       })
       .addCase(getCloudinaryGamesImages.rejected, (state, action) => {
+        state.loading = false;
+        state.error = action.error.message;
+      })
+      .addCase(addCloudinaryGamesImage.pending, (state) => {
+        state.loading = true;
+        state.error = null;
+      })
+      .addCase(addCloudinaryGamesImage.fulfilled, (state, action) => {
+        state.loading = false;
+        const new_data = [...state.data];
+        new_data.push(action.payload);
+        state.data = new_data;
+      })
+      .addCase(addCloudinaryGamesImage.rejected, (state, action) => {
+        state.loading = false;
+        state.error = action.error.message;
+      })
+      .addCase(deleteCloudinaryGamesImage.pending, (state) => {
+        state.loading = true;
+        state.error = null;
+      })
+      .addCase(deleteCloudinaryGamesImage.fulfilled, (state, action) => {
+        state.loading = false;
+        const new_data = state.data.filter((img) => img._id != action.payload);
+        state.data = new_data;
+      })
+      .addCase(deleteCloudinaryGamesImage.rejected, (state, action) => {
         state.loading = false;
         state.error = action.error.message;
       });

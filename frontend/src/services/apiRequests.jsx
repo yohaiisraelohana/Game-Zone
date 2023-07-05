@@ -54,7 +54,7 @@ export const apiPut = async(url,bodyData) => {
     }
 }
 
-export const apiDelete = async(url,bodyData) => {
+export const apiDelete = async(url) => {
     try {
         let config = {
             method:"DELETE",
