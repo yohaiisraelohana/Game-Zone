@@ -21,6 +21,33 @@
     justify-content: center;
     padding-inline: 5%;
 }
+.AddMemoryGame .api-lable{
+    width: 100%;
+    text-align: start;
+}
+
+.AddMemoryGame .headers-container{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 10px;
+}
+.AddMemoryGame .headers-container label{
+    width: 100%;
+}
+.AddMemoryGame .headers-container .input{
+    margin: 0px;
+    width: 40%;
+}
+
+
+.AddMemoryGame .headers-container .object-container{
+    width: 100%;
+}
+
+
 .AddMemoryGame form .input {
     width: 100%;
     background-color: transparent;
@@ -56,7 +83,8 @@
 
 .AddMemoryGame .image-input-container{
     margin-bottom: 50px;
-    height: 10vh;
+    height: 12vh;
+    width: 100%;
 }
 
 .AddMemoryGame form button{

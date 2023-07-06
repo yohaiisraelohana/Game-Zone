@@ -7,22 +7,41 @@ import {AiFillPlusSquare} from 'react-icons/ai';
 export default function AddMemoryGame() {
   const [mainKeys,setMainKeys] = useState([""]);
   const [imgKeys,setImgKeys] = useState([""]);
+  const [headers,setHeaders] = useState({name:"ss"}); 
   console.log(mainKeys);
   console.log(imgKeys);
   return (
     <div className='AddMemoryGame'>
         <h2>ADD Memory Game</h2>
         <form action="">
-            <label htmlFor="">API</label>
+            <label className='api-lable' htmlFor="">API</label>
             <input 
               className='input'
               type="text" />
 
+            <div className="headers-container">
+              <label htmlFor="">Headers</label>
+              <input 
+                placeholder='key'
+                className='input'
+                type="text" />
+              <p className='object-mid'>:</p>
+              <input 
+                placeholder='value'
+                className='input'
+                type="text" />
+              {/* <div className="object-container">
+                <p>{"{"}</p>
+                {Object.keys(headers).map((key) => (
+                  <p key={key}>
+                    {key} : {headers[key]},
+                  </p>
+                ))}
+                <p>{"}"}</p>
+              </div> */}
 
-            <label htmlFor="">Headers</label>
-            <input 
-              className='input'
-              type="text" />
+            </div>
+
             
 
             <div className="lable-container">
@@ -68,7 +87,7 @@ export default function AddMemoryGame() {
               </div>
 
             ))} 
-            
+          
 
                 <div className="image-input-container">
                   <label htmlFor="">Background Image</label>

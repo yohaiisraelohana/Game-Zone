@@ -29,7 +29,12 @@ export default function MemoryGameMenagmentCollection() {
             </div>
 
             
-            <p className='headers'><span>Headers:</span> {memory.headers && JSON.stringify(memory.headers) }</p>
+            <p className='headers'><span>Headers:</span>{"{"}
+              {memory.headers && Object.keys(memory.headers).map((key) => (
+                  <p key={key}>
+                    {key} : {memory.headers[key]},
+                  </p>
+                ))}{"}"}</p>
             <p className='api'><span>API:</span> {memory.api }</p>
           </div>
         ))}
