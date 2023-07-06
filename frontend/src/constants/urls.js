@@ -20,6 +20,9 @@ export const ADMIN_UPDATE_USER = USER + "/adminUpdate/" ;
 //* memory Game
 const MEMORY_GAME = API_URL + "/memoryGame";
 export const GET_MEMORY_GAMES = MEMORY_GAME;
+export const ADD_MEMORY_GAME = MEMORY_GAME;
+export const UPDATE_MEMORY_GAME = MEMORY_GAME + "/";
+export const DELETE_MEMORY_GAME = MEMORY_GAME + "/";
 
 //* sudoku
 const SUDOKU = API_URL + "/sudoku";
