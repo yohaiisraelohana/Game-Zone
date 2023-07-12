@@ -5,14 +5,19 @@ import './memoryGameMenagmentCollection.css';
 
 //assets
 import {AiOutlineEdit} from 'react-icons/ai' 
+import { useNavigate } from 'react-router-dom';
 
 export default function MemoryGameMenagmentCollection() {
-    const {data} = UseMemoryGame();
+    const {data,setMemoryGame} = UseMemoryGame();
+    const navigate = useNavigate();
   return (
     <div className='MemoryGameMenagmentCollection'>
         {data && data.map((memory,i)=>(
           <div className="memory-details-container" key={i}>
-            <AiOutlineEdit className='edit-icon' />
+            <AiOutlineEdit onClick={()=>{
+              setMemoryGame(memory);
+              navigate("/memoryGame/menagment");
+            }} className='edit-icon' />
             <h1>{memory.name}</h1>
             <div className="details-container">
               <div className="keys-details">
@@ -29,12 +34,12 @@ export default function MemoryGameMenagmentCollection() {
             </div>
 
             
-            <p className='headers'><span>Headers:</span>{"{"}
+            <div className='headers'><span>Headers:</span>{"{"}
               {memory.headers && Object.keys(memory.headers).map((key) => (
                   <p key={key}>
                     {key} : {memory.headers[key]},
                   </p>
-                ))}{"}"}</p>
+                ))}{"}"}</div>
             <p className='api'><span>API:</span> {memory.api }</p>
           </div>
         ))}

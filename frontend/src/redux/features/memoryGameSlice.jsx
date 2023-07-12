@@ -18,6 +18,7 @@ export const addMemoryGame = createAsyncThunk('memoryGame/addMemoryGame', async 
     return response.data;
   } catch (error) {
     // Handle any errors that occurred during the API request
+    console.log(error);
     throw Error({msg:'Failed to add memory games',error});
   }
 });

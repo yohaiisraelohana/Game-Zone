@@ -20,7 +20,7 @@ export default function MemoryGameMenagment() {
           <h1>Memory Game</h1>
           <button
             onClick={()=>{
-              const m = useModal(<AddMemoryGame/>,()=>setModal(null));
+              const m = useModal(<AddMemoryGame closeModal={()=>setModal(null)} />,()=>setModal(null));
               setModal(m);
             }}
             className='add-button'

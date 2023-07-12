@@ -1,0 +1,109 @@
+.EditMemoryGame{
+    position: relative;
+    margin: auto;
+}
+.EditMemoryGame{
+    height: fit-content;
+    width: 80vw;
+    background-color: black;
+    padding: 5px;
+    padding-block: 20px;
+    padding-top: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    border-radius: 5px;
+}
+.EditMemoryGame h2{
+    width: 100%;
+    text-align: center;
+    margin-bottom:10px ;
+}
+.EditMemoryGame .form{
+    width: 75vw;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-inline: 5%;
+}
+.EditMemoryGame .api-lable{
+    width: 100%;
+    text-align: start;
+}
+
+.EditMemoryGame .headers-container{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.EditMemoryGame .form .input {
+    width: 100%;
+    background-color: transparent;
+    border: 1px white solid;
+    padding: 3px;
+    margin-bottom:10px ;
+    border-radius: 5px; 
+    outline-color: var(--primary);
+}
+.EditMemoryGame .headers-container .input{
+    margin: 0px;
+    width: 40%;
+}
+.EditMemoryGame .form .lable-container{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding-inline: 5px;
+}
+.EditMemoryGame .form .input-container{
+    position: relative;
+    display: flex;
+    width: 100%;
+    height: fit-content;
+}
+.EditMemoryGame .form .input-container button{
+    position: absolute;
+    right: 5px;
+    background-color: transparent;
+    padding: 0px;
+    margin: 0px;
+    top: 2px;
+    font-size: large;
+    color: red;
+    
+}
+
+.EditMemoryGame .image-input-container{
+    margin-bottom: 160px;
+    height: 12vh;
+    width: 100%;
+
+}
+
+.EditMemoryGame .form button{
+    padding: 5px;
+    padding-inline: 10px;
+    background-color: var(--primary);
+    border: none;
+    border-radius: 10px;
+    margin-top: 5px;
+}
+
+.EditMemoryGame .error-field{
+    border: 1px solid red;
+    padding: 5px;
+    background-color: rgb(249, 110, 110);
+    color: white;
+    border-radius: 3px;
+    width: 80%;
+    text-align: center;
+    margin-bottom: 2vh;
+}
+.EditMemoryGame .deleteButton{
+    background-color: red !important;
+    margin-right: 20%;
+}
