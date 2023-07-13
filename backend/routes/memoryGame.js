@@ -1,6 +1,6 @@
 const express = require('express');
 const {authenticationAdmin, authentication}  = require('../middleware/requireAuth');
-const {validateMemoryGame, validateSudoku} = require('../middleware/validation');
+const {validateMemoryGame} = require('../middleware/validation');
 const {getMemories,addMemory, updateMemory, deleteMemory, getMemoryCount} = require('../controllers/memoryGameControllers');
 const router = express.Router()
 
@@ -12,7 +12,7 @@ router.get("/count",getMemoryCount);
 router.post("/",authentication,authenticationAdmin,validateMemoryGame,addMemory);
 
 //update memory route
-router.put("/:id",authentication,authenticationAdmin,validateSudoku,updateMemory);
+router.put("/:id",authentication,authenticationAdmin,validateMemoryGame,updateMemory);
 
 //delete memory route
 router.delete("/:id",authentication,authenticationAdmin,deleteMemory);

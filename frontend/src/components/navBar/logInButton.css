@@ -1,10 +1,10 @@
-.login-button{
+.LogInButton{
     background-color: var(--primary);
     border: none;
     border-radius: 3px;
     padding: 7px;
     margin-inline: 5px;
 }
-.login-button:hover{
+.LogInButton:hover{
     box-shadow: 2px 2px 20px 1px var(--primary);
 }

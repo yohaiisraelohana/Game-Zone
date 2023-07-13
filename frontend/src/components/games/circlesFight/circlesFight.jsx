@@ -248,7 +248,7 @@ export default function CirclesFight() {
 
 
   return (
-    <div className="circle-fight-container">
+    <div className="CirclesFight">
         <div className="score">score <span id='score'>0</span></div>
         <canvas
             ref={canvasRef}

@@ -1,0 +1,29 @@
+.SudokuInputTemplate{
+    display: grid;
+    grid-template-columns: repeat(9,30px);
+    margin-block:1vh;
+    width: fit-content;
+    align-self: center;
+}
+
+.SudokuInputTemplate input{
+    background-color: white;
+    color: #333;
+    border: 1px black solid;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 100%;
+}
+
+@media (width > 600px){
+    .SudokuInputTemplate{
+        grid-template-columns: repeat(9,50px);
+    }
+    
+    .SudokuInputTemplate input{
+        height: 50px;
+    }
+}

@@ -1,4 +1,7 @@
-.memory-cards-container{
+.MemoryGameStart{
+    position: relative;
+}
+.MemoryGameStart .memory-cards-container{
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;

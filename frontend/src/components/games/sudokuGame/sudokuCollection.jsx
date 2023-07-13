@@ -1,20 +1,19 @@
-import React from 'react'
+import React,{useEffect} from 'react'
 import './sudokuCollection.css';
 import useSudoku from '../../../hooks/useSudoku';
-import { useNavigate } from 'react-router-dom';
 
-export default function SudokuCollection() {
-    const {data,loading,error,setSudokuTemplate} = useSudoku();
-    const navigate = useNavigate();
-    console.log(data);
+
+export default function SudokuCollection({handleClick}) {
+    const {data,loading,error,getSudokuTemolates} = useSudoku();
+    useEffect(()=>{
+        getSudokuTemolates();
+    },[])
+
   return (
-    <div className='sudoku-collection-container'>
+    <div className='SudokuCollection'>
         {data ? data.map((sudoku,i)=>(
             <div 
-                onClick={()=>{
-                    setSudokuTemplate(sudoku.template);
-                    navigate(`/sudokuGame/${sudoku.level}`);
-                }}
+                onClick={()=>handleClick(sudoku)}
                 className={`sudoku-preview `} key={i}>
                 {sudoku.template.map((row)=>(
                     row.map((col,j)=>(

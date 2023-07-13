@@ -14,7 +14,7 @@ export default function MemoryCollection({memorycategories}) {
   return (
     <div>
       {memorycategories.map((m,i)=>(
-        <div className='collection-card'
+        <div className='MemoryCollection'
         key={i}
         onClick={()=>selectCollection(m)}
         style={{backgroundImage:`url(${m.img_url})`}}>

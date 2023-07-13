@@ -5,14 +5,14 @@
     justify-content: center;
     padding-top: 20px;
 } */
-.tic-tac-toe-container{
+.TicTacGame{
     position: relative;
     padding-top: 5vh;
     display: flex;
     flex-wrap: wrap;
     width: 100%;
 }
-.tic-tac-toe-container .type{
+.TicTacGame .type{
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
@@ -20,7 +20,7 @@
     height: 70vh;
 }
 
-.ticTac-pc{
+.TicTacGame .ticTac-pc{
     background-image:url('../../../assets/images/games/tictaccomputer.png');
     background-position: center;
     background-size: cover;
@@ -36,12 +36,12 @@
     align-items: center;
     text-decoration: none;
 }
-.ticTac-pc p{
+.TicTacGame .ticTac-pc p{
     margin: auto;
     font-size: 30px;
 }
 
-.ticTac-pc:hover{
+.TicTacGame .ticTac-pc:hover{
     /* box-shadow: inset white 0px 2px 7px 7px; */
     box-shadow:  white 0px 2px 7px 7px;
     text-shadow: white 0px 0px 5px,
@@ -50,7 +50,7 @@
 }
 
 
-.ticTac-users{
+.TicTacGame .ticTac-users{
     background-image:url('../../../assets/images/games/tictacusers.png');
     background-position: center;
     background-size: cover;
@@ -66,12 +66,12 @@
     align-items: center;
     text-decoration: none;
 }
-.ticTac-users p{
+.TicTacGame .ticTac-users p{
     margin: auto;
     font-size: 30px;
 }
 
-.ticTac-users:hover{
+.TicTacGame .ticTac-users:hover{
     /* box-shadow: inset white 0px 2px 7px 7px; */
     box-shadow:  white 0px 2px 7px 7px;
     text-shadow: white 0px 0px 5px,

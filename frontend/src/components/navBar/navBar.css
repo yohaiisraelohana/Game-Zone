@@ -1,6 +1,6 @@
 
 
-.header{
+.NavBar .header{
     width: 97vw;
     display: flex;
     justify-content: space-between;
@@ -10,7 +10,7 @@
 }
 
 
-.account-dropdown{
+.NavBar .account-dropdown{
     position: relative;
     height: 0px;
     
@@ -21,7 +21,7 @@
 
 
 
-.login{
+.NavBar .login{
     border: white 1px solid ;
     padding-inline: 5px;
     margin-inline: 5px;

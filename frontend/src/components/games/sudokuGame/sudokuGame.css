@@ -1,6 +1,6 @@
-.sudoku-game h2{
+.SudokuGame h2{
     color: white;
 }
-.sudoku-game{
+.SudokuGame {
     position: relative;
 }

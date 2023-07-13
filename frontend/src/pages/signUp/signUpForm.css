@@ -1,4 +1,4 @@
-.signUp-container{
+.SignUpForm{
     background-color: rgb(26, 22, 22);
     border-radius: 10px;
     padding: 10px;
@@ -9,19 +9,19 @@
     align-content: start;
     flex-wrap: wrap;
     width: 85vw;
-}
+} 
 
-.signUp-nav{
+.SignUpForm .signUp-nav{
     color: var(--primary);
     font-size: 25px;
     
 }
-.log-in{
+.SignUpForm .log-in{
     border: none;
     background-color: transparent;
 }
 
-.signUp-form{
+.SignUpForm .signUp-form{
     width: 100%;
     display: flex;
     justify-content: center;
@@ -29,13 +29,13 @@
     position: relative;
 }
 
-.signUp-form label{
+.SignUpForm .signUp-form label{
     width: 100%;
     margin-inline:12% ;
     margin-top: 15px;
 }
 
-.signUp-form input{
+.SignUpForm .signUp-form input{
     width: 75%;
     padding: 7px;
     background-color: transparent;
@@ -44,7 +44,7 @@
     margin: 2px;
 }
 
-.forgot-password{
+.SignUpForm .forgot-password{
     color: var(--primary);
     font-size: small;
     margin-top: 10px;
@@ -52,7 +52,7 @@
     text-align: center;
 }
 
-.signUp-form .signUp-button{
+.SignUpForm .signUp-form .signUp-button{
     background-color: var(--primary);
     width: 40%;
     border: none;
@@ -61,30 +61,30 @@
     border-radius: 3px;
 }
 
-.signUp-form .eye-icon{
+.SignUpForm .signUp-form .eye-icon{
     position: absolute;
     top: 69%;
     left: 78%;
 }
-.signUp-form .lock-icon{
+.SignUpForm .signUp-form .lock-icon{
     position: absolute;
     top: 69%;
     left: 84%;
 }
-.signUp-form .email-icon{
+.SignUpForm .signUp-form .email-icon{
     position: absolute;
     top: 43%;
     left: 84%; 
 }
-.signUp-form .user-icon{
+.SignUpForm .signUp-form .user-icon{
     position: absolute;
     top: 16%;
     left: 84%; 
 }
 
-.error-server p {
+.SignUpForm .error-server p {
     color: red;
 }
-.error-client p{
+.SignUpForm .error-client p{
     color: red;
 }

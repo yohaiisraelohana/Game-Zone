@@ -1,28 +1,28 @@
-.tic-tac-toe-pc-container .game {
+.TicTacPc .game {
     display: flex;
     flex-direction: column;
     align-items: center;
     margin-top: 50px;
   }
-  .tic-tac-toe-pc-container{
+  .TicTacPc{
     position: relative;
     width: 100%;
     display: flex;
     justify-content: center;
   }
   
-  .board {
+  .TicTacPc .board {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 10px;
   }
 
-  .board.disabled {
+ .TicTacPc .board .disabled {
     pointer-events: none;
     opacity: 0.5;
   }
   
-  .cell {
+  .TicTacPc .cell {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -34,12 +34,12 @@
     color: black;
   }
   
-  .winner {
+  .TicTacPc .winner {
     margin-top: 20px;
     font-size: 24px;
     font-weight: bold;
   }
-  .button {
+ .TicTacPc .button {
     color: black;
     margin-top: 5px;
     font-size: 20px;

@@ -1,5 +1,5 @@
 
-.profile-container{
+.ProfileImgAndLevel{
     height: 50px;
     width: 50px;
     position: relative;
@@ -7,23 +7,24 @@
     justify-content: center;
     align-items: center;
 }
-.profile-img-border{
+.ProfileImgAndLevel .profile-img-border{
     height: 50px;
     width: 50px;
     border-radius: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: rgb(250, 250, 250);
+    /* background-color: rgb(250, 250, 250); */
 }
-.profile-img{
+.ProfileImgAndLevel .profile-img{
     height: 40px;
     width: 40px;
     border-radius: 50%;
+    box-shadow:0px 1px 7px white;
     /* background: url("https://cdn-icons-png.flaticon.com/512/172/172163.png?w=1380&t=st=1686294406~exp=1686295006~hmac=6d0c4f48de7d3358ef4fa3a0adc29bd588f6be37fc03da9745af1169836542da") center/cover; */
 }
 
-svg{
+.ProfileImgAndLevel svg{
     position: absolute;
     top: 0;
     left: 0;
@@ -33,7 +34,7 @@ svg{
     border-radius: 50%;
 
 }
-circle{
+.ProfileImgAndLevel circle{
     fill: none;
     stroke:url("#GradientColor");
     /* stroke-dasharray: 1000;
@@ -43,13 +44,13 @@ circle{
 
 
 
-.level-container{
+.ProfileImgAndLevel .level-container{
     position: absolute;
     font-size: 30px;
     bottom: 22px;
     left: -12px;
 }
-.level{
+.ProfileImgAndLevel .level{
     font-size: 9px;
     font-weight: bold;
     position: absolute;

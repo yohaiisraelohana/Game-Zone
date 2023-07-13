@@ -19,8 +19,7 @@ export default function AdminMenagment() {
     console.log(error);
   return (<>
     {user && user.role == "admin" ? 
-      <div className='adminMenagment'>
-      <h1>Hello {user.name}</h1> 
+      <div className='AdminMenagment'>
         <AdminMenagmentNav 
           selected={option}
           options={menagment_options} 

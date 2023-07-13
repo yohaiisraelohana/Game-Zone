@@ -3,7 +3,7 @@ const API_URL = "http://localhost:3003";
 
 //* user
 const USER = API_URL + "/user";
-export const UPLOAD_IMAGE = USER + "/uploadImage";
+export const GET_CLOUDINARY_SIGNATURE = USER + "/uploadImage";
 export const LOGIN_USER = USER + "/login";
 export const SIGNUP_USER = USER + "/signup";
 export const STAY_LOGIN = USER + "/stayLogin";
@@ -14,14 +14,25 @@ export const REMOVE_FRIEND = USER + "/removeFriendRequest";
 export const UPDATE_USER = USER + "/update"; 
 
 //* admin
-//const ADMIN = API_URL + "/user/admin";
-export const ADMIN_GET_USERS = API_URL + "/user/adminUsersList";
-export const ADMIN_UPDATE_USER =  "/user/adminUpdate";
+export const ADMIN_GET_USERS = USER + "/adminUsersList";
+export const ADMIN_UPDATE_USER = USER + "/adminUpdate/" ;
 
 //* memory Game
 const MEMORY_GAME = API_URL + "/memoryGame";
 export const GET_MEMORY_GAMES = MEMORY_GAME;
+export const ADD_MEMORY_GAME = MEMORY_GAME;
+export const UPDATE_MEMORY_GAME = MEMORY_GAME + "/";
+export const DELETE_MEMORY_GAME = MEMORY_GAME + "/";
 
 //* sudoku
 const SUDOKU = API_URL + "/sudoku";
 export const GET_SUDOKU_TEMPLATE = SUDOKU;
+export const Add_SUDOKU_TEMPLATE = SUDOKU;
+export const UPDATE_SUDOKU_TEMPLATE = SUDOKU + "/";
+export const DELETE_SUDOKU_TEMPLATE = SUDOKU + "/";
+
+//* cloudinaryGamesImages
+const CLOUDINARYGAMESIMAGES = API_URL + "/cloudoinaryGamesImgs";
+export const GET_CLOUDINARY_GAMES_IMGS = CLOUDINARYGAMESIMAGES;
+export const ADD_CLOUDINARY_GAMES_IMG = CLOUDINARYGAMESIMAGES;
+export const DELETE_CLOUDINARY_GAMES_IMG = CLOUDINARYGAMESIMAGES + "/";

@@ -8,7 +8,7 @@ export default function LogInButton({updateModal,closeModal}) {
   return (
     <button
     onClick={()=>updateModal(<LogInForm closeModal={closeModal} updateModal={updateModal}/>)}
-    className='login-button'
+    className='LogInButton'
     >logIn</button>
   )
 }

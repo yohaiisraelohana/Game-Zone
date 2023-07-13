@@ -131,7 +131,7 @@ export default function MemoryGameStart() {
 
 
   return (
-    <div className='memory-game-start-container'>
+    <div className='MemoryGameStart'>
       <NavBackButton />
       { level ? 
         <div className="memory-game-start">

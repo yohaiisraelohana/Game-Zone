@@ -6,7 +6,7 @@ export default function SelectLevel({handleChoice,options}) {
     
     console.log(options);
   return (
-    <div className='level-options-container'>
+    <div className='SelectLevel'>
         <h2>Pick Level</h2>
         <div className="level-options">
             {options && options.map((option,i)=>(

@@ -1,8 +1,8 @@
 import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { acceptFriend, addFriends, login,signUp,stayLogin, updateUser,removeFriend } from '../redux/features/userSlice';
-import { apiGet } from '../services/apiRequests';
-import { ADMIN_GET_USERS, USERS_LIST } from '../constants/urls';
+import { apiGet, apiPost } from '../services/apiRequests';
+import { USERS_LIST } from '../constants/urls';
 
 
 
@@ -62,17 +62,6 @@ export default function useUser() {
     }
 
 
-    const adminGetUsers = async () => {
-      try {
-        const {data} = await apiGet(ADMIN_GET_USERS,{},true);
-        return data;
-      } catch (error) {
-        console.log(error);
-      }
-    }
-
-
-
 
 
   return {
@@ -87,7 +76,6 @@ export default function useUser() {
       update,
       acceptFriendRequest,
       updateXp,
-      removeFriendRequest,
-      adminGetUsers
+      removeFriendRequest
     };
   }

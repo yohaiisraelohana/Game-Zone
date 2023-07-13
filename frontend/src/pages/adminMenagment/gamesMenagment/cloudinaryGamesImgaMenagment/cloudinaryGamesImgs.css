@@ -1,0 +1,18 @@
+.CloudinaryGamesImgs{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    flex-wrap: wrap;
+}
+.CloudinaryGamesImgs h2{
+    width: 100%;
+    text-align: center;
+    margin-top: 10px;
+}
+.CloudinaryGamesImgs .add-button{
+    width: 85vw;
+    border-radius: 5px;
+    margin-block: 10px;
+    background-color: var(--primary);
+    border: none;
+}

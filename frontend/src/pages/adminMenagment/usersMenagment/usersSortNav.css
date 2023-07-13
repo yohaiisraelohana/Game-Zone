@@ -1,0 +1,48 @@
+.UsersSortNav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90vw;
+    margin: auto;
+    padding-top:10px ;
+    padding-bottom: 5px;
+
+}
+
+.UsersSortNav-input-container{
+    width: 70%;
+    display: flex;
+    justify-content: end;
+    height: fit-content;
+}
+
+.UsersSortNav-input-container input{
+    width: 100%;
+    border-radius: 5px;
+    padding: 3px;
+    border: none;
+    color: black;
+    outline: none;
+    text-align: center;
+}
+
+.UsersSortNav-select{
+    width: 20%;
+}
+.UsersSortNav-select select{
+    width: 100%;
+    color: var(--primary);
+    background-color: transparent;
+    border-radius: 5px;
+    border: 1px solid white;
+}
+
+.UsersSortNav-refresh-container{
+    display: flex;
+}
+.UsersSortNav-refresh-container > *{
+    position: static;
+    font-size: 15px;
+    align-self: center;
+    justify-self: center;
+}

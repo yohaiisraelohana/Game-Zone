@@ -31,7 +31,7 @@ export default function LogInForm({ updateModal,closeModal }) {
   };
 
   return (
-    <div className="login-container">
+    <div className="LogInForm">
       <div className="login-nav">
         LogIn
         <button

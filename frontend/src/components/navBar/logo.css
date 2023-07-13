@@ -8,23 +8,23 @@
 }
 
 
-.logo-container{
+.Logo{
     display: flex;
    
 }
-.logo-name{
+.Logo .logo-name{
     font-size: 20px;
     width: 70px;
     align-self: center;
     font-family: Impact, sans-serif; 
 }
-.logo-image{
+.Logo .logo-image{
     background: url('../../assets/icons/logo2.png') center;
     background-position: center;
     background-size: contain;
     height: 70px;
     width: 70px;
 }
-.logo-image:hover{
+.Logo .logo-image:hover{
     animation: flip 1s infinite ease-in-out;
 }

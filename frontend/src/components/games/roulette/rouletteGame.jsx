@@ -27,9 +27,11 @@ export default function RouletteGame() {
     }
   
     const checkPrice = (p) => {
-      if (user.xp < p) {
-        alert("You dont have enough xp");
-        return false;
+      if(user){
+        if (user.xp < p) {
+          alert("You dont have enough xp");
+          return false;
+        }
       }
       return true;
     }
@@ -38,25 +40,25 @@ export default function RouletteGame() {
     const spinBall = () => {
       setDisable(true);
       const randomNumber = Math.floor(Math.random() * 37);
-      console.log("randomNumber",randomNumber);
-      console.log("chice",chice);
-      console.log("revard",revard);
-      console.log("revardsOptions[randomNumber]",revardsOptions[randomNumber]);
       setBallPosition(randomNumber * (360/38) + (1080 * round));
       setRound(round + 1);
       setTimeout(()=>{
         if (chice.includes(revardsOptions[randomNumber])) {
-          updateXp(price * revard);
+          if(user){
+            updateXp(price * revard);
+          }
           alert(`you won ${price * revard}xp`);
         } else {
-          updateXp(-price);
+          if (user) {
+            updateXp(-price);
+          }
         }
         setDisable(false);
       },3500)
   
     }
   return (
-    <div className='roulette-container'>
+    <div className='RouletteGame'>
         <NavBackButton/>
         <Roulette ballPosition={ballPosition}/>
         <RouletteSpin 

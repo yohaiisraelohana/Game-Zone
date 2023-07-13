@@ -1,8 +1,6 @@
-.adminMenagment{
+.AdminMenagment{
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-}
-.adminMenagment h1{
-    margin-block: 3vh;
+    position: relative;
 }

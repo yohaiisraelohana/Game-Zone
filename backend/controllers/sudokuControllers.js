@@ -41,6 +41,7 @@ const addSudoku = async (req,res) => {
         await sudoku.save();
         res.json(sudoku);
     } catch (error) {
+        console.log(error);
         res.status(502).json({error});
     }
 }
@@ -52,6 +53,7 @@ const upadateSudoku = async (req,res) => {
         const sudoku = await Sudoku.findByIdAndUpdate(id,req.body);
         res.json(sudoku);
     } catch (error) {
+        console.log(error);
         res.status(502).json({error});
     }
 }

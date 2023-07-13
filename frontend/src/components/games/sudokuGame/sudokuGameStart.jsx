@@ -122,7 +122,7 @@ export default function SudokuGameStart() {
 
 
   return ( 
-    <div className='sudoku-game'>
+    <div className='SudokuGameStart'>
         <NavBackButton/>
         <h2>sudokuGame</h2>
         <div className="sudoku-grid" >

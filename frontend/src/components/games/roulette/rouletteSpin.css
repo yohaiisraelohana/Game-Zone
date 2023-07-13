@@ -1,16 +1,16 @@
-.spin-button-container{
+.RouletteSpin .spin-button-container{
     display: flex;
     justify-content: center;
     margin-block: 5vh;
 }
-.spin-button{
+.RouletteSpin .spin-button{
     background-color: var(--primary);
     padding: 5px;
     border: none;
     border-radius: 5px;
 }
 
-.select-price-container{
+.RouletteSpin .select-price-container{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -19,13 +19,13 @@
     padding: 5px;
     border-radius: 5px;
 }
-.select-price{
+.RouletteSpin .select-price{
     background-color: transparent;
     border: none;
     outline: none;
 }
 
-.spin-container{
+.RouletteSpin{
     display: flex;
     width: 100%;
     justify-content: center;

@@ -53,3 +53,18 @@ export const apiPut = async(url,bodyData) => {
         throw(error);
     }
 }
+
+export const apiDelete = async(url) => {
+    try {
+        let config = {
+            method:"DELETE",
+            url:url,
+            withCredentials:true,
+        }
+        const response = await axios(config);
+        return response;
+    } catch (error) {
+        console.log(error);
+        throw(error);
+    }
+}

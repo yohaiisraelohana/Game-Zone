@@ -1,26 +1,26 @@
-.sudoku-nav{
+.SudokuGameNav{
     width: 100%;
     display: flex;
     justify-content: space-evenly;
     margin-block: 10px;
 }
 
-.sudoku-nav button{
+.SudokuGameNav button{
     border-radius: 3px; 
     border: none;
     text-transform: capitalize;
 }
 
-.all{
+.SudokuGameNav .all{
     background-color: var(--primary);
 }
 
-.easy{
+.SudokuGameNav .easy{
     background-color: green;
 }
-.medium{
+.SudokuGameNav .medium{
     background-color: orange;
 }
-.hard{
+.SudokuGameNav .hard{
     background-color: red;
 }

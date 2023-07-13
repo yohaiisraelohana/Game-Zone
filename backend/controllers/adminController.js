@@ -7,6 +7,9 @@ const usersListByAdmin = async (req ,res) => {
       const per_page = req.query.per_page || 50;
       const page = req.query.page - 1 || 0;
       const name = req.query.name;
+      const sort = req.query.sort || "_id";
+      const reverse = req.query.reverse == "yes" ? 1 : -1;
+      console.log(sort);
 
       if(name) {
         filter.name = new RegExp(name,"i");
@@ -14,8 +17,9 @@ const usersListByAdmin = async (req ,res) => {
       
       const users = await User.find(filter,{password:0})
         .limit(per_page)
-        .skip(per_page * page);
-        console.log(users);
+        .skip(per_page * page)
+        .sort({[sort]:reverse});
+
       res.status(200).json(users);
     }
       catch(error){
@@ -28,6 +32,7 @@ const usersListByAdmin = async (req ,res) => {
 const updateUserByAdmin = async (req, res) => {
     try {
       const admin = await User.find({_id:req._id,role:req.role}); // check if role is in the req
+      if(!admin) return res.status(400).json("unutherized for update");
       const user = await User.findById(req.params.id);
       const {xp,level,role} = req.body;
       if (xp)user.xp = xp;

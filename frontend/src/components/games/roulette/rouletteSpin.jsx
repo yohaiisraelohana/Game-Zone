@@ -3,7 +3,7 @@ import {BsCoin} from 'react-icons/bs';
 import './rouletteSpin.css'
 export default function RouletteSpin({price,hundleSelectPrice,chice,disable,checkPrice,spinBall}) {
   return (
-    <div className="spin-container">
+    <div className="RouletteSpin">
       <div className="select-price-container">
       <BsCoin style={{display:'block',position:'relative'}}/>
       <select 

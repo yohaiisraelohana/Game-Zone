@@ -1,0 +1,51 @@
+.EditUser{
+    width: 80vw;
+    height: fit-content;
+    padding-block: 50px ;
+    background-color: black;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.EditUser-form{
+    width: 90%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding-inline: 7vw;
+}
+.EditUser-form label{
+    font-size: 15px;
+    width: 100%;
+    color: var(--primary);
+}
+.EditUser-form input {
+    margin-bottom: 10px;
+    width: 100%;
+    padding: 5px;
+    color: black;
+    border: none;
+    border-radius: 5px;
+}
+.EditUser-form button {
+    background-color: transparent;
+    color: var(--primary);
+    padding-block: 5px;
+    width: 100%;
+    font-size: 15px;
+    border: var(--primary) solid 1px;
+    border-radius: 10px;
+    margin-top: 15px;
+}
+.EditUser-form button:hover{
+    background-color: rgba(255, 255, 255,1);
+}
+.EditUser-form-level{
+    width: 40%;
+}
+.EditUser-form-level input{
+    width: 90%;
+    text-align: center;
+}
+

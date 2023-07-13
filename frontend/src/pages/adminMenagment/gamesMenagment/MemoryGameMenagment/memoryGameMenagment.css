@@ -1,0 +1,19 @@
+.MemoryGameMenagment .head{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.MemoryGameMenagment .head .add-button{
+    height: fit-content;
+    padding: 5px;
+    padding-inline: 10px;
+    color: black;
+    background-color: white;
+    border: none;
+    border-radius: 10px;
+}
+.MemoryGameMenagment .head .add-button:hover{
+    background-color: var(--primary);
+    color: white;
+}

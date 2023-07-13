@@ -19,7 +19,7 @@ export default function TicTacUsers() {
 
       
   return (
-    <div className="game">
+    <div className="TicTacUsers">
       <div className={`board ${toggle ? "" : "disabled"}`}>
         {board.map((cell, index) => (
           <div key={index} className="cell" onClick={() => doMove(index)}>

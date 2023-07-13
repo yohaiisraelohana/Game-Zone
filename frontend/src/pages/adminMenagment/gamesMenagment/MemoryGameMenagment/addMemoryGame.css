@@ -1,0 +1,99 @@
+.AddMemoryGame{
+    height: fit-content;
+    width: 80vw;
+    background-color: black;
+    padding: 5px;
+    padding-block: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    border-radius: 5px;
+}
+.AddMemoryGame h2{
+    width: 100%;
+    text-align: center;
+    margin-bottom:10px ;
+}
+.AddMemoryGame .form{
+    width: 75vw;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-inline: 5%;
+}
+.AddMemoryGame .api-lable{
+    width: 100%;
+    text-align: start;
+}
+
+.AddMemoryGame .headers-container{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.AddMemoryGame .form .input {
+    width: 100%;
+    background-color: transparent;
+    border: 1px white solid;
+    padding: 3px;
+    margin-bottom:10px ;
+    border-radius: 5px; 
+    outline-color: var(--primary);
+}
+.AddMemoryGame .headers-container .input{
+    margin: 0px;
+    width: 40%;
+}
+.AddMemoryGame .form .lable-container{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding-inline: 5px;
+}
+.AddMemoryGame .form .input-container{
+    position: relative;
+    display: flex;
+    width: 100%;
+    height: fit-content;
+}
+.AddMemoryGame .form .input-container button{
+    position: absolute;
+    right: 5px;
+    background-color: transparent;
+    padding: 0px;
+    margin: 0px;
+    top: 2px;
+    font-size: large;
+    color: red;
+    
+}
+
+.AddMemoryGame .image-input-container{
+    margin-bottom: 50px;
+    height: 12vh;
+    width: 100%;
+}
+
+.AddMemoryGame .form button{
+    padding: 5px;
+    padding-inline: 10px;
+    background-color: var(--primary);
+    border: none;
+    border-radius: 10px;
+    margin-top: 5px;
+}
+
+.AddMemoryGame .error-field{
+    border: 1px solid red;
+    padding: 5px;
+    background-color: rgb(249, 110, 110);
+    color: white;
+    border-radius: 3px;
+    width: 80%;
+    text-align: center;
+    margin-bottom: 2vh;
+}

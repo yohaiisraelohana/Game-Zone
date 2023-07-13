@@ -26,7 +26,7 @@ export default function PuzzleGame() {
     ];
   return (
     <div>
-        <div className="pieces-container">
+        <div className="PuzzleGame">
         {piecesArr && piecesArr.map((p,i)=>(
         <div key={i}
         className={`${i % 3 != 0 ? "take-left " : "take-space "}${i > 2 && i < 6 ? "take-top" : (i > 5 ? "take-double-top":"")}`}
@@ -56,16 +56,4 @@ export default function PuzzleGame() {
   )
 }
 
-/*
-    const piecesArr = [
-        {piece:topLeft,position:"top left",height:"100px",width:"100px",top:0,left:30},
-        {piece:topCenter,position:"top center",height:"100px",width:"130px",top:0,left:100},
-        {piece:topRight,position:"top right",height:"100px",width:"130px",top:0,left:200},
-        {piece:centerLeft,position:"center left",height:"130px",width:"130px",top:72,left:30},
-        {piece:center,position:"center",height:"130px",width:"130px",top:72,left:130},
-        {piece:centerRight,position:"center right",height:"160px",width:"100px",top:72,left:230},
-        {piece:bottomLeft,position:"bottom left",height:"130px",width:"100px",top:172,left:30},
-        {piece:bottomCenter,position:"bottom center",height:"130px",width:"160px",top:172,left:100},
-        {piece:bottomRight,position:"bottom right",height:"100px",width:"100px",top:202,left:230}
-    ];
-*/
+
