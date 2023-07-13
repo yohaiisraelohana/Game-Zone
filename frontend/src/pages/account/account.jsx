@@ -1,10 +1,17 @@
-import React, { useState,useEffect } from 'react'
+import React, { 
+    useState,
+    useEffect
+  } from 'react'
+
 import './account.css';
 import useUser from '../../hooks/useUser';
 import {IoLogoGameControllerB} from 'react-icons/io'
+import {AiOutlineEdit} from 'react-icons/ai';
 import UsersList from '../../components/friends/usersList';
 import { useNavigate } from 'react-router-dom/dist/umd/react-router-dom.development';
-
+import NavBackButton from '../../components/reusfullComponents/navigateBackButton/navBackButton'
+import {useModal} from '../../hooks/useModal';
+import EditAccount from './editAccount';
 
 
 export default function Account() {
@@ -13,6 +20,7 @@ export default function Account() {
   const [xp_progress,setXpProgress] = useState(0);
   const [expected_xp,setExectedXp] = useState(null);
   const [user_details_nav,setUserDetailsNav] = useState(["friends","requests"]);
+  const [modal, setModal] = useState(null);
   const nav = useNavigate();
   useEffect(()=>{
     if (user) {
@@ -34,12 +42,23 @@ export default function Account() {
     <div
       className='Account'
       >
+        <NavBackButton/>
+        {modal && modal}
         {
           user ?
           
         <div className="account-container">
           <div className="account-user-details">
-            <img src={user.image} className='account-profile-img' alt="profile img" />
+            <div className="account-img">
+              <img src={user.image} className='account-profile-img' alt="profile img" />
+              <AiOutlineEdit 
+                onClick={()=>{
+                  const m = useModal(<EditAccount/>,()=>setModal(null));
+                  setModal(m);
+                }} 
+                className='account-edit-icon'/>
+            </div>
+            
             <h2 className='user-name'>{user.name}</h2>
 
               <div className="level-container">

@@ -1,6 +1,22 @@
+.Account{
+    position: relative;
+    padding-top: 30px;
+}
 .Account .account-container{
     width: 100vw;
     display: flex;
+}
+.Account .account-img{
+    position: relative;
+    
+}
+.Account .account-edit-icon{
+    position: absolute;
+    z-index: 4;
+    top: 7px;
+    right: 107px;
+    color: white;
+    font-size: 20px;
 }
 .Account .account-user-details{
     margin: auto;
@@ -30,7 +46,7 @@
     align-items: center;
 }
 .Account .account-user-details .level-container .level{
-    z-index: 2;
+    z-index: 2; 
     font-size: 15px;
     background-color: white;
     position: static;
@@ -38,6 +54,8 @@
     margin-top: -5px;
     margin-left: -42px;
     border-radius: 5px;
+    color: var(--primary);
+    text-align: center;
 }
 .Account .account-user-details .level-container .level-icon{
     position: static;
@@ -66,13 +84,13 @@
 }
 .Account progress[value]::-webkit-progress-bar {
     background-color: #000000;
-    border-radius: 5px;
+    border-radius: 10px;
     box-shadow: 0 2px 5px rgba(255, 255, 255) ;    
 }
 .Account progress[value]::-webkit-progress-value {
     background-image:
          -webkit-linear-gradient(#01faff, #1544ff);
-      border-radius: 2px; 
+      border-radius: 10px; 
       background-size: 35px 20px, 100% 100%, 100% 100%;
       transition: all 3s ease-in-out;
 }

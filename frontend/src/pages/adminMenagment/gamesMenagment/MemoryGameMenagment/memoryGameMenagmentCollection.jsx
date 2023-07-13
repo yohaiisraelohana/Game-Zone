@@ -13,7 +13,7 @@ export default function MemoryGameMenagmentCollection() {
   return (
     <div className='MemoryGameMenagmentCollection'>
         {data && data.map((memory,i)=>(
-          <div className="memory-details-container" key={i}>
+          <div className="memory-details-container" key={i} >
             <AiOutlineEdit onClick={()=>{
               setMemoryGame(memory);
               navigate("/memoryGame/menagment");
@@ -35,8 +35,8 @@ export default function MemoryGameMenagmentCollection() {
 
             
             <div className='headers'><span>Headers:</span>{"{"}
-              {memory.headers && Object.keys(memory.headers).map((key) => (
-                  <p key={key}>
+              {memory.headers && Object.keys(memory.headers).map((key,value) => (
+                  <p key={value}>
                     {key} : {memory.headers[key]},
                   </p>
                 ))}{"}"}</div>

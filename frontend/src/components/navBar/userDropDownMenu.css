@@ -1,16 +1,16 @@
 .UserDropDownMenu{
     position: absolute;
-    z-index: 2;
+    z-index: 5;
     top:5px;
     left: -33vw;
     width: 43vw;
-    border: var(--primary) 1px solid;
     border-radius: 5px;
     display: flex;
     flex-wrap: wrap;
     background-color: white;
     padding: 5px;
     justify-content: center;
+    box-shadow: -1px 3px 13px var(--primary) ;
 }
 .UserDropDownMenu .profile-details{
     border-bottom: var(--primary) 1px solid;

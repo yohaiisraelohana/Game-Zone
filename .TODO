@@ -20,21 +20,15 @@
     change cngradilation allert on winning to something more special
 7.
     light and dark mode https://www.youtube.com/watch?v=pZhAiCSqHPs
-!8.
-    option for user to edit image
 !9.
     function on the account component wich will check if the user is still connected
 !10.
     add all routes in postman
-!11.
-    in uploadImage function on backrnd move the details to .env file
 
     *Admin*
-!1.
-    put authenticationAdmin on every game changing/adding/deleting route
-2.
+1.
     gragh of users in periode
-3.
+2.
     how many users plaied every game (future)
 
     *NavBar*
