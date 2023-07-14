@@ -6,9 +6,9 @@
     align-content: start;
     padding-top: 5vh;
     width: 80vw;
-    min-height: 50vh;
+    min-height: 60vh;
     overflow-y: auto;
-    border-radius: 3px;
+    border-radius: 5px;
 }
 .SearchUsers input{
     background-color: transparent;
@@ -20,7 +20,7 @@
     outline: none;
 }
 
-.SearchUsers .users-list{
+.SearchUsers .UsersList{
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
@@ -29,13 +29,13 @@
     align-content: start;
 }
 
-.SearchUsers .users-list .user{
+.SearchUsers .UsersList .user{
     display: flex;
     justify-content: space-between;
     align-items: center;
     width: 80%;
     padding: 5px;
-    height: 30px; 
+    height: fit-content; 
     margin-block:5px;
     border-bottom: 1px solid white;
 }
@@ -49,3 +49,24 @@
     border-radius: 50%;
     margin-right: 5px;
 }
+
+@media (width > 500px ){
+    .SearchUsers{
+        min-height: 70vh ;
+    }
+    .SearchUsers h3{
+        font-size: 30px;
+    }
+    .SearchUsers .UsersList .user p{
+        font-size: 20px;
+    }
+}
+
+@media (width > 1000px){
+    .SearchUsers{
+        width: 60vw;
+    }
+    .SearchUsers input{
+        width: 70%;
+    }
+} 

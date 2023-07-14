@@ -1,3 +1,7 @@
 .MemoryGame{
     position: relative;
 }
+.MemoryGame h1{
+    width: 80vw;
+    margin: auto;
+}

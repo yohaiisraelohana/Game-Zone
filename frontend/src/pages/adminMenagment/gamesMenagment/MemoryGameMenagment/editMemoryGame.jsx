@@ -44,7 +44,7 @@ export default function EditMemoryGame() {
     if (currentGame) {
       setMainKeys(currentGame.keys);
       setImgKeys(currentGame.img_keys);
-      setHeaders(currentGame.headers);
+      setHeaders(currentGame.headers ? currentGame.headers : {});
       setBackgroundImage(currentGame.img_url);
       setName(currentGame.name);
       setApi(currentGame.api);

@@ -22,6 +22,7 @@ export default function Account() {
   const [user_details_nav,setUserDetailsNav] = useState(["friends","requests"]);
   const [modal, setModal] = useState(null);
   const nav = useNavigate();
+
   useEffect(()=>{
     if (user) {
       let xp_riched = user.xp;
@@ -31,12 +32,13 @@ export default function Account() {
       }
       setCurrentXp(xp_riched);
       setExectedXp(100 * i);
-      setXpProgress((xp_riched / expected_xp) * 100);
+      setXpProgress((xp_riched / (100 * i)) * 100);
     }
     if(error){
       nav('/');
     }
   },[user])
+
 
   return (
     <div

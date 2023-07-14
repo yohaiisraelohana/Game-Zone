@@ -32,7 +32,7 @@ export default function CldGamesImgsCollection() {
               <button 
                onClick={()=>handleDelete(image.name,image._id)}
                className="delete-img">
-                 Delete
+                 x
               </button>
              </div>
 

@@ -17,16 +17,15 @@
 
 .SlidePuzzleCollection .demo-grid{
     width: 150px;
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(3,50px);
     position: absolute;
     left: 0px;
     top: 0px;
 }
 .SlidePuzzleCollection .inner-demo-grid{
-    width:49px;
-    height: 49px;
-    border:  0.5px solid white;
+    height: 50px;
+    border:  1px solid white;
 }
 .SlidePuzzleCollection .inner-demo-grid:last-child{
     background-color: rgba(255, 255, 255,0.4)

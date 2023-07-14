@@ -12,9 +12,9 @@ export default function MemoryCollection({memorycategories}) {
     navigate(`/memoryGame/${m.name}`);
   }
   return (
-    <div>
+    <div className='MemoryCollection'>
       {memorycategories.map((m,i)=>(
-        <div className='MemoryCollection'
+        <div className='MemoryCollection-option'
         key={i}
         onClick={()=>selectCollection(m)}
         style={{backgroundImage:`url(${m.img_url})`}}>

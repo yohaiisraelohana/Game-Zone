@@ -49,8 +49,11 @@ const updateUserByAdmin = async (req, res) => {
 //delete user
 const deleteUserByAdmin = async (req, res) => {
     try {
-      const admin = await User.find({_id:req._id,role:req.role});
-      const user = await User.findByIdAndDelete(req.params.id);
+      const user = await User.findById(req.params.id);
+      user.name = "Deleted Account";
+      user.email = user._id + "@gmail.com";
+      user.image = "https://img.freepik.com/free-vector/cute-cat-gaming-cartoon_138676-2969.jpg?w=1380&t=st=1686294308~exp=1686294908~hmac=067c1c77b764a597964985eae7d9ce98257146f8acfb48443919a2785a246c4f";
+      await user.save();
       res.status(200).json(user);
     } catch (error) {
       res.status(400).json({ error,location:"deleteUser" });

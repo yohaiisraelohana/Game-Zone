@@ -6,7 +6,7 @@ export default function SlidePuzzleCollection({updatePuzzleImage}) {
   useEffect(()=>{
     getCloudinaryImages();
   },[])
-
+ 
   return (
     <div className='SlidePuzzleCollection'>
       {images_collection && images_collection.map((image)=>(

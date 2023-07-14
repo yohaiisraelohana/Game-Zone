@@ -1,6 +1,9 @@
 
 .CirclesFight{
     position: relative;
+    margin-top: -10vh;
+    z-index: 7;
+    background-color: black;
 }
 .CirclesFight .score{
     position: absolute;
@@ -32,6 +35,7 @@
     color: black;
     font-weight: bold;
     margin: 0px;
+    padding-bottom: 0px;
 }
 .circle-start-game-container .circle-form-container p{
     font-size: 15px;
@@ -53,4 +57,22 @@
 }
 .circle-forms-buttons .start {
     background-color: var(--primary);
+}
+
+@media(width > 800px){
+    .circle-start-game-container .circle-form-container{
+        width: 50vw;
+    }
+}
+
+@media(width > 1200px){
+    .circle-start-game-container .circle-form-container{
+        width: 40vw;
+        padding-block: 2vh;
+        padding: 30px;
+        padding-block: 20px;
+    }
+    .circle-start-game-container .circle-form-container p{
+        padding-bottom: 3vh;
+    }
 }

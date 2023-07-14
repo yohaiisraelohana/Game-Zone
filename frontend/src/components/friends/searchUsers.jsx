@@ -7,7 +7,7 @@ export default function SearchUsers() {
   const { searchUser } = useUser();
   const [users, setUsers] = useState(null);
   const searchInputRef = useRef(null);
-
+ 
   const handleInput = async () => {
     try {
       const usersSearched = await searchUser(searchInputRef.current.value);

@@ -10,7 +10,7 @@ import SlidePuzzleStartGame from './slidePuzzleStartGame';
 import { resizeCloudinaryImage } from '../../../services/resizeCloudinaryImage'; 
 import useCloudinaryImages from '../../../hooks/useCloudinaryImages';
 import NavBackButton from '../../reusfullComponents/navigateBackButton/navBackButton';
-
+import { resizeImage } from '../../../services/resizeInputImage';
 
 
 
@@ -25,25 +25,38 @@ export default function SlidePuzzleGame() {
     setPuzzleImage(resizeCloudinaryImage(currentImage.route + currentImage.name,box_size,box_size));
   }
 
+  const handleImageChange = async (img) => {
+    try {
+      const resizedImageBlob = await resizeImage(img,box_size,box_size);
+      const resizedImage = URL.createObjectURL(resizedImageBlob);
+      console.log(resizedImage);
+      setPuzzleImage(resizedImage);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   useEffect(()=>{
     if(currentImage){
       updatePuzzleImage();
     }
   },[currentImage])
 
-  console.log({currentImage});
+  
+
+  console.log({currentImage,puzzle_image});
   return (
     <div className='SlidePuzzleGame' >
-      {currentImage
+      {puzzle_image
         ? 
           <div>
-            <NavBackButton onClick={() => setImage(null)}/>
+            <NavBackButton onClick={() => setPuzzleImage(null)}/>
             <SlidePuzzleStartGame image={puzzle_image} box_size={box_size} />
           </div>
           
         : <div >
             <NavBackButton />
-            <SlidePuzzleImgInput />
+            <SlidePuzzleImgInput handleImageChange={handleImageChange} />
             <SlidePuzzleCollection  />
           </div>
         }

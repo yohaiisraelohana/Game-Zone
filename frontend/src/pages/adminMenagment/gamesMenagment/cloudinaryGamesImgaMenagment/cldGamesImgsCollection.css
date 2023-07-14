@@ -11,12 +11,12 @@
     width: 25vw;
     object-fit: cover;
     position: absolute;
-    z-index: 3;
+    z-index: 1;
 }
 .CldGamesImgsCollection img:hover{
     height: 35vw;
     width: 35vw;
-    z-index: 1;
+    z-index: 3;
     top: -5vw;
     left: -5vw;
 }
@@ -35,12 +35,15 @@
     display: flex;
     justify-content: center;
 }
-.CldGamesImgsCollection .deleteContainer button{
+.CldGamesImgsCollection .deleteContainer .delete-img{
     position: absolute;
     z-index: 2;
-    bottom: 2px;
-    font-size: 10px;
-    background-color: red;
+    top: 0px;
+    right: 3px;
+    padding: 0px;
+    font-size: 15px;
+    color: red;
+    background-color: transparent;
     border: none;
     border-radius: 5px;
 

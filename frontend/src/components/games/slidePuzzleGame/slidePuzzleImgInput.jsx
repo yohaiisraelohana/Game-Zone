@@ -1,23 +1,11 @@
 import React,{useState} from 'react'
 import './slidePuzzleImgInput.css';
 import ImgDropInput from '../../reusfullComponents/imgDropInput/imgDropInput';
-export default function SlidePuzzleImgInput() {
-    const [selectedImage, setSelectedImage] = useState(null);
+
+export default function SlidePuzzleImgInput({handleImageChange}) {
     const [open_input,setOpenInput] = useState(false);
 
-    const handleImageChange = (event) => {
-      const file = event.target.files[0];
-  
-      if (file) {
-        const reader = new FileReader();
-  
-        reader.onload = () => {
-          setSelectedImage(reader.result);
-        };
-  
-        reader.readAsDataURL(file);
-      }
-    };
+
   
     return (
       <div className='SlidePuzzleImgInput'>
@@ -27,7 +15,7 @@ export default function SlidePuzzleImgInput() {
 
           {open_input && 
             <div className="img-input-container">
-              <ImgDropInput/>
+              <ImgDropInput addImage={(img)=>handleImageChange(img)} />
             </div>}
       </div>
     );

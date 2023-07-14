@@ -3,84 +3,40 @@
  
    ! *404page*
 
-    *Main*
+    *style*
 !1.  
     design website for all sizes
+    *stoped at memoryGame
 2.  
-    make admin layout where he can add sudoku templates and 
-    memory games search users and more
-3.  
     use skeletons instead of loading
-
-4.
-    add some styles from https://www.julienthibeaut.xyz/blog
-!5. 
-    https://www.npmjs.com/package/react-image-file-resizer make in services function that changes size of user image from input
-6.
+5.
     change cngradilation allert on winning to something more special
 7.
     light and dark mode https://www.youtube.com/watch?v=pZhAiCSqHPs
-!9.
-    function on the account component wich will check if the user is still connected
-!10.
-    add all routes in postman
 
-    *Admin*
-1.
-    gragh of users in periode
-2.
-    how many users plaied every game (future)
 
-    *NavBar*
-1.
-    shadow to dropdown
+
+
 
     *Sudoku*
-
-1.  when user finish template save the template id 
-    in the user for he is won't be able to do him again
-    or he is will be able to do but will not get xp for 
-    this 
-7.
+1.
     button to solve the sudoku template will use the function from leetcode
-8.
+2.
     add count to redux
 
 
     *MemoryGame*
 1.  
-    make the option to put post and delete for only admin user
-2.  
     update count in redux
-3. 
-    make the option to search for any subject user wants in pexels api
+
 
 
 
     *LogIn*
 !1.  
     finish "forgot your password link"
-
-
-    *SignUp*
-
-
-    *roulette*
-
-
-    *slidePuzzle*
-2.
-    use the function to change user image from input
-
-
-    *circlesFight*
-!1.
-    when start playing put in modal or send to another route for he is will be only in the screen
-    (another option is to put in absolute position )
-
-    *account*
-!1.  
-    fix progress bat to work on the first render
+!2.
+    function on the account component wich will check if the user is still connected
 
     *tic tac toe*
 1.
@@ -103,20 +59,28 @@
     https://youtu.be/PBrEq9Wd6_U
 
     *onFuture*
+!1. 
+    memoryGame : make the option to search for any subject user wants in pexels api
 1.
-    put all games in backend with categories (popular,thinkink,puzzles)
+    games : put all games in backend with categories (popular,thinkink,puzzles)
     in addition make game define settings to every game , 
 2.
-    when someone click on game add to the game in times_played ptropertie 1
+    games : when someone click on game add to the game in times_played ptropertie 1
     in the home page present the most played game
 3.  
-    add to cloudinary game images categories collection
-4. 
-    add option to resize the cloudinary images befor uploading them
-5.
-    add option to remove image from cloudinary
+    cloudinary : add to cloudinary game images categories collection
+6. 
+    styles : add some specials styles from https://www.julienthibeaut.xyz/blog
+7.
+    admin: gragh of users per periode
+8.
+    admin: how many users plaied every game (future)
+!10.
+    main : add all routes in postman
 
 *! check cookies time works
+
+
 -->
 
 

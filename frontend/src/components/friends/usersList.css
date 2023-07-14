@@ -33,3 +33,10 @@
     background-color: transparent;
     border-radius: 10px;
 }
+
+@media(width > 500px){
+    .UsersList .user .user-profile-img{
+        height: 50px;
+        width: 50px;
+    }
+}
