@@ -19,8 +19,6 @@
 
 
     *Sudoku*
-1.
-    button to solve the sudoku template will use the function from leetcode
 2.
     add count to redux
 
