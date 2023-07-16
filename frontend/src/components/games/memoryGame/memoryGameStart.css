@@ -1,9 +1,46 @@
 .MemoryGameStart{
     position: relative;
+    display: flex;
+    align-items: center;
+    height: fit-content;
+    min-height: 80vh;
+    justify-content: center;
+
+}
+.MemoryGameStart .turnes{
+    margin-top: 3vh;
+    padding-bottom: 2vh;
+    width: 100%;
+    text-align: center;
+    font-size: 1.5em;
 }
 .MemoryGameStart .memory-cards-container{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    padding-inline: 20px;
+    display: grid;
+    grid-template-columns: repeat(3,25vw);
+    gap: 5vw;
+    margin-bottom: -3vh;
+}
+@media(width > 500px){
+    .MemoryGameStart .memory-cards-container{
+        display: grid;
+        grid-template-columns: repeat(4,20vw);
+        gap: 5vw;
+        
+    }
+}
+
+/* @media(width > 700px){
+    .MemoryGameStart .memory-cards-container{
+        display: grid;
+        grid-template-columns: repeat(4,20vw);
+        gap: 5vw;
+    }
+} */
+
+@media(width > 1000px){
+    .MemoryGameStart .memory-cards-container{
+        display: grid;
+        grid-template-columns: repeat(6,14vw);
+        gap: 2vw;
+    }
 }

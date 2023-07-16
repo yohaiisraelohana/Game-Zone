@@ -1,8 +1,6 @@
 .MemoryCard {
-    margin-block: 10px;
     display: flex;
-    height: 150px;
-    width: 100px;
+    height: 18vh;
     position: relative;
 }
 
@@ -36,4 +34,23 @@
 .flipped .back {
     transform: rotateY(90deg);
     transition-delay: 0s ;
+}
+@media(width > 500px){
+    .MemoryCard {
+        height: 20vh;
+    }
+}
+@media(width > 700px){
+    .MemoryCard {
+        height: 24vh;
+    }
+    .MemoryGameStart .memory-cards-container{
+        margin-bottom: -5vh;
+    }
+}
+
+@media(width > 1000px){
+    .MemoryCard {
+        height: 30vh;
+    }
 }

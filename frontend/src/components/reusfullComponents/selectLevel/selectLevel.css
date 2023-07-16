@@ -4,6 +4,7 @@
 
     background-color: black;
     border-radius: 5px;
+    margin: auto;
 
     display: flex;
     flex-wrap: wrap;
@@ -11,6 +12,11 @@
     align-items: center;
     align-content: start;
     
+}
+.SelectLevel h2{
+    width: 100%;
+    text-align: center;
+    font-size: 30px;
 }
 .SelectLevel .level-options{
     display: flex;
@@ -30,6 +36,20 @@
     border-radius: 10px;
     font-size: 30px;
 }
+
 .SelectLevel  h2{
     margin-block: 4%;
+}
+
+
+@media(width > 1000px){
+    .SelectLevel  .level-options button{
+        width: 50%;
+        height: 25%;
+        background-color: var(--primary);
+        border: none;
+        text-transform: capitalize;
+        border-radius: 10px;
+        font-size: 30px;
+    }
 }

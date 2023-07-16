@@ -135,8 +135,7 @@ export default function MemoryGameStart() {
       <NavBackButton />
       { level ? 
         <div className="memory-game-start">
-          <p>game started level {level}</p>
-          <p>Turns{turns}</p>
+          <p className='turnes'>Turns: {turns}</p>
           <div className="memory-cards-container">
           {memoryCards ? 
             memoryCards.map((card,i)=>(
