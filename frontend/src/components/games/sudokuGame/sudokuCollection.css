@@ -1,21 +1,23 @@
 .SudokuCollection{
-    display: flex;
-    flex-wrap: wrap;
-    width: 100%;
-    justify-content: space-between;
-    padding-inline: 5vw;
+    display: grid;
+    width: 85vw;
     margin: auto;
+    grid-template-columns: repeat(2,40vw);
+    gap: 5vw;
 }
 .SudokuCollection .sudoku-preview{
     display: grid;
-    grid-template-columns: repeat(9,17px);
-    margin-block:1vh;
+    grid-template-columns: repeat(9,11%) ;
+    height: fit-content;
+    height: 40vw;
+    gap: 0px;
 }
 .SudokuCollection .sudoku-preview > * {
     background-color: white;
     color: #333;
     border: 1px black solid;
-    height: 17px;
+    /* height: 11%; */
+    min-height: 4vw;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -32,4 +34,32 @@
 .SudokuCollection .hard{
     background-color:  rgb(255, 123, 123) ;
     border: 1px black solid;
+}
+
+@media(width > 700px){
+    .SudokuCollection{
+        grid-template-columns: repeat(3,27vw);
+        width: 90vw;
+    }
+    .SudokuCollection .sudoku-preview {
+        height: 28vw;
+        
+    }
+    .SudokuCollection .sudoku-preview > *{
+        min-height: 3vw;
+    }
+
+}
+@media(width > 1200px){
+    .SudokuCollection{
+        grid-template-columns: repeat(4,20vw);
+        width: 95vw;
+    }
+    .SudokuCollection .sudoku-preview {
+        height: 20vw;
+    }
+    .SudokuCollection .sudoku-preview > *{
+        min-height: 2.2vw;
+    }
+
 }

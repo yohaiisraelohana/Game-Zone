@@ -1,5 +1,7 @@
 .SudokuGame h2{
     color: white;
+    padding-left: 5%;
+    font-size: 2em;
 }
 .SudokuGame {
     position: relative;

@@ -6,11 +6,16 @@
     *style*
 !1.  
     design website for all sizes
-    *stoped at puzzleGame
+    *skiped puzzleGame
+    *stoped at ticTacToe
 2.  
     use skeletons instead of loading
+3.
+    retake images from leonardo for the bg games
 5.
     change cngradilation allert on winning to something more special
+    like icon of coins down from the upper screen
+    make it as a component apears when user wons 
 7.
     light and dark mode https://www.youtube.com/watch?v=pZhAiCSqHPs
 

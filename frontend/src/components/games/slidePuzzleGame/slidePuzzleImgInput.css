@@ -18,3 +18,15 @@
     margin-bottom: 20px;
     margin-left: -5px;
 }
+
+@media(width > 500px){
+    .SlidePuzzleImgInput{
+        margin-bottom: 3vh;
+    }
+}
+
+@media(width > 1000px){
+    .SlidePuzzleImgInput{
+        margin-bottom: 8vh;
+    }
+}

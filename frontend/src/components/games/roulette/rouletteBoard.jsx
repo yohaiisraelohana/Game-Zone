@@ -12,7 +12,7 @@ export default function RouletteBoard({setChoice,setRevard,chice}) {
                 onClick={()=>{
                   setChoice(n);
                   setRevard(6);
-                }}
+                }} 
                 key={i}>^</button>
             ))}
         </div>

@@ -17,8 +17,9 @@ import { resizeImage } from '../../../services/resizeInputImage';
 
 export default function SlidePuzzleGame() {
   const [puzzle_image,setPuzzleImage] = useState(null);
-  const box_size = window.innerWidth < 600 ? 300 : (window.innerWidth < 900 ? 600 : 900) ;
+  const box_size = window.innerWidth < 600 ? 300 : 600; 
   const {currentImage,setImage} = useCloudinaryImages();
+  console.log(box_size);
   
 
   const updatePuzzleImage = () => {

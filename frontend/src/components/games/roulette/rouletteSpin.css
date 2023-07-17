@@ -32,3 +32,10 @@
     align-items: center;
     gap: 10px;
 }
+
+/* @media(width > 1000px){
+    .RouletteSpin{
+        width: 30%;
+    }
+    
+} */

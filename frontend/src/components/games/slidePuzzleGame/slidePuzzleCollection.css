@@ -1,9 +1,10 @@
 .SlidePuzzleCollection{
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-evenly;
-    padding-inline:10% ;
+    justify-content: center;
     gap:30px ;
+    width: 100vw;
+    margin: auto;
 }
 
 .SlidePuzzleCollection .image-preview{
@@ -29,4 +30,10 @@
 }
 .SlidePuzzleCollection .inner-demo-grid:last-child{
     background-color: rgba(255, 255, 255,0.4)
+}
+
+@media(width > 700px){
+    .SlidePuzzleCollection{
+        width: 85vw;
+    }
 }

@@ -9,6 +9,7 @@
     border-radius: 3px; 
     border: none;
     text-transform: capitalize;
+    font-size: 1em;
 }
 
 .SudokuGameNav .all{

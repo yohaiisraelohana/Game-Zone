@@ -23,12 +23,14 @@
 }
 
 .RouletteBoard .rows-options-container{
-    display: flex;
+    /* display: flex;
     flex-wrap:wrap ;
+    justify-content: center; */
     margin: auto;
+    
     margin-bottom: -100px;
     width: 100%;
-    justify-content: center;
+    
 }
 
 .RouletteBoard .rows-options-container button{
@@ -49,6 +51,7 @@
 
 .RouletteBoard .two-rows-container{
     display: flex;
+    justify-content: center;
 }
 .RouletteBoard .two-rows-container button{
     width: 50px;

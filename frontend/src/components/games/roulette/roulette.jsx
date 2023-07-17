@@ -15,7 +15,7 @@ const Roulette = ({ballPosition}) => {
             <div className="inner-ball"></div>
           </div>
         </div>
-        <img height="300px" src="https://raw.githubusercontent.com/drcodecamp/html-css-exercises/master/html-css-exercise_2/wheel.png" alt="wheel" />
+        <img className='wheal-img' src="https://raw.githubusercontent.com/drcodecamp/html-css-exercises/master/html-css-exercise_2/wheel.png" alt="wheel" />
       </div>
   )
 }

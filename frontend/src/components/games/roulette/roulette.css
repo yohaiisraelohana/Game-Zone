@@ -46,4 +46,16 @@
     background: #ffffff;
     filter: blur(2px);
 }
+.Roulette .wheal-img{
+    height: 300px;
+}
 
+@media(width > 1000px){
+    .Roulette{
+        grid-column: 1;
+        grid-row: 1 / 3;
+    }
+    .Roulette .wheal-img{
+        height: 100%;
+    }
+}

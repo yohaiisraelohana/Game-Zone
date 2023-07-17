@@ -6,3 +6,22 @@
     position: relative;
     padding-top: 10px;
 }
+
+@media(width > 1000px){
+    .RouletteGame{
+        display: grid;
+        grid-template-columns: 3fr 2fr ;
+        grid-template-rows: 30vh 30vh;
+        padding-top: 10vh;
+    }
+}
+@media(width > 1200px){
+    .RouletteGame{
+        display: grid;
+        grid-template-columns: 3fr 3fr ;
+        grid-template-rows: 30vh 30vh;
+        padding-top: 10vh;
+        width: 70vw;
+        margin: auto;
+    }
+}
