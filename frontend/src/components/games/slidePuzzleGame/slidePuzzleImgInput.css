@@ -20,13 +20,13 @@
 }
 
 @media(width > 500px){
-    .SlidePuzzleImgInput{
-        margin-bottom: 3vh;
+    .SlidePuzzleImgInput .img-input-container{
+        margin-bottom: 5vh;
     }
 }
 
 @media(width > 1000px){
-    .SlidePuzzleImgInput{
-        margin-bottom: 8vh;
+    .SlidePuzzleImgInput .img-input-container{
+        margin-bottom: 10vh;
     }
 }

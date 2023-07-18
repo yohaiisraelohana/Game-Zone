@@ -36,8 +36,8 @@ button:disabled{
 
 :root{
     --primary : #2390FF; 
-    --secondary : #A5ABBD;
+    --secondary : #212733e6;
     
-    --dark-bg : black;
+    --dark-bg : #0C0D14;
     --light-bg : #F6F9FF;
 }

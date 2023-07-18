@@ -1,9 +1,10 @@
 .LogInButton{
     background-color: var(--primary);
     border: none;
-    border-radius: 3px;
-    padding: 7px;
-    margin-inline: 5px;
+    border-radius: 50px;
+    padding: 10px;
+    margin-right: 15px;
+    font-weight: bold;
 }
 .LogInButton:hover{
     box-shadow: 2px 2px 20px 1px var(--primary);

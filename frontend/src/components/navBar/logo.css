@@ -22,8 +22,8 @@
     background: url('../../assets/icons/logo2.png') center;
     background-position: center;
     background-size: contain;
-    height: 70px;
-    width: 70px;
+    height: 60px;
+    width: 60px;
 }
 .Logo .logo-image:hover{
     animation: flip 1s infinite ease-in-out;
