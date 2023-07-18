@@ -59,6 +59,7 @@
         width: 85vw;
         grid-template-columns: repeat(2,40vw);
         gap: 5vw;
+        margin-top: 5vh;
     }
     .GameCollection > *{
         height: 20vw;

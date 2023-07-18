@@ -2,15 +2,16 @@
     position: absolute;
     z-index: 5;
     top:5px;
-    left: -33vw;
+    left: -34vw;
     width: 43vw;
     border-radius: 5px;
     display: flex;
     flex-wrap: wrap;
-    background-color: white;
+    background-color: var(--secondary);
     padding: 5px;
     justify-content: center;
-    box-shadow: -1px 3px 13px var(--primary) ;
+    box-shadow: -1px 2px 10px var(--light-bg) ;
+    color: var(--light-bg);
 }
 .UserDropDownMenu .profile-details{
     border-bottom: var(--primary) 1px solid;
@@ -20,12 +21,12 @@
     margin-bottom: 5px;
 }
 .UserDropDownMenu .profile-details p{
-    color: black;
+    color: var(--light-bg);
     font-weight: bolder;
 }
 .UserDropDownMenu .profile-details .email{
     font-size: 12px;
-    color:#333;
+    color:#8e8e8e;
     font-weight: normal;
     padding-top: 5px;
 }
@@ -33,12 +34,19 @@
 .UserDropDownMenu .dropdown-option{
     background-color: transparent;
     border: none;
-    color: black;
+    color: var(--light-bg);
     width: 100%;
     padding-block:10px ;
 }
 .UserDropDownMenu .dropdown-option:hover{
-    background-color: var(--primary);
-    color: white;
+    background-color: var(--light-bg);
+    color: var(--primary);
     border-radius: 5px;
+}
+
+@media(width > 500px){
+    .UserDropDownMenu{
+        left: -21vh;
+        width: 25vh;
+    }
 }
