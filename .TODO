@@ -7,7 +7,7 @@
 !1.  
     design website for all sizes
     *skiped puzzleGame , ticTacToe
-    *stoped at navbar
+    *stoped at adminMenagment
 2.  
     use skeletons instead of loading
 3.
@@ -21,17 +21,21 @@
 
 
 
-
+    *account*
+1.
+    devide to some compunents
 
     *Sudoku*
-2.
+1.
     add count to redux
+
 
 
     *MemoryGame*
 1.  
     update count in redux
-
+2.
+    change the back img of card
 
 
 
@@ -83,7 +87,8 @@
     admin: how many users plaied every game (future)
 !10.
     main : add all routes in postman
-
+!11.
+    usersList: in friends -> button to invite to a game online
 *! check cookies time works
 
 
