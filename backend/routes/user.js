@@ -1,5 +1,5 @@
 const express = require('express');
-const {removeFriendRequest,usersList,signUser,loginUser,friendRequest,stayLogin,acceptFriendRequest, updateUser} = require('../controllers/userController')
+const {logOut,removeFriendRequest,usersList,signUser,loginUser,friendRequest,stayLogin,acceptFriendRequest, updateUser} = require('../controllers/userController')
 const {authentication, authenticationAdmin}  = require('../middleware/requireAuth');
 const {validateSignUp,validateLogin, validateUpdateUser} = require('../middleware/validation');
 const { getSignature } = require('../utils/uploadImage');
@@ -34,6 +34,8 @@ router.post('/removeFriendRequest/:id',authentication,removeFriendRequest,stayLo
 //update user
 router.put('/update',authentication,validateUpdateUser,updateUser);
 
+//logOut
+router.get('/LogOut',logOut)
 
 //Admin
 router.put('/adminUpdate/:id',authentication,authenticationAdmin,validateUpdateUser,updateUserByAdmin);

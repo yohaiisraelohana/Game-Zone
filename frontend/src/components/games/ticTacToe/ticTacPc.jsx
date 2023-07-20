@@ -19,7 +19,7 @@ export default function TicTacPc() {
     setWinner(null);
     setToggle(true);
     setRound(0);
-    setMove(opposite());
+    setMove("X"); // Reset the move to "X"
   };
 
   const [winConditions] = useState([
@@ -65,6 +65,7 @@ export default function TicTacPc() {
       setWinner("draw");
       setToggle(false);
       return true;
+      
     }
     return false;
   };
@@ -219,13 +220,11 @@ export default function TicTacPc() {
   }, [board, move, round, toggle]);
 
   const doMove = (index) => {
-    if (!toggle || move !== "X") return;
-
-    if (board[index] === null) {
-      setBoard((prev) => prev.map((x, i) => (i === index ? move : x)));
-      setMove((prev) => (prev === "X" ? "O" : "X"));
-      setRound(round + 1);
-    }
+    if (winner !== null || board[index] !== null || move !== "X") return; // Don't allow moves if there's a winner, the cell is already occupied, or it's not the user's turn
+  
+    setBoard((prev) => prev.map((x, i) => (i === index ? move : x)));
+    setMove((prev) => (prev === "X" ? "O" : "X"));
+    setRound(round + 1);
   };
 
   return (

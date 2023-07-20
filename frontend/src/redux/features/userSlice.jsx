@@ -1,7 +1,6 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import { ACCEPT_FRIEND, ADD_FRIEND, LOGIN_USER, SIGNUP_USER, STAY_LOGIN, UPDATE_USER, USERS_LIST,REMOVE_FRIEND } from "../../constants/urls";
+import { ACCEPT_FRIEND, ADD_FRIEND, LOGIN_USER, SIGNUP_USER, STAY_LOGIN, UPDATE_USER,REMOVE_FRIEND, LOG_OUT } from "../../constants/urls";
 import { apiGet, apiPost, apiPut } from "../../services/apiRequests";
-
 
 
 export const login = createAsyncThunk("user/login", async (userData) => {
@@ -70,6 +69,16 @@ export const removeFriend = createAsyncThunk("user/removeFriend" , async (_id) =
     try {
       const response = await apiPost(REMOVE_FRIEND + `/${_id}`,{});
       return response.data;
+    } catch (error) {
+      console.log(error);
+      throw error;
+    }
+})
+
+export const logout = createAsyncThunk("user/logout", async () => {
+    try {
+        const response = await apiGet(LOG_OUT);
+        return response.data;
     } catch (error) {
       console.log(error);
       throw error;
@@ -154,9 +163,21 @@ const userSlice = createSlice({
         state.error = action.payload;
         state.loading = false;
       })
+      .addCase(logout.pending , (state,action) => {
+        state.loading = true;
+    })
+    .addCase(logout.fulfilled, (state, action) => {
+        state.loading = false;
+    })
+    .addCase(logout.rejected, (state, action) => {
+        state.error = action.payload;
+        state.loading = false;
+      })
 
   },
-  reducers: {},
+  reducers: {
+  
+  },
 });
 //acceptFriend
 
