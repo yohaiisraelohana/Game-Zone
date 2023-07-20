@@ -10,8 +10,8 @@
     margin: auto;
     padding: 5%;
     border-radius: 5px;
-    border: 2px dashed #555;
-    color: #444;
+    border: 2px dashed var(--secondary);
+    color: var(--light-bg);
     cursor: pointer;
     transition: background .2s ease-in-out, border .2s ease-in-out;
 }

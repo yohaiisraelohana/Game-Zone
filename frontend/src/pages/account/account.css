@@ -14,7 +14,7 @@
     position: absolute;
     z-index: 4;
     top: 7px;
-    right: 107px;
+    right: 31vw;
     color: white;
     font-size: 20px;
 }
@@ -25,11 +25,11 @@
     flex-wrap: wrap;
 }
 .Account .account-user-details .account-profile-img{
-    height: 200px;
-    width: 200px;
+    height: 30vw;
+    width: 30vw;
     border-radius: 10px;
     border: 1px white solid;
-    margin-inline: 100px;
+    margin-inline: 30vw;
 }
 
 .Account .account-user-details .user-name{
@@ -85,7 +85,8 @@
 .Account progress[value]::-webkit-progress-bar {
     background-color: #000000;
     border-radius: 10px;
-    box-shadow: 0 2px 5px rgba(255, 255, 255) ;    
+    box-shadow: 0 2px 5px var(--secondary),
+    0px 1px 3px var(--light-bg);    
 }
 .Account progress[value]::-webkit-progress-value {
     background-image:
@@ -109,12 +110,13 @@
     align-self: center;
 }
 .Account .details-container{
-    width: 80%;
+    width: 80vw;
     margin-top: 10px;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;  
 }
+
 .Account .details-container p{
     margin-block: 5px;
 }
@@ -145,11 +147,16 @@
 
 .Account .account-container .user {
     display: flex;
-    width: 350px;
+    width: 80vw;
     justify-content: space-between;
     margin-block: 10px ;
-    border-bottom: 1px solid white;
-    padding-block: 10px;
+    /* border-bottom: 1px solid white;
+    padding-block: 10px; */
+    padding: 5px;
+    padding-inline: 10px;
+    height: fit-content; 
+    background-color: var(--secondary);
+    border-radius: 5px;
 }
 
 .Account .account-container .user .user-profile{
@@ -164,7 +171,27 @@
 }
 .Account .account-container .user button{
     max-height: 30px;
-    align-self: self-end;
-    margin-bottom: 4px;
+    align-self: center;
 }
 
+@media(width > 1000px){
+    .Account .account-container .user{
+        width: 70vw;
+    }
+    .Account .details-container{
+        width: 70vw;
+    }
+    .Account .account-container .user .user-profile .user-profile-img{
+        height: 50px;
+        width: 50px;
+    }
+    .Account .account-container .user .user-profile p{
+        font-size: 20px;
+    }
+}
+@media(width > 1200px){
+    .Account .account-container .user .user-profile .user-profile-img{
+        height: 60px;
+        width: 60px;
+    }
+}

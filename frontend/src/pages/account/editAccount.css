@@ -1,5 +1,5 @@
 .EditAccount{
-    background-color: rgb(0, 0, 0);
+    background-color: var(--dark-bg);
     height: fit-content;
     width: 80vw;
     color: black;
@@ -42,4 +42,55 @@
     padding: 5px;
     border-radius: 5px;
     padding-inline: 10px;
+}
+
+@media (width > 500px){
+    .EditAccount img{
+        width: 70vw;
+        height: 70vw;
+    }
+    .EditAccount .EditAccount-img-input{
+        height: 10vh;
+        margin-bottom: 2vh;
+    }
+}
+
+@media (width > 700px){
+    .EditAccount img{
+        width: 50vw;
+        height: 50vw;
+        margin-inline: 20vw;
+    }
+    .EditAccount .EditAccount-img-input{
+        height: 10vh;
+        width: 80%;
+        margin-inline: 10%;
+        margin-bottom: 4vh;
+    }
+}
+@media (width > 1000px){
+    .EditAccount img{
+        width: 40vw;
+        height: 40vw;
+        margin-inline: 25vw;
+    }
+    .EditAccount .EditAccount-img-input{
+        height: 10vh;
+        width: 70%;
+        margin-inline: 15%;
+        margin-bottom: 4vh;
+    }
+}
+@media (width > 1200px){
+    .EditAccount img{
+        width: 30vw;
+        height: 30vw;
+        margin-inline: 30vw;
+    }
+    .EditAccount .EditAccount-img-input{
+        height: 10vh;
+        width: 60%;
+        margin-inline: 20%;
+        margin-bottom: 5vh;
+    }
 }

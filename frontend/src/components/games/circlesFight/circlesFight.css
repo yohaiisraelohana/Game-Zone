@@ -7,7 +7,7 @@
 }
 .CirclesFight .score{
     position: absolute;
-    top: 5px;
+    top: 17px;
     left: 5px;
     user-select: none;
 }
@@ -22,7 +22,7 @@
 }
 
 .circle-start-game-container .circle-form-container{
-    background-color: white;
+    background-color: var(--secondary);
     width: 70vw;
     padding: 15px;
     padding-top: 30px;
@@ -32,7 +32,7 @@
 
 .circle-start-game-container .circle-form-container p:first-child {
     font-size: 40px;
-    color: black;
+    color: var(--light-bg);
     font-weight: bold;
     margin: 0px;
     padding-bottom: 0px;

@@ -1,9 +1,16 @@
 .MemoryGame{
     position: relative;
-    padding-top: 5vh;
+    margin-top: 5vh;
+    padding-top: 4vh;
 }
 .MemoryGame h1{
     position: absolute;
     top: 0px;
     left: 5%;
+}
+@media(width > 700px){
+    .MemoryGame{
+        margin-top: 5vh;
+        padding-top: 2vh;
+    }
 }
