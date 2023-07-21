@@ -6,16 +6,13 @@ import Home from '../pages/homePage/home';
 import MemoryGame from '../components/games/memoryGame/memoryGame';
 import MemoryGameStart from '../components/games/memoryGame/memoryGameStart';
 import NavBar from '../components/navBar/navBar';
-import TicTacGame from '../components/games/ticTacToe/ticTacGame';
 import TicTacPc from '../components/games/ticTacToe/ticTacPc';
 import SudokuGame from '../components/games/sudokuGame/sudokuGame';
 import SudokuGameStart from '../components/games/sudokuGame/sudokuGameStart';
-import Roulette from '../components/games/roulette/roulette'
 import RouletteGame from '../components/games/roulette/rouletteGame';
 import SlidePuzzleGame from '../components/games/slidePuzzleGame/slidePuzzleGame';
 import PuzzleGame from '../components/games/puzzleGame/puzzleGame';
 import CirclesFight from '../components/games/circlesFight/circlesFight';
-import TicTacUsers from '../components/games/ticTacToe/ticTacUsers';
 import useUser from '../hooks/useUser';
 import Account from '../pages/account/account';
 import AdminMenagment from '../pages/adminMenagment/adminMenagment';
@@ -41,9 +38,7 @@ export const AppRoutes = () => {
           <Route path='/memoryGame' element={<MemoryGame/>} />
           <Route path='/memoryGame/:name' element={<MemoryGameStart/>} />
           <Route path='/memoryGame/menagment' element={<EditMemoryGame/>}/>
-          <Route path='/ticTacGame' element={<TicTacGame/>}/>
-          <Route path='/ticTacGame/pc' element={<TicTacPc/>}/>
-          <Route path='/ticTacGame/users' element={<TicTacUsers/>}/>
+          <Route path='/ticTacGame' element={<TicTacPc/>}/>
           <Route path='/sudokuGame' element={<SudokuGame/>} />
           <Route path='/sudokuGame/:level' element={<SudokuGameStart/>} />
           <Route path='/sudokuGame/menagment'  element={<SudokuMenagmentOptions/>}/>

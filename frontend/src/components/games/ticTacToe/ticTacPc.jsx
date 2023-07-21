@@ -230,7 +230,7 @@ export default function TicTacPc() {
   };
   return (
     <div className="TicTacPc">
-      <div className="icon">
+      <div style={{fontSize:'40px'}} className="icon">
       <NavBackButton />
       </div>
       {level ? (

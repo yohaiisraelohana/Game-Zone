@@ -22,6 +22,10 @@
     pointer-events: none;
     opacity: 0.5;
   }
+
+  .TicTacPc .icon {
+    font-size: 40px;
+  }
   
   .TicTacPc .cell {
     display: flex;
@@ -40,7 +44,7 @@
     font-size: 24px;
     font-weight: bold;
   }
- .TicTacPc .button {
+  .TicTacPc .button {
     color: black;
     margin-top: 20px;
     font-size: 20px;
@@ -49,18 +53,49 @@
     padding: 12px;
     border-radius: 15%;
     color: white;
+  
+
+    transition: transform 0.3s ease;
   }
+
+  .TicTacPc .button:hover {
+    transform: scale(1.1); 
+  }
+  
   .TicTacPc .choose-level{
     display: flex;
     justify-content: center;
     height: 80vh;
   }
 
-
-  @media(width > 500px){
+  @media(width > 600px){
     .TicTacPc .cell{
-      height: 400px;
-      width: 400px;
+     width: 130px;
+     height: 130px;
     }
   }
+  
+
+  @media(width > 800px){
+    .TicTacPc .cell{
+     width: 150px;
+     height: 130px;
+    }
+    .TicTacPc .cell {
+      font-size: 35px;
+    }
+  }
+
+
+  @media(width > 1000px){
+    .TicTacPc .cell{
+     width: 200px;
+     height: 130px;
+    }
+    .TicTacPc .cell {
+      font-size: 40px;
+    }
+  }
+
+
   
