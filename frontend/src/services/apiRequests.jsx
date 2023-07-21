@@ -27,8 +27,10 @@ export const apiPost = async(url,bodyData) => {
         let config = {
             method:"POST",
             url:url,
-            data:bodyData,
             withCredentials:true,
+        }
+        if(bodyData){
+            config.data = bodyData;
         }
         const response = await axios(config);
         return response;

@@ -35,11 +35,12 @@ router.post('/removeFriendRequest/:id',authentication,removeFriendRequest,stayLo
 router.put('/update',authentication,validateUpdateUser,updateUser);
 
 //logOut
-router.get('/LogOut',logOut)
+router.post('/LogOut',logOut)
 
 //Admin
 router.put('/adminUpdate/:id',authentication,authenticationAdmin,validateUpdateUser,updateUserByAdmin);
 router.delete('/adminDelete/:id',authentication,authenticationAdmin,deleteUserByAdmin);
 router.get('/adminUsersList',authentication,authenticationAdmin,usersListByAdmin);
+
 
 module.exports = router;

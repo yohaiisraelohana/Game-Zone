@@ -183,6 +183,7 @@ export default function TicTacPc() {
   };
 
   const makeComputerMove = () => {
+    if (!toggle) return;
     setTimeout(() => {
       if (level === "hard") {
         if (!toggle) return;
@@ -211,7 +212,7 @@ export default function TicTacPc() {
 
   useEffect(() => {
     if (!checkWinner()) {
-      if (round % 2 === 1 && toggle) {
+      if (move === "O" && toggle) { 
         makeComputerMove();
       }
     } else {
@@ -219,14 +220,14 @@ export default function TicTacPc() {
     }
   }, [board, move, round, toggle]);
 
+  
   const doMove = (index) => {
-    if (winner !== null || board[index] !== null || move !== "X") return; // Don't allow moves if there's a winner, the cell is already occupied, or it's not the user's turn
+    if (winner !== null || board[index] !== null || move !== "X") return; 
   
     setBoard((prev) => prev.map((x, i) => (i === index ? move : x)));
     setMove((prev) => (prev === "X" ? "O" : "X"));
     setRound(round + 1);
   };
-
   return (
     <div className="TicTacPc">
       <NavBackButton />

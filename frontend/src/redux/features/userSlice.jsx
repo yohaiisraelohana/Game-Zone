@@ -77,7 +77,7 @@ export const removeFriend = createAsyncThunk("user/removeFriend" , async (_id) =
 
 export const logout = createAsyncThunk("user/logout", async () => {
     try {
-        const response = await apiGet(LOG_OUT);
+        const response = await apiPost(LOG_OUT);
         return response.data;
     } catch (error) {
       console.log(error);
@@ -167,6 +167,7 @@ const userSlice = createSlice({
         state.loading = true;
     })
     .addCase(logout.fulfilled, (state, action) => {
+        state.user = null;
         state.loading = false;
     })
     .addCase(logout.rejected, (state, action) => {
