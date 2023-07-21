@@ -36,3 +36,15 @@
     margin-top: 10px;
 }
 
+
+@media(width > 1000px){
+    .AddSudokuTemplate{
+        width: 70vw;
+    }
+}
+
+@media(width > 1200px){
+    .AddSudokuTemplate{
+        width: 60vw;
+    }
+}

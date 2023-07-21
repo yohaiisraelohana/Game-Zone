@@ -19,7 +19,7 @@ export default function GamesMenagment() {
         {selectedGame == "MemoryGame" && <MemoryGameMenagment/>}
       </div>
       : 
-      <div className="">
+      <div className="GamesMenagment-options">
         <input 
           onChange={(e) => setGameSearch(e.target.value)}
           type="text" 

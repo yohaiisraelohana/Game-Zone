@@ -6,12 +6,19 @@
     flex-wrap: wrap;
 }
 .SudokuMenagment h2{
-    width: 60%;
+    font-size: 5vw;
+    margin-bottom: 10px;
 }
 .SudokuMenagment .add-template{
-    padding: 5px;
-    background-color: white;
-    color: black;
+    background-color: var(--secondary);
+    color: var(--light-bg);
     border: none;
     border-radius: 5px;
+    align-self: center;
+}
+
+@media(width > 700px){
+    .SudokuMenagment h2{
+        font-size: 3vw;
+    }
 }

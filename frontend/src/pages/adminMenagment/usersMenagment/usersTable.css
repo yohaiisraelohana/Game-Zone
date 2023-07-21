@@ -29,7 +29,9 @@
     background: var(--primary);
 }
 
-
+.UsersTable .row.header .cell{
+    word-break:keep-all;
+}
 .UsersTable .row.blue {
     background: #2980b9;
 }
@@ -40,7 +42,8 @@
     display: table-cell;
     height: fit-content;
     font-size: 20px;
-    color: var(--light-bg)
+    color: var(--light-bg);
+    word-break: break-all;
   }
 .UsersTable .edit-cell{
     position: relative;
@@ -104,6 +107,7 @@
     }
     .UsersTable .row.header .cell {
         display: none;
+        
     }
     .UsersTable .row .cell {
         margin-bottom: 10px;
@@ -120,7 +124,7 @@
         display: block;
     }
     .UsersTable .cell {
-        padding: 2px 16px;
+        padding: 2px 6px 2px 16px;
         display: block;
         width: 80%;
         background-color: transparent;
