@@ -4,6 +4,7 @@
     gap: 5vw;
     width: fit-content;
     margin: auto;
+    padding-bottom: 2vh;
 }
 
 .CldGamesImgsCollection img{
@@ -13,12 +14,12 @@
     position: absolute;
     z-index: 1;
 }
-.CldGamesImgsCollection img:hover{
+.CldGamesImgsCollection .show{
     height: 35vw;
     width: 35vw;
-    z-index: 3;
     top: -5vw;
     left: -5vw;
+    z-index: 3;
 }
 
 .CldGamesImgsCollection .img-container{

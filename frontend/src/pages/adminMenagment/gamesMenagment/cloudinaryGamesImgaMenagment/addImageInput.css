@@ -1,6 +1,6 @@
 
 .AddImageInput{
-    background-color: black;
+    background-color: var(--dark-bg);
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -8,6 +8,8 @@
     border-radius: 5px;
     width: 80vw;
     padding-left: 1px;
+    max-height: 80vh;
+    overflow-y: auto;
 }
 .AddImageInput .img-input-container{
     height: 40vh;
@@ -35,5 +37,29 @@
     border: none;
     padding: 3px;
     border-radius: 5px;
-    margin:5px;
+    margin:2vh;
+}
+@media(width > 500px){
+    .AddImageInput .imgs-preview{
+        margin-top: 2vh;
+    }
+}
+@media(width > 700px){
+    .AddImageInput .imgs-preview{
+        margin-top: 3vh;
+    }
+
+}
+
+@media(width > 1000px){
+    .AddImageInput .imgs-preview{
+        margin-top: 5vh;
+    }
+
+}
+@media(width > 1200px){
+    .AddImageInput .imgs-preview{
+        margin-top: 10vh;
+    }
+
 }

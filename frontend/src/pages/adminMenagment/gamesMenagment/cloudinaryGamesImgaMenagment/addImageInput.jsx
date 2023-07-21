@@ -20,7 +20,9 @@ export default function AddImageInput({closeModal}) {
           const name = res[i].substring(res[i].lastIndexOf('/') + 1);
           addImageToGamesImgs(src,"/",name);
         }
-
+        if (res.length > 0) {
+          closeModal();
+        }
         console.log(res);
       } catch (error) {
         console.log(error);
