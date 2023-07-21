@@ -15,7 +15,7 @@
     border-radius: 5px;
 
     height: 30vw;
-    border: 1px white solid;
+    border: 2px var(--secondary) solid;
 
 
     display: flex;
