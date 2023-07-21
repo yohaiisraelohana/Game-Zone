@@ -29,18 +29,29 @@ export default function MemoryGameMenagmentCollection() {
               <div className="imgKeys">
                 {memory.img_keys.map((k)=>( <p>{k}</p> ))}
               </div>
+              <div className="desk">
+                <div className='headers'><span>Headers:</span>{"{"}
+                {memory.headers && Object.keys(memory.headers).map((key,value) => (
+                    <p key={value}>
+                      {key} : {memory.headers[key]},
+                    </p>
+                  ))}{"}"}</div>
+                <p className='api'><span>API:</span> {memory.api }</p>
+              </div> 
               </div>
               <img src={memory.img_url} alt="memory image" height="100px" width="100px" />
             </div>
 
-            
-            <div className='headers'><span>Headers:</span>{"{"}
+           <div className="mobile">
+           <div className='headers'><span>Headers:</span>{"{"}
               {memory.headers && Object.keys(memory.headers).map((key,value) => (
                   <p key={value}>
                     {key} : {memory.headers[key]},
                   </p>
                 ))}{"}"}</div>
             <p className='api'><span>API:</span> {memory.api }</p>
+          </div> 
+
           </div>
         ))}
     </div>

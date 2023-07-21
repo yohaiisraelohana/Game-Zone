@@ -5,10 +5,10 @@
 .EditMemoryGame{
     height: fit-content;
     width: 80vw;
-    background-color: black;
+    background-color: var(--dark-bg);
     padding: 5px;
     padding-block: 20px;
-    padding-top: 30px;
+    padding-top: 15vw;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -42,12 +42,13 @@
 
 .EditMemoryGame .form .input {
     width: 100%;
-    background-color: transparent;
-    border: 1px white solid;
+    background-color: var(--secondary);
+    border: none;
     padding: 3px;
     margin-bottom:10px ;
     border-radius: 5px; 
     outline-color: var(--primary);
+    
 }
 .EditMemoryGame .headers-container .input{
     margin: 0px;
@@ -58,6 +59,10 @@
     display: flex;
     justify-content: space-between;
     padding-inline: 5px;
+}
+.EditMemoryGame .form .lable-container .AiOutlinePlus{
+    background-color: var(--primary);
+    border-radius: 3px;
 }
 .EditMemoryGame .form .input-container{
     position: relative;
@@ -81,8 +86,9 @@
     margin-bottom: 160px;
     height: 12vh;
     width: 100%;
-
+    
 }
+
 
 .EditMemoryGame .form button{
     padding: 5px;
@@ -106,4 +112,68 @@
 .EditMemoryGame .deleteButton{
     background-color: red !important;
     margin-right: 20%;
+}
+
+@media(width > 700px){
+    .EditMemoryGame{
+        padding-top: 10vw;
+        font-size: 20px;
+    }
+    .EditMemoryGame .form .input{
+        padding: 5px;
+        font-size: 15px;
+    }
+    .EditMemoryGame .image-input-container{
+        margin-bottom: 15vh;
+        height: 12vh;
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+    .EditMemoryGame .image-input-container img{
+        width: 49%;
+        height:20vw;
+    }
+    .drop-place{
+        width: 49%;
+        height:20vw;
+        border: 2px dashed var(--secondary);
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .EditMemoryGame .image-input-container .ImgDropInput{
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        border: none;
+    }
+    .EditMemoryGame .image-input-container .ImgDropInput input{
+        margin-right: -10vw;
+    }
+    .EditMemoryGame .image-input-container .img-lable{
+        margin-right: 40vw;
+    }
+}
+@media(width > 1000px){
+    .EditMemoryGame{
+        font-size: 25px;
+    }
+    .EditMemoryGame .form .input{
+        padding: 8px;
+        font-size: 15px;
+    }
+    .EditMemoryGame .image-input-container{
+        margin-bottom: 20vh;
+    }
+}
+@media(width > 1200px){
+    .EditMemoryGame{
+        padding-top: 5vw;
+    }
+    .EditMemoryGame .image-input-container{
+        margin-bottom: 28vh;
+    }
 }

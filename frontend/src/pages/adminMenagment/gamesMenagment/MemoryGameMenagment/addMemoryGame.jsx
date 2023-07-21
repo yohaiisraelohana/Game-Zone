@@ -3,7 +3,7 @@ import './addMemoryGame.css';
 import ImgDropInput from '../../../../components/reusfullComponents/imgDropInput/imgDropInput'
 import {uploadImageToCloudinary} from '../../../../services/cloudinaryRequests'
 //assets
-import {AiFillPlusSquare} from 'react-icons/ai';
+import {AiOutlinePlus} from 'react-icons/ai';
 import UseMemoryGame from '../../../../hooks/useMemoryGame';
 export default function AddMemoryGame({closeModal}) {
   const [keys,setMainKeys] = useState([""]);
@@ -63,7 +63,7 @@ export default function AddMemoryGame({closeModal}) {
 
             <div className="lable-container">
               <label htmlFor="">Headers</label>
-              <AiFillPlusSquare onClick={()=>setHeaders({...headers,"":""})} />
+              <AiOutlinePlus className='AiOutlinePlus' onClick={()=>setHeaders({...headers,"":""})} />
             </div>
 
             {Object.entries(headers).map(([key, value]) => (
@@ -106,7 +106,7 @@ export default function AddMemoryGame({closeModal}) {
 
             <div className="lable-container">
               <label htmlFor="">Main Keys</label>
-              <AiFillPlusSquare onClick={()=>setMainKeys([...keys,""])} />
+              <AiOutlinePlus className='AiOutlinePlus' onClick={()=>setMainKeys([...keys,""])} />
             </div>
             {keys.map((inp,i)=>(
               <div className="input-container">
@@ -128,7 +128,7 @@ export default function AddMemoryGame({closeModal}) {
 
             <div className="lable-container">
               <label htmlFor="">Image Keys</label>
-              <AiFillPlusSquare onClick={()=>setImgKeys([...img_keys,""])} />
+              <AiOutlinePlus className='AiOutlinePlus' onClick={()=>setImgKeys([...img_keys,""])} />
             </div>
             {img_keys.map((inp,i)=>(
               <div className="input-container">

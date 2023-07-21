@@ -2,7 +2,7 @@ import React , { useEffect, useState} from 'react'
 import './editMemoryGame.css';
 import UseMemoryGame from '../../../../hooks/useMemoryGame';
 import NavBackButton from '../../../../components/reusfullComponents/navigateBackButton/navBackButton';
-import { AiFillPlusSquare } from 'react-icons/ai';
+import {AiOutlinePlus } from 'react-icons/ai';
 import ImgDropInput from '../../../../components/reusfullComponents/imgDropInput/imgDropInput';
 import { uploadImageToCloudinary } from '../../../../services/cloudinaryRequests';
 import { useNavigate } from 'react-router-dom/dist/umd/react-router-dom.development';
@@ -53,7 +53,7 @@ export default function EditMemoryGame() {
   return (
     <div className='EditMemoryGame'>
         <NavBackButton/>
-        <h2>ADD Memory Game</h2>
+        <h2>Edit Memory Game</h2>
         {error && <div className="error-field">
           {error.msg}
           </div>}
@@ -82,7 +82,7 @@ export default function EditMemoryGame() {
 
             <div className="lable-container">
               <label htmlFor="">Headers</label>
-              <AiFillPlusSquare onClick={()=>setHeaders({...headers,"":""})} />
+              <AiOutlinePlus className='AiOutlinePlus' onClick={()=>setHeaders({...headers,"":""})} />
             </div>
 
             {Object.entries(headers).map(([key, value]) => (
@@ -125,7 +125,7 @@ export default function EditMemoryGame() {
 
             <div className="lable-container">
               <label htmlFor="">Main Keys</label>
-              <AiFillPlusSquare onClick={()=>setMainKeys([...keys,""])} />
+              <AiOutlinePlus className='AiOutlinePlus' onClick={()=>setMainKeys([...keys,""])} />
             </div>
             {keys.map((inp,i)=>(
               <div className="input-container">
@@ -147,7 +147,7 @@ export default function EditMemoryGame() {
 
             <div className="lable-container">
               <label htmlFor="">Image Keys</label>
-              <AiFillPlusSquare onClick={()=>setImgKeys([...img_keys,""])} />
+              <AiOutlinePlus className='AiOutlinePlus' onClick={()=>setImgKeys([...img_keys,""])} />
             </div>
             {img_keys.map((inp,i)=>(
               <div className="input-container">
@@ -170,9 +170,12 @@ export default function EditMemoryGame() {
           
 
                 <div className="image-input-container">
-                  <label htmlFor="">Background Image</label>
+                  <label className='img-lable' htmlFor="">Background Image</label>
                   <img src={img_url} height="100%" width="100%" alt="" />
+                  <div className="drop-place">
                   <ImgDropInput addImage={(img)=>setBackgroundImage(img)} />
+                  </div>
+                  
                 </div>
             
             
