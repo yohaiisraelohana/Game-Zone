@@ -1,5 +1,5 @@
 .LogInForm{
-    background-color: rgb(26, 22, 22);
+    background-color: var(--dark-bg);
     border-radius: 10px;
     padding: 10px;
     padding-block: 20px;
@@ -34,18 +34,25 @@
     margin-inline:12% ;
     margin-top: 15px;
 }
-
-.LogInForm .login-form input{
-    width: 75%;
-    padding: 7px;
-    background-color: transparent;
-    border: 1px var(--primary) solid;
+.LogInForm .input{
+    width: 76%;
+    background-color: var(--secondary);
     border-radius: 5px;
+    padding: 7px;
     margin: 2px;
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+.LogInForm .login-form input{
+    width: 100%;
+    background-color: transparent;
+    border: none;
+
 }
 
 .LogInForm .forgot-password{
-    color: var(--primary);
+    color: var(--light-bg);
     font-size: small;
     margin-top: 10px;
     width: 100%;
@@ -57,23 +64,21 @@
     border: none;
     margin-top: 20px;
     padding: 10px 30px;
+    border-radius: 50px;
 }
 
 .LogInForm .eye-icon{
     position: absolute;
-    left: 79%;
-    top: 52%;
+    right: 4px;
 }
 
 .LogInForm .lock-icon {
     position: absolute;
-    left: 84%;
-    top: 52%;
+    right: 22px;
 }
 .LogInForm .email-icon{
     position: absolute;
-    top: 20%;
-    left: 84%;
+    right: 4px;
 }
 
 .LogInForm .error-server p {
@@ -84,4 +89,18 @@
     color: red;
 }
 
-
+@media(width > 700px){
+    .LogInForm{
+        width: 75vw;
+    }
+}
+@media(width > 1000px){
+    .LogInForm{
+        width: 60vw;
+    }
+}
+@media(width > 1200px){
+    .LogInForm{
+        width: 40vw;
+    }
+}

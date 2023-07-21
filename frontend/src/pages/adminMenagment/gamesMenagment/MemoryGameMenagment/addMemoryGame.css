@@ -1,13 +1,17 @@
 .AddMemoryGame{
     height: fit-content;
     width: 80vw;
-    background-color: black;
+    background-color: var(--dark-bg);
     padding: 5px;
     padding-block: 20px;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     border-radius: 5px;
+}
+.AddMemoryGame .form .lable-container .AiOutlinePlus{
+    background-color: var(--primary);
+    border-radius: 3px;
 }
 .AddMemoryGame h2{
     width: 100%;
@@ -37,8 +41,8 @@
 
 .AddMemoryGame .form .input {
     width: 100%;
-    background-color: transparent;
-    border: 1px white solid;
+    background-color:var(--secondary);
+    border: none;
     padding: 3px;
     margin-bottom:10px ;
     border-radius: 5px; 
@@ -73,7 +77,7 @@
 }
 
 .AddMemoryGame .image-input-container{
-    margin-bottom: 50px;
+    margin-bottom: 10vw;
     height: 12vh;
     width: 100%;
 }
@@ -96,4 +100,28 @@
     width: 80%;
     text-align: center;
     margin-bottom: 2vh;
+}
+
+@media(width > 700px){
+    .AddMemoryGame {
+        font-size: 20px;
+    }
+    .AddMemoryGame .form .input{
+        padding: 7px;
+        font-size: 15px;
+    }
+}
+
+@media(width > 1000px){
+    .AddMemoryGame .image-input-container{
+        margin-bottom: 8vw;
+    }
+    .AddMemoryGame{
+        width: 70vw;
+    }
+}
+@media(width > 1200px){
+    .AddMemoryGame{
+        width: 60vw;
+    }
 }

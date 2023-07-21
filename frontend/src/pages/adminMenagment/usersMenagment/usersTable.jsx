@@ -38,7 +38,8 @@ export default function UsersTable({users}) {
                     <div className="cell">Email</div>
                     <div className="cell">Level</div>
                     <div className="cell">XP</div>
-                    <div className="cell"></div>
+                    <div className="cell">_id</div>
+                    <div className="cell">Edit</div>
                   </div>
         {users.map((u, i) => (
 
@@ -55,7 +56,7 @@ export default function UsersTable({users}) {
                     <div className="cell" data-title="XP">
                       {u.xp}
                     </div>
-                    <div className="cell" data-title="XP">
+                    <div className="cell" data-title="_id">
                       {u._id}
                     </div>
                     <div className={`cell edit-cell ${ (show_actions_menu > -1 ? "menu-opened" : "")}`} data-title="">

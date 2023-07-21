@@ -1,3 +1,40 @@
 .GamesMenagment{
-    width: 90vw;
+    width: 97vw;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.GamesMenagment .search-game{
+    width: 80%;
+    margin-inline: 10%;
+    outline: none;
+    border: 2px solid var(--secondary);
+    background-color: transparent;
+    text-align: center;
+}
+
+.GamesMenagment .option-button{
+    background-color: var(--secondary);
+    color: var(--light-bg);
+    padding: 2vw;
+    border: none;
+    border-radius: 10px;
+    margin:0.9vh;
+    font-size: 2vh;
+}
+.GamesMenagment .option-button:hover{
+    background-color: var(--primary);
+}
+.GamesMenagment-options{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+@media(width > 1000px){
+    .GamesMenagment .option-button{
+        padding: 1.5vw;
+        margin: 1.5vh;
+        font-size: 2.5vh;
+    }
 }

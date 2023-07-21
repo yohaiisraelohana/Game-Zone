@@ -1,14 +1,15 @@
 .MemoryGameMenagment .head{
-    width: 100%;
+    width: 95vw;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin-bottom: 1vw;
 }
 .MemoryGameMenagment .head .add-button{
     height: fit-content;
     padding: 5px;
     padding-inline: 10px;
-    color: black;
+    color: var(--dark-bg);
     background-color: white;
     border: none;
     border-radius: 10px;
@@ -16,4 +17,10 @@
 .MemoryGameMenagment .head .add-button:hover{
     background-color: var(--primary);
     color: white;
+}
+
+@media(width > 600px){
+    .MemoryGameMenagment .head{
+        width: 100%;
+    }
 }

@@ -1,3 +1,9 @@
+
+.DefineSudokuLevel{
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+}
 .DefineSudokuLevel button{
     margin-inline:10px ;
     text-transform: capitalize;

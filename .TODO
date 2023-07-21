@@ -1,8 +1,7 @@
 <!-- 
                                          TODO
  
-   ! *404page*
-
+   !!!!!!!!!!!!!!!!!!! *404page* !!!!!!!!!!!!!!!!!!!!
     *style*
 !1.  
     design website for all sizes
@@ -20,7 +19,6 @@
     light and dark mode https://www.youtube.com/watch?v=pZhAiCSqHPs
 
 
-
     *account*
 1.
     devide to some compunents
@@ -36,6 +34,8 @@
     update count in redux
 2.
     change the back img of card
+3.
+    change api cars
 
 
 
@@ -81,7 +81,7 @@
 7.
     admin: gragh of users per periode
 8.
-    admin: how many users plaied every game (future)
+    admin: how many users plaied every game 
 !10.
     main : add all routes in postman
 !11.

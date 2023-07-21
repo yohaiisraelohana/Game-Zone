@@ -14,6 +14,7 @@ export default function EditUser({user,closeModal}) {
     }
   return (
     <div className='EditUser'>
+        <h2>Edit User</h2>
         <form className="EditUser-form" onSubmit={handleSubmit(saveChanges)}>
             <label >Name</label>
             <input 

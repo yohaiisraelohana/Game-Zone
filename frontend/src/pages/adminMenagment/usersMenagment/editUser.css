@@ -1,12 +1,19 @@
 .EditUser{
     width: 80vw;
     height: fit-content;
-    padding-block: 50px ;
-    background-color: black;
+    padding-block: 40px ;
+    background-color: var(--dark-bg);
     border-radius: 10px;
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
+}
+.EditUser h2{
+    width: 100%;
+    font-size: 20px;
+    text-align: center;
+    margin-bottom: 5px;
 }
 .EditUser-form{
     width: 90%;
@@ -18,29 +25,28 @@
 .EditUser-form label{
     font-size: 15px;
     width: 100%;
-    color: var(--primary);
+    color: var(--light-bg);
 }
 .EditUser-form input {
     margin-bottom: 10px;
     width: 100%;
     padding: 5px;
-    color: black;
+    color: var(--light-bg);
     border: none;
     border-radius: 5px;
+    background-color: var(--secondary);
 }
 .EditUser-form button {
-    background-color: transparent;
-    color: var(--primary);
+    background-color: var(--primary);
+    color: var(--light-bg);
+    border: none;
     padding-block: 5px;
     width: 100%;
     font-size: 15px;
-    border: var(--primary) solid 1px;
     border-radius: 10px;
     margin-top: 15px;
 }
-.EditUser-form button:hover{
-    background-color: rgba(255, 255, 255,1);
-}
+
 .EditUser-form-level{
     width: 40%;
 }
@@ -49,3 +55,22 @@
     text-align: center;
 }
 
+@media(width > 700px){
+    .EditUser{
+        width: 70vw;
+    }
+    .EditUser-form-level input{
+        width: 95%;
+    }
+}
+
+@media(width > 1000px){
+    .EditUser{
+        width: 60vw;
+    }
+}
+@media(width > 1200px){
+    .EditUser{
+        width: 45vw;
+    }
+}

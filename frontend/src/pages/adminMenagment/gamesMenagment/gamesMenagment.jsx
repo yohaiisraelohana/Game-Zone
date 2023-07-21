@@ -6,7 +6,8 @@ import CloudinaryGamesImgs from './cloudinaryGamesImgaMenagment/cloudinaryGamesI
 import MemoryGameMenagment from './MemoryGameMenagment/memoryGameMenagment';
 export default function GamesMenagment() {
   const [selectedGame,setSelectedGame] = useState(null);
-  const menagmentGamesOptions = ["Sudoku","Games Images","MemoryGame"]
+  const menagmentGamesOptions = ["Sudoku","Games Images","MemoryGame"];
+  const [gameSearch , setGameSearch] = useState("");
   return (
     <div className='GamesMenagment'>
       
@@ -18,12 +19,20 @@ export default function GamesMenagment() {
         {selectedGame == "MemoryGame" && <MemoryGameMenagment/>}
       </div>
       : 
-      <div className="">
-        {menagmentGamesOptions.map((m,i)=>(
-          <button 
-            key={i}
-            onClick={()=>setSelectedGame(m) } 
-            >{m}</button>
+      <div className="GamesMenagment-options">
+        <input 
+          onChange={(e) => setGameSearch(e.target.value)}
+          type="text" 
+          className='search-game'
+           />
+        {(gameSearch.length > 0 
+          ? menagmentGamesOptions.filter(option => option.toLowerCase().includes(gameSearch.toLowerCase()))
+          : menagmentGamesOptions).map((m,i)=>(
+            <button 
+              className='option-button'
+              key={i}
+              onClick={()=>setSelectedGame(m) } 
+              >{m}</button>
         ))}
       </div>
       }

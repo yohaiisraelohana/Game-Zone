@@ -1,9 +1,10 @@
 .MemoryGameMenagmentCollection .memory-details-container{
-    margin-block: 10px;
-    border: 1px white solid;
+    width: 90vw;
+    margin-bottom: 3vw;
     padding: 10px;
     border-radius: 5px;
     position: relative;
+    background-color: var(--secondary);
 }
 .MemoryGameMenagmentCollection .memory-details-container .headers{
     width: 100%;
@@ -35,10 +36,41 @@
     width: 69%;
 }
 .MemoryGameMenagmentCollection .details-container img{
-    width: 30%;
+    width: 120px;
+    height: 120px;
 }
 .MemoryGameMenagmentCollection .edit-icon{
     position: absolute;
     right: 7px;
     top: 7px;
+}
+.mobile{
+    display: block;
+}
+.desk{
+    display: none;
+}
+@media(width > 700px){
+    .MemoryGameMenagmentCollection .memory-details-container{
+        width: 80vw;
+    }
+    .MemoryGameMenagmentCollection .details-container img{
+        width: 150px;
+        height: 150px;
+    }
+    .desk{
+        display: block;
+    }
+    .mobile{
+        display: none;
+    }
+}
+@media(width > 1000px){
+    .MemoryGameMenagmentCollection .memory-details-container{
+        width: 70vw;
+    }
+    .MemoryGameMenagmentCollection .details-container img{
+        width: 200px;
+        height: 200px;
+    }
 }

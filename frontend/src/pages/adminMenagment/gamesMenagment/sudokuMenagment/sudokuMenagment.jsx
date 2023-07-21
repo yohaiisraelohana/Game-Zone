@@ -17,15 +17,14 @@ export default function SudokuMenagment() {
   return (
     <div className='SudokuMenagment'>
         {modal && modal}
-        <h2>Sudoku Game</h2>
-        <button
-          className='add-template'
+        <h2>Sudoku Game Menagment</h2>
+        <SudokuGameNav additional={ <button 
+          className={`add-template`}
           onClick={()=>{
             const m = useModal(<AddSudokuTemplate closeModal={()=>setModal(null)}/>,()=>setModal(null));
             setModal(m);
           }}
-          >ADD</button>
-        <SudokuGameNav/>
+          >Add</button>}/>
         <SudokuCollection handleClick={(sudoku)=>{
           setSudokuTemplate(sudoku);
           navigate("/sudokuGame/menagment");

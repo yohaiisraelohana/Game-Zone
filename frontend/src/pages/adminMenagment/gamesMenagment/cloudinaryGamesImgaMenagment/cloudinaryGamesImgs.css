@@ -14,5 +14,6 @@
     border-radius: 5px;
     margin-block: 10px;
     background-color: var(--primary);
+    font-size: 1rem;
     border: none;
 }

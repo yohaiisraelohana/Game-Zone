@@ -1,5 +1,5 @@
 .SignUpForm{
-    background-color: rgb(26, 22, 22);
+    background-color: var(--dark-bg);
     border-radius: 10px;
     padding: 10px;
     padding-block: 20px;
@@ -34,14 +34,20 @@
     margin-inline:12% ;
     margin-top: 15px;
 }
-
-.SignUpForm .signUp-form input{
-    width: 75%;
-    padding: 7px;
-    background-color: transparent;
-    border: 1px var(--primary) solid;
+.SignUpForm .input{
+    width: 76%;
+    background-color: var(--secondary);
     border-radius: 5px;
+    padding: 7px;
     margin: 2px;
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+.SignUpForm .signUp-form input{
+    width: 100%;
+    background-color: transparent;
+    border: none;
 }
 
 .SignUpForm .forgot-password{
@@ -54,32 +60,29 @@
 
 .SignUpForm .signUp-form .signUp-button{
     background-color: var(--primary);
-    width: 40%;
+    margin-inline: 10vw;
     border: none;
     margin-top: 20px;
     padding: 10px 30px;
-    border-radius: 3px;
+    border-radius: 50px;
+
 }
 
 .SignUpForm .signUp-form .eye-icon{
     position: absolute;
-    top: 69%;
-    left: 78%;
+    right: 4px;
 }
 .SignUpForm .signUp-form .lock-icon{
     position: absolute;
-    top: 69%;
-    left: 84%;
+    right: 22px;
 }
 .SignUpForm .signUp-form .email-icon{
     position: absolute;
-    top: 43%;
-    left: 84%; 
+    right: 4px; 
 }
 .SignUpForm .signUp-form .user-icon{
     position: absolute;
-    top: 16%;
-    left: 84%; 
+    right: 4px; 
 }
 
 .SignUpForm .error-server p {
@@ -87,4 +90,20 @@
 }
 .SignUpForm .error-client p{
     color: red;
+}
+
+@media(width > 700px){
+    .SignUpForm{
+        width: 75vw;
+    }
+}
+@media(width > 1000px){
+    .SignUpForm{
+        width: 60vw;
+    }
+}
+@media(width > 1200px){
+    .SignUpForm{
+        width: 40vw;
+    }
 }
