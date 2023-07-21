@@ -230,7 +230,9 @@ export default function TicTacPc() {
   };
   return (
     <div className="TicTacPc">
+      <div className="icon">
       <NavBackButton />
+      </div>
       {level ? (
         <div className="game">
           <div className={`board ${toggle ? "" : "disabled"}`}>
@@ -246,10 +248,12 @@ export default function TicTacPc() {
           </button>
         </div>
       ) : (
+        <div className="choose-level">
         <SelectLevel
           options={["easy", "medium", "hard"]}
           handleChoice={(option) => setLevel(option)}
         />
+        </div>
       )}
     </div>
   );

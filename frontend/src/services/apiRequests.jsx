@@ -63,7 +63,7 @@ export const apiDelete = async(url) => {
             withCredentials:true,
         }
         const response = await axios(config);
-        return response;
+        return response.data;
     } catch (error) {
         console.log(error);
         throw(error);

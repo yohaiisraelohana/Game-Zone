@@ -53,8 +53,9 @@ const deleteUserByAdmin = async (req, res) => {
       user.name = "Deleted Account";
       user.email = user._id + "@gmail.com";
       user.image = "https://img.freepik.com/free-vector/cute-cat-gaming-cartoon_138676-2969.jpg?w=1380&t=st=1686294308~exp=1686294908~hmac=067c1c77b764a597964985eae7d9ce98257146f8acfb48443919a2785a246c4f";
+      console.log(user);
       await user.save();
-      res.status(200).json(user);
+      return res.status(200).json(user);
     } catch (error) {
       res.status(400).json({ error,location:"deleteUser" });
     }

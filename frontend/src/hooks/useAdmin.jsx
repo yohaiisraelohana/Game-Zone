@@ -50,13 +50,11 @@ export default function useUser() {
       try {
         if (user.role == "user") throw Error("unutherize");
         const response = await apiDelete(`${ADMIN_DELETE_USER}${id}`);
+        return response.data;
       } catch (error) {
         console.log(error);
       }
-
     }
-
-
 
 
   return {

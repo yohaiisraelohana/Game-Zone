@@ -1,14 +1,15 @@
-.TicTacPc .game {
+
+  .TicTacPc{
+    position: relative;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .TicTacPc .game {
     display: flex;
     flex-direction: column;
     align-items: center;
     margin-top: 50px;
-  }
-  .TicTacPc{
-    position: relative;
-    width: 100%;
-    display: flex;
-    justify-content: center;
   }
   
   .TicTacPc .board {
@@ -31,7 +32,7 @@
     background-color: #f2f2f2;
     font-size: 32px;
     cursor: pointer;
-    color: black;
+    color:var(--primary);
   }
   
   .TicTacPc .winner {
@@ -41,8 +42,25 @@
   }
  .TicTacPc .button {
     color: black;
-    margin-top: 5px;
+    margin-top: 20px;
     font-size: 20px;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    background-color: var(--primary);
+    padding: 12px;
+    border-radius: 15%;
+    color: white;
+  }
+  .TicTacPc .choose-level{
+    display: flex;
+    justify-content: center;
+    height: 80vh;
+  }
+
+
+  @media(width > 500px){
+    .TicTacPc .cell{
+      height: 400px;
+      width: 400px;
+    }
   }
   
