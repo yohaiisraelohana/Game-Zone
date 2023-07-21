@@ -1,13 +1,13 @@
 import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { acceptFriend, addFriends, login,signUp,stayLogin, updateUser,removeFriend } from '../redux/features/userSlice';
+import { acceptFriend, addFriends, login,signUp,stayLogin, updateUser,removeFriend,logout} from '../redux/features/userSlice';
 import { apiGet, apiPost } from '../services/apiRequests';
 import { USERS_LIST } from '../constants/urls';
 
 
 
 export default function useUser() {
-    const {user,loading,error} = useSelector(store=>store.userReducer);
+    const {user,loading,error,} = useSelector(store=>store.userReducer);
     const dispatch  = useDispatch();
     const loginUser = (data) => {
         dispatch(login(data));
@@ -21,6 +21,10 @@ export default function useUser() {
 
     const sendFriendRequest = (id) => {
       dispatch(addFriends(id));
+    }
+
+    const userLogOut = () => {
+      dispatch(logout());
     }
 
     const searchUser = async (name) => {
@@ -76,6 +80,7 @@ export default function useUser() {
       update,
       acceptFriendRequest,
       updateXp,
-      removeFriendRequest
+      removeFriendRequest,
+      userLogOut,
     };
   }

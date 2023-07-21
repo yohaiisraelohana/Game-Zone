@@ -12,10 +12,12 @@ export const ACCEPT_FRIEND = USER + "/acceptFriendRequest";
 export const USERS_LIST = USER + "/usersList/";
 export const REMOVE_FRIEND = USER + "/removeFriendRequest";
 export const UPDATE_USER = USER + "/update"; 
+export const LOG_OUT = USER + "/LogOut";
 
 //* admin
 export const ADMIN_GET_USERS = USER + "/adminUsersList";
 export const ADMIN_UPDATE_USER = USER + "/adminUpdate/" ;
+export const ADMIN_DELETE_USER = USER + "/adminDelete/";
 
 //* memory Game
 const MEMORY_GAME = API_URL + "/memoryGame";

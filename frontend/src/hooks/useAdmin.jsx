@@ -1,7 +1,7 @@
 import React from 'react'
 import {  useSelector } from 'react-redux'
-import { apiGet, apiPost, apiPut } from '../services/apiRequests';
-import { ADMIN_GET_USERS, ADMIN_UPDATE_USER } from '../constants/urls';
+import { apiDelete, apiGet, apiPost, apiPut } from '../services/apiRequests';
+import { ADMIN_GET_USERS, ADMIN_UPDATE_USER, ADMIN_DELETE_USER } from '../constants/urls';
 
 
 
@@ -46,11 +46,22 @@ export default function useUser() {
       }
     }
 
+    const adminDeleteUsers = async (id) => {
+      try {
+        if (user.role == "user") throw Error("unutherize");
+        const response = await apiDelete(`${ADMIN_DELETE_USER}${id}`);
+      } catch (error) {
+        console.log(error);
+      }
+
+    }
+
 
 
 
   return {
       adminGetUsers,
-      adminUpdateUsers
+      adminUpdateUsers,
+      adminDeleteUsers,
     };
   }

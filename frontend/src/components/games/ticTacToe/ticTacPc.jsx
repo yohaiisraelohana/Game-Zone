@@ -19,7 +19,7 @@ export default function TicTacPc() {
     setWinner(null);
     setToggle(true);
     setRound(0);
-    setMove(opposite());
+    setMove("X"); // Reset the move to "X"
   };
 
   const [winConditions] = useState([
@@ -65,6 +65,7 @@ export default function TicTacPc() {
       setWinner("draw");
       setToggle(false);
       return true;
+      
     }
     return false;
   };
@@ -182,6 +183,7 @@ export default function TicTacPc() {
   };
 
   const makeComputerMove = () => {
+    if (!toggle) return;
     setTimeout(() => {
       if (level === "hard") {
         if (!toggle) return;
@@ -210,7 +212,7 @@ export default function TicTacPc() {
 
   useEffect(() => {
     if (!checkWinner()) {
-      if (round % 2 === 1 && toggle) {
+      if (move === "O" && toggle) { 
         makeComputerMove();
       }
     } else {
@@ -218,16 +220,14 @@ export default function TicTacPc() {
     }
   }, [board, move, round, toggle]);
 
+  
   const doMove = (index) => {
-    if (!toggle || move !== "X") return;
-
-    if (board[index] === null) {
-      setBoard((prev) => prev.map((x, i) => (i === index ? move : x)));
-      setMove((prev) => (prev === "X" ? "O" : "X"));
-      setRound(round + 1);
-    }
+    if (winner !== null || board[index] !== null || move !== "X") return; 
+  
+    setBoard((prev) => prev.map((x, i) => (i === index ? move : x)));
+    setMove((prev) => (prev === "X" ? "O" : "X"));
+    setRound(round + 1);
   };
-
   return (
     <div className="TicTacPc">
       <NavBackButton />

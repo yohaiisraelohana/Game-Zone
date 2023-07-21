@@ -6,7 +6,6 @@ export const apiGet = async (url,headers,withCredentials) => {
         let config = {
             method:"GET",
             url:url,
-            // withCredentials:true,//!check proplems
         }
         if (headers) {
             config.headers = headers
@@ -28,8 +27,10 @@ export const apiPost = async(url,bodyData) => {
         let config = {
             method:"POST",
             url:url,
-            data:bodyData,
             withCredentials:true,
+        }
+        if(bodyData){
+            config.data = bodyData;
         }
         const response = await axios(config);
         return response;

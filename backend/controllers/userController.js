@@ -223,6 +223,24 @@ const deleteUser = async (req, res) => {
 
 
 
+const logOut = async (req, res) => {
+  try {
+     res.clearCookie("refreshToken",{
+      httpOnly: true,
+      sameSite: "lax",
+    });
+     res.clearCookie("accessToken",{
+      httpOnly: true,
+      sameSite: "lax",
+    });
+    return res.status(200).json({ message: "Logout successful" });
+  } catch (err) {
+    console.error(err);
+    return res.status(500).json({ error: "Internal Server Error" });
+  }
+};
+
+
 module.exports = {
     usersList,
     signUser,
@@ -232,4 +250,5 @@ module.exports = {
     friendRequest,
     updateUser,
     removeFriendRequest,
+    logOut,
 }

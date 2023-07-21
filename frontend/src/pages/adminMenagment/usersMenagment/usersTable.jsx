@@ -3,11 +3,10 @@ import './usersTable.css';
 import {  AiOutlinePlus , AiFillEdit ,AiFillDelete} from 'react-icons/ai';
 import { useModal } from '../../../hooks/useModal';
 import EditUser from './editUser';
-
-
+import useAdmin from '../../../hooks/useAdmin'
 export default function UsersTable({users}) {
   //const [actions_menu,setActionsMenu] = useState(false);
-  
+    const {adminDeleteUsers} = useAdmin();
   const [show_actions_menu,setShowActionsMenu] = useState(-1);
 
   const [modal,setModal] = useState(null);
@@ -15,10 +14,15 @@ export default function UsersTable({users}) {
     {name:<AiFillEdit/>,action:(u)=>getModal(<EditUser user={u} closeModal={()=>{
       setModal(null);
     }}/>)},
-    {name:<AiFillDelete/>,action:()=>console.log("del")}
+    {name:<AiFillDelete/>,action:(u)=>deleteUser(u)}
   ]
 
+  const deleteUser = (content) => {
+    adminDeleteUsers(content._id);
+  }
+
   const getModal = (content) => {
+    console.log(content);
     const m = useModal(content,()=>setModal(null));
     setModal(m);
   }
@@ -49,6 +53,9 @@ export default function UsersTable({users}) {
                     </div>
                     <div className="cell" data-title="XP">
                       {u.xp}
+                    </div>
+                    <div className="cell" data-title="XP">
+                      {u._id}
                     </div>
                     <div className={`cell edit-cell ${ (show_actions_menu > -1 ? "menu-opened" : "")}`} data-title="">
                         <AiOutlinePlus onClick={()=>setShowActionsMenu((i == show_actions_menu ? -1 : i))} className='edit-cell-icon'/>
