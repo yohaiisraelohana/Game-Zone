@@ -27,7 +27,7 @@ export default function SudokuGameStart() {
         return true;
     }
 
-    const checkCol = (col) => {
+    const checkCol = (template,col) => {
         let arr = new Array(10).fill(0);
         for(let i=0;i < template[0].length;i++){
             if(template[i][col]>0){
@@ -41,7 +41,7 @@ export default function SudokuGameStart() {
         return true;
     }
 
-    const checkBox = (row_ind,col_ind) => {
+    const checkBox = (trmplate,row_ind,col_ind) => {
         let arr = new Array(10).fill(0);
         for (let i = -1; i < 2; i++) {
             for (let j = -1; j < 2; j++) {
@@ -66,13 +66,13 @@ export default function SudokuGameStart() {
         return ind + 1;
     } 
     
-    const checkSudoku = (row,col) => {
-        if (!checkRow(template[row]) || !checkCol(col)) {
+    const checkSudoku = (template,row,col) => {
+        if (!checkRow(template[row]) || !checkCol(template,col)) {
             return false;
         }
         let row_ind = getMiddleBox(row);
         let col_ind = getMiddleBox(col);
-        if (!checkBox(row_ind,col_ind)) {
+        if (!checkBox(template,row_ind,col_ind)) {
             return false;
         }
         return true;
@@ -94,7 +94,7 @@ export default function SudokuGameStart() {
         const newTmp = [...template.map((rowArr) => [...rowArr])];
         newTmp[row][col] = val;
         setTemplete(newTmp);
-        if (checkSudoku(row,col)) {
+        if (checkSudoku(newTmp,row,col)) {
             if(checkWinningSudoku()){
                 if (user) {
                     if(level === "easy"){
@@ -146,7 +146,11 @@ export default function SudokuGameStart() {
         ))}
         </div>
         <button 
-            onClick={()=>setTemplete(currentSudoku)}
+            onClick={()=>{
+                setTemplete(currentSudoku);
+                setWrongNumber(null);
+                setDisable(false);
+            }}
             className='reset-sudoku'>
             Reset
         </button>

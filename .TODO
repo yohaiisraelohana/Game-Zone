@@ -3,10 +3,6 @@
  
    !!!!!!!!!!!!!!!!!!! *404page* !!!!!!!!!!!!!!!!!!!!
     *style*
-!1.  
-    design website for all sizes
-    *skiped puzzleGame , ticTacToe
-    *stoped at adminMenagment
 2.  
     use skeletons instead of loading
 3.
@@ -28,12 +24,9 @@
     add count to redux
 
 
-
     *MemoryGame*
 1.  
     update count in redux
-2.
-    change the back img of card
 3.
     change api cars
 
