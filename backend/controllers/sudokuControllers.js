@@ -8,7 +8,7 @@ const getSudoku = async(req,res) => {
         let {level,page,per_page} = req.query;
         if (level) {filter.level = level}; 
         if (page) {page--}  else {page = 0}; 
-        if (!per_page) {per_page = 30};
+        if (!per_page) {per_page = 12};
         const sudoku = await Sudoku
             .find(filter)
             .skip(page*per_page)
@@ -25,7 +25,7 @@ const getSudokuCount = async(req,res) => {
         let filter = {};
         let {level,per_page} = req.query;
         if (level) {filter.level = level}; 
-        if (!per_page) {per_page = 30};
+        if (!per_page) {per_page = 12};
         const sudokuCount = await Sudoku.countDocuments(filter);
         res.json({count:sudokuCount,pages:Math.ceil(sudokuCount/per_page)});
     } catch (error) {

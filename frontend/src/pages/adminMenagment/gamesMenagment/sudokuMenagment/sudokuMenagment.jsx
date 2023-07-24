@@ -9,9 +9,10 @@ import { useModal } from '../../../../hooks/useModal';
 import AddSudokuTemplate from './addSudokuTemplate';
 
 import './sudokuMenagment.css'
+import Pagination from '../../../../components/reusfullComponents/pagination/pagination';
 
 export default function SudokuMenagment() {
-  const {setSudokuTemplate} = useSudoku();
+  const {setSudokuTemplate,page,pages,selectPage} = useSudoku();
   const [modal,setModal] = useState(null);
   const navigate = useNavigate();  
   return (
@@ -29,6 +30,7 @@ export default function SudokuMenagment() {
           setSudokuTemplate(sudoku);
           navigate("/sudokuGame/menagment");
         }} />
+        <Pagination page={page} setPage={selectPage} pages={pages} />
 
     </div>
   )

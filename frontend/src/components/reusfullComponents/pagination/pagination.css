@@ -1,0 +1,20 @@
+.Pagination{
+    width: 100vw;
+    margin-block: 10px;
+    text-align: center;
+}
+
+.Pagination button{
+    background-color: transparent;
+    color: var(--light-bg);
+    border: none;
+    border-radius: 3px;
+    font-size: 1rem;
+    margin: 3px;
+}
+.Pagination button:hover{
+    background-color: var(--secondary);
+}
+.Pagination .selectedPage{
+    background-color: var(--primary);
+}
