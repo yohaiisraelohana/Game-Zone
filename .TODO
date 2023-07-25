@@ -15,11 +15,8 @@
     use toast
 4.
     light and dark mode https://www.youtube.com/watch?v=pZhAiCSqHPs
-
-
-    *cloudinary Images*
-1.
-    update count in redux
+5.
+    create error reusfull component
 
     *Main*
     !!! every place using api to present error if there is , create reusable component for showing errors
@@ -30,7 +27,6 @@
 !2.
     function on the account component wich will check if the user is still connected
 
-1.
     *Puzzle*
 !1. 
     finish the game
