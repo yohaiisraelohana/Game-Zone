@@ -12,21 +12,21 @@
 }
 
 .SlidePuzzleCollection img{
-    height: 150px;
-    width: 150px;
+    height: 39vw;
+    width: 39vw;
 }
 
 .SlidePuzzleCollection .demo-grid{
-    width: 150px;
+    width: 39vw;
     display: grid;
-    grid-template-columns: repeat(3,50px);
+    grid-template-columns: repeat(3, 13vw);
     position: absolute;
     left: 0px;
     top: 0px;
 }
 .SlidePuzzleCollection .inner-demo-grid{
-    height: 50px;
-    border:  1px solid white;
+    height: 13vw;
+    border:  0.1px solid white;
 }
 .SlidePuzzleCollection .inner-demo-grid:last-child{
     background-color: rgba(255, 255, 255,0.4)
@@ -34,6 +34,41 @@
 
 @media(width > 700px){
     .SlidePuzzleCollection{
-        width: 85vw;
+        width: 90vw;
+    }
+    .SlidePuzzleCollection img{
+        height: 27vw;
+        width: 27vw;
+    }
+    .SlidePuzzleCollection .demo-grid{
+        width: 27vw;
+        display: grid;
+        grid-template-columns: repeat(3, 9vw);
+        position: absolute;
+        left: 0px;
+        top: 0px;
+    }
+    .SlidePuzzleCollection .inner-demo-grid{
+        height: 9vw;
+    }
+}
+@media(width > 700px){
+    .SlidePuzzleCollection{
+        width: 95vw;
+    }
+    .SlidePuzzleCollection img{
+        height: 21vw;
+        width: 21vw;
+    }
+    .SlidePuzzleCollection .demo-grid{
+        width: 21vw;
+        display: grid;
+        grid-template-columns: repeat(3, 7vw);
+        position: absolute;
+        left: 0px;
+        top: 0px;
+    }
+    .SlidePuzzleCollection .inner-demo-grid{
+        height: 7vw;
     }
 }

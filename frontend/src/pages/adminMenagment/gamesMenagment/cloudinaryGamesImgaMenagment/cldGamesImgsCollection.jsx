@@ -27,7 +27,7 @@ export default function CldGamesImgsCollection() {
           className="img-container"
           key={index}>
           <img 
-            className={showImg == index && "show"}
+            className={showImg == index ? "show" : ""}
             onClick={(e)=>{
               e.preventDefault();
               e.stopPropagation();

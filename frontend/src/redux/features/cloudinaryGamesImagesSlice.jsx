@@ -1,13 +1,23 @@
 import { createSlice,createAsyncThunk} from "@reduxjs/toolkit";
-import { ADD_CLOUDINARY_GAMES_IMG, DELETE_CLOUDINARY_GAMES_IMG, GET_CLOUDINARY_GAMES_IMGS } from "../../constants/urls";
+import { ADD_CLOUDINARY_GAMES_IMG, COUNTT_CLOUDINARY_GAMES_IMGS, DELETE_CLOUDINARY_GAMES_IMG, GET_CLOUDINARY_GAMES_IMGS } from "../../constants/urls";
 import { apiDelete, apiGet, apiPost } from "../../services/apiRequests";
 
 
-export const getCloudinaryGamesImages = createAsyncThunk('cloudinaryGamesImages/getCloudinaryGamesImages', async () => {
+export const getCloudinaryGamesImages = createAsyncThunk('cloudinaryGamesImages/getCloudinaryGamesImages', async (payload) => {
   try {
-    const response = await apiGet(GET_CLOUDINARY_GAMES_IMGS,false,false);
+    const response = await apiGet(GET_CLOUDINARY_GAMES_IMGS + (payload || ""),false,false);
     return response.data;
   } catch (error) {
+    // Handle any errors that occurred during the API request
+    throw Error({msg:'Failed to fetch cloudinary games images',error});
+  }
+});
+export const countCloudinaryGamesImages = createAsyncThunk('cloudinaryGamesImages/countCloudinaryGamesImages', async (payload) => {
+  try {
+    const response = await apiGet(COUNTT_CLOUDINARY_GAMES_IMGS + (payload || ""),false,false);
+    return response.data;
+  } catch (error) {
+    console.log(error);
     // Handle any errors that occurred during the API request
     throw Error({msg:'Failed to fetch cloudinary games images',error});
   }
@@ -41,6 +51,8 @@ const initialState = {
     loading:false,
     error:null,
     currentImage:null,
+    pages:null,
+    page:1
 }
 
 const cloudinaryGamesImagesSlice = createSlice({
@@ -49,6 +61,9 @@ const cloudinaryGamesImagesSlice = createSlice({
     reducers:{
         setCurrentImage: (state,action) =>{
             state.currentImage = action.payload;
+        },
+        setPage: (state,action) => {
+          state.page = action.payload;
         }
     },
     extraReducers: (builder) => {
@@ -62,6 +77,18 @@ const cloudinaryGamesImagesSlice = createSlice({
         state.data = action.payload;
       })
       .addCase(getCloudinaryGamesImages.rejected, (state, action) => {
+        state.loading = false;
+        state.error = action.error.message;
+      })
+      .addCase(countCloudinaryGamesImages.pending, (state) => {
+        state.loading = true;
+        state.error = null;
+      })
+      .addCase(countCloudinaryGamesImages.fulfilled, (state, action) => {
+        state.loading = false;
+        state.pages = action.payload.pages;
+      })
+      .addCase(countCloudinaryGamesImages.rejected, (state, action) => {
         state.loading = false;
         state.error = action.error.message;
       })
@@ -96,7 +123,7 @@ const cloudinaryGamesImagesSlice = createSlice({
 })
 
 
-export const {setCurrentImage} = cloudinaryGamesImagesSlice.actions;
+export const {setCurrentImage , setPage} = cloudinaryGamesImagesSlice.actions;
 export default cloudinaryGamesImagesSlice.reducer;
 
 

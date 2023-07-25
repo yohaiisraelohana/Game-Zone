@@ -21,6 +21,8 @@
 1.
     update count in redux
 
+    *Main*
+    !!! every place using api to present error if there is , create reusable component for showing errors
 
     *LogIn*
 !1.  

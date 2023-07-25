@@ -1,15 +1,16 @@
 import React, { useEffect, useState } from 'react'
-
 //style
 import './slidePuzzleGame.css'
 //components
 import SlidePuzzleCollection from './slidePuzzleCollection'
 import SlidePuzzleImgInput from './slidePuzzleImgInput'
 import SlidePuzzleStartGame from './slidePuzzleStartGame';
+import NavBackButton from '../../reusfullComponents/navigateBackButton/navBackButton';
+import Pagination from '../../reusfullComponents/pagination/pagination';
+//hooks
+import useCloudinaryImages from '../../../hooks/useCloudinaryImages';
 //services
 import { resizeCloudinaryImage } from '../../../services/resizeCloudinaryImage'; 
-import useCloudinaryImages from '../../../hooks/useCloudinaryImages';
-import NavBackButton from '../../reusfullComponents/navigateBackButton/navBackButton';
 import { resizeImage } from '../../../services/resizeInputImage';
 
 
@@ -18,7 +19,7 @@ import { resizeImage } from '../../../services/resizeInputImage';
 export default function SlidePuzzleGame() {
   const [puzzle_image,setPuzzleImage] = useState(null);
   const box_size = window.innerWidth < 600 ? 300 : 600; 
-  const {currentImage,setImage} = useCloudinaryImages();
+  const {currentImage,setImage,page,pages,selectPage} = useCloudinaryImages();
   console.log(box_size);
   
 
@@ -59,6 +60,7 @@ export default function SlidePuzzleGame() {
             <NavBackButton />
             <SlidePuzzleImgInput handleImageChange={handleImageChange} />
             <SlidePuzzleCollection  />
+            <Pagination page={page} pages={pages} setPage={(p)=>selectPage(p)} />
           </div>
         }
     </div>
