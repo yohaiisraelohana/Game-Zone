@@ -17,7 +17,6 @@ import useUser from '../hooks/useUser';
 import Account from '../pages/account/account';
 import AdminMenagment from '../pages/adminMenagment/adminMenagment';
 import SudokuMenagmentOptions from '../pages/adminMenagment/gamesMenagment/sudokuMenagment/sudokuMenagmentOptions';
-import EditMemoryGame from '../pages/adminMenagment/gamesMenagment/MemoryGameMenagment/editMemoryGame';
 import NotFound404 from '../pages/notFound404/NotFound404';
  
 export const AppRoutes = () => {
@@ -38,11 +37,9 @@ export const AppRoutes = () => {
           <Route index element={<Home/>}/>
           <Route path='/memoryGame' element={<MemoryGame/>} />
           <Route path='/memoryGame/:name' element={<MemoryGameStart/>} />
-          <Route path='/memoryGame/menagment' element={<EditMemoryGame/>}/>
           <Route path='/ticTacGame' element={<TicTacPc/>}/>
           <Route path='/sudokuGame' element={<SudokuGame/>} />
           <Route path='/sudokuGame/:level' element={<SudokuGameStart/>} />
-          <Route path='/sudokuGame/menagment'  element={<SudokuMenagmentOptions/>}/>
           <Route path='/rouletteGame' element={<RouletteGame/>} />
           <Route path='/slidePuzzleGame' element={<SlidePuzzleGame/>} />
           <Route path='/puzzleGame' element={<PuzzleGame/>}/>

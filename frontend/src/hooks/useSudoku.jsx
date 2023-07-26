@@ -34,6 +34,8 @@ export default function useSudoku() {
     const updateSudokuTemplate = async (id,sudoku) => {
         try {
             const response = await apiPut(`${UPDATE_SUDOKU_TEMPLATE}${id}`,sudoku);
+            if(response.status >= 200 && response.status < 300)
+                selectPage(page);
             return response;
         } catch (error) {
             console.log(error);

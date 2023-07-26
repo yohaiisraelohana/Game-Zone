@@ -1,15 +1,18 @@
 .SudokuMenagmentOptions{
     position: relative;
-    width: 100%;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    height: 90vh;
+    height: 55vh;
+    min-height: fit-content;
+    width: 80vw;
     align-content: center;
+    background-color: var(--dark-bg);
+    border-radius: 5px;
 }
 .SudokuMenagmentOptions h2{
     width: 100%;
-    margin-bottom: 20px;
+    margin-block: 10px;
     text-align: center;
 }
 .SudokuMenagmentOptions .options{
@@ -18,8 +21,7 @@
     justify-content: center;
 }
 .SudokuMenagmentOptions .options button{
-    margin-top: 30px;
-    margin-inline: 10px;
+    margin: 10px;
     padding: 5px;
     border-radius: 5px;
     border: none;
@@ -32,4 +34,31 @@
 .SudokuMenagmentOptions .options .update{
     background-color: var(--primary);
 
+}
+
+@media (width > 600px) {
+    .SudokuMenagmentOptions{
+
+        height: 75vh;
+        min-height: fit-content;
+        width: 80vw;
+    }
+}
+
+@media (width > 900px) {
+    .SudokuMenagmentOptions{
+
+        height: 75vh;
+        min-height: fit-content;
+        width: 60vw;
+    }
+}
+
+@media (width > 1200px) {
+    .SudokuMenagmentOptions{
+
+        height: 75vh;
+        min-height: fit-content;
+        width: 50vw;
+    }
 }
