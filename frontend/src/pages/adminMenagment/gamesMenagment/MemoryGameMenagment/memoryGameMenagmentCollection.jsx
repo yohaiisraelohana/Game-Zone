@@ -2,21 +2,20 @@ import React from 'react'
 import UseMemoryGame from '../../../../hooks/useMemoryGame'
 //style
 import './memoryGameMenagmentCollection.css';
-
+//components
+import EditMemoryGame from './editMemoryGame';
 //assets
 import {AiOutlineEdit} from 'react-icons/ai' 
-import { useNavigate } from 'react-router-dom';
 
-export default function MemoryGameMenagmentCollection() {
+export default function MemoryGameMenagmentCollection({closeModal,openModal}) {
     const {data,setMemoryGame} = UseMemoryGame();
-    const navigate = useNavigate();
   return (
     <div className='MemoryGameMenagmentCollection'>
         {data && data.map((memory,i)=>(
           <div className="memory-details-container" key={i} >
             <AiOutlineEdit onClick={()=>{
               setMemoryGame(memory);
-              navigate("/memoryGame/menagment");
+              openModal(<EditMemoryGame closeModal={closeModal} />);
             }} className='edit-icon' />
             <h1>{memory.name}</h1>
             <div className="details-container">

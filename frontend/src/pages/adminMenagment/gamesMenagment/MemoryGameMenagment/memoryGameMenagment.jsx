@@ -12,6 +12,13 @@ export default function MemoryGameMenagment() {
     useEffect(()=>{
       getMemory();
     },[])
+    const openModal = (content) => {
+      const m = useModal(content,()=>setModal(null));
+      setModal(m);
+    }
+    const closeModal = () => {
+      setModal(null);
+    }
   return (
     <div>
       <div className="MemoryGameMenagment">
@@ -19,14 +26,11 @@ export default function MemoryGameMenagment() {
         <div className="head">
           <h1>Memory Game</h1>
           <button
-            onClick={()=>{
-              const m = useModal(<AddMemoryGame closeModal={()=>setModal(null)} />,()=>setModal(null));
-              setModal(m);
-            }}
+            onClick={()=>openModal(<AddMemoryGame closeModal={closeModal}/>)}
             className='add-button'
             >ADD</button>
         </div>
-        <MemoryGameMenagmentCollection />
+        <MemoryGameMenagmentCollection closeModal={closeModal} openModal={openModal}  />
       </div>
     </div>
   )

@@ -1,13 +1,11 @@
 import React , { useEffect, useState} from 'react'
 import './editMemoryGame.css';
 import UseMemoryGame from '../../../../hooks/useMemoryGame';
-import NavBackButton from '../../../../components/reusfullComponents/navigateBackButton/navBackButton';
 import {AiOutlinePlus } from 'react-icons/ai';
 import ImgDropInput from '../../../../components/reusfullComponents/imgDropInput/imgDropInput';
 import { uploadImageToCloudinary } from '../../../../services/cloudinaryRequests';
-import { useNavigate } from 'react-router-dom/dist/umd/react-router-dom.development';
 
-export default function EditMemoryGame() {
+export default function EditMemoryGame({closeModal}) {
   const {currentGame , deleteMemory , updateMemory} = UseMemoryGame();
   const [keys,setMainKeys] = useState([""]);
   const [img_keys,setImgKeys] = useState([""]);
@@ -16,7 +14,7 @@ export default function EditMemoryGame() {
   const [name,setName] = useState("");
   const [api,setApi] = useState("");
   const [error,setError] = useState(null);
-  const navigate = useNavigate();
+
   console.log({keys,img_keys,headers,img_url,api,name});
   console.log(currentGame);
 
@@ -25,13 +23,13 @@ export default function EditMemoryGame() {
     if (game.api.length < 1) return setError({type:"api",msg:"Api is required !"});
     if ( typeof game.img_url == 'string') {
       updateMemory({...game,_id:currentGame._id});
-      navigate(-1);
+      closeModal();
     }
     try {
       await uploadImageToCloudinary([img_url],"secure_url")
       .then((res)=>{
         updateMemory({...game,img_url:res[0],_id:currentGame._id});
-        navigate(-1);
+        closeModal();
       }); 
     } catch (error) {
       console.log(error);
@@ -52,7 +50,6 @@ export default function EditMemoryGame() {
   },[currentGame])
   return (
     <div className='EditMemoryGame'>
-        <NavBackButton/>
         <h2>Edit Memory Game</h2>
         {error && <div className="error-field">
           {error.msg}
