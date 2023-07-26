@@ -1,7 +1,8 @@
 const User = require("../models/userModel");
 const mongoose = require("mongoose");
 const generateToken = require("../utils/generatToken");
-
+const validator = require('validator');
+const bcrypt = require('bcrypt');
 
 const usersList = async (req ,res) => {
   try{
@@ -209,6 +210,27 @@ const updateUser = async (req, res) => {
   }
 };
 
+const updateUserPassword = async (req ,res) => {
+  try {
+    const {password,email} = req.body;
+    console.log({password,email});
+    let user = await User.findOne({email});
+    if(!user) throw Error("email address is not a member , go to sign up");
+    if(!validator.isStrongPassword(password)){
+      throw Error('Passowrd not strong enough');
+    }
+    const salt = await bcrypt.genSalt(10);
+    const hash = await bcrypt.hash(password, salt);
+
+    user.password = hash;
+    await user.save();
+    res.status(200).json(user);
+  } catch (error) {
+    console.log(error);
+    res.status(400).json({ error });
+  }
+}
+
 
 
 //delete user
@@ -251,4 +273,5 @@ module.exports = {
     updateUser,
     removeFriendRequest,
     logOut,
+    updateUserPassword
 }

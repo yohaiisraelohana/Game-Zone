@@ -13,10 +13,13 @@
 .Account .account-edit-icon{
     position: absolute;
     z-index: 4;
-    top: 7px;
-    right: 31vw;
+    top: 1px;
+    right: 30.4vw;
     color: white;
     font-size: 20px;
+    background-color: var(--secondary);
+    padding: 2px;
+    border-radius: 3px  10px 3px 3px ;
 }
 .Account .account-user-details{
     margin: auto;
@@ -25,8 +28,8 @@
     flex-wrap: wrap;
 }
 .Account .account-user-details .account-profile-img{
-    height: 30vw;
-    width: 30vw;
+    height: 40vw;
+    width: 40vw;
     border-radius: 10px;
     border: 1px white solid;
     margin-inline: 30vw;
@@ -39,13 +42,13 @@
     margin-block: 10px;
     margin-right: 10px;
 }
-.Account .account-user-details .level-container{
+.Account .account-user-details .level-container-user{
     position: static;
     display: flex;
     justify-content: center;
     align-items: center;
 }
-.Account .account-user-details .level-container .level{
+.Account .account-user-details .level-container-user .level-user{
     z-index: 2; 
     font-size: 15px;
     background-color: white;
@@ -57,7 +60,7 @@
     color: var(--primary);
     text-align: center;
 }
-.Account .account-user-details .level-container .level-icon{
+.Account .account-user-details .level-container-user .level-icon{
     position: static;
     font-size: 50px;
     top: 0px;
@@ -112,7 +115,7 @@
 .Account .details-container{
     width: 80vw;
     margin-top: 10px;
-    display: flex;
+    display: flex; 
     flex-wrap: wrap;
     justify-content: space-between;  
 }
@@ -181,6 +184,10 @@
     .Account .details-container{
         width: 70vw;
     }
+    .Account .account-user-details .account-profile-img{
+        height: 30vw;
+        width: 30vw;
+    }
     .Account .account-container .user .user-profile .user-profile-img{
         height: 50px;
         width: 50px;
@@ -193,5 +200,14 @@
     .Account .account-container .user .user-profile .user-profile-img{
         height: 60px;
         width: 60px;
+    }
+    .Account .account-user-details .account-profile-img{
+        height: 20vw;
+        width: 20vw;
+        margin-inline: 35vw;
+    }
+    .Account .account-edit-icon{
+        top: 1px;
+        right: 35.1vw;
     }
 }

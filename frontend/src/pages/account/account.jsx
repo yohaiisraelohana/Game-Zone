@@ -63,9 +63,9 @@ export default function Account() {
             
             <h2 className='user-name'>{user.name}</h2>
 
-              <div className="level-container">
+              <div className="level-container-user">
                 <IoLogoGameControllerB className='level-icon'/>
-                <p className='level'>{user.level}</p> 
+                <p className='level-user'>{user.level}</p> 
               </div>
               <div className="xp-container">
                 <progress value={xp_progress} max={100} /> 

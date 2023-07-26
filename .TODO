@@ -19,7 +19,8 @@
 
     *Main*
     !!! every place using api to present error if there is , create reusable component for showing errors
-
+!10.
+    main : add all routes in postman
     *LogIn*
 !1.  
     finish "forgot your password link"
@@ -62,8 +63,7 @@
     admin: gragh of users per periode
 8.
     admin: how many users plaied every game 
-!10.
-    main : add all routes in postman
+
 !11.
     usersList: in friends -> button to invite to a game online
 *! check cookies time works

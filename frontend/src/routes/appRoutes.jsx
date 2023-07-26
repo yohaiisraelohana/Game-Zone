@@ -18,6 +18,7 @@ import Account from '../pages/account/account';
 import AdminMenagment from '../pages/adminMenagment/adminMenagment';
 import SudokuMenagmentOptions from '../pages/adminMenagment/gamesMenagment/sudokuMenagment/sudokuMenagmentOptions';
 import NotFound404 from '../pages/notFound404/NotFound404';
+import ResetPassword from '../pages/resetPassword/resetPassword';
  
 export const AppRoutes = () => {
   const { user , stayLoginUser} = useUser();
@@ -46,6 +47,7 @@ export const AppRoutes = () => {
           <Route path='/circlesFight' element={<CirclesFight/>}/>
           <Route path='/account' element={<Account/>}/>
           <Route path='/admin' element={<AdminMenagment/>}/>
+          <Route path='/resetPassword' element={<ResetPassword/>} />
           <Route path='*' element={<NotFound404/>}/>
         </Route>
       )
