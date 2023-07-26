@@ -4,12 +4,14 @@ import useCloudinaryImages from '../../../../hooks/useCloudinaryImages'
 import CldGamesImgsCollection from './cldGamesImgsCollection';
 import {useModal} from '../../../../hooks/useModal';
 import AddImageInput from './addImageInput';
+import Pagination from '../../../../components/reusfullComponents/pagination/pagination';
+import { setPage } from '../../../../redux/features/cloudinaryGamesImagesSlice';
 export default function CloudinaryGamesImgs() {
-    const {getCloudinaryImages} = useCloudinaryImages();
+    const {page,pages,selectPage} = useCloudinaryImages();
     const [modal,setModal] = useState(null);
 
     useEffect(()=>{
-        getCloudinaryImages();
+        selectPage(1);
     },[])
   return (
     <div className='CloudinaryGamesImgs'>
@@ -23,6 +25,7 @@ export default function CloudinaryGamesImgs() {
           }}
           >ADD</button>
         <CldGamesImgsCollection/>
+        <Pagination page={page} pages={pages} setPage={(p)=>selectPage(p)}/>
     </div>
   )
 }

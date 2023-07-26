@@ -3,7 +3,7 @@ const GameImage = require('../models/cloudinaryGamesImgModel');
 //GET
 const getGameImages= async(req,res) => {
     try {
-        const per_page = req.query.per_page || 30;
+        const per_page = req.query.per_page || 12;
         const page = req.query.page -1 || 0;
 
         const data = await GameImage
@@ -18,7 +18,7 @@ const getGameImages= async(req,res) => {
 
 const getGameImagesCount = async(req,res) => {
     try {
-        const per_page = req.query.per_page || 30;
+        const per_page = req.query.per_page || 12;
         const dataCount = await GameImage.countDocuments();
         res.json({count:dataCount,pages:Math.ceil(dataCount/per_page)});
     } catch (error) {

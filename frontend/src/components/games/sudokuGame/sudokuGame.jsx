@@ -8,9 +8,10 @@ import SudokuCollection from './sudokuCollection';
 import NavBackButton from '../../reusfullComponents/navigateBackButton/navBackButton'
 
 import './sudokuGame.css'
+import Pagination from '../../reusfullComponents/pagination/pagination';
 
 export default function SudokuGame() {
-    const {setSudokuTemplate} = useSudoku();
+    const {setSudokuTemplate,pages,page,selectPage} = useSudoku();
     const navigate = useNavigate();
 
   return ( 
@@ -23,6 +24,8 @@ export default function SudokuGame() {
             setSudokuTemplate(sudoku.template);
             navigate(`/sudokuGame/${sudoku.level}`);
         }} />
+        {pages &&
+        <Pagination page={page} setPage={selectPage} pages={pages} />}
     </div>
   )
 }

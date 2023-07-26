@@ -2,20 +2,20 @@ import React from 'react'
 import './sudokuGameNav.css'; 
 import useSudoku from '../../../hooks/useSudoku';
 export default function SudokuGameNav({additional}) {
-    const {sudokuLevels,getSudokuTemolates} = useSudoku();
+    const {sudokuLevels,selectLevel} = useSudoku();
     const hundleClick = (level) => {
-      getSudokuTemolates(`?level=${level}`)
+      selectLevel(level)
     }
   return (
     sudokuLevels ? 
     <div className='SudokuGameNav'>
       <button 
           className={`all`}
-          onClick={()=>getSudokuTemolates()}
+          onClick={()=>selectLevel()}
           >All</button>
       {sudokuLevels.map((option,i)=>(
           <button 
-              className={`${option.level}`}
+              className={`${option.level}` }
               onClick={()=>hundleClick(option.level)}
               key={i}>{option.level}</button>
       ))}

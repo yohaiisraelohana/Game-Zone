@@ -32,6 +32,7 @@ export default function SudokuCollection({handleClick}) {
             : error && <p>{error}</p> 
             ) 
         }
+
     </div>
   )
 }

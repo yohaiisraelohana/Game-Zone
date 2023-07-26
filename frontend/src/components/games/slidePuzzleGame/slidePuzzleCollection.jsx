@@ -2,9 +2,9 @@ import React, { useEffect } from 'react'
 import './slidePuzzleCollection.css'
 import useCloudinaryImages from '../../../hooks/useCloudinaryImages';
 export default function SlidePuzzleCollection({updatePuzzleImage}) {
-  const {setImage,getCloudinaryImages,data:images_collection} = useCloudinaryImages();
+  const {setImage,data:images_collection,selectPage} = useCloudinaryImages();
   useEffect(()=>{
-    getCloudinaryImages();
+    selectPage(1);
   },[])
  
   return (

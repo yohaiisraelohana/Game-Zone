@@ -1,17 +1,20 @@
 import React from 'react'
 import './usersList.css';
 import useUser from '../../hooks/useUser';
+import ProfileImgAndLevel from '../navBar/profileImgAndLevel';
 export default function UsersList({users,handleClearInput}) {
     const {user:{friends,_id,requests},sendFriendRequest,acceptFriendRequest,removeFriendRequest} = useUser();
-    console.log({users,friends,requests});
+
   return (
       <div className='UsersList'>
-        {users && users.map((user,i) => user._id != _id && (
+        {users && users.map((user,i) => (user._id != _id && user.name != "Deleted Account") && (
             <div className='user' key={i}>
+              
               <div className="user-profile">
-                <img className='user-profile-img' src={user.image} alt="user profile img" />
+                <ProfileImgAndLevel user={user} />
                 <p>{user.name}</p>
               </div>
+              
                 
                 {
                   friends.find(friend => friend._id === user._id) 

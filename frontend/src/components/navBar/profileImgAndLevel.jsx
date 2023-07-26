@@ -20,7 +20,7 @@ export default function ProfileImgAndLevel({user,openUserMenu}) {
 
 console.log({image,level,xp,user});
   return (
-    <div className="ProfileImgAndLevel" onClick={()=>openUserMenu()}>
+    <div className="ProfileImgAndLevel" onClick={()=>(openUserMenu && openUserMenu())}>
               <div className="profile-img-border">
                 <img src={image} className="profile-img"/>
               </div>

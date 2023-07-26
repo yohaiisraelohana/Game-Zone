@@ -3,6 +3,8 @@
     position: relative;
     display: flex;
     justify-content: center;
+    min-height: 80vh;
+    align-items: center;
   }
   
   .TicTacPc .game {
@@ -45,15 +47,20 @@
     font-weight: bold;
   }
   .TicTacPc .button {
+
     all: unset;
     margin-top: 20px;
-    font-size: 20px;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 1rem;
     background-color: var(--primary);
     padding: 12px;
     border-radius: 15%;
     color: white;
     transition: all .2s ease-in-out;
+    padding: 5px 10px;
+    border-radius: 50px;
+    border: none;
+    color: var(--light-bg);
+    transition: transform 0.3s ease;
   }
 
   .TicTacPc .button:hover {

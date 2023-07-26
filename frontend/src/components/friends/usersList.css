@@ -10,7 +10,9 @@
     background-color: var(--primary);
     color: white;
 }
-
+.UsersList .user-profile{
+    margin-left: 1vw;
+}
 .UsersList .pending{
     border-radius: 10px;
     opacity: 0.7;

@@ -3,41 +3,23 @@
  
    !!!!!!!!!!!!!!!!!!! *404page* !!!!!!!!!!!!!!!!!!!!
     *style*
-!1.  
-    design website for all sizes
-    *skiped puzzleGame , ticTacToe
-    *stoped at adminMenagment
-2.  
+1.  
     use skeletons instead of loading
-3.
+2.
     retake images from leonardo for the bg games
-5.
+3.
     change cngradilation allert on winning to something more special
     like icon of coins down from the upper screen
     make it as a component apears when user wons 
-7.
+    ?or
+    use toast
+4.
     light and dark mode https://www.youtube.com/watch?v=pZhAiCSqHPs
+5.
+    create error reusfull component
 
-
-    *account*
-1.
-    devide to some compunents
-
-    *Sudoku*
-1.
-    add count to redux
-
-
-
-    *MemoryGame*
-1.  
-    update count in redux
-2.
-    change the back img of card
-3.
-    change api cars
-
-
+    *Main*
+    !!! every place using api to present error if there is , create reusable component for showing errors
 
     *LogIn*
 !1.  
@@ -45,7 +27,6 @@
 !2.
     function on the account component wich will check if the user is still connected
 
-1.
     *Puzzle*
 !1. 
     finish the game
