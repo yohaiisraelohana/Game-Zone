@@ -138,34 +138,34 @@ export default function TicTacPc() {
   };
 
   const advance = () => {
-    let rnd = Math.round(Math.random());
-    let flag = false;
     for (let i = 0; i < winConditions.length; i++) {
       const [a, b, c] = winConditions[i];
-      if (
-        (board[a] === null && board[b] === move && board[c] === null) ||
-        (board[a] === move && board[b] === null && board[c] === null) ||
-        (board[a] === null && board[b] === null && board[c] === move)
-      ) {
-        setBoard((prev) =>
-          prev.map((x, i) => {
-            if (
-              (i === a || i === b || i === c) &&
-              i > rnd &&
-              !flag &&
-              board[i] === null
-            ) {
-              flag = true;
-              return move;
-            }
-            return x;
-          })
-        );
-        return true;
+      const line = [board[a], board[b], board[c]];
+  
+      // Count 'X' and 'O' occurrences
+      const xCount = line.filter((cell) => cell === 'X').length;
+      const oCount = line.filter((cell) => cell === 'O').length;
+  
+      // If there are 2 'X' and 1 'O', find the empty cell and place 'O'
+      if (xCount === 2 && oCount === 1) {
+        const emptyCellIndex = line.indexOf(null);
+        if (emptyCellIndex !== -1) {
+          const [newA, newB, newC] = winConditions[i];
+          setBoard((prev) =>
+            prev.map((x, index) => {
+              if (index === newA || index === newB || index === newC) {
+                return move;
+              }
+              return x;
+            })
+          );
+          return true;
+        }
       }
     }
     return false;
   };
+  
 
   const randomMove = () => {
     let emptyCells = board.reduce(

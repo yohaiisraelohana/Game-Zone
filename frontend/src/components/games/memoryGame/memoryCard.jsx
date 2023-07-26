@@ -10,7 +10,6 @@ export default function MemoryCard({card,choiseCard,flipped,disabled}) {
       style={{backgroundImage:`url("https://res.cloudinary.com/dhojbnefp/image/upload/v1689870255/78185EDB-298E-4F9A-8F1D-3E60AAC192E2_1_201_a_on4uxp.jpg")`}}
       className="back">
       </div>
-
       <div 
       className='front'
       style={{backgroundImage:`url(${card.src})`}}  >

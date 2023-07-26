@@ -36,6 +36,10 @@
     padding: 5px;
 }
 
+.SelectLevel  .level-options button:hover{
+    cursor: pointer;
+}
+
 .SelectLevel  h2{
     margin-block: 4%;
 }
