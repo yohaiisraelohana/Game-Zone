@@ -16,8 +16,8 @@
 
     height: 20vw;
     border: 2px var(--secondary) solid;
-
-
+    transform: rotate(0deg);
+    transition: box-shadow ease-in-out 1s, transform ease-in-out 1s;
     display: flex;
     align-items: center;
     text-decoration: none;
