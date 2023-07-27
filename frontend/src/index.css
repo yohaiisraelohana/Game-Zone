@@ -36,6 +36,7 @@ input{
 :root{
     --primary : #1B93FA; 
     --secondary : #212733;
+    --gradiant-primary : linear-gradient(to right,  var(--primary) , #01faff );
     
     --dark-bg : #0C0D14;
     --light-bg : #F2F9FF;
