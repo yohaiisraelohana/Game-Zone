@@ -30,28 +30,125 @@
     gray 0px 0px 10px,
     black 0px 0px 15px;
 }
-.GameCollection > *:hover{
-    /* box-shadow: inset white 0px 2px 7px 7px; */
+/* .GameCollection > *:hover{
     box-shadow:  white 0px 2px 10px 4px; 
     transform: rotate(5deg); 
     transition: all ease-in-out 1s;
 
-}
+} */
 
 .GameCollection .memory-game{
     background-image:url('../../../assets/icons/games/memoryGameIcon.svg');
 }
+.GameCollection .memory-game:hover{
+    border: 3px solid #0000;
+    background: url('../../../assets/icons/games/memoryGameIcon.svg') padding-box, linear-gradient(
+          var(--angle),
+          var(--secondary),
+          #00bbff
+        ) border-box  ; 
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    animation: 6s rotate linear infinite;
+}
+
+
 
 .GameCollection .ticTac-game{
     background-image:url('../../../assets/images/games/tictac.png');
 }
 
+.GameCollection .ticTac-game:hover{
+    border: 3px solid #0000;
+    background: url('../../../assets/images/games/tictac.png') padding-box, linear-gradient(
+          var(--angle),
+          var(--secondary),
+          #00bbff
+        ) border-box  ; 
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    animation: 6s rotate linear infinite;
+}
+
+
+
 .GameCollection .roulette-game{
     background-image:url('../../../assets/icons/games/rouletteIcon.svg');
 }
 
+.GameCollection .roulette-game:hover{
+    border: 3px solid #0000;
+    background: url('../../../assets/icons/games/rouletteIcon.svg') padding-box, linear-gradient(
+          var(--angle),
+          var(--secondary),
+          #00bbff
+        ) border-box  ; 
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    animation: 6s rotate linear infinite;
+}
+
+
+
 .GameCollection .sudoko-game{
     background-image:url('../../../assets/icons/games/sudokoGameIcon.svg');
+}
+.GameCollection .sudoko-game:hover{
+    border: 3px solid #0000;
+    background: url('../../../assets/icons/games/sudokoGameIcon.svg') padding-box, linear-gradient(
+          var(--angle),
+          var(--secondary),
+          #00bbff
+        ) border-box  ; 
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    animation: 6s rotate linear infinite;
+}
+
+
+
+
+
+
+.GameCollection .slide-puzzle-game:hover{
+    border: 3px solid #0000;
+    background: linear-gradient(#131219, #131219) padding-box, linear-gradient(
+          var(--angle),
+          var(--secondary),
+          #00bbff
+        ) border-box  ; 
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    animation: 6s rotate linear infinite;
+}
+.GameCollection .puzzle-game:hover{
+    border: 3px solid #0000;
+    background: linear-gradient(#131219, #131219) padding-box, linear-gradient(
+          var(--angle),
+          var(--secondary),
+          #00bbff
+        ) border-box  ; 
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    animation: 6s rotate linear infinite;
+}
+.GameCollection .circles-fight-game:hover{
+    border: 3px solid #0000;
+    background:linear-gradient(#131219, #131219) padding-box, linear-gradient(
+          var(--angle),
+          var(--secondary),
+          #00bbff
+        ) border-box  ; 
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    animation: 6s rotate linear infinite;
 }
 
 @media(width > 500px){
@@ -63,10 +160,6 @@
     }
     .GameCollection > *{
         height: 20vw;
-    }
-    .GameCollection > *:hover{
-        transform: rotate(10deg); 
-    
     }
 }
 
@@ -83,6 +176,20 @@
     }
 }
 
+
+  
+  @keyframes rotate {
+    to {
+      --angle: 360deg;
+    }
+  }
+  
+  @property --angle {
+    syntax: "<angle>";
+    initial-value: 0deg;
+    inherits: false;
+  }
+  
 /* @media(width > 1200px){
     .GameCollection{
         width: 80vw;
