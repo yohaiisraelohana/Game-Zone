@@ -1,8 +1,4 @@
-*{
-    margin: 0;
-    color: white;
-    font-family:  ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-}
+
 
 button:disabled{
     cursor: not-allowed;
@@ -45,6 +41,19 @@ input{
     --light-bg : #F2F9FF;
 }
 
+[data-theme = "light"] {
+    --primary : #1B93FA; 
+    --secondary : #212733;
+    
+    --dark-bg : #F2F9FF ;
+    --light-bg : #0C0D14;
+}
+
+*{
+    margin: 0;
+    color: white;
+    font-family:  ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+}
 
 /* 
 linear-gradient(to right, #01faff 0%, #258fff 100%);
