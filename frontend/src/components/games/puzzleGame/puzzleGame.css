@@ -1,23 +1,19 @@
-.PuzzleGame{
+.PuzzleGame .slice-image{
     width: 300px;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    position: relative;
 }
 
-/* .pieces-container > *{
-     position: absolute; 
-} */
-/* .take-space{
-    margin-right: 1px;
+.PuzzleGame .game{
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
 }
-.take-top{
-    margin-top: -30px;
+
+.PuzzleGame .slice{
+    cursor: grab ;
 }
-.take-double-top{
-    margin-top: -60px;
-}
-.take-left{
-    margin-left: -30px !important;
-} */
+
