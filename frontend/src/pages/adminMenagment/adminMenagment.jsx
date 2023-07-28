@@ -8,7 +8,7 @@ import GamesMenagment from './gamesMenagment/gamesMenagment';
 
 export default function AdminMenagment() {
     const {user,error} = useUser();
-    const [option, setOption] = useState("Users")
+    const [option, setOption] = useState("Users");
     const menagment_options = ["Users","Games"];
     const navigate = useNavigate();
     useEffect(()=>{

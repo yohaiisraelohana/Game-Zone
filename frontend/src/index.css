@@ -1,12 +1,11 @@
-*{
-    margin: 0;
-    color: white;
-    font-family:  ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-}
+
 
 button:disabled{
     cursor: not-allowed;
     opacity: 0.5;
+}
+input{
+    background-color: transparent;
 }
 
 .modal-container{
@@ -37,11 +36,27 @@ button:disabled{
 :root{
     --primary : #1B93FA; 
     --secondary : #212733;
+    --gradiant-primary : linear-gradient(to right,  var(--primary) , #01faff );
     
     --dark-bg : #0C0D14;
     --light-bg : #F2F9FF;
 }
 
+[data-theme = "light"] {
+    --primary : #1B93FA; 
+    --secondary : #212733;
+    
+    --dark-bg : #F2F9FF ;
+    --light-bg : #0C0D14;
+}
 
-/* --primary : #2390FF; 
+*{
+    margin: 0;
+    color: white;
+    font-family:  ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+}
+
+/* 
+linear-gradient(to right, #01faff 0%, #258fff 100%);
+--primary : #2390FF; 
  --secondary : #212733e6; */

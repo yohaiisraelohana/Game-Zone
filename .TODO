@@ -1,7 +1,6 @@
 <!-- 
                                          TODO
  
-   !!!!!!!!!!!!!!!!!!! *404page* !!!!!!!!!!!!!!!!!!!!
     *style*
 1.  
     use skeletons instead of loading
@@ -14,19 +13,18 @@
     ?or
     use toast
 4.
-    light and dark mode https://www.youtube.com/watch?v=pZhAiCSqHPs
+    light and dark mode 
+    stoped at friends
+    add shadow to variable 
 5.
     create error reusfull component
-
+!6 
+    change the code sended to the backend and check how to do this with a code
     *Main*
     !!! every place using api to present error if there is , create reusable component for showing errors
-
-    *LogIn*
-!1.  
-    finish "forgot your password link"
-!2.
-    function on the account component wich will check if the user is still connected
-
+!10.
+    main : add all routes in postman
+    
     *Puzzle*
 !1. 
     finish the game
@@ -63,8 +61,7 @@
     admin: gragh of users per periode
 8.
     admin: how many users plaied every game 
-!10.
-    main : add all routes in postman
+
 !11.
     usersList: in friends -> button to invite to a game online
 *! check cookies time works

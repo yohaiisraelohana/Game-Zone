@@ -10,25 +10,31 @@ import AddSudokuTemplate from './addSudokuTemplate';
 
 import './sudokuMenagment.css'
 import Pagination from '../../../../components/reusfullComponents/pagination/pagination';
+import SudokuMenagmentOptions from './sudokuMenagmentOptions';
 
 export default function SudokuMenagment() {
   const {setSudokuTemplate,page,pages,selectPage} = useSudoku();
   const [modal,setModal] = useState(null);
   const navigate = useNavigate();  
+  const closeModal = () => {
+    setModal(null);
+  }
+  const openModal = (content) => {
+    const m = useModal(content,closeModal);
+    setModal(m);
+  }
+
   return (
     <div className='SudokuMenagment'>
         {modal && modal}
         <h2>Sudoku Game Menagment</h2>
         <SudokuGameNav additional={ <button 
           className={`add-template`}
-          onClick={()=>{
-            const m = useModal(<AddSudokuTemplate closeModal={()=>setModal(null)}/>,()=>setModal(null));
-            setModal(m);
-          }}
+          onClick={()=>openModal(<AddSudokuTemplate closeModal={closeModal}/>)}
           >Add</button>}/>
         <SudokuCollection handleClick={(sudoku)=>{
           setSudokuTemplate(sudoku);
-          navigate("/sudokuGame/menagment");
+          openModal(<SudokuMenagmentOptions closeModal={closeModal} />)
         }} />
         <Pagination page={page} setPage={selectPage} pages={pages} />
 

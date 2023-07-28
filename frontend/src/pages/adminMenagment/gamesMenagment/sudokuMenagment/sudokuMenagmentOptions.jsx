@@ -1,17 +1,14 @@
 import React, { useEffect, useState } from 'react'
 import useSudoku from '../../../../hooks/useSudoku'
-import NavBackButton from '../../../../components/reusfullComponents/navigateBackButton/navBackButton';
 
 import './sudokuMenagmentOptions.css'
 import SudokuInputTemplate from './sudokuInputTemplate';
 import DefineSudokuLevel from './defineSudokuLevel';
-import { useNavigate } from 'react-router-dom';
 
-export default function SudokuMenagmentOptions() {
+export default function SudokuMenagmentOptions({closeModal}) {
     const {currentSudoku,deleteSudokuTemplate,updateSudokuTemplate} = useSudoku();
     const [new_template,setNewTemplate] = useState(null);
     const [level,setLevel] = useState(null);
-    const navigate = useNavigate();
     useEffect(()=>{
       if (currentSudoku) {
         setNewTemplate(currentSudoku.template);
@@ -20,7 +17,6 @@ export default function SudokuMenagmentOptions() {
     },[currentSudoku]);
   return (
     <div className='SudokuMenagmentOptions'>
-        <NavBackButton/>
         <h2>Edit Sudoku Template</h2>
         <div className="sudoku-change-level">
           <DefineSudokuLevel setLevel={setLevel} level={level} />
@@ -32,7 +28,7 @@ export default function SudokuMenagmentOptions() {
             className='delete'
             onClick={()=>{
               deleteSudokuTemplate(currentSudoku._id);
-              navigate(-1);
+              closeModal();
             }}
             >DELETE</button>
           <button 
@@ -42,7 +38,7 @@ export default function SudokuMenagmentOptions() {
                 template:new_template,
                 level
               });
-              navigate(-1);
+              closeModal();
             }}
             >UPDATE</button>
         </div>

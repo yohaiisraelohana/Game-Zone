@@ -13,6 +13,7 @@ export const USERS_LIST = USER + "/usersList/";
 export const REMOVE_FRIEND = USER + "/removeFriendRequest";
 export const UPDATE_USER = USER + "/update"; 
 export const LOG_OUT = USER + "/LogOut";
+export const RESET_USER_PASSWORD = USER + "/resetPassword";
 
 //* admin
 export const ADMIN_GET_USERS = USER + "/adminUsersList";

@@ -11,6 +11,11 @@
     /* background-color: rgba(33, 34, 51, 0.9); */
 }
 
+.NavBar .right-nav{
+    display: flex;
+    height: 100%;
+    align-items: center;
+}
 
 .NavBar .account-dropdown{
     position: relative;

@@ -1,14 +1,14 @@
+
 .EditMemoryGame{
     position: relative;
     margin: auto;
-}
-.EditMemoryGame{
     height: fit-content;
+    max-height: 90vh;
+    overflow-y: auto;
     width: 80vw;
     background-color: var(--dark-bg);
     padding: 5px;
-    padding-block: 20px;
-    padding-top: 15vw;
+    padding-block: 10px;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -116,7 +116,6 @@
 
 @media(width > 700px){
     .EditMemoryGame{
-        padding-top: 10vw;
         font-size: 20px;
     }
     .EditMemoryGame .form .input{
@@ -130,6 +129,9 @@
         display: flex;
         flex-wrap: wrap;
         justify-content: space-between;
+    }
+    .EditMemoryGame .api-lable{
+        font-size: 20px;
     }
     .EditMemoryGame .image-input-container img{
         width: 49%;
@@ -170,9 +172,6 @@
     }
 }
 @media(width > 1200px){
-    .EditMemoryGame{
-        padding-top: 5vw;
-    }
     .EditMemoryGame .image-input-container{
         margin-bottom: 28vh;
     }

@@ -20,7 +20,7 @@
     width: 100px;
 }
 
-h1 {
+.NotFound404 h1 {
   color: var(--light-bg); 
   /* color: var(--secondary); */
   font-size: 12.5rem;
@@ -31,24 +31,24 @@ h1 {
 }
 
 @media (max-width: 30rem) {
-  h1 {
+    .NotFound404 h1 {
     font-size: 8.5rem;
   }
 }
 
-h1 > span {
+.NotFound404 h1 > span {
   -webkit-animation: spooky 2s alternate infinite linear;
           animation: spooky 2s alternate infinite linear;
   color: #528cce;
   display: inline-block;
 }
 
-h2 {
+.NotFound404 h2 {
   color: #e7ebf2;
   margin-bottom: 0.4em;
 }
 
-p {
+.NotFound404 p {
   color: var(--light-bg);
   margin-top: 0;
 }

@@ -86,7 +86,11 @@ export default function LogInForm({ updateModal,closeModal }) {
         <div className="error-server">
           <p>{error}</p>
         </div>
-        <Link className="forgot-password">Forgot your password ?</Link>
+        <Link
+          onClick={()=>closeModal()}
+          to={"/resetPassword"} 
+          className="forgot-password"
+          >Forgot your password ?</Link>
         <button className="login-button">LogIn</button>
       </form>
     </div>
