@@ -54,10 +54,10 @@ export const AppRoutes = () => {
 
 
   
-  const [theme, setTheme] = useState((localStorage.getItem("theme") || "dark"));
+  const [theme, setTheme] = useState((localStorage.getItem("theme") || "light"));
 
   const changeTheme = () => {
-    let newTheme = (theme == "dark" ? "light" : "dark"); 
+    let newTheme = (theme == "light" ? "dark" : "light"); 
     localStorage.setItem("theme",newTheme);
     setTheme(newTheme);
   }

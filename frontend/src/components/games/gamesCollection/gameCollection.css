@@ -113,10 +113,12 @@
 
 
 
-
+.GameCollection .slide-puzzle-game{
+    background-image: url("https://res.cloudinary.com/dhojbnefp/image/upload/v1690752914/0C782CFE-AC5B-4F8F-A7FB-38CED6E9C9EE_1_201_a_oklugk.jpg");
+}
 .GameCollection .slide-puzzle-game:hover{
     border: 3px solid #0000;
-    background: linear-gradient(#131219, #131219) padding-box, linear-gradient(
+    background: url("https://res.cloudinary.com/dhojbnefp/image/upload/v1690752914/0C782CFE-AC5B-4F8F-A7FB-38CED6E9C9EE_1_201_a_oklugk.jpg")  padding-box, linear-gradient(
           var(--angle),
           var(--secondary),
           #00bbff

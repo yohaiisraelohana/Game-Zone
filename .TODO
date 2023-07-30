@@ -17,12 +17,15 @@
     stoped at 
     *gamesCollection*
     add shadow to variable 
+    switch the default
 5.
     create error reusfull component
 !6 
     change the code sended to the backend and check how to do this with a code
 7.
     add animation to endedGameAllert
+!!!8
+    memory game search category
     *Main*
     !!! every place using api to present error if there is , create reusable component for showing errors
 !10.
