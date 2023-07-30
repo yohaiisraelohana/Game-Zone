@@ -1,6 +1,7 @@
 .LogInButton{
     background-color: var(--primary);
     background-image: var(--gradiant-primary);
+    color: white;
     border: none;
     border-radius: 50px;
     padding: 10px;

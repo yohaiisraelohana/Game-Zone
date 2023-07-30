@@ -1,5 +1,20 @@
 
+:root{
+    --primary : #1B93FA; 
+    --secondary : #212733;
+    --gradiant-primary : linear-gradient(to right,  var(--primary) , #01faff );
+    --modal-bg : rgba(255, 255, 255, 0.5);
+    --dark-bg : #0C0D14;
+    --light-bg : #F2F9FF;
+}
 
+[data-theme = "dark"] {
+    --primary : #1B93FA; 
+    --secondary : #212733;
+    --modal-bg : rgba(51, 51, 51, 0.5);
+    --dark-bg : #F2F9FF ;
+    --light-bg : #0C0D14;
+}
 button:disabled{
     cursor: not-allowed;
     opacity: 0.5;
@@ -11,7 +26,7 @@ input{
 .modal-container{
     height: 100vh;
     width: 100vw;
-    background-color:rgba(255, 255, 255, 0.5) ;
+    background-color:var(--modal-bg);
     z-index: 5;
     position: fixed;
     top: 0;
@@ -33,22 +48,7 @@ input{
     background-color: transparent;
 }
 
-:root{
-    --primary : #1B93FA; 
-    --secondary : #212733;
-    --gradiant-primary : linear-gradient(to right,  var(--primary) , #01faff );
-    
-    --dark-bg : #0C0D14;
-    --light-bg : #F2F9FF;
-}
 
-[data-theme = "light"] {
-    --primary : #1B93FA; 
-    --secondary : #212733;
-    
-    --dark-bg : #F2F9FF ;
-    --light-bg : #0C0D14;
-}
 
 *{
     margin: 0;

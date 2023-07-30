@@ -3,7 +3,7 @@
     position: relative;
     margin-top: -10vh;
     z-index: 7;
-    background-color: black;
+    background-color: var(--dark-bg);
 }
 .CirclesFight .score{
     position: absolute;

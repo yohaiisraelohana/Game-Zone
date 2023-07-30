@@ -111,7 +111,7 @@ export default function CirclesFight() {
 
     
 
-    const player = new Player(window.innerWidth / 2,window.innerHeight / 2,10,'white');
+    const player = new Player(window.innerWidth / 2,window.innerHeight / 2,10,'#1B93FA');
     //! try change to useState
     const projectiles = [];
     const enemies = [];
@@ -242,7 +242,7 @@ export default function CirclesFight() {
             x:Math.cos(angle) * 5,
             y:Math.sin(angle) * 5
         }
-        projectiles.push(new Projectile(player.x,player.y,5,'white',velocity));
+        projectiles.push(new Projectile(player.x,player.y,5,'#1B93FA',velocity));
     })
 
 
