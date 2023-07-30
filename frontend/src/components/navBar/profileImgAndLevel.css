@@ -34,6 +34,7 @@
 
     border-radius: 50%;
 
+
 }
 .ProfileImgAndLevel circle{
     fill: none;
@@ -41,6 +42,7 @@
     /* stroke-dasharray: 1000;
     stroke-dashoffset: 855; */ 
     stroke-width: 4px; 
+
 }
 
 
@@ -50,7 +52,9 @@
     font-size: 30px;
     bottom: 22px;
     left: -12px;
+    color: white;
 }
+
 .ProfileImgAndLevel .level{
     font-size: 9px;
     font-weight: bold;

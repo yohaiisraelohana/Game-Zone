@@ -12,6 +12,7 @@ export default function GameCollection() {
     {name:"Slide Puzzle",link:"/slidePuzzleGame",className:"slide-puzzle-game"},
     {name:"Puzzle",link:"/puzzleGame",className:"puzzle-game"},
     {name:"Circles Fight",link:"/circlesFight",className:"circles-fight-game"},
+    {name:"BreakOut",link:"/breakOutGame",className:"break-out-game"},
   ];
 
   return (

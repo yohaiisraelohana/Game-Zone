@@ -18,6 +18,7 @@
     align-self: center;
     font-family: Impact, sans-serif; 
     margin-left: -1vw;
+    color: white;
 }
 .Logo .logo-image{
     background: url('../../assets/icons/logo2.png') center;
