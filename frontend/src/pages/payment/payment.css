@@ -1,0 +1,106 @@
+.Payment{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.Payment .buying-section{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border:  #01faff solid 3px;
+    width: 500px;
+    height: 600px;
+    margin-top: 70px;
+}
+
+.Payment .price {
+    margin-top: 10px;
+    display: flex;
+}
+
+.Payment .array {
+    all: unset;
+    padding: 10px 16px;
+    margin: 10px 10px;
+    border: var(--primary) solid 2px;
+    border-radius: 10%;
+    cursor: pointer;
+    text-align: center;
+    position: relative; 
+  }
+.Payment .star {
+    display: flex;
+    position: relative;
+  }
+  
+  .Payment .five-pointed-star {
+    --star-color: #01faff;
+    margin: 1em auto;
+    font-size: 4em;
+    position: relative;
+    display: block;
+    width: 0px;
+    height: 0px;
+    border-right: 1em solid transparent;
+    border-bottom: 0.7em solid var(--star-color);
+    border-left: 1em solid transparent;
+    transform: rotate(35deg);
+    z-index: 1; 
+  }
+  
+  .Payment .five-pointed-star:nth-child(3),
+  .Payment .five-pointed-star:nth-child(1) {
+    position: absolute; 
+  }
+  
+  .Payment .five-pointed-star:nth-child(3) {
+    top: 20%;
+    right: 70%; 
+    z-index: 2; 
+  }
+  
+  .Payment .five-pointed-star:nth-child(1) {
+    left: 70%; 
+    z-index: 2;
+    top: 20%; 
+  }
+  
+  .Payment .five-pointed-star:before {
+    border-bottom: 0.8em solid var(--star-color);
+    border-left: 0.3em solid transparent;
+    border-right: 0.3em solid transparent;
+    position: absolute;
+    height: 0;
+    width: 0;
+    top: -0.45em;
+    left: -0.65em;
+    display: block;
+    content: "";
+    transform: rotate(-35deg);
+  }
+  
+  .Payment .five-pointed-star:after {
+    position: absolute;
+    display: block;
+    top: 0.03em;
+    left: -1.05em;
+    width: 0;
+    height: 0;
+    border-right: 1em solid transparent;
+    border-bottom: 0.7em solid var(--star-color);
+    border-left: 1em solid transparent;
+    transform: rotate(-70deg);
+    content: "";
+  }
+
+
+  .Payment .paypal-container{
+    margin-top: 20px;
+    top: 100px;
+  }
+
+  .Payment .paypal-buttons:focus{
+  }

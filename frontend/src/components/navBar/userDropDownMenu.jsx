@@ -16,6 +16,10 @@ export default function UserDropDownMenu({user:{email,name,role},getModal,closeM
           navigate("/account");
           closeMenu();
         }},
+        {name:"Payment",to:"/account",function:()=>{
+          navigate("/payment");
+          closeMenu();
+        }},
         {name:"Friends",to:"/account",function:()=>{
           getModal(<SearchUsers />);
           closeMenu();

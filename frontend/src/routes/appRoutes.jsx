@@ -18,6 +18,7 @@ import Account from '../pages/account/account';
 import AdminMenagment from '../pages/adminMenagment/adminMenagment';
 import NotFound404 from '../pages/notFound404/NotFound404';
 import ResetPassword from '../pages/resetPassword/resetPassword';
+import Payment from '../pages/payment/payment';
 
 export const ThemeContext = createContext(null);
  
@@ -40,6 +41,7 @@ export const AppRoutes = () => {
         <Route path='/admin' element={<AdminMenagment/>}/>
         <Route path='/resetPassword' element={<ResetPassword/>} />
         <Route path='*' element={<NotFound404/>}/>
+        <Route path='payment' element={<Payment/>}/>
       </Route>
     )
   )
