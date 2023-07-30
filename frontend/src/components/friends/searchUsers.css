@@ -9,6 +9,7 @@
     min-height: 60vh;
     overflow-y: auto;
     border-radius: 5px;
+    color: var(--light-bg);
 }
 .SearchUsers input{
     background-color: transparent;
@@ -18,6 +19,7 @@
     margin-block: 10px;
     border-radius: 5px;
     outline: none;
+    color: var(--light-bg);
 }
 
 .SearchUsers .UsersList{
@@ -27,6 +29,7 @@
     width: 100%;
     border-radius: 10px;
     align-content: start;
+    color: white;
 }
 
 .SearchUsers .UsersList .user{
@@ -40,16 +43,19 @@
     margin-block:5px;
     background-color: var(--secondary);
     border-radius: 5px;
+    color: white;
 }
 .SearchUsers .user .user-profile{
     display: flex;
     align-items: end;
+    color: white;
 }
 .SearchUsers .user .user-profile-img{
     height: 30px;
     width: 30px;
     border-radius: 50%;
     margin-right: 5px;
+    color: var(--light-bg);
 }
 
 @media (width > 500px ){

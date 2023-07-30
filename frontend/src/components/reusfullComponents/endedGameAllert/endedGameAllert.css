@@ -1,0 +1,57 @@
+.EndedGameAllert{
+    position: fixed;
+    inset: 1;
+    background-color: var(--light-bg);
+    z-index: 7;
+    border: var(--secondary)3px solid;
+    padding: 30px ;
+    width: 70vw;
+    border-radius: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.EndedGameAllert h1 , h2{
+    color: var(--dark-bg);
+    width: 100%;
+    text-align: center;
+    padding-bottom: 20px;
+}
+
+.EndedGameAllert-restart{
+    padding: 5px 20px;
+    height: fit-content;
+    background-color: var(--primary);
+    border: none;
+    border-radius: 5px;
+    font-size: 15px;
+}
+.EndedGameAllert-exit{
+    padding: 5px 20px;
+    height: fit-content;
+    background-color: red;
+    border: none;
+    border-radius: 5px;
+    font-size: 15px;
+}
+
+@media(width > 700px){
+    .EndedGameAllert{
+        width: 60vw;
+    }
+}
+
+@media(width > 1000px){
+    .EndedGameAllert{
+        width: 50vw;
+    }
+
+}
+
+@media(width > 1200px){
+    .EndedGameAllert{
+        width: 30vw;
+    }
+
+}

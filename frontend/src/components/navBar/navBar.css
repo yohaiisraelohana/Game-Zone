@@ -22,7 +22,9 @@
     height: 0px;
     
 }
-
+.NavBar main{
+    background-color: var(--dark-bg);
+}
 
 
 

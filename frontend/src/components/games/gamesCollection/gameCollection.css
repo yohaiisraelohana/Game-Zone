@@ -150,6 +150,18 @@
     background-position: center;
     animation: 6s rotate linear infinite;
 }
+.GameCollection .break-out-game:hover{
+    border: 3px solid #0000;
+    background:linear-gradient(#131219, #131219) padding-box, linear-gradient(
+          var(--angle),
+          var(--secondary),
+          #00bbff
+        ) border-box  ; 
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    animation: 6s rotate linear infinite;
+}
 
 @media(width > 500px){
     .GameCollection{

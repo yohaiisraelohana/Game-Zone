@@ -19,6 +19,8 @@ import AdminMenagment from '../pages/adminMenagment/adminMenagment';
 import NotFound404 from '../pages/notFound404/NotFound404';
 import ResetPassword from '../pages/resetPassword/resetPassword';
 import Payment from '../pages/payment/payment';
+import BreakOutGame from '../components/games/breakOutGame/breakOutGame';
+
 
 export const ThemeContext = createContext(null);
  
@@ -37,6 +39,8 @@ export const AppRoutes = () => {
         <Route path='/slidePuzzleGame' element={<SlidePuzzleGame/>} />
         <Route path='/puzzleGame' element={<PuzzleGame/>}/>
         <Route path='/circlesFight' element={<CirclesFight/>}/>
+        <Route path='/breakOutGame' element={<BreakOutGame/>}/>
+
         <Route path='/account' element={<Account/>}/>
         <Route path='/admin' element={<AdminMenagment/>}/>
         <Route path='/resetPassword' element={<ResetPassword/>} />
