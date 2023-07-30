@@ -1,4 +1,6 @@
 import React from 'react'
+import Draggable, {DraggableCore} from 'react-draggable';
+
 
 import topLeft from '../../../assets/images/puzzle9x9/pieces/topLeft.png';
 import topCenter from '../../../assets/images/puzzle9x9/pieces/topCenter.png';
@@ -25,11 +27,13 @@ export default function PuzzleGame() {
         {piece:bottomRight,position:"100% 100%",height:"100px",width:"100px",top:30,left:30}
     ];
   return (
-    <div>
-        <div className="PuzzleGame">
+    <div className='PuzzleGame'>
+        <div className='game'>
+        <div className="slice-image">
         {piecesArr && piecesArr.map((p,i)=>(
-        <div key={i}
-        className={`${i % 3 != 0 ? "take-left " : "take-space "}${i > 2 && i < 6 ? "take-top" : (i > 5 ? "take-double-top":"")}`}
+            <Draggable>
+        <div className='slice' key={i}
+        // className={`${i % 3 != 0 ? "take-left " : "take-space "}${i > 2 && i < 6 ? "take-top" : (i > 5 ? "take-double-top":"")}`}
         style={{
             WebkitMaskImage:`url(${p.piece})`,
             WebkitMaskRepeat:'no-repeat',
@@ -49,9 +53,16 @@ export default function PuzzleGame() {
                         }}>
                 </div>
         </div> 
+        </Draggable>
         ))}
         </div>
+        <div className='full-image'>
         <img src={gameImage} alt="" />
+        </div>
+        </div>
+        <div className='board'></div>
+
+
     </div>
   )
 }
