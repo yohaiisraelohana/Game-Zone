@@ -2,12 +2,16 @@
     position: relative;
     margin-top: 5vh;
     padding-top: 4vh;
+    color: var(--light-bg);
+}
+.MemoryGame .navBack{
+    color: var(--light-bg) !important;
 }
 .MemoryGame h1{
     position: absolute;
     top: 0px;
     left: 5%;
-    
+    color: var(--light-bg);
 }
 @media(width > 700px){
     .MemoryGame{

@@ -132,7 +132,7 @@ export default function MemoryGameStart() {
 
   return (
     <div className='MemoryGameStart'>
-      <NavBackButton />
+      <NavBackButton className="navBack" />
       { level ? 
         <div className="memory-game-start">
           <p className='turnes'>Turns: {turns}</p>

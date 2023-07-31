@@ -52,12 +52,12 @@ export default function SlidePuzzleGame() {
       {puzzle_image
         ? 
           <div>
-            <NavBackButton onClick={() => setPuzzleImage(null)}/>
+            <NavBackButton className="navBack" onClick={() => setPuzzleImage(null)}/>
             <SlidePuzzleStartGame image={puzzle_image} box_size={box_size} />
           </div>
           
         : <div >
-            <NavBackButton />
+            <NavBackButton className="navBack" />
             <SlidePuzzleImgInput handleImageChange={handleImageChange} />
             <SlidePuzzleCollection  />
             <Pagination page={page} pages={pages} setPage={(p)=>selectPage(p)} />

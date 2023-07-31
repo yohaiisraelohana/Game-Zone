@@ -16,7 +16,7 @@ export default function SudokuGame() {
 
   return ( 
     <div className='SudokuGame'>
-      <NavBackButton />
+      <NavBackButton className="navBack" />
         <h2>sudokuGame</h2>
         <SudokuGameNav />
         <SudokuCollection

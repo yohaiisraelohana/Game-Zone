@@ -20,7 +20,7 @@ export default function MemoryGame() {
 
   return (
     <div className='MemoryGame'>
-      <NavBackButton to={"/"}/>
+      <NavBackButton className="navBack" to={"/"}/>
       <h1>Memory Game</h1>
       {memoryGames 
         ? <MemoryCollection memorycategories={memoryGames} /> 

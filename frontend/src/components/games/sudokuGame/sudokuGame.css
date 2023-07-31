@@ -1,8 +1,13 @@
 .SudokuGame h2{
-    color: white;
+    color: var(--light-bg);
     padding-left: 5%;
     font-size: 2em;
+    width: fit-content;
+    padding-bottom: 0px;
 }
 .SudokuGame {
     position: relative;
+}
+.SudokuGame .navBack{
+    color: var(--light-bg) !important;
 }

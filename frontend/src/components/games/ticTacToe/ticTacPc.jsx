@@ -231,7 +231,7 @@ export default function TicTacPc() {
   return (
     <div className="TicTacPc">
       <div style={{fontSize:'40px'}} className="icon">
-      <NavBackButton />
+      <NavBackButton className="navBack" />
       </div>
       {level ? (
         <div className="game">

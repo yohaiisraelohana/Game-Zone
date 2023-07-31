@@ -14,7 +14,7 @@
 .RouletteBoard .options-container button{
     width: 50px; 
     height: 25px;
-    border: 1px solid white;
+    border: 1px solid var(--light-bg);
     background-color: rgb(66, 171, 66);
     color: white;
 }
@@ -42,7 +42,7 @@
     color: white;
     height: 25px;
     width: 25px;
-    border: white 1px solid;
+    border: var(--light-bg) 1px solid;
     padding: 6px;
     transform: rotate(180deg);
 }
@@ -70,7 +70,7 @@
 }
 .RouletteBoard .four-rows-container button{
     background-color: rgb(66, 171, 66);
-    border: white 1px solid;
+    border: var(--light-bg) 1px solid;
     width: 100px;
     height: 30px;
     color: white;
@@ -83,7 +83,7 @@
 }
 .RouletteBoard .specials-options-container button{
     background-color: rgb(66, 171, 66);
-    border: white 1px solid;
+    border: var(--light-bg) 1px solid;
     padding-inline:7px ;
     color: white;
 }

@@ -2,3 +2,6 @@
     position: relative;
     padding-block:20px ;
 }
+.SlidePuzzleGame .navBack{
+    color: var(--light-bg) !important;
+}

@@ -8,7 +8,7 @@ const Roulette = ({ballPosition}) => {
 
   return (
       <div className="Roulette">
-        <div className='result '>Number</div>
+        <div className='result '>{"result"}</div>
         <div className="ball-container"
           style={{transform:`rotate(${ballPosition}deg)`,transitionProperty:"all",transitionDuration:'3s'}} >
           <div className="ball"> 

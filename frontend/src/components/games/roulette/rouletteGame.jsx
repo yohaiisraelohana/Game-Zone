@@ -59,8 +59,9 @@ export default function RouletteGame() {
     }
   return (
     <div className='RouletteGame'>
-        <NavBackButton/>
-        <Roulette ballPosition={ballPosition}/>
+        <NavBackButton className="navBack"/>
+        <Roulette 
+          ballPosition={ballPosition}/>
         <RouletteSpin 
             spinBall={spinBall} 
             price={price} 

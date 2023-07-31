@@ -2,6 +2,7 @@
     display: flex;
     height: 18vh;
     position: relative;
+    
 }
 
 .MemoryCard .back{
@@ -11,7 +12,7 @@
     background-size: cover;
     transition: all ease-in 0.2s;
     transition-delay: 0.2s ;
-    border: white 1px solid;
+    border: var(--secondary) 1px solid;
     border-radius: 5px;
 }
 
@@ -23,7 +24,7 @@
     transition: all ease-in 0.2s;
     transform: rotateY(90deg);
     position: absolute;
-    border: white 1px solid;
+    border: var(--secondary)1px solid;
     border-radius: 5px;
 }
 .flipped .front {

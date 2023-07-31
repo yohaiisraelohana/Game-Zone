@@ -15,6 +15,7 @@
 
 .Roulette .result{
     position: absolute;
+    color: var(--light-bg);
 }
 
 

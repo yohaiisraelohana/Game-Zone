@@ -6,6 +6,8 @@
 }
 .SlidePuzzleImgInput .open-input{
     background-color: var(--primary);
+    background-image: var(--gradiant-primary);
+    color: white;
     border: none;
     padding: 3px;
     border-radius: 5px;
