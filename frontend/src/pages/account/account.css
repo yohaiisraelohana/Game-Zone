@@ -1,6 +1,7 @@
 .Account{
     position: relative;
     padding-top: 30px;
+    color: var(--light-bg);
 }
 .Account .account-container{
     width: 100vw;
@@ -26,6 +27,7 @@
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
+    
 }
 .Account .account-user-details .account-profile-img{
     height: 40vw;
@@ -38,9 +40,14 @@
 .Account .account-user-details .user-name{
     font-weight: bold;
     text-align: center;
-    align-self: end;
+    align-self: self-end;
+    padding: 0px;
     margin-block: 10px;
     margin-right: 10px;
+    color: var(--light-bg);
+    width: fit-content;
+
+    
 }
 .Account .account-user-details .level-container-user{
     position: static;
@@ -139,6 +146,7 @@
     border-radius: 5px;
     font-size: medium;
     text-transform: capitalize;
+    color: var(--light-bg);
 }
 
 .Account .friends-container .selected{

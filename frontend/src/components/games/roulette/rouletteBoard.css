@@ -4,16 +4,19 @@
     width: 150px;
     transform: rotate(-90deg); 
     margin: auto;
+    color: white;
 }
 .RouletteBoard .options-container .zero{
     width: 150px;
     border-radius:100% 100% 0px 0px ;
+    color: white;
 }
 .RouletteBoard .options-container button{
     width: 50px; 
     height: 25px;
     border: 1px solid white;
     background-color: rgb(66, 171, 66);
+    color: white;
 }
 .RouletteBoard .options-container .red-cell{
     background-color: red ;
@@ -29,6 +32,7 @@
     margin: auto;
     
     margin-bottom: -100px;
+    color: white;
     width: 100%;
     
 }
@@ -69,16 +73,19 @@
     border: white 1px solid;
     width: 100px;
     height: 30px;
+    color: white;
 }
 .RouletteBoard .specials-options-container{
     width: 300px;
     margin: auto;
     display: flex;
+    color: white;
 }
 .RouletteBoard .specials-options-container button{
     background-color: rgb(66, 171, 66);
     border: white 1px solid;
     padding-inline:7px ;
+    color: white;
 }
 .RouletteBoard .selected-number{
     background-color: var(--primary) !important;

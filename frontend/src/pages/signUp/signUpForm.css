@@ -9,6 +9,7 @@
     align-content: start;
     flex-wrap: wrap;
     width: 85vw;
+    color: var(--light-bg);
 } 
 
 .SignUpForm .signUp-nav{
@@ -19,6 +20,7 @@
 .SignUpForm .log-in{
     border: none;
     background-color: transparent;
+    color: var(--light-bg);
 }
 
 .SignUpForm .signUp-form{

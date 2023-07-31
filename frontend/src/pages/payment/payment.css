@@ -47,6 +47,7 @@
     border-right: 1em solid transparent;
     border-bottom: 0.7em solid var(--star-color);
     border-left: 1em solid transparent;
+    
     transform: rotate(35deg);
     z-index: 1; 
   }
@@ -80,6 +81,7 @@
     display: block;
     content: "";
     transform: rotate(-35deg);
+    
   }
   
   .Payment .five-pointed-star:after {

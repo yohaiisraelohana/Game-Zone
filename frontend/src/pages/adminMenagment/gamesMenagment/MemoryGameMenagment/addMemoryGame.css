@@ -8,15 +8,18 @@
     flex-wrap: wrap;
     justify-content: center;
     border-radius: 5px;
+    color: var(--light-bg);
 }
 .AddMemoryGame .form .lable-container .AiOutlinePlus{
     background-color: var(--primary);
     border-radius: 3px;
+    color: var(--light-bg);
 }
 .AddMemoryGame h2{
     width: 100%;
     text-align: center;
     margin-bottom:10px ;
+    color: var(--light-bg);
 }
 .AddMemoryGame .form{
     width: 75vw;

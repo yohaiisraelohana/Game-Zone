@@ -3,11 +3,13 @@
     justify-content: center;
     width: 100%;
     flex-wrap: wrap;
+    color: var(--light-bg);
 }
 .CloudinaryGamesImgs h2{
     width: 100%;
     text-align: center;
     margin-top: 10px;
+    color: var(--light-bg);
 }
 .CloudinaryGamesImgs .add-button{
     width: 85vw;

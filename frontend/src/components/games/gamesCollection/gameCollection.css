@@ -15,7 +15,7 @@
     border-radius: 5px;
 
     height: 20vw;
-    border: 2px var(--secondary) solid;
+    border: 4px var(--secondary) solid;
     transform: rotate(0deg);
     transition: box-shadow ease-in-out 1s, transform ease-in-out 1s;
     display: flex;
@@ -38,13 +38,13 @@
 } */
 
 .GameCollection .memory-game{
-    background-image:url('../../../assets/icons/games/memoryGameIcon.svg');
+    background-image:url('https://res.cloudinary.com/dhojbnefp/image/upload/v1690756372/C3C45339-EB0E-41D8-B857-A16D38B36AD8_dppowt.jpg');
 }
 .GameCollection .memory-game:hover{
-    border: 3px solid #0000;
-    background: url('../../../assets/icons/games/memoryGameIcon.svg') padding-box, linear-gradient(
+    border: 5px solid #0000;
+    background: url('https://res.cloudinary.com/dhojbnefp/image/upload/v1690756372/C3C45339-EB0E-41D8-B857-A16D38B36AD8_dppowt.jpg') padding-box, linear-gradient(
           var(--angle),
-          var(--secondary),
+          var(--light-bg),
           #00bbff
         ) border-box  ; 
     background-repeat: no-repeat;
@@ -56,12 +56,12 @@
 
 
 .GameCollection .ticTac-game{
-    background-image:url('../../../assets/images/games/tictac.png');
+    background-image:url('https://res.cloudinary.com/dhojbnefp/image/upload/v1690756191/93B8DCAE-D0A7-43CB-AD8C-6B3660BAB87C_wllz6e.jpg');
 }
 
 .GameCollection .ticTac-game:hover{
-    border: 3px solid #0000;
-    background: url('../../../assets/images/games/tictac.png') padding-box, linear-gradient(
+    border: 5px solid #0000;
+    background: url('https://res.cloudinary.com/dhojbnefp/image/upload/v1690756191/93B8DCAE-D0A7-43CB-AD8C-6B3660BAB87C_wllz6e.jpg') padding-box, linear-gradient(
           var(--angle),
           var(--secondary),
           #00bbff
@@ -75,12 +75,12 @@
 
 
 .GameCollection .roulette-game{
-    background-image:url('../../../assets/icons/games/rouletteIcon.svg');
+    background-image:url('https://res.cloudinary.com/dhojbnefp/image/upload/v1690755036/E6E9E94B-8F98-4453-BE9B-3055FB8436E2_njkvyr.jpg');
 }
 
 .GameCollection .roulette-game:hover{
-    border: 3px solid #0000;
-    background: url('../../../assets/icons/games/rouletteIcon.svg') padding-box, linear-gradient(
+    border: 5px solid #0000;
+    background: url('https://res.cloudinary.com/dhojbnefp/image/upload/v1690755036/E6E9E94B-8F98-4453-BE9B-3055FB8436E2_njkvyr.jpg') padding-box, linear-gradient(
           var(--angle),
           var(--secondary),
           #00bbff
@@ -94,11 +94,11 @@
 
 
 .GameCollection .sudoko-game{
-    background-image:url('../../../assets/icons/games/sudokoGameIcon.svg');
+    background-image:url('https://res.cloudinary.com/dhojbnefp/image/upload/v1690756051/A295D9C4-82D0-4A45-B222-8CF41FC241B3_eyg1el.jpg');
 }
 .GameCollection .sudoko-game:hover{
-    border: 3px solid #0000;
-    background: url('../../../assets/icons/games/sudokoGameIcon.svg') padding-box, linear-gradient(
+    border: 5px solid #0000;
+    background: url('https://res.cloudinary.com/dhojbnefp/image/upload/v1690756051/A295D9C4-82D0-4A45-B222-8CF41FC241B3_eyg1el.jpg') padding-box, linear-gradient(
           var(--angle),
           var(--secondary),
           #00bbff
@@ -108,17 +108,16 @@
     background-position: center;
     animation: 6s rotate linear infinite;
 }
-
 
 
 
 
 .GameCollection .slide-puzzle-game{
-    background-image: url("https://res.cloudinary.com/dhojbnefp/image/upload/v1690752914/0C782CFE-AC5B-4F8F-A7FB-38CED6E9C9EE_1_201_a_oklugk.jpg");
+    background-image: url("https://res.cloudinary.com/dhojbnefp/image/upload/v1690755927/7D6F2BF0-C934-47B3-9D10-EBB5D9338D95_ym7x0l.jpg");
 }
 .GameCollection .slide-puzzle-game:hover{
-    border: 3px solid #0000;
-    background: url("https://res.cloudinary.com/dhojbnefp/image/upload/v1690752914/0C782CFE-AC5B-4F8F-A7FB-38CED6E9C9EE_1_201_a_oklugk.jpg")  padding-box, linear-gradient(
+    border: 5px solid #0000;
+    background: url("https://res.cloudinary.com/dhojbnefp/image/upload/v1690755927/7D6F2BF0-C934-47B3-9D10-EBB5D9338D95_ym7x0l.jpg")  padding-box, linear-gradient(
           var(--angle),
           var(--secondary),
           #00bbff
@@ -127,10 +126,14 @@
     background-size: cover;
     background-position: center;
     animation: 6s rotate linear infinite;
+}
+
+.GameCollection .puzzle-game{
+    background-image:  url("https://res.cloudinary.com/dhojbnefp/image/upload/v1690755178/919F3E9D-CD7B-4DF4-8B4A-E2A7ECF1EC1F_srewus.jpg");
 }
 .GameCollection .puzzle-game:hover{
-    border: 3px solid #0000;
-    background: linear-gradient(#131219, #131219) padding-box, linear-gradient(
+    border: 5px solid #0000;
+    background:  url("https://res.cloudinary.com/dhojbnefp/image/upload/v1690755178/919F3E9D-CD7B-4DF4-8B4A-E2A7ECF1EC1F_srewus.jpg") padding-box, linear-gradient(
           var(--angle),
           var(--secondary),
           #00bbff
@@ -139,10 +142,14 @@
     background-size: cover;
     background-position: center;
     animation: 6s rotate linear infinite;
+}
+
+.GameCollection .circles-fight-game{
+    background-image: url("https://res.cloudinary.com/dhojbnefp/image/upload/v1690754064/%D7%A6%D7%99%D7%9C%D7%95%D7%9D_%D7%9E%D7%A1%D7%9A_2023-07-31_%D7%91-0.52.21_ooni9x.png");
 }
 .GameCollection .circles-fight-game:hover{
-    border: 3px solid #0000;
-    background:linear-gradient(#131219, #131219) padding-box, linear-gradient(
+    border: 5px solid #0000;
+    background:url("https://res.cloudinary.com/dhojbnefp/image/upload/v1690754064/%D7%A6%D7%99%D7%9C%D7%95%D7%9D_%D7%9E%D7%A1%D7%9A_2023-07-31_%D7%91-0.52.21_ooni9x.png") padding-box, linear-gradient(
           var(--angle),
           var(--secondary),
           #00bbff
@@ -152,9 +159,13 @@
     background-position: center;
     animation: 6s rotate linear infinite;
 }
+.GameCollection .break-out-game{
+    background-image: url("https://res.cloudinary.com/dhojbnefp/image/upload/v1690754271/D8B0D115-42AD-4AA1-811E-0B729F2071D2_z0khg1.jpg");
+}
+
 .GameCollection .break-out-game:hover{
-    border: 3px solid #0000;
-    background:linear-gradient(#131219, #131219) padding-box, linear-gradient(
+    border: 5px solid #0000;
+    background:url("https://res.cloudinary.com/dhojbnefp/image/upload/v1690754271/D8B0D115-42AD-4AA1-811E-0B729F2071D2_z0khg1.jpg") padding-box, linear-gradient(
           var(--angle),
           var(--secondary),
           #00bbff

@@ -8,12 +8,14 @@
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
+    color: var(--light-bg);
 }
 .EditUser h2{
     width: 100%;
     font-size: 20px;
     text-align: center;
     margin-bottom: 5px;
+    color: var(--light-bg);
 }
 .EditUser-form{
     width: 90%;
@@ -21,6 +23,7 @@
     flex-wrap: wrap;
     justify-content: space-between;
     padding-inline: 7vw;
+    color: var(--light-bg);
 }
 .EditUser-form label{
     font-size: 15px;

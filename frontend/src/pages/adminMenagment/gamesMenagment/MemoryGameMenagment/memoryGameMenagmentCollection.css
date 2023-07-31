@@ -5,6 +5,7 @@
     border-radius: 5px;
     position: relative;
     background-color: var(--secondary);
+    color: var(--light-bg);
 }
 .MemoryGameMenagmentCollection .memory-details-container .headers{
     width: 100%;

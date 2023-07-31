@@ -8,11 +8,13 @@
     justify-content: center;
     flex-wrap: wrap;
     align-items: center;
+    color: var(--light-bg);
 }
 
 .AddSudokuTemplate h2{
     width: 100%;
     text-align: center;
+    color: var(--light-bg);
 }
 
 .AddSudokuTemplate .add-button{

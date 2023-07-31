@@ -12,17 +12,21 @@
     justify-content: center;
     align-items: center;
     align-content: start;
+
+    color: var(--light-bg);
     
 }
 .SelectLevel h2{
     width: 100%;
     text-align: center;
     font-size: 25px;
+    color: var(--light-bg);
 }
 .SelectLevel .level-options{
     height: fit-content;
     display: flex;
     flex-wrap: wrap;
+    
 }
 .SelectLevel  .level-options button{
     background-color: var(--primary);
@@ -34,6 +38,7 @@
     font-size: 20px;
     margin-block: 10px;
     padding: 5px;
+    color: var(--light-bg);
 }
 
 .SelectLevel  .level-options button:hover{

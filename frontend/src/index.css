@@ -12,7 +12,7 @@
     --primary : #1B93FA; 
     --secondary : #212733;
     --modal-bg : rgba(51, 51, 51, 0.5);
-    --dark-bg : #F2F9FF ;
+    --dark-bg : white ;
     --light-bg : #0C0D14;
 }
 button:disabled{

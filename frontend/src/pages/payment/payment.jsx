@@ -4,7 +4,7 @@ import "./payment.css";
 import useUser from "../../hooks/useUser";
 
 export default function Payment() {
-    const {user} = useUser();
+    const {user , updateXp} = useUser();
   const price = [
     { price: "99.99$", amount: "500", class: "five-pointed-star" },
     { price: "259.99$", amount: "1500", class: "five-pointed-star" },
@@ -70,6 +70,7 @@ export default function Payment() {
                 }}
                 onApprove={(data,actions) => {
                     return actions.order.capture().then(function(details){
+                        updateXp(parseInt(value));
                         alert(
                             "Payment completed by " + user.name
                         )
