@@ -20,6 +20,9 @@ export default function ResetPassword() {
     const [emailSent,setEmailSent] = useState(false);
     const {sendEmail} = useSendEmail();
     const navigate = useNavigate();
+    const pattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    const [validEmail,setValidEmail] = useState(false); 
+
     //functions
     const hundleSendEmail = async () => {
         try {
@@ -34,7 +37,7 @@ export default function ResetPassword() {
         setGeneratedKey((Math.random(0,9999)*10000).toFixed(0));
     },[])
     console.log(generatedKey);
-    console.log(keyInput);
+
     
     const resetPassword = async (password) => {
         try {
@@ -48,7 +51,7 @@ export default function ResetPassword() {
       } 
   return (
     <div className="ResetPassword">
-        <NavBackButton to={"/"} />
+        <NavBackButton className="navBack" to={"/"} />
         {emailSent ? 
             (generatedKey == keyInput 
                 ? <ResetPasswordForm resetPassword={resetPassword}/> 
@@ -57,10 +60,13 @@ export default function ResetPassword() {
             <div className="ResetPassword-email-container">
                 <h2>Enter Email Address</h2>
                 <input 
+                    onChange={(e) => setValidEmail(pattern.test(e.target.value))}
+                    pattern={pattern}
                     placeholder="your email address"
                     ref={emailRef}
                     type='email' />
                 <button
+                disabled={!validEmail}
                 onClick={()=>hundleSendEmail()}
                 >Send</button>
             </div>

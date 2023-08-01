@@ -12,20 +12,23 @@
     
     display: table;
     border-radius: 20px;
+    color: white;
 }
 
 .UsersTable .row {
     display: table-row;
     background: var(--secondary);
+    color: white;
     
 }
 .UsersTable .row:nth-of-type(odd) {
     background: #323844;
+    color: white;
   }
 .UsersTable .row.header {
     width: 90vw;
     font-weight: 900;
-    color: var(--light-bg);
+    color: white;
     background: var(--primary);
 }
 
@@ -42,7 +45,7 @@
     display: table-cell;
     height: fit-content;
     font-size: 20px;
-    color: var(--light-bg);
+    color: white;
     word-break: break-all;
   }
 .UsersTable .edit-cell{

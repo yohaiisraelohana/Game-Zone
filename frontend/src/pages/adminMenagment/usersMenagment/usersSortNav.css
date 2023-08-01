@@ -8,6 +8,9 @@
     padding-bottom: 5px;
 
 }
+.UsersSortNav .iconR{
+    color: var(--light-bg) !important;
+}
 
 .UsersSortNav-input-container{
     width: 70%;
@@ -21,7 +24,7 @@
     border-radius: 5px;
     padding: 3px;
     border: 3px solid var(--secondary);
-    color: white;
+    color: var(--light-bg);
     outline: none;
     text-align: center;
     background-color: transparent;
@@ -30,7 +33,7 @@
 
 .UsersSortNav-select select{
     width: 100%;
-    color: var(--light-bg);
+    color: white;
     background-color: var(--secondary);
     border-radius: 5px;
     border: none;

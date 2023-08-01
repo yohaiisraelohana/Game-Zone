@@ -11,7 +11,7 @@
     padding: 5px;
     padding-inline: 10px;
     color: var(--dark-bg);
-    background-color: white;
+    background-color: var(--light-bg);
     border: none;
     border-radius: 10px;
     

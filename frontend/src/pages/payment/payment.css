@@ -10,10 +10,10 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    border:  #01faff solid 3px;
     width: 500px;
     height: 600px;
     margin-top: 70px;
+    color: var(--light-bg);
 }
 
 .Payment .price {
@@ -37,7 +37,7 @@
   }
   
   .Payment .five-pointed-star {
-    --star-color: #01faff;
+    --star-color: var(--primary);
     margin: 1em auto;
     font-size: 4em;
     position: relative;

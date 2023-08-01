@@ -51,6 +51,7 @@
     background-color: transparent;
     border: none;
     outline: none;
+    color: white;
 
 }
 
@@ -68,20 +69,24 @@
     margin-top: 20px;
     padding: 10px 30px;
     border-radius: 50px;
+    color: white;
 }
 
 .LogInForm .eye-icon{
     position: absolute;
     right: 4px;
+    color: white;
 }
 
 .LogInForm .lock-icon {
     position: absolute;
     right: 22px;
+    color: white;
 }
 .LogInForm .email-icon{
     position: absolute;
     right: 4px;
+    color: white;
 }
 
 .LogInForm .error-server p {

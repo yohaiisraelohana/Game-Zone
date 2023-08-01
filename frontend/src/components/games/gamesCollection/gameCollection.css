@@ -44,7 +44,7 @@
     border: 5px solid #0000;
     background: url('https://res.cloudinary.com/dhojbnefp/image/upload/v1690756372/C3C45339-EB0E-41D8-B857-A16D38B36AD8_dppowt.jpg') padding-box, linear-gradient(
           var(--angle),
-          var(--light-bg),
+          var(--secondary),
           #00bbff
         ) border-box  ; 
     background-repeat: no-repeat;

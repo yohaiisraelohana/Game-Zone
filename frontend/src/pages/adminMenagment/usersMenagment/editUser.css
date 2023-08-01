@@ -12,9 +12,9 @@
 }
 .EditUser h2{
     width: 100%;
-    font-size: 20px;
+    font-size: 22px;
     text-align: center;
-    margin-bottom: 5px;
+    margin-bottom: 4px;
     color: var(--light-bg);
 }
 .EditUser-form{
@@ -34,20 +34,20 @@
     margin-bottom: 10px;
     width: 100%;
     padding: 5px;
-    color: var(--light-bg);
+    color: white;
     border: none;
     border-radius: 5px;
     background-color: var(--secondary);
 }
 .EditUser-form button {
     background-color: var(--primary);
-    color: var(--light-bg);
+    color:white;
     border: none;
-    padding-block: 5px;
+    padding-block: 10px;
     width: 100%;
     font-size: 15px;
     border-radius: 10px;
-    margin-top: 15px;
+    margin-top: 20px;
 }
 
 .EditUser-form-level{

@@ -13,7 +13,7 @@ export default function GamesMenagment() {
       
       {selectedGame ? 
       <div className="">
-        <NavBackButton onClick={()=>setSelectedGame(null)} />
+        <NavBackButton className="navBack" onClick={()=>setSelectedGame(null)} />
         {selectedGame == "Sudoku" && <SudokuMenagment/>}
         {selectedGame == "Games Images" && <CloudinaryGamesImgs/>}
         {selectedGame == "MemoryGame" && <MemoryGameMenagment/>}
