@@ -3,6 +3,7 @@ import useUser from '../../../hooks/useUser';
 //style
 import './slidePuzzleStartGame.css';
 import SelectLevel from '../../reusfullComponents/selectLevel/selectLevel';
+import EndedGameAllert from '../../reusfullComponents/endedGameAllert/endedGameAllert';
 
 
 
@@ -12,32 +13,42 @@ export default function SlidePuzzleStartGame({image,box_size}) {
     const [empty,setEmpty] = useState(null);
     const {user,updateXp} = useUser();
     const [level,setLevel] = useState();
+    const [gameDone,setGameDone] = useState(null);
+    const templates = {
+      easy:{
+        positions:[
+        "top left","top center","top right",
+        "center left","center","center right",
+        "bottom left","bottom center"],
+        revard:200,
+        pices:9,
+      },
+      medium:{
+        positions:[
+        "0% 0%","34% 0%","67% 0%","100% 0%",
+        "0% 34%","34% 34%","67% 34%","100% 34%",
+        "0% 67%","34% 67%","67% 67%","100% 67%",
+        "0% 100%","34% 100%","67% 100%"],
+        revard:400,
+        pices:15,
+      },
+      hard:{
+        positions:[
+        "0% 0%","25% 0%","50% 0%","75% 0%","100% 0%",
+        "0% 25%","25% 25%","50% 25%","75% 25%","100% 25%",
+        "0% 50%","25% 50%","50% 50%","75% 50%","100% 50%",
+        "0% 75%","25% 75%","50% 75%","75% 75%","100% 75%",
+        "0% 100%","25% 100%","50% 100%","75% 100%"],
+        revard:600,
+        pices:24,
+      }
+    }
 
     
     useEffect(()=>{
       if(!level)return;
-      if(level === "easy"){
-        setInitial([
-          "top left","top center","top right",
-          "center left","center","center right",
-          "bottom left","bottom center"]);
-        setEmpty(8);
-      } else if(level === "medium"){
-        setInitial([
-          "0% 0%","34% 0%","67% 0%","100% 0%",
-          "0% 34%","34% 34%","67% 34%","100% 34%",
-          "0% 67%","34% 67%","67% 67%","100% 67%",
-          "0% 100%","34% 100%","67% 100%"]);
-        setEmpty(15);
-      } else {
-        setInitial([
-          "0% 0%","25% 0%","50% 0%","75% 0%","100% 0%",
-          "0% 25%","25% 25%","50% 25%","75% 25%","100% 25%",
-          "0% 50%","25% 50%","50% 50%","75% 50%","100% 50%",
-          "0% 75%","25% 75%","50% 75%","75% 75%","100% 75%",
-          "0% 100%","25% 100%","50% 100%","75% 100%"]);
-        setEmpty(24);
-      }
+      setInitial(templates[level].positions);
+      setEmpty(templates[level].pices -1);
     },[level]);
   
     //initialize the images array after shuffle
@@ -51,7 +62,7 @@ export default function SlidePuzzleStartGame({image,box_size}) {
 
     //check if user has won
     const checkWinning = () => {
-        const checkArr = [...initial,"empty"];
+        const checkArr = [...templates[level].positions,"empty"];
         for (let i = 0; i < checkArr.length ; i++) {
           if (checkArr[i] != imagesArr[i]) {
             return false;
@@ -78,19 +89,28 @@ export default function SlidePuzzleStartGame({image,box_size}) {
         if (!imagesArr) return;
         if (checkWinning()) {
           if (user) {
-            if(level == "easy"){
-              updateXp(150);
-            } else if(level == "medium"){
-              updateXp(300);
-            } else {
-              updateXp(500);
-            }
+            updateXp(templates[level].revard);
+            setGameDone(
+              <EndedGameAllert 
+                message={"Good Game!"} 
+                xp={templates[level].revard} 
+                restart={()=>{
+                  setLevel(null);
+                  setGameDone(null);
+                }} />);
+          } else {
+            setGameDone(
+              <EndedGameAllert 
+                message={"Good Game!"} 
+                xp={templates[level].revard} 
+                restart={()=>{
+                  setLevel(null);
+                  setGameDone(null);
+                }} />);
           }
-          alert("congradilations !!!");
         }
       },[empty])
-      console.table(initial);
-      console.table(imagesArr);
+
   return (
     <div className="SlidePuzzleStartGame">
       {level ?
@@ -114,6 +134,7 @@ export default function SlidePuzzleStartGame({image,box_size}) {
            <img src={image} alt="bg-image" className='bg-image' />
       </div>
       : <SelectLevel options={["easy","medium","hard"]} handleChoice={(c)=>setLevel(c)} /> }
+      {gameDone && gameDone}
     </div>
   )
 }

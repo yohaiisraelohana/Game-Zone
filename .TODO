@@ -5,32 +5,24 @@
 1.  
     use skeletons instead of loading
 2.
-    retake images from leonardo for the bg games
-3.
     change cngradilation allert on winning to something more special
     like icon of coins down from the upper screen
     make it as a component apears when user wons 
     ?or
     use toast
-4.
-    light and dark mode 
-    stoped at 
-    *pagination*
-    add shadow to variable 
-    switch the default
-5.
+    *stoped at sliding puzzle game*
+
+3.
     create error reusfull component
-!6 
+!4 
     change the code sended to the backend and check how to do this with a code
-7.
+5.
     add animation to endedGameAllert
-!!!8
+!!!6
     memory game search category
     *Main*
     !!! every place using api to present error if there is , create reusable component for showing errors
-!10.
-    main : add all routes in postman
-    
+
     *Puzzle*
 !1. 
     finish the game

@@ -1,13 +1,14 @@
 import React, { useEffect, useState } from 'react'
-import {useNavigate} from 'react-router-dom'
 //components
 import MemoryCard from './memoryCard';
 import SelectLevel from '../../reusfullComponents/selectLevel/selectLevel';
-import NavBackButton from '../../reusfullComponents/navigateBackButton/navBackButton'
+import NavBackButton from '../../reusfullComponents/navigateBackButton/navBackButton';
+import EndedGameAllert from "../../reusfullComponents/endedGameAllert/endedGameAllert";
 //hooks & services
 import useUser from '../../../hooks/useUser';
 import useMemoryGame from '../../../hooks/useMemoryGame'
 import { apiGet } from '../../../services/apiRequests';
+
 //style
 import './memoryGameStart.css';
 
@@ -17,13 +18,13 @@ export default function MemoryGameStart() {
     const {currentGame,memoryLevels} = useMemoryGame();
     const [memoryCards,setMemoryCards]=useState(null); 
     const {user,updateXp} = useUser();
+    const [gameDone,setGameDone] = useState(null);
 
     const [turns,setTurns] = useState(0);
     const [firstCard,setFirstCard] = useState(null);
     const [secondCard,setSecondCard] = useState(null);
     const [disabled,setDisabled] =  useState(false);
 
-    const navigate = useNavigate();
 
     const updateMemoryCards = (data) => {
       const shuffledCardsArray = [...data,...data]
@@ -119,11 +120,32 @@ export default function MemoryGameStart() {
 
         if (checkIfWon()) {
           if (user) {
-            updateXp(Math.ceil(level * 100 / turns))
+            updateXp(Math.ceil(level * 100 / turns));
+            setGameDone(
+              <EndedGameAllert 
+                message={"Well Done!"} 
+                xp={Math.ceil(level * 100 / turns)} 
+                restart={()=>{
+                  getMemoryCards();
+                  setGameDone(false);
+                  setTurns(0);
+                  setFirstCard(null);
+                  setSecondCard(null);
+                  setDisabled(false);
+                }}/>);
           }
-          alert(`congradilations!
-          you won ${Math.ceil(level * 100 / turns)} xp`);
-          navigate(-1);
+          setGameDone(
+            <EndedGameAllert 
+              message={"Well Done!"} 
+              xp={Math.ceil(level * 100 / turns)} 
+              restart={()=>{
+                getMemoryCards();
+                setGameDone(false);
+                setTurns(0);
+                setFirstCard(null);
+                setSecondCard(null);
+                setDisabled(false);
+              }}/>);
         }
       }
     },[memoryCards])
@@ -156,6 +178,7 @@ export default function MemoryGameStart() {
               const {level} = memoryLevels.find((l)=>l.name === name);
               setLevel(level);
             }} /> }
+          {gameDone && gameDone}
     </div>
   )
 }

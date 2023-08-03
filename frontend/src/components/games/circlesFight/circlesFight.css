@@ -2,8 +2,11 @@
 .CirclesFight{
     position: relative;
     margin-top: -10vh;
-    z-index: 7;
+    z-index: 6;
     background-color: var(--dark-bg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .CirclesFight .score{
     position: absolute;

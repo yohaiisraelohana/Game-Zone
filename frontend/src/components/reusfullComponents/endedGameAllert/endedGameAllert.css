@@ -6,6 +6,7 @@
     border: var(--secondary)3px solid;
     padding: 30px ;
     width: 70vw;
+    margin: 0px 15vw;
     border-radius: 10px;
     display: flex;
     flex-wrap: wrap;
@@ -13,7 +14,7 @@
 }
 
 .EndedGameAllert h1 , h2{
-    color: var(--dark-bg);
+    color: var(--dark-bg) !important;
     width: 100%;
     text-align: center;
     padding-bottom: 20px;
@@ -41,12 +42,14 @@
 @media(width > 700px){
     .EndedGameAllert{
         width: 60vw;
+        margin: 0px 20vw;
     }
 }
 
 @media(width > 1000px){
     .EndedGameAllert{
         width: 50vw;
+        margin: 0px 25vw;
     }
 
 }
@@ -54,6 +57,8 @@
 @media(width > 1200px){
     .EndedGameAllert{
         width: 30vw;
+        margin: 0px 35vw;
+        
     }
 
 }

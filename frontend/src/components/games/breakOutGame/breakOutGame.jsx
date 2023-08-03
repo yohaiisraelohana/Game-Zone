@@ -28,7 +28,7 @@ export default function BreakOutGame() {
         {level > 0
         ? <BreakOutGameBoard level={level} gameEnded={gameEnded} />
         : <div className="">
-            <NavBackButton/>
+            <NavBackButton className="navBack"/>
             <SelectLevel 
             options={["easy","medium","hard"]} 
             handleChoice={(levelSelected)=>levelSelected == "easy" 

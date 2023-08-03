@@ -2,12 +2,14 @@ import React from 'react'
 import { useNavigate } from 'react-router-dom'
 import "./endedGameAllert.css";
 
-export default function EndedGameAllert({message,xp,restart,exit}) {
+export default function EndedGameAllert({message,xpMessage,xp,restart,exit,styled}) {
     const navigate = useNavigate();
   return (
-    <div className='EndedGameAllert'>
+    <div 
+      style={styled ? styled : {}}
+      className='EndedGameAllert'>
         <h1>{message || "game ended"}</h1>
-        <h2>You won {xp} xp</h2>
+        <h2>{xpMessage || `You won ${xp} xp`}</h2>
         <button
             className='EndedGameAllert-exit'
             onClick={()=> exit ? exit() : navigate(-1) }
