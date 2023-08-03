@@ -4,48 +4,24 @@
     *style*
 1.  
     use skeletons instead of loading
-2.
-    change cngradilation allert on winning to something more special
-    like icon of coins down from the upper screen
-    make it as a component apears when user wons 
-    ?or
-    use toast
-    *stoped at sliding puzzle game*
-
 3.
-    create error reusfull component
+    create error reusfull component apply every api call
 !4 
     change the code sended to the backend and check how to do this with a code
-5.
-    add animation to endedGameAllert
 !!!6
-    memory game search category
-    *Main*
-    !!! every place using api to present error if there is , create reusable component for showing errors
+    make the option to search for any subject user wants in pexels api
 
     *Puzzle*
-!1. 
+1. 
     finish the game
 
 
 
-    *chess*
-1.
-    https://youtu.be/Iri__zwxwHg
 
-    *candyCash*
-1.
-    https://youtu.be/PBrEq9Wd6_U
-
-    *2048 game *
-1.
-    https://www.youtube.com/watch?v=ca0BEH2bBLs&t=41s
 
 
 
     *onFuture*
-!1. 
-    memoryGame : make the option to search for any subject user wants in pexels api
 1.
     games : put all games in backend with categories (popular,thinkink,puzzles)
     in addition make game define settings to every game , 
@@ -60,8 +36,21 @@
     admin: gragh of users per periode
 8.
     admin: how many users plaied every game 
+9.
+    add animation to endedGameAllert
 
+GAMES:
+    *chess*
+1.
+    https://youtu.be/Iri__zwxwHg
 
+    *candyCash*
+1.
+    https://youtu.be/PBrEq9Wd6_U
+
+    *2048 game *
+1.
+    https://www.youtube.com/watch?v=ca0BEH2bBLs&t=41s
 
 
 -->
