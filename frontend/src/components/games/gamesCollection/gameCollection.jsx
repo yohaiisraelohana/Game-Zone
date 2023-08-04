@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 //style
 import "./gameCollection.css";
-import SkeletonElement from "../../reusfullComponents/skeletons/SkeletonElement";
+
 
 
  
@@ -29,8 +29,7 @@ export default function GameCollection() {
             <p>{game.name}</p>
           </Link>
         ))}
-      </div>   
-      <SkeletonElement type={"squar"} />   
+      </div>    
     </div>
   );
 }

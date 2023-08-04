@@ -3,7 +3,10 @@
  
     *style*
 1.  
-    use skeletons instead of loading
+    use skeletons instead of loading (dark and light css)
+    *MemoryGame* -> done
+    *SudokuGame* -> done
+    doing by the order of games
 3.
     create error reusfull component apply every api call
 !4 
