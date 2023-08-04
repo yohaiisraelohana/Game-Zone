@@ -8,8 +8,8 @@ export default function EndedGameAllert({message,xpMessage,xp,restart,exit,style
     <div 
       style={styled ? styled : {}}
       className='EndedGameAllert'>
-        <h1>{message || "game ended"}</h1>
-        <h2>{xpMessage || `You won ${xp} xp`}</h2>
+        <h1 className='EndedGameAllert-message'>{message || "game ended"}</h1>
+        <h2 className='EndedGameAllert-xpmessage'>{xpMessage || `You won ${xp} xp`}</h2>
         <button
             className='EndedGameAllert-exit'
             onClick={()=> exit ? exit() : navigate(-1) }
