@@ -11,7 +11,7 @@
     position: relative;
 }
 
-.SlidePuzzleCollection img{
+.SlidePuzzleCollection .img{
     height: 39vw;
     width: 39vw;
 }
@@ -36,7 +36,7 @@
     .SlidePuzzleCollection{
         width: 90vw;
     }
-    .SlidePuzzleCollection img{
+    .SlidePuzzleCollection .img{
         height: 27vw;
         width: 27vw;
     }
@@ -56,7 +56,7 @@
     .SlidePuzzleCollection{
         width: 95vw;
     }
-    .SlidePuzzleCollection img{
+    .SlidePuzzleCollection .img{
         height: 21vw;
         width: 21vw;
     }
