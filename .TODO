@@ -2,16 +2,9 @@
                                          TODO
  
     *style*
-1.  
-    use skeletons instead of loading (dark and light css)
-    *MemoryGame* -> done
-    *SudokuGame* -> done
-    doing by the order of games
-3.
+1.
     create error reusfull component apply every api call
-!4 
-    change the code sended to the backend and check how to do this with a code
-!!!6
+!!!3
     make the option to search for any subject user wants in pexels api
 
     *Puzzle*
