@@ -13,7 +13,7 @@
     justify-content: space-between;
 }
 
-.EndedGameAllert .EndedGameAllert-xpmessage , .EndedGameAllert-xpmessage{
+.EndedGameAllert .EndedGameAllert-message , .EndedGameAllert-xpmessage{
     color: var(--dark-bg) !important;
     width: 100%;
     text-align: center;

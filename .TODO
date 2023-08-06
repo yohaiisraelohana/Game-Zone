@@ -9,7 +9,9 @@
 
     *Puzzle*
 1. 
-    finish the game
+    level easy opacity 0.4 hard 0
+2.
+    make responsive and collection of images
 
 
 
@@ -21,6 +23,7 @@
 1.
     games : put all games in backend with categories (popular,thinkink,puzzles)
     in addition make game define settings to every game , 
+    manage them and their revards
 2.
     games : when someone click on game add to the game in times_played ptropertie 1
     in the home page present the most played game
