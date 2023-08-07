@@ -1,36 +1,8 @@
 .PuzzleGame{
     display: flex;
-    width: 100vw;
+    align-content: center;
+    height: fit-content;
+    padding-top: 10vh;
     justify-content: center;
-    height: 80vh;
-    align-items: center;
-}
-.PuzzleGame .slice-image{
-    width: 300px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-}
-
-.PuzzleGame .game{
-    margin-top: 20px;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    width: 100%;
-}
-
-.PuzzleGame .slice{
-    cursor: grab ;
-    position: absolute;
-    transition: opacity 1s ease, visibility 1s ease;
-    bottom: 10vh;
-}
-.PuzzleGame .img{
-    position: absolute;
-    opacity: 0.3;
-}
-.PuzzleGame .full-image{
-    width: fit-content;
-    border: 2px solid var(--light-bg);
+    position: relative;
 }

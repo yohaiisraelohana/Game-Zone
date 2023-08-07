@@ -1,0 +1,43 @@
+.PuzzleCollection{
+    display: grid;
+    grid-template-columns: repeat(2,35vw);
+    width: 80vw;
+    padding-inline: 10vw;
+    gap: 10vw;
+    max-height: 80vh;
+    overflow-y: auto;
+}
+.PuzzleCollection-image-preview{
+    height: 35vw;
+}
+.PuzzleCollection-img{
+    height: 100%;
+    width: 100%;
+}
+.PuzzleCollection-img-skeleton{
+    height: 10vw;
+    width: 10vw;
+}
+
+@media (width > 700px) {
+    .PuzzleCollection{
+        grid-template-columns: repeat(3,22vw);
+        gap: 7vw;
+    }
+    .PuzzleCollection-image-preview{
+        height: 22vw;
+    }
+}
+
+@media (width > 1200px) {
+    .PuzzleCollection{
+        grid-template-columns: repeat(4,20vw);
+        gap: 5vw;
+        width: 95vw;
+        padding-inline: 2vw;
+        margin: auto;
+    }
+    .PuzzleCollection-image-preview{
+        height: 20vw;
+    }
+}

@@ -1,127 +1,104 @@
-import React, { useEffect, useRef, useState } from 'react'
-import Draggable, {DraggableCore} from 'react-draggable';
-
-//  Assets
-import topLeft from '../../../assets/images/puzzle9x9/pieces/topLeft.png';
-import topCenter from '../../../assets/images/puzzle9x9/pieces/topCenter.png';
-import topRight from '../../../assets/images/puzzle9x9/pieces/topRight.png'; 
-import centerLeft from '../../../assets/images/puzzle9x9/pieces/centerLeft.png';
-import center from '../../../assets/images/puzzle9x9/pieces/center.png';
-import centerRight from '../../../assets/images/puzzle9x9/pieces/centerRight.png';
-import bottomLeft from '../../../assets/images/puzzle9x9/pieces/bottomLeft.png';
-import bottomCenter from '../../../assets/images/puzzle9x9/pieces/bottomCenter.png';
-import bottomRight from '../../../assets/images/puzzle9x9/pieces/bottomRight.png';
-import gameImage from '../../../assets/images/puzzle9x9/images/demo.jpg';
-//  Style
+import React, { useState , useEffect } from 'react'
+//  STYLE
 import './puzzleGame.css';
-
-//  Components
-import EndedGameAllert from '../../reusfullComponents/endedGameAllert/endedGameAllert';
+//  COMPONENTS 
+import PuzzleGameStart from './puzzleGameStart';
+import SelectLevel from '../../reusfullComponents/selectLevel/selectLevel'
+import PuzzleCollection from './puzzleCollection';
+import PuzzleImgInput from './puzzleImgInput';
+import NavBackButton from '../../reusfullComponents/navigateBackButton/navBackButton';
+import Pagination from '../../reusfullComponents/pagination/pagination';
+//hooks
+import useCloudinaryImages from '../../../hooks/useCloudinaryImages';
+//services
+import { resizeCloudinaryImage } from '../../../services/resizeCloudinaryImage'; 
+import { resizeImage } from '../../../services/resizeInputImage';
 
 export default function PuzzleGame() {
-    const [piecesArr, setPiecesArr] = useState([
-            {found:false,piece:topLeft,position:"0% 0%",height:"100px",width:"100px",top:0,left:0},
-            {found:false,piece:topCenter,position:"41% 0%",height:"100px",width:"130px",top:0,left:30},
-            {found:false,piece:topRight,position:"100% 0%",height:"100px",width:"130px",top:0,left:30},
-            {found:false,piece:centerLeft,position:"0% 41%",height:"130px",width:"130px",top:30,left:0},
-            {found:false,piece:center,position:"59% 41%",height:"130px",width:"130px",top:30,left:30},
-            {found:false,piece:centerRight,position:"100% 50%",height:"160px",width:"100px",top:30,left:30},
-            {found:false,piece:bottomLeft,position:"0% 100%",height:"130px",width:"100px",top:60,left:0},
-            {found:false,piece:bottomCenter,position:"50% 100%",height:"130px",width:"160px",top:60,left:30},
-            {found:false,piece:bottomRight,position:"100% 100%",height:"100px",width:"100px",top:30,left:30}
-        ]);
-    const [gameDone,setGameDone] = useState(null);
+  const [puzzle_image,setPuzzleImage] = useState(null);
+  const box_size = window.innerWidth < 600 ? 300 : 600; 
+  const {currentImage,setImage,page,pages,selectPage} = useCloudinaryImages();
+  const [level,setLevel] = useState(null);
+  console.log(box_size);
+  
 
-    const piecesRefs = [useRef(),useRef(),useRef(),useRef(),useRef(),useRef(),useRef(),useRef(),useRef()];
+  const updatePuzzleImage = () => {
+    setPuzzleImage(resizeCloudinaryImage(currentImage.route + currentImage.name,box_size,box_size));
+  }
 
-    const checkPiece = (event,i) => {
-        const tx = piecesRefs[i].current.getBoundingClientRect().left;
-        const ty = piecesRefs[i].current.getBoundingClientRect().top;
-        if ((event.clientX > tx - 70 && event.clientX < tx + 70)
-         && (event.clientY > ty - 70 && event.clientY < ty + 70)) {
-            setTimeout(()=>{
-                let newPiecesArr = [...piecesArr];
-                piecesArr[i].found = true;
-                setPiecesArr(newPiecesArr);
-            },500);
-        }
+  const handleImageChange = async (img) => {
+    try {
+      const resizedImageBlob = await resizeImage(img,box_size,box_size);
+      const resizedImage = URL.createObjectURL(resizedImageBlob);
+      console.log(resizedImage);
+      setPuzzleImage(resizedImage);
+    } catch (error) {
+      console.log(error);
     }
+  };
 
-    const checkWining = () => {
-        let won = true;
-        for (let i = 0; i < 9; i++) {  
-            if (!piecesArr[i].found){
-                won = false; 
-                break; 
-            }
-        }
-        if (won) setGameDone(<EndedGameAllert xp={200} message={"GOOD GAME"} />)
+  useEffect(()=>{
+    if(currentImage){
+      updatePuzzleImage();
     }
+  },[currentImage]);
 
-    useEffect(()=>checkWining(),[piecesArr]);
   return (
+    <div className='PuzzleGame'>
         
-        <div className='PuzzleGame'>
-            {gameDone && gameDone}
-            <div className="slice-images">
-                {piecesArr && piecesArr.map((p,i)=>(
-                    <Draggable 
-                        key={i}
-                        onDrag={(e)=>checkPiece(e,i)}>
-
-                        <div className='slice' 
-                        style={{
-                            opacity:(p.found ? 0 : 1),
-                            WebkitMaskImage:`url(${p.piece})`,
-                            WebkitMaskRepeat:'no-repeat',
-                            maskImage:`url(${p.piece})`,
-                            maskRepeat:'no-repeat',
-                            zIndex:'3',
-                            }} >
-                                <div 
-                                    style={{
-                                        backgroundImage:`url(${gameImage})`,
-                                        height:p.height,
-                                        width:p.width,
-                                        backgroundPosition:p.position
-                                        }}>
-                                </div>
-                        </div> 
-                </Draggable>
-                ))}
+        {  puzzle_image ?
+            <div className="">
+              <NavBackButton onClick={()=>{
+                setPuzzleImage(null);
+                setImage(null);
+              }} />
+              {level 
+                ?   <PuzzleGameStart level={level} image={puzzle_image} box_size={box_size} />
+                :   <SelectLevel options={["easy","hard"]} handleChoice={setLevel} />}
             </div>
-
-            <div className='full-image'>
+            :
+            <div className="">
+              <NavBackButton/>
+              <PuzzleImgInput handleImageChange={handleImageChange} />
+              <PuzzleCollection />
+              <Pagination page={page} pages={pages} setPage={(p)=>selectPage(p)}/>
+            </div>
             
-                <div className='slice-image'>
-                    {piecesRefs.map((ref,i)=>
-                        <div 
-                        ref={ref}
-                        className='sliced' 
-                        style={{
-                            opacity:(piecesArr[i].found ? 1 : 0),
-                            WebkitMaskImage:`url(${piecesArr[i].piece})`,
-                            WebkitMaskRepeat:'no-repeat',
-                            maskImage:`url(${piecesArr[i].piece})`,
-                            maskRepeat:'no-repeat',
-                            marginLeft:`${-piecesArr[i].left}px`,
-                            marginTop:`${-piecesArr[i].top}px`,
-                            zIndex:'2',
-                            }} >
-                                <div 
-                                    style={{
-                                        backgroundImage:`url(${gameImage})`,
-                                        height:piecesArr[i].height,
-                                        width:piecesArr[i].width,
-                                        backgroundPosition:piecesArr[i].position
-                                        }}>
-                                </div>
-                        </div> 
-                    )}
-                </div>
-            </div>
-        </div>
+        }
+    </div>
   )
 }
 
+// import React, { useEffect, useState } from 'react'
+// //style
+// import './slidePuzzleGame.css'
 
+
+
+
+
+// export default function SlidePuzzleGame() {
+
+
+  
+
+//   console.log({currentImage,puzzle_image});
+//   return (
+//     <div className='SlidePuzzleGame' >
+//       {puzzle_image
+//         ? 
+//           <div>
+//             <NavBackButton className="navBack" onClick={() => setPuzzleImage(null)}/>
+//             <SlidePuzzleStartGame image={puzzle_image} box_size={box_size} />
+//           </div>
+          
+//         : <div >
+//             <NavBackButton className="navBack" />
+//             <SlidePuzzleImgInput handleImageChange={handleImageChange} />
+//             <SlidePuzzleCollection  />
+//             <Pagination page={page} pages={pages} setPage={(p)=>selectPage(p)} />
+//           </div>
+//         }
+//     </div>
+//   )
+// }

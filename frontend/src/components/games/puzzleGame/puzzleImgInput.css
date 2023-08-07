@@ -1,0 +1,44 @@
+.PuzzleImgInput-open{
+    padding-block: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 10vh;
+}
+.PuzzleImgInput-close{
+    padding-block: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.PuzzleImgInput-open-input{
+    background-color: var(--primary);
+    background-image: var(--gradiant-primary);
+    color: white;
+    border: none;
+    padding: 3px;
+    border-radius: 5px;
+    width: 75%;
+    margin-block:10px;
+}
+.PuzzleImgInput-img-input-container{
+    height: 100px;
+    width: 70vw;
+    margin-bottom: 20px;
+    margin-left: -5px;
+}
+
+@media(width > 500px){
+    .PuzzleImgInput-img-input-container{
+        margin-bottom: 5vh;
+    }
+}
+
+@media(width > 1000px){
+    .PuzzleImgInput-img-input-container{
+        margin-bottom: 10vh;
+    }
+    .PuzzleImgInput-open{
+        margin-top: 15vh;
+    }
+}
