@@ -16,7 +16,7 @@ import { resizeImage } from '../../../services/resizeInputImage';
 
 export default function PuzzleGame() {
   const [puzzle_image,setPuzzleImage] = useState(null);
-  const box_size = window.innerWidth < 600 ? 300 : 600; 
+  const box_size = 300;//window.innerWidth < 600 ? 300 : 600; 
   const {currentImage,setImage,page,pages,selectPage} = useCloudinaryImages();
   const [level,setLevel] = useState(null);
   console.log(box_size);

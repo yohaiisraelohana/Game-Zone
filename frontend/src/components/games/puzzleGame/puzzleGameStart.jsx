@@ -112,7 +112,7 @@ export default function PuzzleGameStart({level,image,box_size}) {
                         ref={ref}
                         className='sliced' 
                         style={{
-                            opacity:(piecesArr[i].found ? 1 : (level == "easy" ? 0.4 : 0)),
+                            opacity:(piecesArr[i].found ? 1 : (level == "easy" ? 0.2 : 0)),
                             WebkitMaskImage:`url(${piecesArr[i].piece})`,
                             WebkitMaskRepeat:'no-repeat',
                             maskImage:`url(${piecesArr[i].piece})`,
