@@ -31,9 +31,9 @@ const initialState = {
     page:1,
     level:null,
     sudokuLevels:[
-      {level:"easy"},
-      {level:"medium"},
-      {level:"hard"}
+      {level:"easy",revard:150},
+      {level:"medium",revard:300},
+      {level:"hard",revard:500}
     ]
 }
 

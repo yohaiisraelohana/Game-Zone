@@ -53,7 +53,7 @@
     margin-bottom:10px ;
     border-radius: 5px; 
     outline-color: var(--primary);
-    color: var(--light-bg);
+    color: white;
     
 }
 .EditMemoryGame .headers-container .input{
@@ -103,6 +103,7 @@
     border: none;
     border-radius: 10px;
     margin-top: 5px;
+    color: white;
 }
 
 .EditMemoryGame .error-field{

@@ -44,7 +44,7 @@ export default function Account() {
     <div
       className='Account'
       >
-        <NavBackButton/>
+        <NavBackButton className="navBack"/>
         {modal && modal}
         {
           user ?

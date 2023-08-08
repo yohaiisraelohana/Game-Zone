@@ -10,7 +10,7 @@
     border: none;
     text-transform: capitalize;
     font-size: 1em;
-    color: var(--light-bg);
+    color: white;
 }
 
 .SudokuGameNav .all{

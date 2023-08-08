@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 import "./ticTacPc.css";
 import useUser from "../../../hooks/useUser";
-import { useParams } from "react-router-dom/dist/umd/react-router-dom.development";
 import SelectLevel from "../../reusfullComponents/selectLevel/selectLevel";
 import NavBackButton from "../../reusfullComponents/navigateBackButton/navBackButton";
+import EndedGameAllert from "../../reusfullComponents/endedGameAllert/endedGameAllert";
 
 export default function TicTacPc() {
   const [board, setBoard] = useState(Array(9).fill(null));
@@ -13,6 +13,12 @@ export default function TicTacPc() {
   const [toggle, setToggle] = useState(true);
   const { user, updateXp } = useUser();
   const [level, setLevel] = useState(null);
+  const [gameDone,setGameDone] = useState(null);
+  const revards = {
+    easy:100,
+    medium:200,
+    hard:300
+  }
 
   const reset = () => {
     setBoard(Array(9).fill(null));
@@ -44,15 +50,13 @@ export default function TicTacPc() {
         const [a, b, c] = winConditions[i];
         if (board[a] === check && board[b] === check && board[c] === check) {
           setWinner(check);
-          if (user) {
+          
             if (check === "X") {
-              if (level === "easy") {
-                updateXp(50);
-              } else if (level === "medium") {
-                updateXp(100);
-              } else {
-                updateXp(150);
-              }
+              if (user) {
+                updateXp(revards[level]);
+                setGameDone(<EndedGameAllert message={"Good Game!"} xp={revards[level]} restart={()=>{reset(); setGameDone(null);}} />);
+            } else {
+              setGameDone(<EndedGameAllert message={"Good Game! log in to get the revard"} xp={revards[level]} restart={()=>{reset(); setGameDone(null);}} />);
             }
           }
           setToggle(false);
@@ -255,6 +259,7 @@ export default function TicTacPc() {
         />
         </div>
       )}
+      {gameDone && gameDone}
     </div>
   );
 }

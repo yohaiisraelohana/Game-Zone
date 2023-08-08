@@ -44,7 +44,7 @@
 }
 
 .NotFound404 h2 {
-  color: #e7ebf2;
+  color: var(--light-bg);
   margin-bottom: 0.4em;
 }
 

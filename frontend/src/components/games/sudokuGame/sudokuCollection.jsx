@@ -1,6 +1,7 @@
 import React,{useEffect} from 'react'
 import './sudokuCollection.css';
 import useSudoku from '../../../hooks/useSudoku';
+import SkeletonElement from '../../reusfullComponents/skeletons/skeletonElement'
 
 
 export default function SudokuCollection({handleClick}) {
@@ -18,7 +19,7 @@ export default function SudokuCollection({handleClick}) {
                 {sudoku.template.map((row)=>(
                     row.map((col,j)=>(
                         <div 
-                            className={`${col > 0 ? sudoku.level : ""}`}
+                            className={`${col > 0 ? sudoku.level + " cell" : "cell"}`}
                             key={j}>
                             {col > 0 ? col : ""}
                         </div>
@@ -28,8 +29,13 @@ export default function SudokuCollection({handleClick}) {
         ))
         : 
         (loading 
-            ? <p>loading skeletons</p> 
-            : error && <p>{error}</p> 
+            ? Array(9).fill(0).map((_,k)=>
+            <div key={k} className="sudoku-preview-skeleton">
+                <SkeletonElement   type={"fit"}/>    
+            </div>
+                
+                )
+            : <p>{error}</p> 
             ) 
         }
 

@@ -4,14 +4,16 @@ import {useParams} from 'react-router-dom'
 import './sudokuGameStart.css'
 import useUser from '../../../hooks/useUser';
 import NavBackButton from '../../reusfullComponents/navigateBackButton/navBackButton';
+import EndedGameAllert from '../../reusfullComponents/endedGameAllert/endedGameAllert'
 
 export default function SudokuGameStart() {
-    const {currentSudoku} = useSudoku();
+    const {currentSudoku , sudokuLevels} = useSudoku();
     const [template,setTemplete] = useState(null);
     const [wrongNumber,setWrongNumber] = useState(null);
     const [disable,setDisable] = useState(false);
     const {level} = useParams();
     const {user,updateXp} = useUser();
+    const [gameDone,setGameDone] = useState(null);
 
     const checkRow = (row)=>{
         let arr = new Array(10).fill(0);
@@ -78,13 +80,9 @@ export default function SudokuGameStart() {
         return true;
     }
     const checkWinningSudoku = () => {
-        for (let i = 0; i < template.length; i++) {
-            for (let j = 0; j < template[i].length; j++) {
-                if (template[i][j] == 0) {
-                    return false;
-                }
-            }
-        }
+        for (let i = 0; i < template.length; i++) 
+            if(template[i].includes(0)) return false;
+        
         return true;
     }
 
@@ -96,16 +94,34 @@ export default function SudokuGameStart() {
         setTemplete(newTmp);
         if (checkSudoku(newTmp,row,col)) {
             if(checkWinningSudoku()){
+                let revard ;
+                for (const levelObj of sudokuLevels)
+                    if(levelObj.level == level) revard = levelObj.revard;
+                
                 if (user) {
-                    if(level === "easy"){
-                        updateXp(50);
-                    } else if(level === "medium"){
-                        updateXp(100);
-                    } else {
-                        updateXp(200);
-                    }
+                    updateXp(revard);
+                    setGameDone(
+                        <EndedGameAllert 
+                        message={"Good Solve!"} 
+                        xp={revard} 
+                        restart={()=>{
+                            setTemplete(currentSudoku);
+                            setWrongNumber(null);
+                            setDisable(false);
+                            setGameDone(null);
+                        }} />);
+                } else {
+                    setGameDone(
+                        <EndedGameAllert 
+                        message={"Good Solve! log in to get the revard"} 
+                        xp={revard} 
+                        restart={()=>{
+                            setTemplete(currentSudoku);
+                            setWrongNumber(null);
+                            setDisable(false);
+                            setGameDone(null);
+                        }} />);
                 }
-                alert("amaizing");
             }
             setDisable(false);
         } else {
@@ -154,6 +170,7 @@ export default function SudokuGameStart() {
             className='reset-sudoku'>
             Reset
         </button>
+        {gameDone && gameDone}
     </div>
   )
 }

@@ -2,14 +2,18 @@
 .CirclesFight{
     position: relative;
     margin-top: -10vh;
-    z-index: 7;
+    z-index: 6;
     background-color: var(--dark-bg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .CirclesFight .score{
     position: absolute;
     top: 17px;
     left: 5px;
     user-select: none;
+    color: var(--light-bg);
 }
 
 .circle-start-game-container{
@@ -51,6 +55,7 @@
     padding-block: 5px;
     padding-inline: 10px;
     border-radius: 10px;
+    color: white;
 }
 .circle-forms-buttons .exit{
     background-color: red;

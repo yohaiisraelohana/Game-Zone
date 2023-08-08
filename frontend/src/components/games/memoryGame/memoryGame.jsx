@@ -12,7 +12,7 @@ import './memoryGame.css';
 
 
 export default function MemoryGame() {
-  const {data:memoryGames,error,loading,getMemory} = useMemoryGame(); 
+  const {getMemory} = useMemoryGame(); 
 
   useEffect(()=>{
     getMemory();
@@ -22,14 +22,7 @@ export default function MemoryGame() {
     <div className='MemoryGame'>
       <NavBackButton className="navBack" to={"/"}/>
       <h1>Memory Game</h1>
-      {memoryGames 
-        ? <MemoryCollection memorycategories={memoryGames} /> 
-        : 
-        <div className="">
-          {loading && <div className="">loading</div> }
-          {error && <div className="">{error.msg}</div> }
-        </div>
-      }
+      <MemoryCollection  /> 
     </div>
   )
 }

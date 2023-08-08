@@ -13,6 +13,9 @@
     height: 40vw;
     gap: 0px;
 }
+.SudokuCollection .sudoku-preview-skeleton{
+    height: 40vw;
+}
 .SudokuCollection .sudoku-preview > * {
     background-color: white;
     color: #333;
@@ -23,6 +26,7 @@
     align-items: center;
     justify-content: center;
 }
+
 
 .SudokuCollection .easy{
     background-color:  lightgreen ;
@@ -46,6 +50,9 @@
         height: 28vw;
         
     }
+    .SudokuCollection .sudoku-preview-skeleton{
+        height: 28vw;
+    }
     .SudokuCollection .sudoku-preview > *{
         min-height: 3vw;
     }
@@ -57,6 +64,9 @@
         width: 95vw;
     }
     .SudokuCollection .sudoku-preview {
+        height: 20vw;
+    }
+    .SudokuCollection .sudoku-preview-skeleton{
         height: 20vw;
     }
     .SudokuCollection .sudoku-preview > *{

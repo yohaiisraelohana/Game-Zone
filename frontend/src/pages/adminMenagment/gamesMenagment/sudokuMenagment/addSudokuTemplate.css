@@ -30,6 +30,7 @@
     border-radius: 5px;
     width: 80px;
     margin-block: 10px;
+    color: white;
 }
 .AddSudokuTemplate .level-options{
     width: 100%;

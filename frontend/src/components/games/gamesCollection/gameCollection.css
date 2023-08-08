@@ -44,7 +44,7 @@
     border: 5px solid #0000;
     background: url('https://res.cloudinary.com/dhojbnefp/image/upload/v1690756372/C3C45339-EB0E-41D8-B857-A16D38B36AD8_dppowt.jpg') padding-box, linear-gradient(
           var(--angle),
-          var(--light-bg),
+          var(--secondary),
           #00bbff
         ) border-box  ; 
     background-repeat: no-repeat;
@@ -161,6 +161,7 @@
 }
 .GameCollection .break-out-game{
     background-image: url("https://res.cloudinary.com/dhojbnefp/image/upload/v1690754271/D8B0D115-42AD-4AA1-811E-0B729F2071D2_z0khg1.jpg");
+    background-position: bottom;
 }
 
 .GameCollection .break-out-game:hover{
@@ -185,6 +186,9 @@
     }
     .GameCollection > *{
         height: 20vw;
+    }
+    .GameCollection .break-out-game{
+        background-position: center;
     }
 }
 

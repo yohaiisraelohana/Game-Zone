@@ -50,6 +50,7 @@
     margin-bottom:10px ;
     border-radius: 5px; 
     outline-color: var(--primary);
+    color: white;
 }
 .AddMemoryGame .headers-container .input{
     margin: 0px;
@@ -92,6 +93,7 @@
     border: none;
     border-radius: 10px;
     margin-top: 5px;
+    color: white;
 }
 
 .AddMemoryGame .error-field{

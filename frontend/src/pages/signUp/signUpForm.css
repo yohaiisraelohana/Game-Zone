@@ -50,6 +50,7 @@
     width: 100%;
     background-color: transparent;
     border: none;
+    color: white;
 }
 
 .SignUpForm .forgot-password{
@@ -67,24 +68,29 @@
     margin-top: 20px;
     padding: 10px 30px;
     border-radius: 50px;
+    color: white;
 
 }
 
 .SignUpForm .signUp-form .eye-icon{
     position: absolute;
     right: 4px;
+    color: white;
 }
 .SignUpForm .signUp-form .lock-icon{
     position: absolute;
     right: 22px;
+    color: white;
 }
 .SignUpForm .signUp-form .email-icon{
     position: absolute;
     right: 4px; 
+    color: white;
 }
 .SignUpForm .signUp-form .user-icon{
     position: absolute;
     right: 4px; 
+    color: white;
 }
 
 .SignUpForm .error-server p {

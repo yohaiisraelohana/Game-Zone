@@ -5,6 +5,7 @@ import RouletteSpin from './rouletteSpin'
 import RouletteBoard from './rouletteBoard';
 import useUser from '../../../hooks/useUser';
 import NavBackButton from '../../reusfullComponents/navigateBackButton/navBackButton'
+import EndedGameAllert from '../../reusfullComponents/endedGameAllert/endedGameAllert';
 
 export default function RouletteGame() {
     const [revard,setRevard] = useState(null);
@@ -14,6 +15,7 @@ export default function RouletteGame() {
     const [disable,setDisable] = useState(false);
     const [price,setPrice] = useState(100);
     const {updateXp,user} =  useUser();
+    const [gameDone , setGameDone] = useState(null);
 
     const revardsOptions = [
       0,28,9,26,30,11,7,20,32,17,5,22,34,15,3,24,36,13,1,
@@ -46,11 +48,37 @@ export default function RouletteGame() {
         if (chice.includes(revardsOptions[randomNumber])) {
           if(user){
             updateXp(price * revard);
+            setGameDone(
+              <EndedGameAllert 
+              styled={{alignSelf:'center'}}
+                message={"Good Spin !"} 
+                xp={price * revard} 
+                restart={()=>setGameDone(null)} />);
+          } else {
+            setGameDone(
+              <EndedGameAllert 
+              styled={{alignSelf:'center'}}
+                message={"Good Spin !"} 
+                xp={price * revard} 
+                restart={()=>setGameDone(null)} />);
           }
-          alert(`you won ${price * revard}xp`);
+          
         } else {
           if (user) {
             updateXp(-price);
+            setGameDone(
+              <EndedGameAllert 
+              styled={{alignSelf:'center'}}
+                message={"Try Again..."} 
+                xpMessage={`You lossed ${price} xp`} 
+                restart={()=>setGameDone(null)} />);
+          } else {
+            setGameDone(
+              <EndedGameAllert 
+              styled={{alignSelf:'center'}}
+                message={"Try Again..."} 
+                xpMessage={`You lossed ${price} xp`} 
+                restart={()=>setGameDone(null)} />);
           }
         }
         setDisable(false);
@@ -58,7 +86,8 @@ export default function RouletteGame() {
   
     }
   return (
-    <div className='RouletteGame'>
+    <div 
+      className='RouletteGame'>
         <NavBackButton className="navBack"/>
         <Roulette 
           ballPosition={ballPosition}/>
@@ -70,6 +99,7 @@ export default function RouletteGame() {
             checkPrice={checkPrice}
             disable={disable} />
         <RouletteBoard setChoice={setChoice} setRevard={setRevard} chice={chice}/>
+        {gameDone && gameDone}
     </div>
   )
 }

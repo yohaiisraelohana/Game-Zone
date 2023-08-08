@@ -1,19 +1,8 @@
-.PuzzleGame .slice-image{
-    width: 300px;
+.PuzzleGame{
     display: flex;
-    flex-wrap: wrap;
+    align-content: center;
+    height: fit-content;
+    padding-top: 10vh;
     justify-content: center;
+    position: relative;
 }
-
-.PuzzleGame .game{
-    margin-top: 20px;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    width: 100%;
-}
-
-.PuzzleGame .slice{
-    cursor: grab ;
-}
-

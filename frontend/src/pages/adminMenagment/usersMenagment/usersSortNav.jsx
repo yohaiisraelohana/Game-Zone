@@ -45,7 +45,7 @@ export default function UsersSortNav({handleSort}) {
       <div 
         onClick={()=>handleSort()}
         className="UsersSortNav-refresh-container">
-        <FiRefreshCw/>
+        <FiRefreshCw className='iconR'/>
       </div>
 
     </div>

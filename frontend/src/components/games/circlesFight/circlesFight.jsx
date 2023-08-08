@@ -1,17 +1,16 @@
 import React, { useEffect, useState ,useRef } from 'react'
 import useUser from '../../../hooks/useUser';
 import './circlesFight.css'
-import { useNavigate } from 'react-router-dom';
+import EndedGameAllert from '../../reusfullComponents/endedGameAllert/endedGameAllert';
 
 export default function CirclesFight() {
     const canvasRef = useRef();// document.querySelector('canvas');
     const [c,setC]= useState();
     let score = 0;
     let scoreElement = document.querySelector('#score');
-    const [display,setDisplay] = useState('flex');
+    const [display,setDisplay] = useState(false);
     const {user,updateXp} = useUser();
     const [final_score,setFinalScore] = useState(0);
-    const navigate = useNavigate();
 
     useEffect(()=>{
         if (canvasRef) {
@@ -192,7 +191,7 @@ export default function CirclesFight() {
                     updateXp(score);
                 }
                 setFinalScore(score);
-                setDisplay('flex');
+                setDisplay(true);
             }
             projectiles.forEach((projectile,pindex)=>{
                 const dist = Math.hypot(projectile.x - enemy.x,projectile.y - enemy.y);
@@ -245,6 +244,18 @@ export default function CirclesFight() {
         projectiles.push(new Projectile(player.x,player.y,5,'#1B93FA',velocity));
     })
 
+    useEffect(()=>{
+        if (canvasRef.current) {
+            // coll the animation game always to check the game
+            animate(); 
+            // call the function to create enemies
+            spawEnemies();
+        }
+
+    },[canvasRef.current]);
+
+
+
 
 
   return (
@@ -255,31 +266,18 @@ export default function CirclesFight() {
             height={window.innerHeight}
             width={innerWidth}>
         </canvas>
-        <div className="circle-start-game-container" style={{display}}>
-            <div className="circle-form-container">
-                <p>{final_score}</p>
-                <p>xp</p>
-                <div className="circle-forms-buttons">
-                    <button 
-                    onClick={()=>navigate(-1)}
-                    className='exit'>
-
-                        Exit
-                    </button>
-                    <button
-                    onClick={()=>{
-                        // coll the animation game always to check the game
-                        animate(); 
-                        // call the function to create enemies
-                        spawEnemies();
-                        setDisplay('none');
-                    }}
-                    className='start'>
-                        Start Game
-                    </button>
-                </div>
-            </div>
-        </div>
+        {display && 
+        <EndedGameAllert 
+            message={"Good Game !" + (user ? "" : ", log in to get the revard")} 
+            xp={final_score}
+            restart={()=>{
+                // coll the animation game always to check the game
+                animate(); 
+                // call the function to create enemies
+                spawEnemies();
+                setDisplay(false);
+            }}
+            /> }
      </div>
   )
 }

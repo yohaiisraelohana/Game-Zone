@@ -2,6 +2,9 @@ import React from "react";
 import { Link } from "react-router-dom";
 //style
 import "./gameCollection.css";
+
+
+
  
 export default function GameCollection() {
   const games_collection = [
@@ -26,7 +29,7 @@ export default function GameCollection() {
             <p>{game.name}</p>
           </Link>
         ))}
-      </div>
+      </div>    
     </div>
   );
 }
