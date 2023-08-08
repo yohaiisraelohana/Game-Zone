@@ -37,6 +37,7 @@
     color: var(--light-bg);
     width: 100%;
     padding-block:10px ;
+    cursor: pointer;
 }
 .UserDropDownMenu .dropdown-option:hover{
     background-color: var(--light-bg);

@@ -19,8 +19,7 @@
 
 .NavBar .account-dropdown{
     position: relative;
-    height: 0px;
-    
+    height: 0px;  
 }
 .NavBar main{
     background-color: var(--dark-bg);
